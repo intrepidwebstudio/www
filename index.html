@@ -72,23 +72,18 @@ ul.touch li.ui-li-has-alt a.ui-btn {
 /*	background-color:#F0525B;
 	opacity:.65;
 	
-*/	position:absolute; bottom:0 ;
+*/	position:absolute; bottom:0px;
 background: rgba(240, 82, 91, 0.65) !important;
 	}
 
-.limitedLines{
-    white-space: normal !important;
-	font-size:15px !important;
-    line-height:20px !important;
-    max-height:30px !important;
-	overflow:hidden ellipsis !important;
-    text-overflow: ellipsis !important;
-}
+
 	
-	
-	.wrap {
-    white-space: normal !important;
-}
+	.ui-listview>li p{
+		
+		white-space:normal;
+		max-height:30px;
+		text-overflow:ellipsis !important;
+		}
 	
     .behind {
         width: 100%;
@@ -98,7 +93,7 @@ background: rgba(240, 82, 91, 0.65) !important;
         right: 0;
     }
     .behind a.ui-btn {
-        width: 68px;
+        
         margin: 0px;
         float: right;
         border: none;
@@ -109,13 +104,40 @@ background: rgba(240, 82, 91, 0.65) !important;
         text-shadow: none;
     }
 	
-	
-	
-	
-	
-	
-    
-	
+	.socialicon{
+		
+		float:right;
+		vertical-align:middle !important;
+		padding: 5px 5px;
+		
+		}
+		
+	.socialicon img {
+		width:40px;
+		
+		}	
+		
+	.sourceicon{
+				 padding:5px;
+		}	
+	.searchicon img{
+			position:absolute;
+			top:30px;
+			left:15px;
+			width:25px;
+				
+		}	
+		
+		.settings{
+				 padding:5px;
+		}	
+	.settings img{
+			position:absolute;
+			top:30px;
+			right:15px;
+			width:25px;
+				
+		}	
 	
   </style>
 
@@ -124,109 +146,472 @@ background: rgba(240, 82, 91, 0.65) !important;
 
 
 <div data-role="page" id="demo-page" data-title="Inbox" data-url="demo-page">
-
-    <div data-role="header" data-position="fixed" data-theme="b" style="background:url('img/ebooheader.png') no-repeat; background-size:350px; 230px; height:220px; border-bottom:none !important;"  >
-	    <div class="title_bac" style="alignment-baseline:baseline; width:100%;"  >
-        		<center><span style="alignment-adjust:middle; font-size:25px; ">Eboo Testing</span></center>
+	
+    <div data-role="header" data-position="fixed" data-theme="b" style="background:url('img/ebooheader.png') no-repeat; background-size:100%; height:200px;   border-bottom:none !important;"  >
+	    
+        <div class="searchicon" >
+       		 <img src="Eboo - Icons/search.png" >
+        </div>
+        
+        
+        <div class="settings">
+        	<img src="Eboo - Icons/settings.png" >
+        </div>
+        
+        
+        <div class="title_bac" style="alignment-baseline:baseline; height:30px; width:100%;"  >
+        		<center><span style="font-size:20px; padding:5px; ">Eboo Testing</span></center>
         </div>
 	</div><!-- /header -->
     
    
-    <div  role="main" class="ui-content">
-        <ul data-role="listview" class="swipe-delete" >
+    <div  role="main" class="ui-content" >
+        <ul data-role="listview" class="swipe-delete" data-divider="false" >
         
-        
-               
-                    <li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/BUSINESSINSIDER.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/BUZZFEED.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/CARADVICE.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/CNN.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/DAILYBEAST.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/FOX.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/GOSSIPCOP.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/DAILYBEAST.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/GRUBSTREET.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/YAHOO.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+<li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/BUSINESSINSIDER.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/BUZZFEED.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/CARADVICE.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/CNN.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/DAILYBEAST.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/FOX.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/GOSSIPCOP.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/DAILYBEAST.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/GRUBSTREET.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                                <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" >
+                                
+                                <img src="resources/YAHOO.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                                </li>
+                     	
                     
-                        
-                        <div class="behind">
-                        
-                     
-    <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-    <img src="socialicons/twitter.png" alt="twitter"  style="width:50px;"  ></a>
-    <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-    <img src="socialicons/facebook.png" alt="facebook"  style="width:50px;"></a>
-    <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-    <img src="socialicons/tumblr.png" alt="tumblr"  style="width:50px;" ></a>
-    <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-    <img src="socialicons/linkedin.png" alt="linkedin"  style="width:50px;" ></a>
-    <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-    <img src="socialicons/email.png" alt="email" style="width:50px;" ></a>
-                            
-                            
-                        </div>
-                        <a href="#" onClick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-                            
-                            <img src="resources/BUZZFEED.png" alt="yahoo" style="max-width:80px; padding:10px;" >
-                            <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
-                            
-                            <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
-                        </a>
-                       
-                    </li>
-                    <li>
-                        <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">Delete</a>
-                        </div>
-                        
-                        <a href="#demo-mail">
-                            
-                            <img src="resources/ALLRECIPIES.png" alt="yahoo" style="max-width:80px; padding:10px;" >
-                            <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
-                            
-                            <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
-                        </a>
-                        
-                    </li>
-                    <li>
-                        <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">Delete</a>
-                        </div>
-                        
-                      <a href="#demo-mail">
-                            
-                            <img src="resources/CNN.png" alt="yahoo" style="max-width:80px; padding:10px;" >
-                            <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
-                            
-                      <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
-                      </a>
-                      </li>
                     
-
-        
-                    
-                    <li>
-                        <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">Delete</a>
-                        </div>
-                        <a href="#">item 11</a>
-                    </li>
-                    <li>
-                        <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">Delete</a>
-                        </div>
-                        <a href="#">item 12</a>
-                    </li>
-                    <li>
-                        <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">Delete</a>
-                        </div>
-                        <a href="#">item 13</a>
-                    </li>
-                    <li>
-                        <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">Delete</a>
-                        </div>
-                        <a href="#">item 14</a>
-                    </li>
-                    <li>
-                        <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">Delete</a>
-                        </div>
-                        <a href="#">item 15</a>
-                    </li>
-                </ul>
+                                    </ul>
     </div><!-- /content -->
     
     
@@ -258,19 +643,26 @@ background: rgba(240, 82, 91, 0.65) !important;
         $(document).unbind('touchmove', prevent_default)
     }
 
+
+
+
+
+
     var x;
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
             $('.swipe-delete li > a').css('left', '0px') // close em all
             x = e.originalEvent.pageX // anchor point
+			
         })
         .on('touchmove', function(e) {
             var change = e.originalEvent.pageX - x
-            change = Math.min(Math.max(-250, change), 0) // restrict to -100px left, 0px right
+		    change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
             e.currentTarget.style.left = change + 'px'
             if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
         })
         .on('touchend', function(e) {
+			
             var left = parseInt(e.currentTarget.style.left)
             var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
             e.currentTarget.style.left = new_left
@@ -282,14 +674,16 @@ background: rgba(240, 82, 91, 0.65) !important;
         e.preventDefault()
 		
 		
-     //   $(this).parents('li').slideUp('fast', function() {
-            
-			
+     //   $(this).parents('li').slideUp('fast', function() {.
+      	
 			//$(this).remove()
 			
 			
       //  })
     })
+	
+	
+	
 	
 	
 		
