@@ -48,7 +48,7 @@
 	
 	
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
-
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 	
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
@@ -78,7 +78,7 @@
     <access origin="*" />
 	<access origin=".*" />
 	<access origin="file://*"/>
-	<access uri="*" subdomains="true" />
+	<access url="*" subdomains="true" />
 
 
 <!-- for iOS -->
@@ -88,6 +88,11 @@
 <!-- for iOS -->
 <feature name="SocialSharing">
   <param name="android-package" value="SocialSharing" />
+</feature>
+
+
+<feature name="InAppBrowser">
+    <param name="ios-package" value="CDVInAppBrowser" />
 </feature>
 
 

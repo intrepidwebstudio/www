@@ -89,17 +89,14 @@ background: rgba(240, 82, 91, 0.65) !important;
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 25%;
+        top: 0;
         right: 0;
-		bottom:25%;
-		
     }
     .behind a.ui-btn {
         
         margin: 0px;
         float: right;
         border: none;
-		
     }
     .behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
       
@@ -118,7 +115,6 @@ background: rgba(240, 82, 91, 0.65) !important;
 	.socialicon img {
 		width:40px;
 		
-		
 		}	
 		
 	.sourceicon{
@@ -129,124 +125,48 @@ background: rgba(240, 82, 91, 0.65) !important;
 			top:30px;
 			left:15px;
 			width:25px;
-			z-index:99999px;
 				
 		}	
 		
-		
-	.righticon img{
+		.settings{
+				 padding:5px;
+		}	
+	.settings img{
 			position:absolute;
 			top:30px;
 			right:15px;
 			width:25px;
 				
 		}	
-		
-	.ebooheader{
-		
-		width:100%; z-index:99999px; margin-bottom:-4px; 
-		
-		}	
-	
-	/******************* ADDING CUSTOM UI ICONS ******************/
-	
-	/* .ui-icon-ebootick {
-    background-image: url("taifun.png");
-  }
-
-  .nav .ui-btn .ui-btn-inner {
-    padding-top: 40px !important;
-  }
-
-  .nav .ui-btn .ui-icon-ebootick {
-    width: 45px!important;
-    height: 35px!important;
-    margin-left: -24px !important;
-    box-shadow: none!important;
-    -moz-box-shadow: none!important;
-    -webkit-box-shadow: none!important;
-    -webkit-border-radius: none !important;
-    border-radius: none !important;
-  }
-
-  #programas .ui-icon-ebootick {
-    background-image: url(taifun.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-  }
-  */
-  
-  
-  	
-	 .ui-icon-ebootoggleoff {
-    background-image: url("icons/ebootoggleoff.png");
-  }
-
-  .nav .ui-btn .ui-btn-inner {
-    padding-top: 40px !important;
-  }
-
-  .nav .ui-btn .ui-icon-ebootoggleoff {
-    width: 45px!important;
-    height: 35px!important;
-    margin-left: -24px !important;
-    box-shadow: none!important;
-    -moz-box-shadow: none!important;
-    -webkit-box-shadow: none!important;
-    -webkit-border-radius: none !important;
-    border-radius: none !important;
-  }
-
-   .ui-icon-ebootoggleoff {
-    background-image: url(icons/ebootoggleoff.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-  }
-	
-	
-	.ebooicons{
-		
-		width:16px;
-		vertical-align:middle !important;
-		
-		}
-	
-	/******************* ADDING CUSTOM UI ICONS ******************/
 	
   </style>
-  
-  
 
 </head>
 <body>
 
 
-<div data-role="page" id="page1" data-title="Inbox" data-url="demo-page">
+<div data-role="page" id="demo-page" data-title="Inbox" data-url="demo-page">
 	
-    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;"  >
-	  
-        <img  src="img/ebooheader.png" class="ebooheader"  >
-     
-        
-        <div  class="lefticon" >
-       		 <img  src="icons/search.png" >
+    <div data-role="header" data-position="fixed" data-theme="b" style="background:url('img/ebooheader.png') no-repeat; background-size:100%; height:200px;   border-bottom:none !important;"  >
+	    
+        <div class="lefticon" >
+       		 <img src="Eboo - Icons/search.png" >
         </div>
         
         
-        <div class="righticon">
-        	<a href="#page2" ><img src="icons/settings.png" ></a>
+        <div class="settings">
+        	<img src="Eboo - Icons/settings.png" >
         </div>
         
-        <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ;  text-align:center;"  >
-        		<p style="vertical-align:middle !important;">Eboo Testing</p>
-        </div>
         
-       
+        <div class="title_bac" style="alignment-baseline:baseline; height:30px; width:100%;"  >
+        		<center><span style="font-size:20px; padding:5px; ">Eboo Testing</span></center>
+        </div>
 	</div><!-- /header -->
     
    
     <div  role="main" class="ui-content" >
-        <ul data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
+        <ul data-role="listview" class="swipe-delete" data-divider="false" >
         
                                 <li>
                                 <div class="behind">
@@ -261,7 +181,7 @@ background: rgba(240, 82, 91, 0.65) !important;
                                 <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
                                 <img src="socialicons/email.png" alt="email"  ></a>
                                 </div>
-                                <a href="#" onClick="window.open('http://www.google.com','_parent','location=yes')" target="_parent"  >
+                                <a href="#" >
                                 
                                 <img src="resources/BUSINESSINSIDER.png" alt="yahoo" class="sourceicon"  >
                                 <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
@@ -692,20 +612,6 @@ background: rgba(240, 82, 91, 0.65) !important;
                     
                     
                                     </ul>
-                                    
-                                    
-                                    
-                                     <p>link test<br /><br />
-  <a href="#" onclick="window.open('http://www.wikipedia.org','_self','location=yes')">Wikipedia (webview)</a><br /><br />
-  <a href="#" onclick="window.open('http://www.wikipedia.org','_blank','location=yes')">Wikipedia (inAppBrowser)</a><br /><br />
-  <a href="#" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">Wikipedia (mobile browser)</a><br /><br />
-  </p>
-  <p>button test<br /><br />
-  <button type="button" onclick="window.open('http://www.wikipedia.org','_self','location=yes')">Wikipedia (webview)</button><br /><br />
-  <button type="button" onclick="window.open('http://www.wikipedia.org','_blank','location=yes')">Wikipedia (inAppBrowser)</button><br /><br />
-  <button type="button" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">Wikipedia (mobile browser)</button><br /><br />  
-  </p>
-                                    
     </div><!-- /content -->
     
     
@@ -722,131 +628,6 @@ background: rgba(240, 82, 91, 0.65) !important;
     </div><!-- /popup -->
 </div>
  
- 
- 
- <div data-role="page" id="page2">
- 	 
-
-   
-   
-         <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;"  >
-	  
-        <img  src="img/ebooheader.png" class="ebooheader"  >
-     
-        
-        <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/back.png" ></a>
-        </div>
-        
-        
-        
-        
-        <div class="title_bac" style="alignment-baseline:baseline;  height:50px; width:100% ;  text-align:center;"  >
-   		  <p style="vertical-align:middle !important;">Settings</p>
-        </div>
-        
-       
-	</div><!-- /header -->
-    
-   
-   	<div  role="main" class="ui-content" >
-          <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li><a href="#twitterauthorize" >
-                		<p style="float:left">Twitter  </p>
-                		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleon.png" class="ebooicons" ></p>
-                        
-                </a> </li>
-                <li><a href="#facebookauthorize" >
-                		<p style="float:left">Facebook  </p>
-                		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleoff.png" class="ebooicons" ></p>
-                        
-                </a> </li>
-                <li><a href="#tumblrauthorize" >
-                		<p style="float:left">Tumblr  </p>
-                		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleon.png" class="ebooicons" ></p>
-                        
-                </a> </li>
-                <li><a href="#linkedinauthorize" >
-                		<p style="float:left">LinkedIn  </p>
-                		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleoff.png" class="ebooicons" ></p>
-                        
-                </a> </li>
-                <li><a href="#termsofservice" >
-                		<p style="float:left">Terms of service  </p>
-                		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/terms.png" class="ebooicons" ></p>
-                        
-                </a> </li>
-                <li><a href="#privacy" >
-                		<p style="float:left">Privacy  </p>
-                		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/privacy.png" class="ebooicons" ></p>
-                        
-                </a> </li>
-                
-                
-         </ul>
-    </div><!-- /content -->
-    
-   
-    	
-    	
-</div>
-
-
-<div data-role="page" id="termsofservice">
- 	 
-
-   
-   
-         <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;"  >
-	  
-        <img  src="img/ebooheader.png" class="ebooheader"  >
-     
-        
-        <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/back.png" ></a>
-        </div>
-        
-        
-        
-        
-        <div class="title_bac" style="alignment-baseline:baseline;  height:50px; width:100% ;  text-align:center;"  >
-   		  <p style="vertical-align:middle !important;">Terms of service</p>
-        </div>
-        
-       
-	</div><!-- /header -->
-    
-   
-   	<div  role="main" class="ui-content" >
-          <h3>Eboo Terms of Service </h3>
-          <p>
-Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
-By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
-
-<h3>Heading 2</h3>
-<p>The Site and all of its original content are the sole property of Your Nowhere Town and are, as such</p>
-
-<h3>Links to Other Websites</h3>
-<p>Our Site contain a number of links to other websites and online resources that are  owned or controlled by eboo.Your app has no control over, and 
-therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
-Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
-          </p>
-          
-    </div><!-- /content -->
-    
-   
-    	
-    	
-</div>
-
-
-
  <script>
  $(function() {
 
@@ -908,49 +689,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 		
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-   document.addEventListener("deviceready", onDeviceReady, false);
-
-    // Global InAppBrowser reference
-    var iabRef = null;
-
-    function iabLoadStart(event) {
-        alert(event.type + ' - ' + event.url);
-    }
-
-    function iabLoadStop(event) {
-        alert(event.type + ' - ' + event.url);
-    }
-
-    function iabClose(event) {
-         alert(event.type);
-         iabRef.removeEventListener('loadstart', iabLoadStart);
-         iabRef.removeEventListener('loadstop', iabLoadStop);
-         iabRef.removeEventListener('exit', iabClose);
-    }
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-         alert('Device is ready!');
-         //iabRef = window.open('http://apache.org', '_blank', 'location=yes');
-         //iabRef.addEventListener('loadstart', iabLoadStart);
-         //iabRef.addEventListener('loadstop', iabLoadStop);
-         //iabRef.addEventListener('exit', iabClose);
-    }
-
-
 </script>
  
 
