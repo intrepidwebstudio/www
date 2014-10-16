@@ -8,7 +8,7 @@
         PhoneGap Team
     </author>
     <preference name="permissions" value="none" />
-    <!--<preference name="phonegap-version" value="2.4.0" />-->
+    <!--<preference name="phonegap-version" value="2.9.0" />-->
 	
 	<preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="orientation" value="default" />
@@ -46,9 +46,22 @@
     <gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="org.devgeeks.canvas2imageplugin" version="0.6.0" />
 	
+	<gap:plugin name="com.kerosieben.cordova.plugins.ios7scrollfix" version="0.1.0" />
+	
+	 <preference name="IOS7PreventWebViewScrolling" value="true"/>
+	 
+	
 	
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
+	
+	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+	<preference name="StatusBarOverlaysWebView" value="false" />
+	<preference name="StatusBarBackgroundColor" value="#000000" />
+	
+	<feature name="StatusBar">
+            <param name="ios-package" value="CDVStatusBar" onload="true" />
+        </feature>
 	
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
@@ -64,7 +77,7 @@
     <icon gap:platform="webos" src="res/icon/webos/icon-64.png" />
     <icon gap:platform="winphone" src="res/icon/windows-phone/icon-48.png" />
     <icon gap:platform="winphone" gap:role="background" src="res/icon/windows-phone/icon-173.png" />
-    <gap:splash gap:density="ldpi" gap:platform="android" src="res/screen/android/screen-ldpi-landscape.png" gap:qualifier="land-ldpi" />
+  <!--  <gap:splash gap:density="ldpi" gap:platform="android" src="res/screen/android/screen-ldpi-landscape.png" gap:qualifier="land-ldpi" />
 <gap:splash gap:density="mdpi" gap:platform="android" src="res/screen/android/screen-mdpi-landscape.png" gap:qualifier="land-mdpi" />
 <gap:splash gap:density="hdpi" gap:platform="android" src="res/screen/android/screen-hdpi-landscape" gap:qualifier="land-hdpi" />
 <gap:splash gap:density="xhdpi" gap:platform="android" src="res/screen/android/screen-xhdpi-landscape.png" gap:qualifier="land-xhdpi" />
@@ -74,11 +87,15 @@
     <gap:splash gap:platform="ios" height="1136" src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
     <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
-    <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
+    <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />-->
     <access origin="*" />
 	<access origin=".*" />
 	<access origin="file://*"/>
 	<access url="*" subdomains="true" />
+    
+    <preference name="DisallowOverscroll" value="true" />
+   
+   
 
 
 <!-- for iOS -->
