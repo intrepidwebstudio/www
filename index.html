@@ -214,16 +214,6 @@ background: rgba(240, 82, 91, 0.65) !important;
 	
 	/******************* ADDING CUSTOM UI ICONS ******************/
 	
-	
-	
-	.scrollable {
-    -webkit-overflow-scrolling: touch;
-    overflow-y:scroll;
-}
-	.touch {
-  -webkit-overflow-scrolling: touch;
-}
-	
   </style>
   
   
@@ -234,7 +224,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 
 <div data-role="page" id="page1" data-title="Inbox" data-url="demo-page">
 	
-    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;" class="nonbounce"  >
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;"  >
 	  
         <img  src="img/ebooheader.png" class="ebooheader"  >
      
@@ -256,8 +246,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 	</div><!-- /header -->
     
    
-    <div  role="main" class="ui-content touch scrollable"  style="overflow-y:scroll !important ; "  >
-   
+    <div  role="main" class="ui-content" >
         <ul data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
                                 <li>
@@ -717,9 +706,7 @@ background: rgba(240, 82, 91, 0.65) !important;
   <button type="button" onclick="window.open('http://www.wikipedia.org','_blank','location=yes')">Wikipedia (inAppBrowser)</button><br /><br />
   <button type="button" onclick="window.open('http://www.wikipedia.org','_system','location=yes')">Wikipedia (mobile browser)</button><br /><br />  
   </p>
-                     
-                     
-                       
+                                    
     </div><!-- /content -->
     
     
@@ -763,7 +750,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 	</div><!-- /header -->
     
    
-   	<div  role="main" class="ui-content nonbounce" >
+   	<div  role="main" class="ui-content" >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
                 <li><a href="#twitterauthorize" >
                 		<p style="float:left">Twitter  </p>
@@ -862,32 +849,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
  <script>
- 
- 
- var selScrollable = '.scrollable';
-// Uses document because document will be topmost level in bubbling
-$(document).on('touchmove',function(e){
-  e.preventDefault();
-});
-// Uses body because jQuery on events are called off of the element they are
-// added to, so bubbling would not work if we used document instead.
-$('body').on('touchstart', selScrollable, function(e) {
-  if (e.currentTarget.scrollTop === 0) {
-    e.currentTarget.scrollTop = 1;
-  } else if (e.currentTarget.scrollHeight === e.currentTarget.scrollTop + e.currentTarget.offsetHeight) {
-    e.currentTarget.scrollTop -= 1;
-  }
-});
-// Stops preventDefault from being called on document if it sees a scrollable div
-$('body').on('touchmove', selScrollable, function(e) {
-  e.stopPropagation();
-});
- 
- 
- 
  $(function() {
-	 
-	// $('.nonbounce').nonbounce();
 
     function prevent_default(e) {
         e.preventDefault();
