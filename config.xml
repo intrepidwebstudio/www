@@ -8,6 +8,7 @@
         PhoneGap Team
     </author>
     <preference name="permissions" value="none" />
+	<preference name="phonegap-version" value="2.9.0" />
     <!--<preference name="phonegap-version" value="2.9.0" />-->
 	
 	
@@ -18,7 +19,7 @@
     <preference name="webviewbounce" value="false" />
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
-    <preference name="ios-statusbarstyle" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
     
@@ -55,13 +56,13 @@
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 	
-<!--	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#000000" />
 	
 	<feature name="StatusBar">
             <param name="ios-package" value="CDVStatusBar" onload="true" />
-        </feature>  --->
+        </feature>
 	
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
