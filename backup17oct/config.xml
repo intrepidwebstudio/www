@@ -22,11 +22,6 @@
         permission on your app, which PhoneGap requires.
     -->
     <preference name="permissions"                value="none"/>
-	
-	
-
-	<!-- PG version -->
-	<!--<preference name="phonegap-version" value="3.1.0" />-->
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version"           value="3.5.0" />          <!-- all: current version of PhoneGap -->
@@ -48,14 +43,6 @@
     <!-- Plugins -->
 
     <!-- Core plugins -->
-		<!-- @note gap:platforms not working in PGB! -->
-	<gap:platform name="ios" />
-	<gap:platform name="android" minVersion="2.1"/>
-
-
-	
-	
-	
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media-capture" />
@@ -113,6 +100,7 @@
 	
 	
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 	
 	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
 	<preference name="StatusBarOverlaysWebView" value="false" />

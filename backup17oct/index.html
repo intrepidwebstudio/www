@@ -9,63 +9,25 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
-  <!--<script src="phonegap.js"></script>-->
-  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script src="phonegap.js"></script>
   <script type="text/javascript" src="js/query-1.7.1.min.js"></script>
   <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
    <script type="text/javascript" src="js/SocialSharing.js"></script>
    <script type="text/javascript" src="js/nonbounce.js"></script>
    
-   
    <script>
-    // Wait for Cordova to load
+   
+   // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    // Global InAppBrowser reference
-    var iabRef = null;
-
-    function iabLoadStart(event) {
-        alert(event.type + ' - ' + event.url);
-		
-		
-    }
-	
-	
-	
-	 function iabLoadStop(event) {
-        alert(event.type + ' - ' + event.url);
-		
-		
-        ref.insertCSS({code:'.headonstart { display:block; height:100px !important;  }'});         
-
-    
-		
-		alert('asdasd');
-    }
-	
-	
-	
-	
-
-    function iabClose(event) {
-         alert(event.type);
-         iabRef.removeEventListener('loadstart', iabLoadStart);
-         iabRef.removeEventListener('loadstop', iabLoadStop);
-         iabRef.removeEventListener('exit', iabClose);
-    }
-
-    // Cordova is ready
+    // device APIs are available
     //
     function onDeviceReady() {
-         alert('Device is ready!');
-		 
-		
-		 
-         //iabRef = window.open('http://apache.org', '_blank', 'presentationstyle=pagesheet,toolbarposition=top');
-        // iabRef.addEventListener('loadstart', iabLoadStart);
-        // iabRef.addEventListener('loadstop', iabLoadStop);
-        // iabRef.addEventListener('exit', iabClose);
+        // external url
+        var ref = window.open(encodeURI('http://www.google.com'), '_blank', 'toolbar=yes');
+        // relative document
+      //  ref = window.open('next.html', '_self');
     }
 
    </script>
@@ -322,7 +284,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 <div data-role="page" id="page1" data-title="Inbox" data-url="demo-page">
 
 	
-    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
 	  
     
         <img  src="img/ebooheader.png" class="ebooheader"  style="margin-bottom:-5px !important;" >
@@ -371,7 +333,7 @@ background: rgba(240, 82, 91, 0.65) !important;
                                 <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
                                 <img src="socialicons/email.png" alt="email"  ></a>
                                 </div>
-                                 <a href="#" onClick="window.open('http://www.inpws.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >
+                                <a href="#" data-link="http://www.inpws.com"  >
                                 
                                 <img src="resources/BUSINESSINSIDER.png" alt="yahoo" class="sourceicon"  >
                                 <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
@@ -393,7 +355,7 @@ background: rgba(240, 82, 91, 0.65) !important;
                                 <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
                                 <img src="socialicons/email.png" alt="email"  ></a>
                                 </div>
-                                <a href="#" onClick="window.open('http://www.inpws.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >
+                                <a href="#" onClick="window.open('http://www.inpws.com','_blank','toolbar=yes' )" target="_blank"  >
                                 
                                 <img src="resources/BUZZFEED.png" alt="yahoo" class="sourceicon"  >
                                 <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
@@ -415,7 +377,7 @@ background: rgba(240, 82, 91, 0.65) !important;
                                 <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
                                 <img src="socialicons/email.png" alt="email"  ></a>
                                 </div>
-                                 <a href="#" onClick="window.open('http://www.google.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >
+                                 <a href="#" onClick="window.open('http://www.google.com','_blank','toolbar=yes' )" target="_blank"  >
                                 
                                 <img src="resources/CARADVICE.png" alt="yahoo" class="sourceicon"  >
                                 <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
@@ -437,7 +399,7 @@ background: rgba(240, 82, 91, 0.65) !important;
                                 <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
                                 <img src="socialicons/email.png" alt="email"  ></a>
                                 </div>
-                                 <a href="#" onClick="window.open('http://www.google.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >
+                                 <a href="#" onClick="window.open('http://www.google.com','_blank','toolbar=yes' )" target="_blank"  >
                                 
                                 <img src="resources/CNN.png" alt="yahoo" class="sourceicon"  >
                                 <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
@@ -965,7 +927,44 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 </div>
 
 
+<div data-role="page" id="iframetab">
+         
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
+	   <img  src="img/ebooheader.png" class="ebooheader"  style="margin-bottom:-5px !important;" >
+        <div class="topmenucontainer" >
+        
+     <div class="ui-field-contain forceinline">
+	          <input type="text" id="searcharea"  data-transition="fade" class="topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div>  
+     
+     <div class="searchsettings">
+        
+        <div  class="lefticon" >
+       		<img  src="icons/search.png" onClick="show_search()" >
+        </div>
+        
+        
+        <div class="righticon">
+        	<a href="#page2" ><img src="icons/settings.png" ></a>
+        </div>
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;">Eboo Testing</p>
+    </div>
+      
+ 
+</div><!-- /header -->
 
+	   	<div id="iframeview"  role="main" class="ui-content" >
+          
+          
+          
+    		</div> <!-- /content -->
+</div>
 
 
 
@@ -974,11 +973,36 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
  <script>
-    
-
-
  
  
+ $(document).ready(function(){
+
+    $('ul li a').bind('click', function(){
+        // we're storing the link in an attribute
+        // called 'data-link':
+        var url = $(this).attr('data-link');        
+        // create iframe if not there, comment display none to see it
+        if ($('#temp-iframe').length === 0) {
+            $('<iframe />').attr({
+                id: 'temp-iframe',
+                name: 'temp-iframe',
+                height: '200px',
+                width: '100%'
+            }).css({                
+                position: 'absolute',
+                left: '50%',
+                bottom: 0
+            }).bind('load', function(){             
+            }).appendTo('#iframeview');
+        }
+        // call the url into the iframe
+        $('#temp-iframe').attr('src', url);
+        // jquerymobile already does this because the link is just "#"
+        // but if you end up 
+        return false; 
+    });
+
+});
 
 
  $('#searcharea').hide();
@@ -1003,8 +1027,7 @@ $(document).on('focus', 'input, textarea', function()
  $(function() {
 
     function prevent_default(e) {
-      //  e.preventDefault();
-	  alert('1');
+        e.preventDefault();
     }
 
     function disable_scroll() {
@@ -1071,7 +1094,40 @@ $(document).on('focus', 'input, textarea', function()
 
 
 
-   
+   document.addEventListener("deviceready", onDeviceReady, false);
+
+  // Global InAppBrowser reference
+    var iabRef = null;
+	
+	alert("ready");
+
+    function iabLoadStart(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+
+    function iabLoadStop(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+
+    function iabClose(event) {
+         alert(event.type);
+         iabRef.removeEventListener('loadstart', iabLoadStart);
+         iabRef.removeEventListener('loadstop', iabLoadStop);
+         iabRef.removeEventListener('exit', iabClose);
+    }
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+         alert('Device is ready!');
+		 
+		
+		 
+         iabRef = window.open('http://apache.org', '_blank', 'location=yes');
+         iabRef.addEventListener('loadstart', iabLoadStart);
+         iabRef.addEventListener('loadstop', iabLoadStop);
+         iabRef.addEventListener('exit', iabClose);
+    }
 
 /*
  var iabUrl = null;
