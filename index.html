@@ -26,7 +26,7 @@
     var iabRef = null;
 
     function iabLoadStart(event) {
-        alert(event.type + ' - ' + event.url);
+     //   alert(event.type + ' - ' + event.url);
 		
 		
     }
@@ -34,7 +34,7 @@
 	
 	
 	 function iabLoadStop(event) {
-        alert(event.type + ' - ' + event.url);
+       // alert(event.type + ' - ' + event.url);
 		
 		
         ref.insertCSS({code:'.headonstart { display:block; height:100px !important;  }'});         
@@ -49,7 +49,7 @@
 	
 
     function iabClose(event) {
-         alert(event.type);
+    //     alert(event.type);
          iabRef.removeEventListener('loadstart', iabLoadStart);
          iabRef.removeEventListener('loadstop', iabLoadStop);
          iabRef.removeEventListener('exit', iabClose);
@@ -62,7 +62,7 @@
 		 
 		
 		 
-         //iabRef = window.open('http://apache.org', '_blank', 'presentationstyle=pagesheet,toolbarposition=top');
+         iabRef = window.open('http://apache.org', '_blank', 'presentationstyle=pagesheet,toolbarposition=top');
         // iabRef.addEventListener('loadstart', iabLoadStart);
         // iabRef.addEventListener('loadstop', iabLoadStop);
         // iabRef.addEventListener('exit', iabClose);
