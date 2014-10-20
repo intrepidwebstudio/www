@@ -14,8 +14,6 @@ try{
 	
 	
 $query_feed_link=mysql_query("select * from eboo_feeds where status='1' and date(article_pubdate) between '".$yesterday."' and '".$today."'   order by clickcount desc ")or die(insertErrorLogException('application',basename(__FILE__),mysql_error()));
-
-
 if(mysql_num_rows($query_feed_link)>0)
 		{
 	
