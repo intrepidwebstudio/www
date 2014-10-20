@@ -81,11 +81,7 @@ function onDeviceReady()
    var imagepath = 'http://www.safelearners.com/eboo/';
    var ajax_path = 'http://www.safelearners.com/eboo/app/';
     
-					
-					
 				load_trending();	
-					
-				swipe_right(); 
 				browser_setting();
 				}
 	
@@ -142,10 +138,10 @@ function onDeviceReady()
 		
 			
 			
-	        iabRef.addEventListener('exit', iabClose);
-            iabRef.addEventListener('share', iabShare);
-            iabRef.addEventListener('loadstart', iabLoadStart);
-            iabRef.addEventListener('loadstop', iabLoadStop);
+//	        iabRef.addEventListener('exit', iabClose);
+  //          iabRef.addEventListener('share', iabShare);
+   //         iabRef.addEventListener('loadstart', iabLoadStart);
+    //        iabRef.addEventListener('loadstop', iabLoadStop);
 			
         }
 		
@@ -194,9 +190,9 @@ function browser_setting()
     //
     function onDeviceReady() {
          iabRef = window.open('http://apache.org', '_blank', 'location=yes');
+
          iabRef.addEventListener('loadstop', replaceHeaderImage);
-         iabRef.addEventListener('exit', iabClose);
-    }
+         iabRef.addEventListener('exit', iabClose);    }
 
 */
    </script>
@@ -214,7 +210,7 @@ function browser_setting()
   
   
   /* Left transition */
-li.left {
+.swipe-delete li.left {
     -webkit-transition: -webkit-transform 250ms ease;
     -webkit-transform: translateX(-70%);
     -moz-transition: -moz-transform 250ms ease;
@@ -225,7 +221,7 @@ li.left {
     transform: translateX(-70%);
 }
 /* Right transition */
-li.right {
+.swipe-delete li.right {
     -webkit-transition: -webkit-transform 250ms ease;
     -webkit-transform: translateX(70%);
     -moz-transition: -moz-transform 250ms ease;
@@ -505,30 +501,6 @@ background: rgba(240, 82, 91, 0.65) !important;
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
         
-                             <li>
-                                <div class="behind">
-                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
-                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
-                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
-                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
-                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
-                                <img src="socialicons/email.png" alt="email"  ></a>
-                                </div>
-                                <a href="#" data-link="http://www.inpws.com"  >
-                                
-                                <img src="resources/BUSINESSINSIDER.png" alt="yahoo" class="sourceicon"  >
-                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
-                                
-                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
-                                </a>
-                                
-                           </li>
-
-        			
      
         </ul>
                                     
@@ -734,6 +706,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
   <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
    <script type="text/javascript" src="js/SocialSharing.js"></script>
    <script type="text/javascript" src="js/nonbounce.js"></script>
+<script type="text/javascript" src="js/swipeleft.js"></script>
 
 
  <script>
@@ -780,64 +753,6 @@ $(document).on('focus', 'input, textarea', function()
   
   */
   
-  
-
-function swipe_right() {
-
-    function prevent_default(e) {
-      //  e.preventDefault();
-	//  alert('1');
-    }
-
-    function disable_scroll() {
-        $(document).on('touchmove', prevent_default);
-    }
-
-    function enable_scroll() {
-        $(document).unbind('touchmove', prevent_default)
-    }
-
-
-
-
-
-    var x;
-    $('.swipe-delete li > a')
-        .on('touchstart', function(e) {
-            $('.swipe-delete li > a').css('left', '0px') // close em all
-            x = e.originalEvent.pageX // anchor point
-			
-        })
-        .on('touchmove', function(e) {
-            var change = e.originalEvent.pageX - x
-		    change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
-            e.currentTarget.style.left = change + 'px'
-            if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
-        })
-        .on('touchend', function(e) {
-			
-            var left = parseInt(e.currentTarget.style.left)
-            var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-            e.currentTarget.style.left = new_left
-            enable_scroll()
-			
-        });
-
-    $('li .delete-btn').on('touchend', function(e) {
-        e.preventDefault()
-		
-		
-     //   $(this).parents('li').slideUp('fast', function() {.
-      	
-			//$(this).remove()
-			
-			
-      //  })
-    })
-	
-
-}
-
 
 
 
@@ -927,9 +842,9 @@ $(document).keypress(function(e) {
 										$('#list_view').listview().listview('refresh');
 											
 									//	$('#list_view').refresh();
-										swipe_right();
 										browser_setting();
 										$.getScript("js/SocialSharing.js");
+										$.getScript("js/swipeleft.js");
 												
 												
 				}//user data match if
@@ -1050,8 +965,8 @@ function load_trending()
 									//	$('#list_view').refresh();
 
 										$.getScript("js/SocialSharing.js");
-										
-										swipe_right();
+										$.getScript("js/swipeleft.js");
+
 										browser_setting();
 												
 												
