@@ -137,6 +137,7 @@ function onDeviceReady()
 	        iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 			
 			$.support.cors = true;
+			
 			$.post(ajax_path+'clickcount.php?id='+click_id);
 		
 			
