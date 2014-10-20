@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.inpws.www"
+        id        = "com.inpws.eboo"
         version   = "1.0.0">
 
-    <name>Test app</name>
+    <name>Eboo App</name>
 
     <description>
-        test sample application that responds to the deviceready event.
+        Eboo Online article app
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
