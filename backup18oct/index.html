@@ -10,18 +10,18 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
   <!--<script src="phonegap.js"></script>-->
-  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-  <script type="text/javascript" src="js/query-1.7.1.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
   <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
    <script type="text/javascript" src="js/SocialSharing.js"></script>
    <script type="text/javascript" src="js/nonbounce.js"></script>
    
-   
+     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
    <script>
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
-
+/*
     // Global InAppBrowser reference
     var iabRef = null;
 
@@ -67,6 +67,57 @@
         // iabRef.addEventListener('loadstop', iabLoadStop);
         // iabRef.addEventListener('exit', iabClose);
     }
+	
+	*/
+	
+	 var iabUrl = null;
+        // Global InAppBrowser reference
+        var iabRef = null;
+        function iabLoadStart(event) {
+            //alert(event.type + ' – ' + event.url);
+        }
+        function iabLoadStop(event) {
+            if ( iabUrl != event.url ){
+                iabUrl = event.url;
+                alert(event.type + ' – URL CHANGED – ' + event.url);
+            }
+        }
+        function iabClose(event) {
+            alert(event.type);
+            iabRef.removeEventListener('loadstart', iabLoadStart);
+            iabRef.removeEventListener('loadstop', iabLoadStop);
+            iabRef.removeEventListener('exit', iabClose);
+            iabRef.removeEventListener('share', iabClose);
+        }
+        function iabShare(event){
+            alert('SHARE:'+event.type);
+            iabRef.removeEventListener('loadstart', iabLoadStart);
+            iabRef.removeEventListener('loadstop', iabLoadStop);
+            iabRef.removeEventListener('exit', iabClose);
+            iabRef.removeEventListener('share', iabClose);
+        }
+        function navigateTo(url){
+			
+			alert('trueee'+url);
+			
+            iabRef = window.open(url, '_blank', 'location=no');
+            iabRef.addEventListener('exit', iabClose);
+            iabRef.addEventListener('share', iabShare);
+            iabRef.addEventListener('loadstart', iabLoadStart);
+            iabRef.addEventListener('loadstop', iabLoadStop);
+        }
+        $(document).bind( 'mobileinit', function(){
+                         $.mobile.loader.prototype.options.text ="loading";
+                         $.mobile.loader.prototype.options.textVisible = false;
+                         $.mobile.loader.prototype.options.theme ="d";
+                         $.mobile.loader.prototype.options.textonly = false;
+                         $.mobile.loader.prototype.options.html ="<img src='icons/settings.png'/>";
+                         $.mobile.allowCrossDomainPages = true;
+                         });
+
+
+
+
 
    </script>
    
@@ -371,8 +422,8 @@ background: rgba(240, 82, 91, 0.65) !important;
                                 <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
                                 <img src="socialicons/email.png" alt="email"  ></a>
                                 </div>
-                                 <a href="#" onClick="window.open('http://www.inpws.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >
-                                
+                                 <!--<a href="#" onClick="window.open('http://www.inpws.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >-->
+                                <a href="#" onClick="navigateTo('http://www.cricinfo.com')" >
                                 <img src="resources/BUSINESSINSIDER.png" alt="yahoo" class="sourceicon"  >
                                 <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
                                 
@@ -393,7 +444,8 @@ background: rgba(240, 82, 91, 0.65) !important;
                                 <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
                                 <img src="socialicons/email.png" alt="email"  ></a>
                                 </div>
-                                <a href="#" onClick="window.open('http://www.inpws.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >
+                              <!--  <a href="#" onClick="window.open('http://www.inpws.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >-->
+                                <a href="#" onClick="navigateTo('http://www.cricinfo.com')" >
                                 
                                 <img src="resources/BUZZFEED.png" alt="yahoo" class="sourceicon"  >
                                 <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
@@ -415,7 +467,8 @@ background: rgba(240, 82, 91, 0.65) !important;
                                 <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
                                 <img src="socialicons/email.png" alt="email"  ></a>
                                 </div>
-                                 <a href="#" onClick="window.open('http://www.google.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >
+                                <!-- <a href="#" onClick="window.open('http://www.google.com','_blank','presentationstyle=pagesheet,toolbarposition=top' )" target="_blank"  >-->
+                                 <a href="#" onClick="navigateTo('http://www.cricinfo.com')" >
                                 
                                 <img src="resources/CARADVICE.png" alt="yahoo" class="sourceicon"  >
                                 <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
@@ -804,7 +857,8 @@ background: rgba(240, 82, 91, 0.65) !important;
                                     </ul>
                                     
                                     
-                         
+                         <div id="data_show">
+                         </div>
                                     
     </div><!-- /content -->
     
@@ -959,6 +1013,8 @@ By using or accessing the Site in any way, viewing or browsing the Site, or addi
 <p>Our Site contain a number of links to other websites and online resources that are  owned or controlled by eboo.Your app has no control over, and 
 therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
 Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
+
+
           </p>
           
     </div><!-- /content -->
@@ -1073,51 +1129,119 @@ $(document).on('focus', 'input, textarea', function()
 
    
 
-/*
- var iabUrl = null;
-        // Global InAppBrowser reference
-        var iabRef = null;
-        function iabLoadStart(event) {
-            //alert(event.type + ' – ' + event.url);
-        }
-        function iabLoadStop(event) {
-            if ( iabUrl != event.url ){
-                iabUrl = event.url;
-                alert(event.type + ' – URL CHANGED – ' + event.url);
-            }
-        }
-        function iabClose(event) {
-            alert(event.type);
-            iabRef.removeEventListener('loadstart', iabLoadStart);
-            iabRef.removeEventListener('loadstop', iabLoadStop);
-            iabRef.removeEventListener('exit', iabClose);
-            iabRef.removeEventListener('share', iabClose);
-        }
-        function iabShare(event){
-            alert('SHARE:'+event.type);
-            iabRef.removeEventListener('loadstart', iabLoadStart);
-            iabRef.removeEventListener('loadstop', iabLoadStop);
-            iabRef.removeEventListener('exit', iabClose);
-            iabRef.removeEventListener('share', iabClose);
-        }
-        function navigateTo(url){
-            iabRef = window.open(url, '_blank', 'location=yes');
-            iabRef.addEventListener('exit', iabClose);
-            iabRef.addEventListener('share', iabShare);
-            iabRef.addEventListener('loadstart', iabLoadStart);
-            iabRef.addEventListener('loadstop', iabLoadStop);
-        }
-        $(document).bind( 'mobileinit', function(){
-                         $.mobile.loader.prototype.options.text ="loading";
-                         $.mobile.loader.prototype.options.textVisible = false;
-                         $.mobile.loader.prototype.options.theme ="d";
-                         $.mobile.loader.prototype.options.textonly = false;
-                         $.mobile.loader.prototype.options.html ="<img src='img/ajax-loader.gif'/>";
-                         $.mobile.allowCrossDomainPages = true;
-                         });
+var feedData;
 
 
-*/
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+       
+		alert('1');
+		
+		$.support.cors = true;
+		
+		$.ajax({
+			url:'http://www.safelearners.com/eboo/app/feedsearch.php',
+			type:'GET',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			success: function(data)
+			{
+				feedData=data.Feeds;
+				
+							$.each(feedData, function(index, element) {
+								
+								
+									var article_title = element.article_title ;
+									var article_link = element.article_link ;
+									var source_name = element.source_name ;
+									var source_image = element.source_image ;
+									var pubtime = element.pubtime ;
+									
+													
+								
+								
+												$('ul').append($('<li/>', {    //here appending `<li>`
+												'data-role': "list-divider"
+												})
+												.append(
+												$('<div/>', { 'class': 'behind', 'data-transition': 'slide' } )
+												
+												
+												//social icons
+												
+												.append(
+												$('<a/>',{ 'href':'#', 'class':'socialicon' , 'onclick':' window.plugins.socialsharing.shareViaTwitter("'+article_title+'", null /* img */, "'+ article_link +'" )'  })
+												.append(
+												$('<img/>',{ 'src': 'socialicons/twitter.png' , 'alt': 'twitter' })) //close of image tag
+												)// close of a tag
+												.append(
+												$('<a/>',{ 'href':'#', 'class':'socialicon' , 'onclick':' window.plugins.socialsharing.shareViaFacebook("'+article_title+'", null /* img */, "'+ article_link +'" )'  })
+												.append(
+												$('<img/>',{ 'src': 'socialicons/facebook.png' , 'alt': 'facebook' })) //close of image tag
+												)// close of a tag
+												.append(
+												$('<a/>',{ 'href':'#', 'class':'socialicon' , 'onclick':' window.plugins.socialsharing.share("'+article_title+'", null /* img */, "'+ article_link +'" )'  })
+												.append(
+												$('<img/>',{ 'src': 'socialicons/tumblr.png' , 'alt': 'tumblr' })) //close of image tag
+												)// close of a tag
+												.append(
+												$('<a/>',{ 'href':'#', 'class':'socialicon' , 'onclick':' window.plugins.socialsharing.share("'+article_title+'", null /* img */, "'+ article_link +'" )'  })
+												.append(
+												$('<img/>',{ 'src': 'socialicons/linkedin.png' , 'alt': 'linkedIn' })) //close of image tag
+												)// close of a tag
+												.append(
+												$('<a/>',{ 'href':'#', 'class':'socialicon' , 'onclick':' window.plugins.socialsharing.shareViaEmail("'+article_title+'", null /* img */, "'+ article_link +'" )'  })
+												.append(
+												$('<img/>',{ 'src': 'socialicons/email.png' , 'alt': 'Email' })) //close of image tag
+												)// close of a tag
+												
+												// end of social icons
+												
+												
+												
+												
+												)// close of behind div tag
+												
+												.append(
+												$('<a/>', { 'href':'#' , 'onClick': 'navigateTo("'+article_link+'")'  })
+												
+												.append( $('<img>', { 'src': source_image , 'alt': source_name , 'class':'sourceicon' })) // image close
+												.append( $('<p/>' ,{ 'text': article_title  } )) //paragraph close
+												.append( $('<p/>',{ 'class': 'ui-li-divider strong_style' }  )
+												.append($('<span/>', {'class':'flo_left' , 'text': source_name } ))
+												.append($('<span/>', {'class':'flo_right' , 'text': pubtime } ))
+												 ) //close of paragraph
+												
+																							
+												)//close of a tag
+												 
+												 
+												)
+							}
+							);					
+											$('ul').listview('refresh');		
+												
+												
+						
+				},
+		error: function(e) {
+       alert('Error: ' + e.message);		
+			
+			console.log(e);
+			
+		}
+			
+			
+			});
+		
+		
+		
+    }
+});
+
+
 </script>
  
 
