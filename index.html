@@ -936,11 +936,11 @@ function load_trending()
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind">';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('+article_title+', null /* img */, '+article_link+')" ><img src="socialicons/twitter.png" alt="twitter" ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('+article_title+', null /* img */, '+article_link+')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share('+article_title+', null /* img */, '+article_link+')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share('+article_title+', null /* img */, '+article_link+')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('+article_title+', null /* img */, '+article_link+')" ><img src="socialicons/email.png" alt="email"  ></a></div>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a></div>';
 					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\')" >';
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon" >';
 					append_data+='<p class="min_height">'+article_title+'</p>';
