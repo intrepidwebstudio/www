@@ -835,11 +835,6 @@ function swipe_right() {
       //  })
     })
 	
-	
-	
-	
-	
-		
 
 }
 
@@ -855,9 +850,6 @@ $('#searcharea').on('blur',function(){
 
    
 //global declarations
-
-
-
 
 
 $(document).keypress(function(e) {
@@ -927,7 +919,7 @@ $(document).keypress(function(e) {
 						}
 							);			
 							
-						//	$('#list_view').html('');
+							$('#list_view').html('');
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
 									
@@ -937,9 +929,7 @@ $(document).keypress(function(e) {
 									//	$('#list_view').refresh();
 										swipe_right();
 										browser_setting();
-										SocialSharing();
 										$.getScript("js/SocialSharing.js");
-										SocialSharing();
 												
 												
 				}//user data match if
@@ -968,6 +958,38 @@ $(document).keypress(function(e) {
 	}//ifclose
     }
 });
+
+
+
+
+
+//Let's say the /profile endpoint on the provider waits for
+//a PATCH request to update the authenticated user's profile 
+//containing the field "name" and returns the field "name" 
+//containing the new name
+
+var provider = 'Facebook';
+
+OAuth.popup(provider)
+.done(function(result) {
+    result.patch('/profile', {
+        data: {
+            name: "John Williams Doe III"
+        }
+    })
+    .done(function (response) {
+        //this will display the new name in the console
+        console.log(response.name);
+    })
+    .fail(function (err) {
+        //handle error with err
+    });
+})
+.fail(function (err) {
+    //handle error with err
+});
+
+
 
 
 function load_trending()
@@ -1026,9 +1048,11 @@ function load_trending()
 										$('#list_view').listview().listview('refresh');
 											
 									//	$('#list_view').refresh();
+
+										$.getScript("js/SocialSharing.js");
+										
 										swipe_right();
 										browser_setting();
-										SocialSharing();
 												
 												
 				}//user data match if
