@@ -721,8 +721,8 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  $('#searcharea').hide();
 
 	function show_focus(){
-		alert('aa');
 		
+		$('#searcharea').focus();
 	
 	}
 	
@@ -730,8 +730,12 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
   
   function show_search()
   {
+	  
+	  $('#searcharea').show();
+	  $('input').focus();
+	  
+	  $('#searcharea').focus();
 	
-	$('#searcharea').show().animate('slide','fast','smooth').focus();
 		/*
 $(document).on('focus', 'input, textarea', function() 
 {
@@ -883,26 +887,6 @@ $(document).keypress(function(e) {
 //containing the field "name" and returns the field "name" 
 //containing the new name
 
-var provider = 'Facebook';
-
-OAuth.popup(provider)
-.done(function(result) {
-    result.patch('/profile', {
-        data: {
-            name: "John Williams Doe III"
-        }
-    })
-    .done(function (response) {
-        //this will display the new name in the console
-        console.log(response.name);
-    })
-    .fail(function (err) {
-        //handle error with err
-    });
-})
-.fail(function (err) {
-    //handle error with err
-});
 
 
 

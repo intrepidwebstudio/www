@@ -24,10 +24,17 @@
 			
         })
         .on('touchmove', function(e) {
+			
             var change = e.originalEvent.pageX - x
 		    change = Math.min(Math.max(-400, change), 0 ) // restrict to -100px left, 0px right
-            e.currentTarget.style.left = change + 'px';
-			if(change < -10 )
+			if(change < -50)
+			{
+			  e.currentTarget.style.left = change + 'px';	
+				
+				}
+			
+          
+			if(change < -50 )
 			{
              disable_scroll() 
 			}// disable scroll once we hit 10px horizontal slide
