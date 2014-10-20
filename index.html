@@ -504,6 +504,31 @@ background: rgba(240, 82, 91, 0.65) !important;
     <div  role="main" class="ui-content" >
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
+        
+                             <li>
+                                <div class="behind">
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/twitter.png" alt="twitter"    ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/facebook.png" alt="facebook"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTumblr('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/tumblr.png" alt="tumblr"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaLinkedIn('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>
+                                <a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')" >
+                                <img src="socialicons/email.png" alt="email"  ></a>
+                                </div>
+                                <a href="#" data-link="http://www.inpws.com"  >
+                                
+                                <img src="resources/BUSINESSINSIDER.png" alt="yahoo" class="sourceicon"  >
+                                <p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+                                
+                                <p class="ui-li-divider"><span style="float:left;" ><strong>Mtv</strong></span> <span style="float:right;" > <strong>4:37</strong>PM</span></p>
+                                </a>
+                                
+                           </li>
+
+        			
      
         </ul>
                                     
@@ -895,10 +920,14 @@ $(document).keypress(function(e) {
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon" >';
 					append_data+='<p class="min_height">'+article_title+'</p>';
 					append_data+='<p class="ui-li-divider "><span style="float:left;" ><strong>'+source_name+'</strong></span> <span style="float:right;" > <strong>'+pubdate+'</strong></span></p></a></li>';
+					
+					
+				//	alert(append_data);
+					
 						}
 							);			
 							
-							$('#list_view').html('');
+						//	$('#list_view').html('');
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
 									
@@ -908,6 +937,8 @@ $(document).keypress(function(e) {
 									//	$('#list_view').refresh();
 										swipe_right();
 										browser_setting();
+										SocialSharing();
+										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 												
 												
