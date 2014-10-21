@@ -251,20 +251,58 @@ function browser_setting()
 		}
 */
 
-.boxop {
-  margin: 30px;
-  height: 50px;
-  width: 50px;
-  background-color: blue;
-}
-.boxop.horizTranslate {
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  -o-transition: 3s;
-  transition: 3s;
-  margin-left: 50% !important;
-}
+
+
+
+
+
+
+
+
+
+		.slideinC {
+			-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-webkit-animation-name: slideinfromleft;
+			-moz-animation-name: slideinfromleft;
+		}
+
+		.slideoutC {
+			-webkit-transform: translateX(100%);
+			-moz-transform: translateX(100%);
+			-webkit-animation-name: slideouttoright;
+			-moz-animation-name: slideouttoright;
+		}
+		
+		
+		
+@-webkit-keyframes slideinfromleft {
+			from { -webkit-transform: translateX(-100%); }
+			to { -webkit-transform: translateX(0); }
+		}
+
+		@-webkit-keyframes slideouttoright {
+			from { -webkit-transform: translateX(0); }
+			to { -webkit-transform: translateX(100%); }
+		}
+		
+	
+	
+		@-moz-keyframes slideinfromleft {
+			from { -moz-transform: translateX(-100%); }
+			to { -moz-transform: translateX(0); }
+		}
+
+		@-moz-keyframes slideouttoright {
+			from { -moz-transform: translateX(0); }
+			to { -moz-transform: translateX(100%); }
+		}		
+
+
+
+
+
+
 
 
 

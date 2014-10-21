@@ -19,7 +19,7 @@
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
 			
-			$('.swipe-delete li > a').addClass('horizTranslate') // close em all
+			$('.swipe-delete li > a').css('left', '0px') // close em all
 			
 			
 			
@@ -49,13 +49,19 @@
 			
 			if(left > -30)
 			{
-			e.currentTarget.addclass = '0px';	
+			e.currentTarget.addClass('slideoutC');	
 				}
 			else{
 				
-			e.currentTarget.style.left = '-250px';		
+			e.currentTarget.addClass('slideoutC');		
 				
 				}
+				
+				e.currentTarget.removeClass('slideoutC');
+				
+				e.currentTarget.removeClass('slideoutC');
+				
+				
             enable_scroll()
 			
         });
