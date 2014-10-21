@@ -43,7 +43,10 @@
 			
             var left = parseInt(e.currentTarget.style.left)
             var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-		   e.currentTarget.style.left = new_left
+			
+			$('.swipe-delete li > a').addClass('move_in')
+			
+		   
             enable_scroll()
 			
         });
