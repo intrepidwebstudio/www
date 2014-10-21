@@ -10,6 +10,12 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
   <!--<script src="phonegap.js"></script>-->
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">
+
+
+
+
 
 
    
@@ -451,6 +457,17 @@ background: rgba(240, 82, 91, 0.65) !important;
 
  
  
+ .ui-content {
+    padding: 0 !important;
+}
+
+.ui-listview {
+    margin: 0 !important;
+}
+
+.wrapper, .wrapper div.iscroll-scroller {
+    width: 100% !important;
+}
 
   </style>
   
@@ -497,12 +514,15 @@ background: rgba(240, 82, 91, 0.65) !important;
       
  
 </div><!-- /header -->
-    <div  role="main" class="ui-content" >
+    <div  role="main" class="ui-content"  >
+    
+    <div class="wrapper" data-iscroll >
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
         
      
         </ul>
+   </div> 
                                     
                       
                                      
@@ -960,6 +980,15 @@ function load_trending()
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
+										
+										
+									//	 for(i = 0; i < 30; i++) {
+      								//  $(".wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
+  										//	  }
+									//	$('[data-role="content"]').trigger('create');
+ 									 //   $(".wrapper").iscrollview("refresh");
+										
+										
 												
 												
 				}//user data match if
@@ -994,10 +1023,20 @@ function load_trending()
 	
 	}
 
-	
-	
+</script>
+
+
+
+
+
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
+<script type="text/javascript">
+
+
 
 </script>
+
  
 
 
