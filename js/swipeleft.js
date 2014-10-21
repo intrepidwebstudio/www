@@ -42,11 +42,16 @@
         .on('touchend', function(e) {
 			
             var left = parseInt(e.currentTarget.style.left)
-            var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
 			
-			e.currentTarget.addClass('move_in')
-			
-		   
+			if(left > -50)
+			{
+			e.currentTarget.style.left = '0px';	
+				}
+			else{
+				
+			e.currentTarget.style.left = '-250px';		
+				
+				}
             enable_scroll()
 			
         });
