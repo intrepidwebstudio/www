@@ -115,7 +115,7 @@
 	
 	
 	
-	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
+	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.6" />
 	
 	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
 	<preference name="StatusBarOverlaysWebView" value="false" />
