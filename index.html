@@ -10,12 +10,10 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
   <!--<script src="phonegap.js"></script>-->
+  
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">
-
-
-
-
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">	  
+  
 
 
    
@@ -457,7 +455,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 
  
  
- .ui-content {
+.ui-content {
     padding: 0 !important;
 }
 
@@ -465,10 +463,9 @@ background: rgba(240, 82, 91, 0.65) !important;
     margin: 0 !important;
 }
 
-.wrapper, .wrapper div.iscroll-scroller {
+.example-wrapper, .example-wrapper div.iscroll-scroller {
     width: 100% !important;
 }
-
   </style>
   
   
@@ -514,15 +511,16 @@ background: rgba(240, 82, 91, 0.65) !important;
       
  
 </div><!-- /header -->
-    <div  role="main" class="ui-content"  >
+    <div  role="main" class="ui-content" >
+    	
+        <div class="example-wrapper" data-iscroll >
     
-    <div class="wrapper" data-iscroll >
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
         
      
         </ul>
-   </div> 
+       </div> 
                                     
                       
                                      
@@ -727,6 +725,10 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
    <script type="text/javascript" src="js/SocialSharing.js"></script>
    <script type="text/javascript" src="js/nonbounce.js"></script>
 <script type="text/javascript" src="js/swipeleft.js"></script>
+
+
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 
 
  <script>
@@ -980,15 +982,6 @@ function load_trending()
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
-										
-										
-									//	 for(i = 0; i < 30; i++) {
-      								//  $(".wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
-  										//	  }
-									//	$('[data-role="content"]').trigger('create');
- 									 //   $(".wrapper").iscrollview("refresh");
-										
-										
 												
 												
 				}//user data match if
@@ -1023,20 +1016,16 @@ function load_trending()
 	
 	}
 
+	
+	
+$(document).on('pagebeforeshow', '#index', function(){ 
+    for(i = 0; i < 30; i++) {
+        $(".example-wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
+    }
+    $('[data-role="content"]').trigger('create');
+    $(".example-wrapper").iscrollview("refresh");
+});
 </script>
-
-
-
-
-
-<script type="text/javascript" src="js/iscroll.js"></script>
-<script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
-<script type="text/javascript">
-
-
-
-</script>
-
  
 
 
