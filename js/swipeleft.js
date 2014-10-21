@@ -45,11 +45,11 @@
 			
 			if(left > -50)
 			{
-			e.currentTarget.addclass = '0px';	
+				
+			element.style.webkitTransform = "rotate(-50deg)";	
 				}
 			else{
-				
-			e.currentTarget.style.left = '-250px';		
+		element.style.webkitTransform = "rotate(-50deg)";	
 				
 				}
             enable_scroll()
@@ -57,7 +57,7 @@
         });
 
     $('li .delete-btn').on('touchend', function(e) {
-        e.preventDefault()
+       // e.preventDefault()
 		
 		
      //   $(this).parents('li').slideUp('fast', function() {.
