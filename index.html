@@ -237,25 +237,17 @@ function browser_setting()
 }
 
 .swipe-delete li{
-    -webkit-transition: -webkit-transform 250ms ease;
-    -webkit-transform: translateX(70%);
-    -moz-transition: -moz-transform 250ms ease;
-    -moz-transform: translateX(70%);
-    -o-transition: -o-transform 250ms ease;
-    -o-transform: translateX(70%);
-    transition: transform 250ms ease;
-    transform: translateX(70%);
+    -webkit-transition: -webkit-transform 2500ms ease;
+    -moz-transition: -moz-transform 2500ms ease;
+    -o-transition: -o-transform 2500ms ease;
+    transition: transform 2500ms ease;
 	}
 
 .swipe-delete {
-	    -webkit-transition: -webkit-transform 250ms ease;
-    -webkit-transform: translateX(70%);
-    -moz-transition: -moz-transform 250ms ease;
-    -moz-transform: translateX(70%);
-    -o-transition: -o-transform 250ms ease;
-    -o-transform: translateX(70%);
-    transition: transform 250ms ease;
-    transform: translateX(70%);
+	    -webkit-transition: -webkit-transform 2500ms ease;
+    -moz-transition: -moz-transform 2500ms ease;
+    -o-transition: -o-transform 2500ms ease;
+    transition: transform 2500ms ease;
 
 	
 	}
@@ -963,7 +955,7 @@ function load_trending()
         	crossDomain: true,
 			success: function(data)
 			{
-				alert(data.Feeds);
+				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
