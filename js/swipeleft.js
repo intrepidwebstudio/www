@@ -45,11 +45,11 @@
 			
 			if(left > -50)
 			{
-			e.currentTarget.style.left = '0px';	
+			e.currentTarget.left.addClass('horizTranslate');	
 				}
 			else{
 				
-			e.currentTarget.style.left = '-250px';		
+			e.currentTarget.left.addClass('horizTranslate');		
 				
 				}
             enable_scroll()
