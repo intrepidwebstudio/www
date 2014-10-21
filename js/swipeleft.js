@@ -47,19 +47,8 @@
 			
             var left = parseInt(e.currentTarget.style.left)
 			
-			if(left > -30)
-			{
-			e.currentTarget.addClass('slideoutC');	
-				}
-			else{
-				
-			e.currentTarget.addClass('slideoutC');		
-				
-				}
-				
-				e.currentTarget.removeClass('slideoutC');
-				
-				e.currentTarget.removeClass('slideoutC');
+			var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
+            e.currentTarget.style.left = new_left
 				
 				
             enable_scroll()
