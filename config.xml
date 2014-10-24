@@ -76,7 +76,7 @@
     <gap:plugin name="org.apache.cordova.vibration" />
 	
 	
-	<gap:plugin name="com.oauthio.plugins.oauthio" version="0.2.4" />	
+<!--	<gap:plugin name="com.oauthio.plugins.oauthio" version="0.2.4" />	-->
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
