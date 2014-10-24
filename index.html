@@ -88,6 +88,20 @@ function onDeviceReady()
    var imagepath = 'http://www.safelearners.com/eboo/';
    var ajax_path = 'http://www.safelearners.com/eboo/app/';
     
+	
+	
+	var element = document.getElementById('deviceProperties');
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+                            'Device Cordova: '  + device.cordova  + '<br />' +
+                            'Device Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+	
+	
+	
+	
+	
+	
 				load_trending();	
 				browser_setting();
 				}
