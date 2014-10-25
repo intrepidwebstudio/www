@@ -73,8 +73,18 @@ $(function(){
 			
 			var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
            // e.currentTarget.style.left = new_left
+		   
+		   if(left > -50)
+		   {
+			 e.currentTarget.animate({'left' : '0px' },500);  
+	
+			   }else{
+				   
+			e.currentTarget.animate({'left' : '-250px' },500);  	   
+				   
+				   }
 			
-			 e.currentTarget.animate({'left' : '-250' },500);
+			 
 				
 				
             enable_scroll();
