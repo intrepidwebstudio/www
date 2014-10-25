@@ -39,13 +39,34 @@ $(function(){
 
    
     var x;
+	
+	
+	
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
-            $('.swipe-delete li > a').animate({'left':'0px'},1000) // close em all
+			
+			
+			$( ".swipe-delete li > a" ).each(function( index ) {
+				
+  			if($(this).hasClass('tocuhedd'))
+			{
+				
+			//	alert('class irukku');
+			$(this).animate({'left':'0px'},1000) // close em all
+			
+			$(this).removeClass('tocuhedd');	
+				
+				
+				} 
+});
+			
             x = e.originalEvent.pageX // anchor point
 			
         })
         .on('touchmove', function(e) {
+			
+			
+			
             var change = e.originalEvent.pageX - x
 		    change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
             e.currentTarget.style.left = change + 'px'
@@ -57,6 +78,13 @@ $(function(){
             var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
             e.currentTarget.style.left = new_left
             enable_scroll()
+			
+			//e.currentTarget.addClass('tocuhedd');
+			
+			$(e.target).addClass("tocuhedd"); 
+			
+			$(this).addClass("tocuhedd")
+			
 			
         });
 
