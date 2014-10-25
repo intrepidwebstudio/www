@@ -41,7 +41,7 @@ $(function(){
     var x;
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
-            $('.swipe-delete li > a').css('left', '0px') // close em all
+            $('.swipe-delete li > a').animate({'left':'0px'},1000) // close em all
             x = e.originalEvent.pageX // anchor point
 			
         })
