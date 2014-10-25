@@ -89,19 +89,7 @@ function onDeviceReady()
    var ajax_path = 'http://www.safelearners.com/eboo/app/';
     
 	
-	
-	var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-	
-	
-	
-	
-	
-	
+		
 				load_trending();	
 				browser_setting();
 				}
@@ -560,12 +548,33 @@ background: rgba(240, 82, 91, 0.65) !important;
 .example-wrapper, .example-wrapper div.iscroll-scroller {
     width: 100% !important;
 }
+
+
+
+
+
+
+/*
+#blue{
+	position:absolute;
+	top:100px;
+    left:100px;
+	width:100px;
+    height:100px;
+	background-color:blue;
+	cursor:pointer;
+	right:
+}
+
+*/
   </style>
   
   
   
 
 </head>
+
+
 <body>
 
 
@@ -578,17 +587,21 @@ background: rgba(240, 82, 91, 0.65) !important;
         <img  src="img/ebooheader.png" class="ebooheader"  style="margin-bottom:-5px !important;" >
         
         
-        <div class="topmenucontainer" >
+        <div class="topmenucontainer"  >
         
      <div class="ui-field-contain forceinline">
 	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
      
-     <div class="searchsettings">
+     <div class="searchsettings " id="top_menu" >
         
         <div  class="lefticon" >
        		<img  src="icons/search.png" onClick="show_search()" >
         </div>
+        
+       <!-- <div id="blue">
+        sasdfasdf asdf assdfg sdfg sdfgs gsdf
+        </div>-->
         
         
         <div class="righticon">
@@ -816,6 +829,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
   <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
+  
+  <script type="text/javascript" src="js/hammer.js"></script>
+  
    <script type="text/javascript" src="js/SocialSharing.js"></script>
    <script type="text/javascript" src="js/nonbounce.js"></script>
 <script type="text/javascript" src="js/swipeleft.js"></script>
@@ -899,9 +915,20 @@ $(document).keypress(function(e) {
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val(),
 			type:'GET',
 			contentType: "application/json",
-        	async: false,
+        	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                        $.mobile.loading('show', {theme:"q",text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                        $.mobile.loading('hide'); // This will hide ajax spinner
+                    },
+			
+			
 			success: function(data)
 			{
 				feedData=data.Feeds;
@@ -917,11 +944,8 @@ $(document).keypress(function(e) {
 				$('#searcharea').hide();
 				$('#searcharea').blur();
 				
-			           
-								   
-								   	var append_data =  '';
-				
-							$.each(feedData, function(index, element) {
+			  	   	var append_data =  '';
+					$.each(feedData, function(index, element) {
 					var article_id = element.id;			
 					var article_title =  element.title ;
 					var article_link = element.article_link ;
@@ -1021,9 +1045,21 @@ function load_trending()
 			url:ajax_path+'trending.php',
 			type:'GET',
 			contentType: "application/json",
-        	async: false,
+        	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                        $.mobile.loading('show', {theme:"q", text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                        $.mobile.loading('hide'); // This will hide ajax spinner
+                    },
+			
+			
+			
 			success: function(data)
 			{
 				
@@ -1067,6 +1103,7 @@ function load_trending()
 							$('#list_view').html('');
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
+							//alert(append_data);
 									
 										$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
@@ -1110,6 +1147,17 @@ function load_trending()
 	
 	
 	}
+
+
+/*jQuery('.mydiv')
+.bind('move', function(e) {
+  // move .mydiv horizontally
+  jQuery(this).css({ left: e.startX + e.deltaX });
+})
+.bind('moveend', function() {
+  // move is complete!
+});
+*/
 
 	
 	

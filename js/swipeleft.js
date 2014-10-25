@@ -1,3 +1,25 @@
+/*
+$(function(){
+    var blue = document.getElementById("blue");
+    
+    Hammer(blue).on("swipeleft", function() {
+		
+		
+		
+          $(blue).animate({left: "-=100"}, 500)  
+    });
+    
+    Hammer(document.getElementById("blue")).on("swiperight", function() {
+		
+          $(blue).animate({left: "+=100"}, 500)  
+    });
+})
+
+*/
+
+
+
+
 // JavaScript Document
  $(function() {
 
@@ -13,13 +35,13 @@
         $(document).unbind('touchmove', prevent_default)
     }
 
- 
+
 
     var x;
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
 			
-			$('.swipe-delete li > a').css('left', '0px') // close em all
+			$('.swipe-delete li > a').animate({'left': '0px'},1000); // close em all
 			
 			
 			
@@ -34,6 +56,8 @@
 			if(change < -30)
 			{
 			  e.currentTarget.style.left = change + 'px';	
+			  
+			//  e.currentTarget.animate({left : change+'px' },500)
 				
 				}
 			
@@ -48,10 +72,12 @@
             var left = parseInt(e.currentTarget.style.left)
 			
 			var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-            e.currentTarget.style.left = new_left
+           // e.currentTarget.style.left = new_left
+			
+			 e.currentTarget.animate({left : new_left },500);
 				
 				
-            enable_scroll()
+            enable_scroll();
 			
         });
 
