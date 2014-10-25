@@ -53,7 +53,7 @@ $(function(){
 			
             var change = e.originalEvent.pageX - x
 		    change = Math.min(Math.max(-450, change), 0 ) // restrict to -100px left, 0px right
-			if(change < -50)
+			if(change < -30)
 			{
 			  e.currentTarget.style.left = change + 'px';	
 			  
@@ -62,7 +62,7 @@ $(function(){
 				}
 			
           
-			if(change < -50 )
+			if(change < -30 )
 			{
              disable_scroll() 
 			}// disable scroll once we hit 10px horizontal slide
@@ -71,7 +71,7 @@ $(function(){
 			
             var left = parseInt(e.currentTarget.style.left)
 			
-			var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
+			var new_left = (left > -30 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
      e.currentTarget.style.left = new_left
 		   
 			
