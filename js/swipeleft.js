@@ -48,26 +48,63 @@ $(function(){
 			
 			$( ".swipe-delete li > a" ).each(function( index ) {
 				
-  			if($(this).hasClass('tocuhedd'))
-			{
+				
+		var rect = this.getBoundingClientRect();
+				
+// console.log(rect.top, rect.right, rect.bottom, rect.left);
+				
+			
 				
 			//	alert('class irukku');
-			$(this).animate({'left':'0px'},1000) // close em all
 			
-			$(this).removeClass('tocuhedd');	
+			if(rect.left !=0)
+			{
 				
+			$(this).unbind('touchmove');
+			$(this).unbind('onClick');
 				
-				} 
+			$(this).animate({'left':'0px'},500,'linear',function(){  
+			
+							var new_rect = this.getBoundingClientRect();
+							console.log(new_rect.left);
+							if(new_rect.left==0)
+							{
+							console.log(new_rect.left);
+								$(this).bind('touchmove',function(e){
+																		e.preventDefault();
+																		return false;
+																  });   
+							//	$(this).unbind('onClick');
+															
+								}
+			
+				
+			}) // close em all
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			}
+			
+			
+	
 });
 			
             x = e.originalEvent.pageX // anchor point
 			
-        })
+        
+		
+		})
         .on('touchmove', function(e) {
 			
-			
-			
-            var change = e.originalEvent.pageX - x
+		    var change = e.originalEvent.pageX - x
 		    change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
             e.currentTarget.style.left = change + 'px'
             if (change < -40) disable_scroll() // disable scroll once we hit 10px horizontal slide
@@ -80,11 +117,7 @@ $(function(){
             enable_scroll()
 			
 			//e.currentTarget.addClass('tocuhedd');
-			
-			$(e.target).addClass("tocuhedd"); 
-			
-			$(this).addClass("tocuhedd")
-			
+
 			
         });
 
