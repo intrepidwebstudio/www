@@ -54,15 +54,8 @@ $(function(){
 // console.log(rect.top, rect.right, rect.bottom, rect.left);
 				
 			
-				
-			//	alert('class irukku');
-			
 			if(rect.left !=0)
 			{
-				
-			
-			
-				
 			$(this).animate({'left':'0px'},500,'linear',function(){  
 			
 							var new_rect = this.getBoundingClientRect();
@@ -70,10 +63,6 @@ $(function(){
 							if(new_rect.left==0)
 							{
 							console.log(new_rect.left);
-								$(this).bind('touchmove',function(e){
-																		
-																		
-																  });   
 							//	$(this).unbind('onClick');
 															
 								}
