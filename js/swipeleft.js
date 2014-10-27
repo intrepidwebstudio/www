@@ -60,8 +60,8 @@ $(function(){
 			if(rect.left !=0)
 			{
 				
-			$(this).unbind('touchmove');
-			$(this).unbind('onClick');
+			
+			
 				
 			$(this).animate({'left':'0px'},500,'linear',function(){  
 			
@@ -71,8 +71,8 @@ $(function(){
 							{
 							console.log(new_rect.left);
 								$(this).bind('touchmove',function(e){
-																		e.preventDefault();
-																		return false;
+																		
+																		
 																  });   
 							//	$(this).unbind('onClick');
 															
