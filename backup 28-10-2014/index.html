@@ -18,8 +18,7 @@
   
   
 
-  <link rel="stylesheet" href="css/idangerous.swiper.css">
-  <script defer src="js/idangerous.swiper.js"></script>
+
    
      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     
@@ -27,8 +26,55 @@
    <script>
     // Wait for Cordova to load
     //
-   
+    document.addEventListener("deviceready", onDeviceReady, false);
+/*
+    // Global InAppBrowser reference
+    var iabRef = null;
 
+    function iabLoadStart(event) {
+     //   alert(event.type + ' - ' + event.url);
+		
+		
+    }
+	
+	
+	
+	 function iabLoadStop(event) {
+       // alert(event.type + ' - ' + event.url);
+		
+		
+        ref.insertCSS({code:'.headonstart { display:block; height:100px !important;  }'});         
+
+    
+		
+		alert('asdasdihjnkjhnhuhj');
+    }
+	
+	
+	
+	
+
+    function iabClose(event) {
+    //     alert(event.type);
+         iabRef.removeEventListener('loadstart', iabLoadStart);
+         iabRef.removeEventListener('loadstop', iabLoadStop);
+         iabRef.removeEventListener('exit', iabClose);
+    }
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+         alert('Device is ready!');
+		 
+		
+		 
+         iabRef = window.open('http://apache.org', '_blank', 'presentationstyle=pagesheet,toolbarposition=top');
+        // iabRef.addEventListener('loadstart', iabLoadStart);
+        // iabRef.addEventListener('loadstop', iabLoadStop);
+        // iabRef.addEventListener('exit', iabClose);
+    }
+	
+	*/
 	var feedData;
 
    var imagepath = 'http://www.safelearners.com/eboo/';
@@ -37,7 +83,52 @@
 	
 	
 	
+function onDeviceReady()
+				{
+					var feedData;
 
+   var imagepath = 'http://www.safelearners.com/eboo/';
+   var ajax_path = 'http://www.safelearners.com/eboo/app/';
+    
+	
+	
+	
+	alert('aa');
+	
+          OAuth.initialize("RQKLC-6C9qwcHCg5tSCQA6ZvtZg");
+		  
+		  alert('auythtt');
+
+                $('#fb-connect').on('touchstart', function() {
+					
+					alert('ss');
+					
+                    $('#result').html("");
+                    OAuth.popup('twitter')
+                        .done(function (r) {
+                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                            r.get('/1.1/account/verify_credentials.json')
+                                .done(function(data) {
+                                    $('#result').html("twitter: Hello, " + data.name + " !");
+                                })
+                                .fail(function( jqXHR, textStatus, errorThrown) {
+                                    $('#result').html("req error: " + textStatus);
+                                });
+                        })
+                        .fail(function (e) {
+                            $('#result').html('error: ' + e.message);
+                        });
+                });
+          
+	
+	
+	
+		
+				load_trending();	
+				browser_setting();
+				}
+	
 	
 	
 	
@@ -116,13 +207,147 @@ function browser_setting()
 	}
 
 
+/*
+  // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
+    // Global InAppBrowser reference
+    var iabRef = null;
+
+    // Inject our custom JavaScript into the InAppBrowser window
+    //
+    function replaceHeaderImage() {
+        iabRef.executeScript({
+            code: "var img=document.querySelector('#header img'); img.src='http://cordova.apache.org/images/cordova_bot.png';"
+        }, function() {
+            alert("Image Element Successfully Hijacked");
+        })
+    }
+
+    function iabClose(event) {
+         iabRef.removeEventListener('loadstop', replaceHeaderImage);
+         iabRef.removeEventListener('exit', iabClose);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+         iabRef = window.open('http://apache.org', '_blank', 'location=yes');
+
+         iabRef.addEventListener('loadstop', replaceHeaderImage);
+         iabRef.addEventListener('exit', iabClose);    }
+
+*/
    </script>
    
    
   
   <style>
   
+/* 
+.animateright{
+    -webkit-transition: -webkit-transform 2ms ease;
+    -moz-transition: -moz-transform 2s ease;
+    -o-transition: -o-transform 2ms ease;
+    transition: transform 2ms ease;
+	}
+
+.swipe-delete {
+	    -webkit-transition: -webkit-transform 2ms ease;
+    -moz-transition: -moz-transform 2ms ease;
+    -o-transition: -o-transform 2ms ease;
+    transition: transform 2ms ease;
+
+	
+	}
+
+.swipe-delete li > a{
+	
+	 -webkit-transition: -webkit-transform 2s ease;
+    -moz-transition: -moz-transform 2s ease;
+    -o-transition: -o-transform 2s ease;
+    transition: transform 2s ease;
+	
+
+	}
+
+
+
+.move_in {
+		 	-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-webkit-animation-name: slideinfromleft;
+			-moz-animation-name: slideinfromleft;
+			
+		-webkit-animation-timing-function: ease-out;
+			-webkit-animation-duration: 2s;
+			-moz-animation-timing-function: ease-out;
+			-moz-animation-duration: 2s;	
+			
+		}
+*/
+
+
+
+
+
+
+
+
+
+
+		.slideinC {
+			-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-webkit-animation-name: slideinfromleft;
+			-moz-animation-name: slideinfromleft;
+		}
+
+		.slideoutC {
+					 	-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-webkit-animation-name: slideinfromleft;
+			-moz-animation-name: slideinfromleft;
+			
+		-webkit-animation-timing-function: ease-out;
+			-webkit-animation-duration: 2s;
+			-moz-animation-timing-function: ease-out;
+			-moz-animation-duration: 2s;	
+		}
+		
+		
+		
+@-webkit-keyframes slideinfromleft {
+			from { -webkit-transform: translateX(-250px); }
+			to { -webkit-transform: translateX(0px); }
+		}
+
+		@-webkit-keyframes slideouttoright {
+			from { -webkit-transform: translateX(0); }
+			to { -webkit-transform: translateX(100%); }
+		}
+		
+	
+	
+		@-moz-keyframes slideinfromleft {
+			from { -moz-transform: translateX(-100%); }
+			to { -moz-transform: translateX(0); }
+		}
+
+		@-moz-keyframes slideouttoright {
+			from { -moz-transform: translateX(0); }
+			to { -moz-transform: translateX(100%); }
+		}		
+
+
+
+
+
+
+
+
+
 
 /* Border bottom for the previous button during the transition*/
 li.left a.ui-btn,
@@ -271,7 +496,34 @@ background: rgba(240, 82, 91, 0.65) !important;
 		
 		}	
 	
+	/******************* ADDING CUSTOM UI ICONS ******************/
+	
+	/* .ui-icon-ebootick {
+    background-image: url("taifun.png");
+  }
 
+  .nav .ui-btn .ui-btn-inner {
+    padding-top: 40px !important;
+  }
+
+  .nav .ui-btn .ui-icon-ebootick {
+    width: 45px!important;
+    height: 35px!important;
+    margin-left: -24px !important;
+    box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    -webkit-border-radius: none !important;
+    border-radius: none !important;
+  }
+
+  #programas .ui-icon-ebootick {
+    background-image: url(taifun.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+  */
+  
   
   	
   .ui-icon-ebootoggleoff {
@@ -335,6 +587,21 @@ background: rgba(240, 82, 91, 0.65) !important;
 
 
 
+
+
+/*
+#blue{
+	position:absolute;
+	top:100px;
+    left:100px;
+	width:100px;
+    height:100px;
+	background-color:blue;
+	cursor:pointer;
+	right:
+}
+
+*/
   </style>
   
   
@@ -344,10 +611,6 @@ background: rgba(240, 82, 91, 0.65) !important;
 
 
 <body>
-
-
-
-
 
 
 <div data-role="page" id="page1" data-title="eboo" >
@@ -393,7 +656,7 @@ background: rgba(240, 82, 91, 0.65) !important;
     <div  role="main" class="ui-content" >
     	
         
-      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
+        <button id="fb-connect" >Facebook loginh auth</button>
         
         <div class="example-wrapper" data-iscroll >
     
@@ -412,64 +675,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 </div>
 
 
-<div data-role="page" data-position="fixed" id="page" data-title="eboo" >
 
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-      <!--First Slide-->
-      <div class="swiper-slide"> 
-        	<img src="img/screen1.png" style="width:100% !important; height:100% !important;">
-      </div>
-      
-      <!--Second Slide-->
-      <div class="swiper-slide">
-      <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >
-        <!-- Any HTML content of the second slide goes here -->
-      </div>
-      
-      <!--Third Slide-->
-      <div class="swiper-slide noSwipingClass"> 
-      <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >
-        <!-- Any HTML content of the third slide goes here -->
-        
-        
-        
-        <div style="position:absolute; top:47% !important;  min-height: 3.2em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;" >
-        
-        
-        		<center><img  src="img/eboo-logo.png" style="width:30% !important" ></center>
-        
-         </div>
-       
-       
-        <p style=" font-size:1.5em !important; position:absolute; top:57% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;
-		cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
-        
-        
-        <input type="text" class="ui-input-btn ui-hide-label" id="useremail" style="position:absolute; top:70% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; background-color:#FFF; width:24% !important ;
-         background:rgba(255,255,255,0.7) !important;
-		cursor:vertical-text; height:25px; " data-corners="false" data-prevent-focus-zoom="false"  >
-        
-        
-        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;  position:absolute; top:80% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; width:24% !important ; 
-        								border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" >
-        Start Using Eboo</button>
-        
-<!---            background-color: #ccc;
-    left: 70%;
-    margin: 53px !important;
-    position: absolute;
-    right: 41%;
-    top: 10% !important;
-    width: 24% !important;
-    -->
-        
-      </div>
-      <!--Etc..-->
-  </div>
-</div>
-
-</div>
   
 
 <div data-role="page" id="settings">
@@ -678,8 +884,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 <script type="text/javascript" src="js/iscroll.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
-<script type="text/javascript" src="js/fastbutton.js"></script>
-
 
 
  <script>
@@ -709,10 +913,32 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 	  
 	  $('#searcharea').focus();
 	
-	
-	  } 
+		/*
+$(document).on('focus', 'input, textarea', function() 
+{
+	$.mobile.activePage.find("div[data-role='footer']").hide();
+});
 
+*/
+	  } 
+/*  
+  $(function(){
+  // Bind the swipeHandler callback function to the swipe event on div.box
+  $( "div.box" ).on( "swipe", swipeHandler );
  
+  // Callback function references the event target and adds the 'swipe' class to it
+  function swipeHandler( event ){
+    $( event.target ).addClass( "swipe" );
+  }
+});
+  
+  */
+  
+
+
+
+
+
 $('#searcharea').on('blur',function(){ 
 									$('#searcharea').hide();	
 										$('#searcharea').blur();
@@ -725,15 +951,10 @@ $('#searcharea').on('blur',function(){
 $(document).keypress(function(e) {
     if(e.which == 13) {
 		
-		
-		console.log(ajax_path + ' asdasd');
-		
 	   if( $('#searcharea').val()!='')
 	   {
 	   //start  my loader here !!!!
 		$.support.cors = true;
-		
-		
 		
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val(),
@@ -829,7 +1050,7 @@ $(document).keypress(function(e) {
 		error: function(e) {
        alert('Network error please try after sometime  ');		
 			
-			console.log(e.status);
+			console.log(e);
 			
 		}
 			
@@ -958,7 +1179,14 @@ function load_trending()
 			
 		}
 			
+			
+			
+			
+			
 	
+	
+		
+		
 		
 		});
 	
@@ -966,206 +1194,25 @@ function load_trending()
 	}
 
 
+/*jQuery('.mydiv')
+.bind('move', function(e) {
+  // move .mydiv horizontally
+  jQuery(this).css({ left: e.startX + e.deltaX });
+})
+.bind('moveend', function() {
+  // move is complete!
+});
+*/
+
 	
-	/*
+	
 $(document).on('pagebeforeshow', '#index', function(){ 
-  for(i = 0; i < 30; i++) {
-       $(".example-wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
-  }
+    for(i = 0; i < 30; i++) {
+        $(".example-wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
+    }
     $('[data-role="content"]').trigger('create');
     $(".example-wrapper").iscrollview("refresh");
 });
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-function startswiperfunction(){
-	
-	
-	var mySwiper = $('.swiper-container').swiper({
-    //Your options here:
-    mode:'horizontal',
-    loop: false,
-	resistance:'100%',
-	freeMode:false,
-	momentumBounce:false,
-	swipeToPrev:true,
-	paginationClickable:true,
-	watchActiveIndex:true
-	
-	
-    //etc..
-  });
-  
- // mySwiper.activeSlide() ;
-  
-  /* FULLSCREEN SWIPER*/
-$(window).resize(function(){
-    var height = $(window).height();
-    var width  = $(window).width();
-    $('.swiper-container, .swiper-slide').height(height);
-    $('.swiper-container, .swiper-slide').width(width);
-    //Add reInit, because jQuery's resize event handler may occur earlier than Swiper's one
-    swiper.reInit()
-})
-$(window).resize();
-
-
-	
-	
-	
-	}
-
-
-
-//add listener when device ready
-    document.addEventListener("deviceready", onDeviceReady, false);
-	
-	
-    var db = window.openDatabase("Dummy_DB", "1.0", "Just a Dummy DB", 200000); //will create database Dummy_DB or open it
- 
-    //function will be called when device ready
-    function onDeviceReady(){
-		
-		
- 
-
-db.transaction(populateDB, errorCB, successCB);
-
-load_trending();
-//swipe_list_items();
-	
-browser_setting();
-
-startswiperfunction();
-
-
-    }
- 
-    //create table and insert some record
-    function populateDB(tx) {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL)');
-		
-       
-    }
- 
-    //function will be called when an error occurred
-    function errorCB(err) {
-        alert("Error processing SQL: "+err.code+'noyhin ?');
-    }
- 
-    //function will be called when process succeed
-    function successCB() {
-      //  alert("success!");
-        db.transaction(queryDB,errorCB);
-    }
- 
-    //select all from SoccerPlayer
-    function queryDB(tx){
-        tx.executeSql('SELECT * FROM ebooUser',[],querySuccess,errorCB);
-    }
- 
-    function querySuccess(tx,result){
-       
-	   console.log(result.rows.item);
-	   
-	   var length = result.rows.length;
-	   	console.log("DEMO table: " + length + " rows found.");	
-		
-		
-		
-		if(length >0)
-		{
-			
-			$.mobile.changePage('index.html#page1');
-		
-				for(var i=0; i< length ; i++)
-				{
-					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
-					}
-					
-				tx.executeSql('DELETE FROM ebooUser');	
-					
-					
-		}else{
-			
-			$.mobile.changePage('index.html#page');
-			
-				
-			
-		}
-  
-    }
-	
-	
-	
-	function ErrorCallBack(){
-		
-		alert('Error');
-		
-		}
-	
-	function validate_email()
-	{
-	var	useremail = $('#useremail').val();
-	var checkk = 	IsEmail(useremail);
-	if(checkk== false)
-	{
-		alert('enter a vaild email');
-		}
-	else{
-			db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );
-		}	
-    }
-		
-		function insertvalues(tx,parameter1)
-		{
-			tx.executeSql('INSERT INTO ebooUser(email) VALUES (?)',[parameter1],userinsert);
-		}
-		
-		
-		function userinsert()
-		{
-			$.mobile.changePage('index.html#page1');
-		}
-		
-
-function IsEmail(email) {
-  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  return regex.test(email);
-}
-	
-	
-	/*
-	var  first_time_pages = '';
-
-				first_time_pages+= '<div data-role="page" data-position="fixed" id="page" data-title="eboo" ><div class="swiper-container"><div class="swiper-wrapper">';
-				first_time_pages+='<div class="swiper-slide"><img src="img/screen1.png" style="width:100% !important; height:100% !important;"></div>';
-				first_time_pages+='<div class="swiper-slide"><img src="img/screen2.png" style="width:100% !important; height:100% !important;" ></div>';
-				first_time_pages+='<div class="swiper-slide noSwipingClass"><img src="img/screen3.png" style="width:100% !important; height:100% !important;" >';
-				first_time_pages+='<div style="position:absolute; top:47% !important;  min-height: 3.2em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;" >';
-				first_time_pages+='<center><img  src="img/eboo-logo.png" style="width:30% !important" ></center></div>';
-				first_time_pages+='<p style=" font-size:1.5em !important; position:absolute; top:57% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ; ';
-				first_time_pages+='cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>';
-				first_time_pages+='<input type="text" class="ui-input-btn ui-hide-label" style="position:absolute; top:70% !important;  min-height: 2.8em !important; left:71.5% !important; ';
-				first_time_pages+=' right:5% !important; background-color:#FFF; width:24% !important ; background:rgba(255,255,255,0.7) !important; cursor:vertical-text; height:25px; " data-corners="false" data-prevent-focus-zoom="false"  >';
-				first_time_pages+='<a href="#page1" ><button class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important; ';
-				first_time_pages+=' position:absolute; top:80% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; width:24% !important ; ';
-				first_time_pages+=' border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" >Start Using Eboo</button></a>';
-				first_time_pages+='</div></div></div></div>';
-				
-				*/
-
-
 </script>
  
 

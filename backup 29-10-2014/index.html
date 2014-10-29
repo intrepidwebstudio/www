@@ -27,7 +27,7 @@
    <script>
     // Wait for Cordova to load
     //
-   
+    document.addEventListener("deviceready", onDeviceReady, false);
 
 	var feedData;
 
@@ -37,7 +37,52 @@
 	
 	
 	
+function onDeviceReady()
+				{
+					var feedData;
 
+   var imagepath = 'http://www.safelearners.com/eboo/';
+   var ajax_path = 'http://www.safelearners.com/eboo/app/';
+    
+	
+	/*
+	
+	alert('aa');
+	
+          OAuth.initialize("RQKLC-6C9qwcHCg5tSCQA6ZvtZg");
+		  
+		  alert('auythtt');
+
+                $('#fb-connect').on('touchstart', function() {
+					
+					alert('ss');
+					
+                    $('#result').html("");
+                    OAuth.popup('twitter')
+                        .done(function (r) {
+                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                            r.get('/1.1/account/verify_credentials.json')
+                                .done(function(data) {
+                                    $('#result').html("twitter: Hello, " + data.name + " !");
+                                })
+                                .fail(function( jqXHR, textStatus, errorThrown) {
+                                    $('#result').html("req error: " + textStatus);
+                                });
+                        })
+                        .fail(function (e) {
+                            $('#result').html('error: ' + e.message);
+                        });
+                });
+          
+	
+	*/
+	
+		
+				load_trending();	
+				browser_setting();
+				}
+	
 	
 	
 	
@@ -335,6 +380,43 @@ background: rgba(240, 82, 91, 0.65) !important;
 
 
 
+.img1 {
+    background-image:url(img/screen1.png);
+    background-size:   cover;                      /* <------ */
+    background-repeat: no-repeat;
+ /* background-position: center center;            /* optionally, center the image */
+}
+.img2{
+	background-image: url(img/screen2.png) ;
+    background-size:   cover;                      /* <------ */
+    background-repeat: no-repeat;
+  /*  background-position: center center;            /* optionally, center the image */
+
+	}
+	
+.img3{
+    background-image:  url(img/screen3.png);
+    background-size: cover ;                      /* <------ */
+    background-repeat: no-repeat;
+  /* background-position: center center;            /* optionally, center the image */
+	
+	}	
+
+
+.login_style{
+	
+	position:absolute;
+	bottom:30% ; 
+	right:7%;
+	z-index:99px;
+	background:#FFF !important;
+	
+	alignment-adjust:middle !important;
+	
+	
+	
+	}
+
   </style>
   
   
@@ -346,8 +428,50 @@ background: rgba(240, 82, 91, 0.65) !important;
 <body>
 
 
+<div data-role="page"   id="page" data-title="eboo" >
+
+ <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="true" style=" border:none !important;   "  class="headonstart" >
+ </div>
+<div  role="main" class="ui-content" >
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+      <!--First Slide-->
+      <div class="swiper-slide" > 
+<img src="img/screen1.png" style="width:100% !important; height:100% !important;">
 
 
+      </div>
+      
+      <!--Second Slide-->
+      <div class="swiper-slide">
+<img src="img/screen2.png" style="width:100% !important; height:100% !important;" >
+        <!-- Any HTML content of the second slide goes here -->
+      </div>
+      
+      <!--Third Slide-->
+      <div class="swiper-slide img3 "> 
+<!--      <img src="img/screen3.png" style="width:100% !important; height:100% !important; z-index:-99px"  >-->
+        <!-- Any HTML content of the third slide goes here -->
+
+         <div class="ui-field-contain forceinline login_style" >
+	          <input type="email" id="useremail"  class=" ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div> 
+         
+         
+         
+         <a href="#page1"><button class="button_center">Submit</button></a>
+         
+	
+        
+        
+      </div>
+      <!--Etc..-->
+  </div>
+</div>
+
+</div><!---header close--->
+
+</div>
 
 
 <div data-role="page" id="page1" data-title="eboo" >
@@ -412,64 +536,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 </div>
 
 
-<div data-role="page" data-position="fixed" id="page" data-title="eboo" >
 
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-      <!--First Slide-->
-      <div class="swiper-slide"> 
-        	<img src="img/screen1.png" style="width:100% !important; height:100% !important;">
-      </div>
-      
-      <!--Second Slide-->
-      <div class="swiper-slide">
-      <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >
-        <!-- Any HTML content of the second slide goes here -->
-      </div>
-      
-      <!--Third Slide-->
-      <div class="swiper-slide noSwipingClass"> 
-      <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >
-        <!-- Any HTML content of the third slide goes here -->
-        
-        
-        
-        <div style="position:absolute; top:47% !important;  min-height: 3.2em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;" >
-        
-        
-        		<center><img  src="img/eboo-logo.png" style="width:30% !important" ></center>
-        
-         </div>
-       
-       
-        <p style=" font-size:1.5em !important; position:absolute; top:57% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;
-		cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
-        
-        
-        <input type="text" class="ui-input-btn ui-hide-label" id="useremail" style="position:absolute; top:70% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; background-color:#FFF; width:24% !important ;
-         background:rgba(255,255,255,0.7) !important;
-		cursor:vertical-text; height:25px; " data-corners="false" data-prevent-focus-zoom="false"  >
-        
-        
-        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;  position:absolute; top:80% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; width:24% !important ; 
-        								border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" >
-        Start Using Eboo</button>
-        
-<!---            background-color: #ccc;
-    left: 70%;
-    margin: 53px !important;
-    position: absolute;
-    right: 41%;
-    top: 10% !important;
-    width: 24% !important;
-    -->
-        
-      </div>
-      <!--Etc..-->
-  </div>
-</div>
-
-</div>
   
 
 <div data-role="page" id="settings">
@@ -678,8 +745,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 <script type="text/javascript" src="js/iscroll.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
-<script type="text/javascript" src="js/fastbutton.js"></script>
-
 
 
  <script>
@@ -725,15 +790,10 @@ $('#searcharea').on('blur',function(){
 $(document).keypress(function(e) {
     if(e.which == 13) {
 		
-		
-		console.log(ajax_path + ' asdasd');
-		
 	   if( $('#searcharea').val()!='')
 	   {
 	   //start  my loader here !!!!
 		$.support.cors = true;
-		
-		
 		
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val(),
@@ -829,7 +889,7 @@ $(document).keypress(function(e) {
 		error: function(e) {
        alert('Network error please try after sometime  ');		
 			
-			console.log(e.status);
+			console.log(e);
 			
 		}
 			
@@ -967,31 +1027,21 @@ function load_trending()
 
 
 	
-	/*
+	
 $(document).on('pagebeforeshow', '#index', function(){ 
-  for(i = 0; i < 30; i++) {
-       $(".example-wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
+ for(i = 0; i < 30; i++) {
+      $(".example-wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
   }
-    $('[data-role="content"]').trigger('create');
-    $(".example-wrapper").iscrollview("refresh");
+  $('[data-role="content"]').trigger('create');
+  $(".example-wrapper").iscrollview("refresh");
 });
 
 
 
-*/
 
 
-
-
-
-
-
-
-
-function startswiperfunction(){
-	
-	
-	var mySwiper = $('.swiper-container').swiper({
+$(function(){
+  var mySwiper = $('.swiper-container').swiper({
     //Your options here:
     mode:'horizontal',
     loop: false,
@@ -999,9 +1049,13 @@ function startswiperfunction(){
 	freeMode:false,
 	momentumBounce:false,
 	swipeToPrev:true,
-	paginationClickable:true,
-	watchActiveIndex:true
 	
+	paginationClickable:true
+//	watchActiveIndex:true,
+//	paginationElement:'span',
+//	paginationElementClass:'.swiper-pagination-switch',
+//	paginationActiveClass:'.swiper-active-switch',
+//	paginationVisibleClass:'.swiper-visible-switch'
 	
     //etc..
   });
@@ -1009,6 +1063,9 @@ function startswiperfunction(){
  // mySwiper.activeSlide() ;
   
   /* FULLSCREEN SWIPER*/
+  
+  
+/*  
 $(window).resize(function(){
     var height = $(window).height();
     var width  = $(window).width();
@@ -1016,14 +1073,16 @@ $(window).resize(function(){
     $('.swiper-container, .swiper-slide').width(width);
     //Add reInit, because jQuery's resize event handler may occur earlier than Swiper's one
     swiper.reInit()
+	
+
 })
 $(window).resize();
+  
+})
+
+*/
 
 
-	
-	
-	
-	}
 
 
 
@@ -1035,20 +1094,7 @@ $(window).resize();
  
     //function will be called when device ready
     function onDeviceReady(){
-		
-		
- 
-
-db.transaction(populateDB, errorCB, successCB);
-
-load_trending();
-//swipe_list_items();
-	
-browser_setting();
-
-startswiperfunction();
-
-
+        db.transaction(populateDB, errorCB, successCB);
     }
  
     //create table and insert some record
@@ -1085,85 +1131,25 @@ startswiperfunction();
 		
 		if(length >0)
 		{
-			
-			$.mobile.changePage('index.html#page1');
 		
 				for(var i=0; i< length ; i++)
 				{
 					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
 					}
 					
-				tx.executeSql('DELETE FROM ebooUser');	
+					
 					
 					
 		}else{
-			
-			$.mobile.changePage('index.html#page');
-			
-				
+				tx.executeSql('INSERT INTO ebooUser(email) VALUES ("ramesh.prabhulal@gmail.com")');
 			
 		}
   
     }
-	
-	
-	
-	function ErrorCallBack(){
-		
-		alert('Error');
-		
-		}
-	
-	function validate_email()
-	{
-	var	useremail = $('#useremail').val();
-	var checkk = 	IsEmail(useremail);
-	if(checkk== false)
-	{
-		alert('enter a vaild email');
-		}
-	else{
-			db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );
-		}	
-    }
-		
-		function insertvalues(tx,parameter1)
-		{
-			tx.executeSql('INSERT INTO ebooUser(email) VALUES (?)',[parameter1],userinsert);
-		}
-		
-		
-		function userinsert()
-		{
-			$.mobile.changePage('index.html#page1');
-		}
-		
 
-function IsEmail(email) {
-  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  return regex.test(email);
-}
-	
-	
-	/*
-	var  first_time_pages = '';
 
-				first_time_pages+= '<div data-role="page" data-position="fixed" id="page" data-title="eboo" ><div class="swiper-container"><div class="swiper-wrapper">';
-				first_time_pages+='<div class="swiper-slide"><img src="img/screen1.png" style="width:100% !important; height:100% !important;"></div>';
-				first_time_pages+='<div class="swiper-slide"><img src="img/screen2.png" style="width:100% !important; height:100% !important;" ></div>';
-				first_time_pages+='<div class="swiper-slide noSwipingClass"><img src="img/screen3.png" style="width:100% !important; height:100% !important;" >';
-				first_time_pages+='<div style="position:absolute; top:47% !important;  min-height: 3.2em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;" >';
-				first_time_pages+='<center><img  src="img/eboo-logo.png" style="width:30% !important" ></center></div>';
-				first_time_pages+='<p style=" font-size:1.5em !important; position:absolute; top:57% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ; ';
-				first_time_pages+='cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>';
-				first_time_pages+='<input type="text" class="ui-input-btn ui-hide-label" style="position:absolute; top:70% !important;  min-height: 2.8em !important; left:71.5% !important; ';
-				first_time_pages+=' right:5% !important; background-color:#FFF; width:24% !important ; background:rgba(255,255,255,0.7) !important; cursor:vertical-text; height:25px; " data-corners="false" data-prevent-focus-zoom="false"  >';
-				first_time_pages+='<a href="#page1" ><button class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important; ';
-				first_time_pages+=' position:absolute; top:80% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; width:24% !important ; ';
-				first_time_pages+=' border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" >Start Using Eboo</button></a>';
-				first_time_pages+='</div></div></div></div>';
-				
-				*/
+
+
 
 
 </script>

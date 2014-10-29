@@ -59,10 +59,10 @@ $(function(){
 			$(this).animate({'left':'0px'},500,'linear',function(){  
 			
 							var new_rect = this.getBoundingClientRect();
-							console.log(new_rect.left);
+						
 							if(new_rect.left==0)
 							{
-							console.log(new_rect.left);
+						
 							//	$(this).unbind('onClick');
 															
 								}
@@ -110,17 +110,11 @@ $(function(){
 			
         });
 
-    $('li .delete-btn').on('touchend', function(e) {
-        e.preventDefault()
-		
-		
-     //   $(this).parents('li').slideUp('fast', function() {.
-      	
-			//$(this).remove()
-			
-			
-      //  })
-    })
+   
 	
 
 });
+
+
+
+
