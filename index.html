@@ -6,7 +6,7 @@
 	        <meta name="format-detection" content="telephone=no" />
         	<meta name="msapplication-tap-highlight" content="no" />
         
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
   <!--<script src="phonegap.js"></script>-->
@@ -433,29 +433,28 @@ background: rgba(240, 82, 91, 0.65) !important;
         <!-- Any HTML content of the third slide goes here -->
         
         
+        <div style="position:absolute; top:47% !important;  min-height: 3.2em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;" >
         
-               <div style="position:absolute; top:47% !important;   left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;" >
-               
-               
-                <div style="position:relative; top:1% !important;  min-height: 3.2em !important;  color:#FFF !important;" >
-                
-                        <center><img  src="img/eboo-logo.png" style="width:30% !important" ></center>
-                
-                 </div>
-               
-               
-                <p style=" font-size:1.5em !important; position:relative; top:1% !important;  min-height: 2.8em !important;  color:#FFF !important;  cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
-                
-                
-                <input type="text" class="ui-input-btn ui-hide-label" id="useremail" style="position:relative; top:1% !important;  min-height: 2.8em !important; background-color:#FFF; background:rgba(255,255,255,0.7) !important;
-                cursor:vertical-text; height:25px; " data-corners="false"  >
-                
-                
-      <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;  position:relative; top:1% !important;  min-height: 2.8em !important; 
-                                                border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" >
-                Start Using Eboo</button>
-                
-                </div>
+        
+        		<center><img  src="img/eboo-logo.png" style="width:30% !important" ></center>
+        
+         </div>
+       
+       
+        <p style=" font-size:1.5em !important; position:absolute; top:57% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;
+		cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
+        
+        
+        <input type="text" class="ui-input-btn ui-hide-label" id="useremail" style="position:absolute; top:70% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; background-color:#FFF; width:24% !important ;
+         background:rgba(255,255,255,0.7) !important;
+		cursor:vertical-text; height:25px; " data-corners="false"  >
+        
+        
+        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;  position:absolute; top:80% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; width:24% !important ; 
+        								border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="true" >
+        Start Using Eboo</button>
+        
+        
         
       </div>
       <!--Etc..-->
@@ -1117,6 +1116,8 @@ startswiperfunction();
 		alert('enter a vaild email');
 		}
 	else{
+		
+		db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );
 		
 	/*	$.ajax({
 			
