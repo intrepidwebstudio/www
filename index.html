@@ -412,7 +412,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 </div>
 
 
-<div data-role="page" data-position="fixed" id="page" data-title="eboo" >
+<div data-role="page"  id="page" data-title="eboo" >
 
 <div class="swiper-container">
   <div class="swiper-wrapper">
@@ -912,6 +912,7 @@ function load_trending()
 					article_title = article_title.substr(0,55);
 					article_title = article_title + '...';	
 						}
+						
 					append_data+='<li><div class="behind">';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a>';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
@@ -919,9 +920,10 @@ function load_trending()
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a></div>';
 					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\')" >';
-					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon" >';
-					append_data+='<p class="min_height">'+article_title+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left;" ><strong>'+source_name+'</strong></span> <span style="float:right;" > <strong>'+pubdate+'</strong></span></p></a></li>';
+					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left;" class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+		
 						}
 							);			
 							$('#list_view').html('');
