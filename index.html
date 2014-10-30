@@ -35,11 +35,17 @@
    var ajax_path = 'http://www.safelearners.com/eboo/app/';
    
    
+   var SearchQueryId;
+   
    var EbooUSER_ID;
-    
+   
+   var feed_conducted=0; 
 	
-	
-	
+   var user_time = 0;
+
+   var user_active = 0;
+
+
 
 	
 	
@@ -82,7 +88,7 @@
             iabRef.removeEventListener('exit', iabClose);
             iabRef.removeEventListener('share', iabClose);
         }
-        function navigateTo(url,click_id){
+        function navigateTo(url,click_id,this_id){
 			
 		//	alert('trueee'+url);
 	
@@ -90,7 +96,15 @@
 			
 			$.support.cors = true;
 			
-			$.post(ajax_path+'clickcount.php?id='+click_id);
+			
+			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
+			
+			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted);
+			
+			
+			$(this_id).css("background-color","#ccc");
+			
+			
 		
 			
 			
@@ -731,7 +745,7 @@ $(document).keypress(function(e) {
 		
 		
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val(),
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID ,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -755,9 +769,15 @@ $(document).keypress(function(e) {
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
+				SearchQueryId=data.SearchQueryId;
+				
+			//	alert(SearchQueryId);
 				
 				if(FeedStatus=='success')
 				{
+					
+					
+					feed_conducted=1;
 				
 				$('#searchvalue').html($('#searcharea').val());
 				
@@ -773,6 +793,10 @@ $(document).keypress(function(e) {
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+					
+					
 				//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
 					var len = 0;
@@ -788,7 +812,16 @@ $(document).keypress(function(e) {
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a></div>';
-					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\')" >';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';
+					}
+					else{
+					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';	
+					}
+
+					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
 					append_data+='<p class="ui-li-divider "><span style="float:left;" class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
@@ -822,11 +855,14 @@ $(document).keypress(function(e) {
 					}
 			
 			
+			$('#searcharea').val('');
+			
+			
 				},
 		error: function(e) {
        alert('Network error please try after sometime  ');		
 			
-			console.log(e.status);
+		//	console.log(e.status);
 			
 		}
 			
@@ -862,8 +898,11 @@ $(document).keypress(function(e) {
 
 function load_trending()
 {
+	
+	//alert(EbooUSER_ID + 'pronnn');
+	
 	$.ajax({
-			url:ajax_path+'trending.php',
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -889,6 +928,8 @@ function load_trending()
 				
 				if(FeedStatus=='success')
 				{
+					feed_conducted=0;
+					
 					
 				$('#searchvalue').html('Trending');
 				
@@ -900,6 +941,9 @@ function load_trending()
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+					
 					//pubdate = pubdate.substr(5,11);
 					// checking the variable length
 					var len = 0;
@@ -916,7 +960,16 @@ function load_trending()
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a></div>';
-					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\')" >';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';
+					}
+					else{
+					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';	
+						}
+					
+					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
 					append_data+='<p class="ui-li-divider "><span style="float:left;" class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
@@ -941,9 +994,7 @@ function load_trending()
 												
 				}//user data match if
 				else{
-					
 					// user data doent match
-					
 					alert("no match");
 					}
 			
@@ -953,7 +1004,7 @@ function load_trending()
       
 	  alert('Network problem ');		
 			
-			console.log(e);
+		//	console.log(e);
 			
 		}
 			
@@ -1037,15 +1088,53 @@ $(window).resize();
 
 db.transaction(populateDB, errorCB, successCB);
 
-load_trending();
-//swipe_list_items();
-	
-browser_setting();
-
-startswiperfunction();
-
-
+										
     }
+	
+	function start_timer(){
+		
+		//alert('aa');
+			 setInterval(
+							function(){
+								
+				//			console.log(user_active+'---time --'+user_time)	
+								//alert('ss');
+							if(user_active==1)
+							{
+							user_time = user_time+30000;
+							user_active=0;	
+								}
+							else{
+							user_active=0;
+							update_timer();	
+							} 
+						}
+							,30000); 
+							
+							
+	}
+	
+	function update_timer(){
+		//					console.log('started update');
+							setInterval( function update_user_time(){
+							
+							if(user_time!=0)
+							{
+								
+								
+							//	console.log('user_id='+EbooUSER_ID+'&seconds='+user_time);
+								
+								$.post(ajax_path+'updatetime.php?user_id='+EbooUSER_ID+'&seconds='+user_time);
+			//					console.log('user_time = '+user_time);
+								
+								user_time= 0;
+								user_active=0;
+								}
+							}	 ,120000 );
+	 
+	}
+	
+
  
     //create table and insert some record
     function populateDB(tx) {
@@ -1056,7 +1145,9 @@ startswiperfunction();
  
     //function will be called when an error occurred
     function errorCB(err) {
-        alert("Error processing SQL: "+err.code+'noyhin ?');
+      //  alert("Error processing SQL: "+err.message+' anoyin ?');
+		
+		
     }
  
     //function will be called when process succeed
@@ -1072,10 +1163,10 @@ startswiperfunction();
  
     function querySuccess(tx,result){
        
-	   console.log(result.rows.item);
+	//   console.log(result.rows.item);
 	   
 	   var length = result.rows.length;
-	   	console.log("DEMO table: " + length + " rows found.");	
+	//   	console.log("DEMO table: " + length + " rows found.");	
 		
 		
 		
@@ -1086,17 +1177,35 @@ startswiperfunction();
 		
 				for(var i=0; i< length ; i++)
 				{
-					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
+			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
 					
 					EbooUSER_ID = result.rows.item(i).user_id;
 					
 					
-					alert(EbooUSER_ID);
+				//	alert(EbooUSER_ID);
+				//	console.log(EbooUSER_ID);
+					
+					
+					
 					
 					}
 					
 				//tx.executeSql('DELETE FROM ebooUser');	
 			
+				load_trending();
+				browser_setting();
+				
+				start_timer();
+				
+				update_timer();
+	
+				
+//swipe_list_items();
+	
+
+
+
+
 			
 					
 					
@@ -1104,6 +1213,12 @@ startswiperfunction();
 			
 			$.mobile.changePage('index.html#page');
 			
+			
+			start_timer();
+			update_timer();
+	
+			
+			startswiperfunction();
 				
 			
 		}
@@ -1114,7 +1229,7 @@ startswiperfunction();
 	
 	function ErrorCallBack(err){
 		
-		alert('Error'+err.code+'----'+err.message);
+	//	alert('Error'+err.code+'----'+err.message);
 		
 		}
 	
@@ -1146,16 +1261,16 @@ startswiperfunction();
 								
 								if(login_Response.status=='100')
 								{
-									alert(login_Response.message);
-									alert(login_Response.user_id)
+								//	alert(login_Response.message);
+							//		alert(login_Response.user_id)
 									
-									var id = 1;
-							 		db.transaction( function(tx){ insertvalues(tx, useremail,id)}, ErrorCallBack );	
+									
+							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
 									
 								}else if(login_Response.status=='101'){
 									
 									
-										alert('User Already Exists' + login_Response.message);
+										alert('User Already Exists' );
 									}
 								else{
 									
@@ -1180,12 +1295,20 @@ startswiperfunction();
 		
 		function insertvalues(tx,parameter1,parameter2)
 		{
+			
+			
 			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2],userinsert);
+			
+			
+		//	console.log(parameter2)
 		}
 		
 		
 		function userinsert()
 		{
+			load_trending();
+				browser_setting();
+			
 			$.mobile.changePage('index.html#page1');
 		}
 		
@@ -1196,25 +1319,50 @@ function IsEmail(email) {
 }
 	
 	
-	/*
-	var  first_time_pages = '';
+	
+	
 
-				first_time_pages+= '<div data-role="page" data-position="fixed" id="page" data-title="eboo" ><div class="swiper-container"><div class="swiper-wrapper">';
-				first_time_pages+='<div class="swiper-slide"><img src="img/screen1.png" style="width:100% !important; height:100% !important;"></div>';
-				first_time_pages+='<div class="swiper-slide"><img src="img/screen2.png" style="width:100% !important; height:100% !important;" ></div>';
-				first_time_pages+='<div class="swiper-slide noSwipingClass"><img src="img/screen3.png" style="width:100% !important; height:100% !important;" >';
-				first_time_pages+='<div style="position:absolute; top:47% !important;  min-height: 3.2em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;" >';
-				first_time_pages+='<center><img  src="img/eboo-logo.png" style="width:30% !important" ></center></div>';
-				first_time_pages+='<p style=" font-size:1.5em !important; position:absolute; top:57% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ; ';
-				first_time_pages+='cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>';
-				first_time_pages+='<input type="text" class="ui-input-btn ui-hide-label" style="position:absolute; top:70% !important;  min-height: 2.8em !important; left:71.5% !important; ';
-				first_time_pages+=' right:5% !important; background-color:#FFF; width:24% !important ; background:rgba(255,255,255,0.7) !important; cursor:vertical-text; height:25px; " data-corners="false" data-prevent-focus-zoom="false"  >';
-				first_time_pages+='<a href="#page1" ><button class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important; ';
-				first_time_pages+=' position:absolute; top:80% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; width:24% !important ; ';
-				first_time_pages+=' border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" >Start Using Eboo</button></a>';
-				first_time_pages+='</div></div></div></div>';
-				
-				*/
+
+
+
+$(document).on("tap",function(){
+ 
+user_active = 1;
+ 
+});
+
+$(document).on("taphold",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("swipe",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("swiperight",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("swipeleft",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("scrollstart",function(){
+ 
+ user_active = 1;
+ 
+});
+
+
+
 
 
 </script>

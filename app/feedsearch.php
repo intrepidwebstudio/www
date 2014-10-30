@@ -5,15 +5,55 @@ include('../include/function.php');
 
 
 try{
+	
+	
+	
+if(isset($_REQUEST['user_id']))
+	{
+		$user_id=$_REQUEST['user_id'];
+		
+		}else{
+			$user_id= NULL;
+			}
 
 	$search_value=mysql_real_escape_string($_REQUEST['q']);
 	
+	
+	mysql_query("insert into eboo_user_search (`u_id`,`search_query`,`session_date`,`status`) VALUES ('".$user_id."','".mysql_real_escape_string($search_value)."','".date('Y-m-d H:i:s')."','1' ) ")or die(insertErrorLogException('application',basename(__FILE__),mysql_error()));
+	
+	$select_seach_query_id = mysql_query("select id from eboo_user_search where u_id='".$user_id."' and search_query='".mysql_real_escape_string($search_value)."' and status='1' order by id desc limit 1  ")or die(insertErrorLogException('application',basename(__FILE__),mysql_error()));
+	$fetch_search_query_id = mysql_fetch_array($select_seach_query_id);
+	
+	$search_query_id = $fetch_search_query_id['id'];
+	
 	$yesterday=date('Y-m-d',strtotime("-2 days"));
 	$today=date('Y-m-d');
+	
+	
+	$yesterday_user_view=date('Y-m-d',strtotime("-4 days"));
+	
+	
+	
 
+	$query_user=mysql_query("select * from eboo_user_clicked_data where status='1' and u_id='".$user_id."' and date(session_date) between '".$yesterday_user_view."' and '".$today."'   ")or die(insertErrorLogException('application',basename(__FILE__),mysql_error()));
+	
+	if(mysql_num_rows($query_user)>0)
+	{
+		
+		while($fetch_user_view=mysql_fetch_array($query_user))
+		{
+		$user_view[] = $fetch_user_view['feeds_id']; 
+		}
+		
+	}
+	else{
+		
+		$user_view[]='';
+		}
 	
 	
 $query_feed_link=mysql_query("select * from eboo_feeds where status='1' and article_title like '%$search_value%' and date(article_pubdate) between '".$yesterday."' and '".$today."'  order by clickcount desc ")or die(insertErrorLogException('application',basename(__FILE__),mysql_error()));
+
 
 
 if(mysql_num_rows($query_feed_link)>0)
@@ -45,6 +85,12 @@ if(mysql_num_rows($query_feed_link)>0)
 	//$dto = \DateTime::createFromFormat(\DateTime::RSS,$fetch_feed['article_pubdate']);
 //	$formattedDate = $dto->format('h:i');
 
+	if(in_array($fetch_feed['id'],$user_view))
+	{
+		$viewed_status='1';
+	}else{
+		$viewed_status='0';
+		}
 	
 	
 	
@@ -54,7 +100,8 @@ $Feeds[]=array( "id" => $fetch_feed['id'],
 				"title" => $fetch_feed['article_title'],
 				"description" => $fetch_feed['article_description'],
 				"sourceimage" => $publication_image,
-				"pubdate" =>  date('M d,Y',strtotime($fetch_feed['article_pubdate']))
+				"pubdate" =>  date('M d,Y',strtotime($fetch_feed['article_pubdate'])),
+				"viewstatus" => $viewed_status
 			);	
 						
  
@@ -69,7 +116,7 @@ $Feeds[]=array( "id" => $fetch_feed['id'],
 		}//while close
 		
 		
-		$data=array("Feeds"=>$Feeds , "FeedStatus"=>'success');
+		$data=array("Feeds"=>$Feeds , "FeedStatus"=>'success',"SearchQueryId"=>$search_query_id);
 		
 	}//if close
 		

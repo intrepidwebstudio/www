@@ -96,7 +96,7 @@ $(function(){
 		    var change = e.originalEvent.pageX - x
 		    change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
             e.currentTarget.style.left = change + 'px'
-            if (change < -40) disable_scroll() // disable scroll once we hit 10px horizontal slide
+            if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
         })
         .on('touchend', function(e) {
 			
