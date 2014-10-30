@@ -33,6 +33,9 @@
 
    var imagepath = 'http://www.safelearners.com/eboo/';
    var ajax_path = 'http://www.safelearners.com/eboo/app/';
+   
+   
+   var EbooUSER_ID;
     
 	
 	
@@ -1046,7 +1049,7 @@ startswiperfunction();
  
     //create table and insert some record
     function populateDB(tx) {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL)');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER )');
 		
        
     }
@@ -1084,9 +1087,17 @@ startswiperfunction();
 				for(var i=0; i< length ; i++)
 				{
 					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
+					
+					EbooUSER_ID = result.rows.item(i).user_id;
+					
+					
+					alert(EbooUSER_ID);
+					
 					}
 					
-				tx.executeSql('DELETE FROM ebooUser');	
+				//tx.executeSql('DELETE FROM ebooUser');	
+			
+			
 					
 					
 		}else{
@@ -1101,9 +1112,9 @@ startswiperfunction();
 	
 	
 	
-	function ErrorCallBack(){
+	function ErrorCallBack(err){
 		
-		alert('Error');
+		alert('Error'+err.code+'----'+err.message);
 		
 		}
 	
@@ -1117,11 +1128,11 @@ startswiperfunction();
 		}
 	else{
 		
-		db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );
+	//	db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );
 		
-	/*	$.ajax({
+		$.ajax({
 			
-			url:ajax_path+'userinsert.php?email='+useremail,
+			url:ajax_path+'userinsert.php?useremail='+useremail,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1129,14 +1140,28 @@ startswiperfunction();
         	crossDomain: true,
 			success: function(data)
 							{
-								if(data.success=='1')
+								
+							var	login_Response = data.LoginResponse;
+								
+								
+								if(login_Response.status=='100')
 								{
-							 		db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );	
-								}else{
+									alert(login_Response.message);
+									alert(login_Response.user_id)
 									
-										alert('Network Error,Unable to contact server');
+									var id = 1;
+							 		db.transaction( function(tx){ insertvalues(tx, useremail,id)}, ErrorCallBack );	
 									
+								}else if(login_Response.status=='101'){
+									
+									
+										alert('User Already Exists' + login_Response.message);
 									}
+								else{
+									
+									
+									alert('server error !!');
+									}	
 								
 								},
 			error: function(e)
@@ -1148,15 +1173,14 @@ startswiperfunction();
 			
 			
 			});
-		*/
 		
 			
 		}	
     }
 		
-		function insertvalues(tx,parameter1)
+		function insertvalues(tx,parameter1,parameter2)
 		{
-			tx.executeSql('INSERT INTO ebooUser(email) VALUES (?)',[parameter1],userinsert);
+			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2],userinsert);
 		}
 		
 		
