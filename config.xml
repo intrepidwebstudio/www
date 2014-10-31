@@ -53,7 +53,7 @@
     <!-- Core plugins -->
 		<!-- @note gap:platforms not working in PGB! -->
 	<gap:platform name="ios" />
-
+	<gap:plugin name="com.wizardlogic.cordova.ios_keyboard" version="2.0.0" />
 	<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
 	<gap:plugin name="com.kerosieben.cordova.plugins.ios7scrollfix" version="0.1.0" />
 	
