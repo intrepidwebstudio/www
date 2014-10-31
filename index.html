@@ -384,18 +384,18 @@ background: rgba(240, 82, 91, 0.65) !important;
       <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >
         <!-- Any HTML content of the third slide goes here -->
         
-        <div style="position:relative; bottom:70%" id="textinput" >
+        <div style="position:relative; bottom:50%" id="textinput" >
         
         
-        <div style=" min-height: 3.2em !important;  color:#FFF !important;">
-        		<center><img  src="img/eboo-logo.png" width="30%"  ></center>
+        <div style="color:#FFF !important;">
+        		<center><img  src="img/eboo-logo.png" width="20%"  ></center>
          </div>
        
-        <p style=" font-size:1.5em !important;  min-height: 2.8em !important;  color:#FFF !important;
-		cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
+        <p style="color:#FFF !important;
+		cursor:vertical-text; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
         
         <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" style="  min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.7) !important;
-		cursor:vertical-text; height:25px; " data-corners="false"  >
+		cursor:vertical-text; " data-corners="false"  >
 
         <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;    min-height: 2.8em !important; 
            								border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="true" >
@@ -1369,24 +1369,31 @@ $(document).on("scrollstart",function(){
  
 });
 
-$('#textinput').bind('focus',function(e) { 
-  $('html,body').animate({
-        scrollTop: 0
-   });
-//  $('#textinput').css('position','absolute');
-  $('#textinput').css('bottom','90%');
-  
-  alert('soldecss 111111');
-});
 
 
 
 function bringup()
 {
-  $('#textinput').css('position','absolute');
+
+
+
+  $('#textinput').css('position','relative');
   $('#textinput').css('bottom','90%');
   
-  alert('soldecss');
+  
+  
+// See if keyboard is open or not
+var is_open = Keyboard.isOpen();
+
+// Get height of open keyboard (including inputAccessoryView toolbar)
+var height = Keyboard.getHeight();
+
+// The following jQuery events are available:
+// keyboardWillShow, keyboardDidShow, keyboardWillHide, keyboardDidHide
+alert('Key Board : ' +is_open);
+alert('Key Board : ' + height);
+  
+ 
 }
 
 </script>
