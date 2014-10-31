@@ -56,7 +56,7 @@ $(function(){
 			
 			if(rect.left !=0)
 			{
-		/*	$(this).animate({'left':'0px'},500,'linear',function(){  
+			$(this).animate({'left':'0px'},500,'linear',function(){  
 			
 							var new_rect = this.getBoundingClientRect();
 						
@@ -66,12 +66,11 @@ $(function(){
 							//	$(this).unbind('onClick');
 															
 								}
-								
 			
 				
 			}) // close em all
 			
-			*/
+			
 			
 			
 			
