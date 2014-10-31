@@ -695,11 +695,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     
 
 
-
- 
- 
-
-
  $('#searcharea').hide();
 
 	function show_focus(){
@@ -1198,7 +1193,8 @@ db.transaction(populateDB, errorCB, successCB);
 				start_timer();
 				
 				update_timer();
-	
+				
+				navigator.splashscreen.hide()
 				
 //swipe_list_items();
 	
@@ -1219,6 +1215,8 @@ db.transaction(populateDB, errorCB, successCB);
 	
 			
 			startswiperfunction();
+				
+			navigator.splashscreen.hide()	
 				
 			
 		}
