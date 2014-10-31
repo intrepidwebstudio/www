@@ -394,7 +394,7 @@ background: rgba(240, 82, 91, 0.65) !important;
         <p style="color:#FFF !important;
 		cursor:vertical-text; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
         
-        <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" style="  min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.7) !important;
+        <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" onBlur="bringdown()" style="  min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.7) !important;
 		cursor:vertical-text; " data-corners="false"  >
 
         <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;    min-height: 2.8em !important; 
@@ -1369,29 +1369,48 @@ $(document).on("scrollstart",function(){
  
 });
 
+var is_open = Keyboard.isOpen();
 
+function bringdown()
+{
+	
+	is_open = Keyboard.isOpen();
+
+	
+if(is_open==false)
+{	
+$('#textinput').css('position','relative');
+$('#textinput').css('bottom','50%');
+}
+
+	
+	}
 
 
 function bringup()
 {
+	
+	is_open = Keyboard.isOpen();
 
+if(is_open==true)
 
-
+{
   $('#textinput').css('position','relative');
   $('#textinput').css('bottom','90%');
-  
+}
   
   
 // See if keyboard is open or not
-var is_open = Keyboard.isOpen();
+
 
 // Get height of open keyboard (including inputAccessoryView toolbar)
-var height = Keyboard.getHeight();
+//var height = Keyboard.getHeight();
 
 // The following jQuery events are available:
 // keyboardWillShow, keyboardDidShow, keyboardWillHide, keyboardDidHide
-alert('Key Board : ' +is_open);
-alert('Key Board : ' + height);
+
+
+
   
  
 }
