@@ -1379,7 +1379,7 @@ function bringdown()
 	
 	
 $('#textinput').css('position','relative');
-$('#textinput').css('bottom','50%');
+$('#textinput').animate({'bottom':'50%'},2000,'linear');
 
 	
 	}
@@ -1392,7 +1392,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').css('bottom','90%');
+  $('#textinput').animate({'bottom':'90%'},2000,'linear');
  
   
 // See if keyboard is open or not
