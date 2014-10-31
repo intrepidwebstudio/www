@@ -1369,16 +1369,15 @@ $(document).on("scrollstart",function(){
  
 });
 
-
-function bring_input()
-{
-
-   
+$('#textinput').bind('focus',function(e) { 
+  $('html,body').animate({
+        scrollTop: 0
+   });
+//  $('#textinput').css('position','absolute');
+  $('#textinput').css('bottom','90%');
   
-  $('#useremail').css('position','absolute');
-  $('#useremail').css('top','0px');
-
-}
+  alert('soldecss');
+});
 
 </script>
  
