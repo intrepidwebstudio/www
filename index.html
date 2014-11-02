@@ -364,9 +364,6 @@ background: rgba(240, 82, 91, 0.65) !important;
 
 
 
-
-
-
 <div data-role="page" id="page1" data-title="eboo" >
 
 	
@@ -408,12 +405,10 @@ background: rgba(240, 82, 91, 0.65) !important;
  
 </div><!-- /header -->
     <div  role="main" class="ui-content" >
-    	
-        
+    	    
       <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
         
         <div class="example-wrapper" data-iscroll >
-    
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
              
@@ -430,6 +425,7 @@ background: rgba(240, 82, 91, 0.65) !important;
 
 
 <div data-role="page" data-position="fixed"  id="page" data-title="eboo" >
+
 
 <div class="swiper-container">
   <div class="swiper-wrapper">
@@ -456,15 +452,17 @@ background: rgba(240, 82, 91, 0.65) !important;
         		<center><img  src="img/eboo-logo.png" width="20%"  ></center>
          </div>
        
-        <p style="color:#FFF !important;
-		cursor:vertical-text; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
+        <center> <p style=" font-size:18px; color:#FFF !important;
+		cursor:vertical-text; text-align:center  !important; width:70% !important ; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p></center>
         
-        <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" onBlur="bringdown()" style="  min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.7) !important;
-		cursor:vertical-text; " data-corners="false"  >
+        <center> <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.7) !important;
+		cursor:vertical-text; " data-corners="false"   ></center>
 
+		<center>
         <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;    min-height: 2.8em !important; 
-           								border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="true" >
+           								border:none !important; text-shadow:none !important; box-shadow:none !important; width:70% !important ;	" data-corners="false" data-prevent-focus-zoom="true" >
         Start Using Eboo</button>
+        </center>
         
         </div>
         
@@ -481,20 +479,20 @@ background: rgba(240, 82, 91, 0.65) !important;
   </div>
 </div>
 
+<div class="pagination"><span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span></div>
+
 </div>
   
 
 <div data-role="page" id="settings">
  	 
-
    
-   
-    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
+    <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
 	  
     
         <img  src="img/ebooheader.png" class="ebooheader"  style="margin-bottom:-5px !important;" >
         
-        
+      
         
         <div class="topmenucontainer" >
         
@@ -527,25 +525,31 @@ background: rgba(240, 82, 91, 0.65) !important;
                 <li><a href="#twitterauthorize" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleon.png" class="ebooicons" ></p>
+                        <img src="icons/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
+                        <img src="icons/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
                 <li><a href="#facebookauthorize" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleoff.png" class="ebooicons" ></p>
+                        <img src="icons/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
+                        <img src="icons/toggleoff.png" class="ebooicons" id="facebooklogout" ></p>
+                        </p>
                         
                 </a> </li>
+               
                 <li><a href="#tumblrauthorize" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleon.png" class="ebooicons" ></p>
+                        <img src="icons/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
+                        <img src="icons/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
                         
                 </a> </li>
                 <li><a href="#linkedinauthorize" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleoff.png" class="ebooicons" ></p>
+                        <img src="icons/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
+                        <img src="icons/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
                 <li><a href="#termsofservice" >
@@ -598,7 +602,6 @@ background: rgba(240, 82, 91, 0.65) !important;
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Terms of Service</p>
     </div>
-      
  
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content" >
@@ -1080,7 +1083,7 @@ $(window).resize();
         navigator.splashscreen.hide();
 		
 		
-   			 }, 1000);
+   			 }, 2000);
 	
 	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
@@ -1088,6 +1091,11 @@ $(window).resize();
     //function will be called when device ready
     function onDeviceReady(){
 		
+		 
+        var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+
+alert(deviceType);
+        
 		
  
 
@@ -1327,6 +1335,94 @@ function IsEmail(email) {
 }
 	
 	
+	/*
+	 $('#twitterauthorize').on('click', function() {
+		 
+		 
+		 				
+		 						$('#twitterlogout').css('display','none');
+								$('#twitterlogged').css('display','block');
+
+		 
+		 });
+	
+	*/
+	
+	
+	
+	/*
+          OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+		  
+                $('#twitterauthorize').on('click', function() {
+					
+                    $('#result').html("");
+                    OAuth.popup('twitter')
+                        .done(function (r) {
+                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                            r.get('/1.1/account/verify_credentials.json')
+                                .done(function(data) {
+//                                    $('#result').html("twitter: Hello, " + data.name + " !");
+									
+									
+									console.log("twitter: Hello, " + data.name + " ! ");
+									
+								$('#twitterlogout').css('display','none');
+								$('#twitterlogged').css('display','block');
+
+									
+                                })
+                                .fail(function( jqXHR, textStatus, errorThrown) {
+                                    $('#result').html("req error: " + textStatus);
+                                });
+                        })
+                        .fail(function (e) {
+                            $('#result').html('error: ' + e.message);
+                        });
+                });
+
+
+                $('#tumblrauthorize').on('click', function() {
+					
+                    $('#result').html("");
+                    OAuth.popup('tumblr')
+                        .done(function (r) {
+                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                            r.get('/1.1/account/verify_credentials.json')
+                                .done(function(data) {
+									
+									console.log("twitter: Hello, " + data.name + " ! ");
+									
+									$('#tumblrlogout').css('display','none');
+									$('#tumblrlogged').css('display','block');
+									
+									
+                                //    $('#result').html("twitter: Hello, " + data.name + " !");
+                                })
+                                .fail(function( jqXHR, textStatus, errorThrown) {
+                                    $('#result').html("req error: " + textStatus);
+                                });
+                        })
+                        .fail(function (e) {
+                            $('#result').html('error: ' + e.message);
+                        });
+                });
+
+
+
+
+	
+*/
+
+
+
+
+	
+	
+	
+	
+	
 	
 	
 
@@ -1379,7 +1475,7 @@ function bringdown()
 	
 	
 $('#textinput').css('position','relative');
-$('#textinput').animate({'bottom':'50%'},500,'linear');
+$('#textinput').animate({'bottom':'50%'},100,'linear');
 
 	
 	}
@@ -1392,7 +1488,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'90%'},500,'linear');
+  $('#textinput').animate({'bottom':'90%'},100,'linear');
  
   
 // See if keyboard is open or not
@@ -1405,10 +1501,15 @@ function bringup()
 // keyboardWillShow, keyboardDidShow, keyboardWillHide, keyboardDidHide
 
 
-
-  
- 
 }
+
+
+
+
+
+
+
+
 
 </script>
  

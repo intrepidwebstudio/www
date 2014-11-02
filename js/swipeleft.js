@@ -40,7 +40,7 @@ $(function(){
    
     var x;
 	
-	
+	var new_rect;
 	
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
@@ -58,7 +58,7 @@ $(function(){
 			{
 			$(this).animate({'left':'0px'},500,'linear',function(){  
 			
-							var new_rect = this.getBoundingClientRect();
+							 new_rect = this.getBoundingClientRect();
 						
 							if(new_rect.left==0)
 							{
@@ -93,14 +93,23 @@ $(function(){
 		})
         .on('touchmove', function(e) {
 			
+			
+			if(new_rect.left==0)
+			{
+			
 		    var change = e.originalEvent.pageX - x
 		    change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
             e.currentTarget.style.left = change + 'px'
             if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
+			}
         })
         .on('touchend', function(e) {
 			
-            var left = parseInt(e.currentTarget.style.left)
+			var left = "0";
+			
+             left = parseInt(e.currentTarget.style.left)
+			
+			
             var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
             e.currentTarget.style.left = new_left
             enable_scroll()
