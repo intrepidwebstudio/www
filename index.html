@@ -594,14 +594,14 @@ background: rgba(255, 255, 255, 0.85) !important;
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li><a href="#twitterauthorize" >
+                <li><a href="#twitterauthorize" onClick="twitterautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li><a href="#facebookauthorize" >
+                <li><a href="#facebookauthorize" onClick="facebookautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -610,14 +610,14 @@ background: rgba(255, 255, 255, 0.85) !important;
                         
                 </a> </li>
                
-                <li><a href="#tumblrauthorize" >
+                <li><a href="#tumblrauthorize" onClick="tumblrautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
                         
                 </a> </li>
-                <li><a href="#linkedinauthorize" >
+                <li><a href="#linkedinauthorize" onClick="linkedinautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
@@ -1440,7 +1440,7 @@ function IsEmail(email) {
 }
 	
 	
-	/*
+/*
 	 $('#twitterauthorize').on('click', function() {
 		 
 		 
@@ -1455,12 +1455,14 @@ function IsEmail(email) {
 	
 	
 	
-	/*
+	
           OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
 		  
-                $('#twitterauthorize').on('click', function() {
+		  
+		  
+            function twitterautho(){
+				
 					
-                    $('#result').html("");
                     OAuth.popup('twitter')
                         .done(function (r) {
                             // the access_token is available via r.access_token
@@ -1484,13 +1486,11 @@ function IsEmail(email) {
                         .fail(function (e) {
                             $('#result').html('error: ' + e.message);
                         });
-                });
-
-
-                $('#tumblrauthorize').on('click', function() {
-					
-                    $('#result').html("");
-                    OAuth.popup('tumblr')
+                }
+				
+				function tumblrautho(){
+			
+			    OAuth.popup('tumblr')
                         .done(function (r) {
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
@@ -1512,16 +1512,12 @@ function IsEmail(email) {
                         .fail(function (e) {
                             $('#result').html('error: ' + e.message);
                         });
-                });
+                }
 
 
 
 
 	
-*/
-
-
-
 
 	
 	
