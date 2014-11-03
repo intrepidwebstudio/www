@@ -444,7 +444,7 @@ background: rgba(255, 255, 255, 0.85) !important;
      <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the third slide goes here -->
         
-        <div style="position:relative; bottom:60%" id="textinput" >
+        <div style="position:relative; bottom:70%" id="textinput" >
         
         
         <div style="color:#FFF !important;">
@@ -1573,12 +1573,11 @@ $(document).on("scrollstart",function(){
  
 });
 
-var is_open = Keyboard.isOpen();
 
 function bringdown()
 {
 	
-	is_open = Keyboard.isOpen();
+	
 
 	
 	
@@ -1592,7 +1591,6 @@ $('#textinput').animate({'bottom':'50%'},100,'linear');
 function bringup()
 {
 	
-	is_open = Keyboard.isOpen();
 
 
   $('#textinput').css('position','relative');
