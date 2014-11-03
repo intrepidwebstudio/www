@@ -482,8 +482,6 @@ background: rgba(255, 255, 255, 0.85) !important;
 
 </div>
 
-
-
 <div data-role="page" id="page1" data-title="eboo" >
 
 	
@@ -1138,14 +1136,13 @@ function startswiperfunction(){
 	freeMode:false,
 	momentumBounce:false,
 	swipeToPrev:true,
-	paginationClickable:false,
-	watchActiveIndex:false
+	paginationClickable:true,
+	watchActiveIndex:true
 	
 	
     //etc..
   });
   
-
  // mySwiper.activeSlide() ;
   
   /* FULLSCREEN SWIPER*/
@@ -1156,7 +1153,7 @@ $(window).resize(function(){
     $('.swiper-container, .swiper-slide').width(width);
     //Add reInit, because jQuery's resize event handler may occur earlier than Swiper's one
     swiper.reInit()
-});
+})
 $(window).resize();
 
 
@@ -1171,7 +1168,7 @@ $(window).resize();
         navigator.splashscreen.hide();
 		
 		
-   			 }, 1000);
+   			 }, 5000);
 	
 	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
@@ -1179,25 +1176,30 @@ $(window).resize();
     //function will be called when device ready
     function onDeviceReady(){
 		
-			
-		//alert('screen height = '+ window.screen.height + 'screen width  = '+ window.screen.width);
-
-		 var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+		 
+    var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
 
 
-       alert(deviceType + navigator.userAgent);
+alert(deviceType + navigator.userAgent);
 	
-		alert('screen height = '+ window.screen.height + 'screen width  = '+ window.screen.width);
+		alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
 
 if(window.screen.height==480 && window.screen.width==320)
 {
 	$('.iphone4s').show();
-
+	alert('4s');
+	
+	}
 if(window.screen.height==568 && window.screen.width==320)
 {
+	
+	$('.iphone4s').hide();
 	$('.iphone5s').show();
+	alert('5s')
+//	alert('asda');
 	}
-
+	
+	
 
 db.transaction(populateDB, errorCB, successCB);
 
@@ -1291,7 +1293,7 @@ db.transaction(populateDB, errorCB, successCB);
 				for(var i=0; i< length ; i++)
 				{
 			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
-					alert('sadfasdfasdf');
+					
 					EbooUSER_ID = result.rows.item(i).user_id;
 					
 					
@@ -1316,7 +1318,7 @@ db.transaction(populateDB, errorCB, successCB);
 				
 //swipe_list_items();
 	
-alert('asdfasdf');
+
 
 
 
@@ -1325,18 +1327,21 @@ alert('asdfasdf');
 					
 		}else{
 			
+			$.mobile.changePage('index.html#page');
 			
-			alert('asdfasdf');
-			
-			
+						
+						
 			
 			start_timer();
 			update_timer();
 	
-			alert('ssss');
+	
+			
+	
+	
+			
 			startswiperfunction();
 				
-		$.mobile.changePage('index.html#page');		
 			navigator.splashscreen.hide()	
 				
 			
@@ -1392,7 +1397,7 @@ alert('asdfasdf');
 									//	alert('User Already Exists' );
 									
 									
-									//db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
+									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
 									
 									}
 								else{
