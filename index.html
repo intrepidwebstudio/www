@@ -474,9 +474,7 @@ background: rgba(255, 255, 255, 0.85) !important;
             <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
             <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
             
-            
-            
-            
+               
             
       </div>
       
@@ -546,7 +544,7 @@ background: rgba(255, 255, 255, 0.85) !important;
   </div>
 </div>
 
-<!--<div class="pagination my-pagination"><span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span></div>-->
+
 
 </div>
   
@@ -1126,6 +1124,7 @@ $(document).on('pagebeforeshow', '#index', function(){
 
 
 
+
 function startswiperfunction(){
 	
 	
@@ -1136,8 +1135,9 @@ function startswiperfunction(){
 	resistance:'100%',
 	freeMode:false,
 	momentumBounce:false,
-	swipeToPrev:true
-	
+	swipeToPrev:true,
+	paginationClickable:true,
+	watchActiveIndex:true
 	
 	
     //etc..
@@ -1158,7 +1158,6 @@ $(window).resize();
 
 
 	}
-
 
 
 //add listener when device ready
