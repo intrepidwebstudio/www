@@ -1143,6 +1143,7 @@ function startswiperfunction(){
     //etc..
   });
   
+  alert();
  // mySwiper.activeSlide() ;
   
   /* FULLSCREEN SWIPER*/
@@ -1153,7 +1154,7 @@ $(window).resize(function(){
     $('.swiper-container, .swiper-slide').width(width);
     //Add reInit, because jQuery's resize event handler may occur earlier than Swiper's one
     swiper.reInit()
-})
+});
 $(window).resize();
 
 
@@ -1335,7 +1336,7 @@ db.transaction(populateDB, errorCB, successCB);
 			start_timer();
 			update_timer();
 	
-			
+			alert('ssss');
 			startswiperfunction();
 				
 			navigator.splashscreen.hide()	
