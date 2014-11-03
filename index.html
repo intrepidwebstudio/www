@@ -444,7 +444,7 @@ background: rgba(255, 255, 255, 0.85) !important;
      <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the third slide goes here -->
         
-        <div style="position:relative; bottom:60%" id="textinput" >
+        <div style="position:relative; bottom:60%" id="textinput" style="box-shadow:none !important; border:none !important; " >
         
         
         <div style="color:#FFF !important;">
@@ -1164,6 +1164,8 @@ alert('screen heigssssssht = '+window.screen.height + 'screen wsssssidth  = '+ w
     document.addEventListener("deviceready", onDeviceReady, false);
 	
 	
+	
+	
 	    setTimeout(function() {
         navigator.splashscreen.hide();
 		
@@ -1185,6 +1187,9 @@ alert('screen heigssssssht = '+window.screen.height + 'screen wsssssidth  = '+ w
 alert(deviceType + navigator.userAgent);
 	
 		alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
+		
+		
+alert(' width  = '+ window.innerWidth +' height  = '+ window.innerHeight );
 
 if(window.screen.height==480 && window.screen.width==320)
 {
