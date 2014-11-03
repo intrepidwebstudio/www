@@ -20,10 +20,7 @@
 
   <link rel="stylesheet" href="css/idangerous.swiper.css">
   <script defer src="js/idangerous.swiper.js"></script>
-   
      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    
-     
    <script>
     // Wait for Cordova to load
     //
@@ -171,7 +168,7 @@ ul.touch li.ui-li-has-alt a.ui-btn {
 	opacity:.65;
 	
 */	position:absolute; bottom:0px;
-background: rgba(240, 82, 91, 0.65) !important;
+background: rgba(255, 255, 255, 0.75) !important;
 	}
 	
 		
@@ -213,26 +210,30 @@ background: rgba(240, 82, 91, 0.65) !important;
 		}
 		
 	.socialicon img {
-		width:40px;
+		 width:40px;
 	}	
 		
 	.sourceicon{
-		
-				 padding:5px 5px !important;
+				width: 23%;
+				margin-left:3% !important;
+				margin-right:2% !important;
+				padding-top:3% !important;
+				vertical-align:middle !important;
 		}	
 	.lefticon img{
 			
 			float:left;
-			width:10%;
+			width:5%;
 			max-width:70px;
-			padding-left:1%;
+			padding-left:3%;
+			
 		}	
 		
 		
 	.righticon img{
 			
 			float:right;
-			width:10%;
+			width:5%;
 			max-width:70px;	
 			padding-right:3%;
 		}	
@@ -351,6 +352,33 @@ background: rgba(240, 82, 91, 0.65) !important;
 
 
 
+.iphone4s
+{
+	display:none;
+	}
+	
+.iphone5s{
+	display:none;
+	
+	}	
+.iphone6
+{display:none;
+	
+	}
+.iphone6plus
+{
+	display:none;
+	}
+.ipadmini{
+	
+	display:none;
+	
+	}		
+.ipadplus{
+	
+	display:none;
+	
+	}
 
   </style>
   
@@ -370,7 +398,11 @@ background: rgba(240, 82, 91, 0.65) !important;
     <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
 	  
     
-        <img  src="img/ebooheader.png" class="ebooheader"  style="margin-bottom:-5px !important;" >
+        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
+        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
+
         
         
         <div class="topmenucontainer"  >
@@ -382,7 +414,7 @@ background: rgba(240, 82, 91, 0.65) !important;
      <div class="searchsettings " id="top_menu" >
         
         <div  class="lefticon" >
-       		<img  src="icons/search.png" onClick="show_search()" >
+       		<img  src="icons/57x57/search.png" onClick="show_search()" >
         </div>
         
        <!-- <div id="blue">
@@ -391,7 +423,7 @@ background: rgba(240, 82, 91, 0.65) !important;
         
         
         <div class="righticon">
-        	<a href="#settings" ><img src="icons/settings.png" ></a>
+        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
         </div>
       </div>  
         
@@ -431,21 +463,56 @@ background: rgba(240, 82, 91, 0.65) !important;
   <div class="swiper-wrapper">
       <!--First Slide-->
       <div class="swiper-slide"> 
-        	<img src="img/screen1.png" style="width:100% !important; height:100% !important;">
+      
+      
+        	<img src="img/01.png" style="width:320px !important; height:480px !important; " class="iphone4s"  >
+            <img src="img/introscreen/640x1136/01.jpg" class="iphone5s" style="width:320px !important; height:568px !important; " >
+            <img src="img/introscreen/1242x2208/01.jpg" class="iphone6plus" style="width:100% !important; ">
+            <img src="img/introscreen/750x1334/01.jpg" class="iphone6" style="width:100% !important; ">
+            
+            
+            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
+            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
+            
+            
+            
+            
+            
       </div>
       
       <!--Second Slide-->
       <div class="swiper-slide">
-      <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >
+      
+      
+   			<img src="img/02.png" class="iphone4s" style="width:320px !important; height:480px !important; " >
+            <img src="img/introscreen/640x1136/02.jpg" class="iphone5s" style="width:320px !important; height:568px !important; " >
+            <img src="img/introscreen/1242x2208/02.jpg" class="iphone6plus" style="width:100% !important; ">
+            <img src="img/introscreen/750x1334/02.jpg" class="iphone6" style="width:100% !important; ">
+            
+            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
+            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
+      
+    <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the second slide goes here -->
       </div>
       
       <!--Third Slide-->
-      <div class="swiper-slide noSwipingClass"> 
-      <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >
+      <div class="swiper-slide "> 
+      
+     		 <img src="img/03.png" class="iphone4s" style="width:320px !important; height:480px !important; " >
+            <img src="img/introscreen/640x1136/03empty.jpg" class="iphone5s" style="width:320px !important; height:568px !important; ">
+            <img src="img/introscreen/1242x2208/03empty.jpg" class="iphone6plus" style="width:100% !important; ">
+            <img src="img/introscreen/750x1334/03empty.jpg" class="iphone6" style="width:100% !important; ">
+            
+            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
+            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
+      
+      
+      
+     <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the third slide goes here -->
         
-        <div style="position:relative; bottom:50%" id="textinput" >
+        <div style="position:relative; bottom:60%" id="textinput" >
         
         
         <div style="color:#FFF !important;">
@@ -479,7 +546,7 @@ background: rgba(240, 82, 91, 0.65) !important;
   </div>
 </div>
 
-<div class="pagination"><span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span></div>
+<div class="pagination my-pagination"><span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span></div>
 
 </div>
   
@@ -490,7 +557,12 @@ background: rgba(240, 82, 91, 0.65) !important;
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
 	  
     
-        <img  src="img/ebooheader.png" class="ebooheader"  style="margin-bottom:-5px !important;" >
+    
+        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
+        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
+
         
       
         
@@ -502,7 +574,7 @@ background: rgba(240, 82, 91, 0.65) !important;
      <div class="searchsettings">
         
         <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/back.png" ></a>
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
         </div>
         
        
@@ -525,15 +597,15 @@ background: rgba(240, 82, 91, 0.65) !important;
                 <li><a href="#twitterauthorize" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
-                        <img src="icons/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
                 <li><a href="#facebookauthorize" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
-                        <img src="icons/toggleoff.png" class="ebooicons" id="facebooklogout" ></p>
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="facebooklogout" ></p>
                         </p>
                         
                 </a> </li>
@@ -541,27 +613,27 @@ background: rgba(240, 82, 91, 0.65) !important;
                 <li><a href="#tumblrauthorize" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
-                        <img src="icons/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
                         
                 </a> </li>
                 <li><a href="#linkedinauthorize" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
-                        <img src="icons/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
                 <li><a href="#termsofservice" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/terms.png" class="ebooicons" ></p>
+                        <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
                 <li><a href="#privacy" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/privacy.png" class="ebooicons" ></p>
+                        <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
                         
                 </a> </li>
                 
@@ -581,8 +653,12 @@ background: rgba(240, 82, 91, 0.65) !important;
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
 	  
     
-        <img  src="img/ebooheader.png" class="ebooheader"  style="margin-bottom:-5px !important;" >
-        
+    
+        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
+        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
+
         
         <div class="topmenucontainer" >
     
@@ -590,7 +666,7 @@ background: rgba(240, 82, 91, 0.65) !important;
      <div class="searchsettings">
         
        <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/back.png" ></a>
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
         </div>
         
                 
@@ -634,7 +710,14 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
 	  
     
-        <img  src="img/ebooheader.png" class="ebooheader"  style="margin-bottom:-5px !important;" >
+    
+    
+        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
+        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
+
+
         
         
         <div class="topmenucontainer" >
@@ -643,7 +726,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
      <div class="searchsettings">
         
        <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/back.png" ></a>
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
         </div>
         
         
@@ -808,11 +891,14 @@ $(document).keypress(function(e) {
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind">';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
+					
+					
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a>';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a></div>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
+					
 					
 					if(viewstatus=='1')
 					{
@@ -825,7 +911,7 @@ $(document).keypress(function(e) {
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left;" class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important;  " class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 					
 					
 				//	alert(append_data);
@@ -956,11 +1042,11 @@ function load_trending()
 						}
 						
 					append_data+='<li><div class="behind">';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a>';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a></div>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
@@ -973,7 +1059,7 @@ function load_trending()
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left;" class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; " class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right; font-size:10px !important" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 		
 						}
 							);			
@@ -1050,6 +1136,7 @@ function startswiperfunction(){
 	freeMode:false,
 	momentumBounce:false,
 	swipeToPrev:true,
+	pagination:'.my-pagination',
 	paginationClickable:true,
 	watchActiveIndex:true
 	
@@ -1083,7 +1170,7 @@ $(window).resize();
         navigator.splashscreen.hide();
 		
 		
-   			 }, 2000);
+   			 }, 5000);
 	
 	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
@@ -1097,11 +1184,20 @@ $(window).resize();
 
 	alert(deviceType + navigator.userAgent);
 	
-	alert('rtt');
-	
-	
 		alert('screen height'+window.screen.height + 'screen width  = '+ window.screen.width);
 
+if(window.screen.height==480 && window.screen.width==320)
+{
+	$('.iphone4s').show();
+	
+	}
+if(window.screen.height==568 && window.screen.width==320)
+{
+	$('.iphone5s').show();
+	
+	}
+	
+	
 
 db.transaction(populateDB, errorCB, successCB);
 
@@ -1290,7 +1386,11 @@ db.transaction(populateDB, errorCB, successCB);
 								}else if(login_Response.status=='101'){
 									
 									
-										alert('User Already Exists' );
+									//	alert('User Already Exists' );
+									
+									
+									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
+									
 									}
 								else{
 									
