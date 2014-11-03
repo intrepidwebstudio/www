@@ -92,9 +92,15 @@
     <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
-    <icon src="res/icon/ios/icon-76.jpg"            gap:platform="ios"        width="76" height="76" />
-    <icon src="res/icon/ios/icon-76-2x.jpg"         gap:platform="ios"        width="114" height="114" />
-    <icon src="res/icon/ios/icon-76-2x.jpg"         gap:platform="ios"        width="152" height="152" />
+   
+    <icon src="res/icon/ios/icon-76.png"            gap:platform="ios"        width="76" height="76" />
+    <icon src="res/icon/ios/icon-120.png"         gap:platform="ios"        width="120" height="120" />
+    <icon src="res/icon/ios/icon-76@2x.png"         gap:platform="ios"        width="152" height="152" />
+	<icon src="res/icon/ios/icon-180.png"         gap:platform="ios"        width="180" height="180" />
+	
+	
+	
+	
     <icon src="res/icon/webos/icon-64.jpg"          gap:platform="webos" />
     <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />

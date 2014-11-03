@@ -390,6 +390,71 @@ background: rgba(255, 255, 255, 0.85) !important;
 
 <body>
 
+
+
+<div data-role="page" id="page1" data-title="eboo" >
+
+	
+    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
+	  
+    
+        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
+        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
+
+        
+        
+        <div class="topmenucontainer"  >
+        
+     <div class="ui-field-contain forceinline">
+	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div>  
+     
+     <div class="searchsettings " id="top_menu" >
+        
+        <div  class="lefticon" >
+       		<img  src="icons/57x57/search.png" onClick="show_search()" >
+        </div>
+        
+       <!-- <div id="blue">
+        sasdfasdf asdf assdfg sdfg sdfgs gsdf
+        </div>-->
+        
+        
+        <div class="righticon">
+        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
+        </div>
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+    <div  role="main" class="ui-content" >
+    	    
+      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
+        
+        <div class="example-wrapper" data-iscroll >
+        <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
+        
+             
+     
+        </ul>
+       </div> 
+                                    
+                      
+                                     
+    </div><!-- /content -->
+    
+
+</div>
+
 <div data-role="page"   id="page" data-title="eboo" >
 
 
@@ -481,71 +546,6 @@ background: rgba(255, 255, 255, 0.85) !important;
 
 
 </div>
-
-<div data-role="page" id="page1" data-title="eboo" >
-
-	
-    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
-	  
-    
-        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
-        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
-
-        
-        
-        <div class="topmenucontainer"  >
-        
-     <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
-         </div>  
-     
-     <div class="searchsettings " id="top_menu" >
-        
-        <div  class="lefticon" >
-       		<img  src="icons/57x57/search.png" onClick="show_search()" >
-        </div>
-        
-       <!-- <div id="blue">
-        sasdfasdf asdf assdfg sdfg sdfgs gsdf
-        </div>-->
-        
-        
-        <div class="righticon">
-        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
-        </div>
-      </div>  
-        
-        
-        </div>
-                    
-    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
-    </div>
-      
- 
-</div><!-- /header -->
-    <div  role="main" class="ui-content" >
-    	    
-      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
-        
-        <div class="example-wrapper" data-iscroll >
-        <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
-        
-             
-     
-        </ul>
-       </div> 
-                                    
-                      
-                                     
-    </div><!-- /content -->
-    
-
-</div>
-
-
 
   
 
@@ -1126,25 +1126,17 @@ $(document).on('pagebeforeshow', '#index', function(){
 
 
 function startswiperfunction(){
-	
-	
 	var mySwiper = $('.swiper-container').swiper({
     //Your options here:
     mode:'horizontal',
     loop: false,
-	resistance:'100%',
+	resistance:false,
 	freeMode:false,
 	momentumBounce:false,
 	swipeToPrev:true,
 	paginationClickable:true,
 	watchActiveIndex:true
-	
-	
-    //etc..
   });
-  
- // mySwiper.activeSlide() ;
-  
   /* FULLSCREEN SWIPER*/
 $(window).resize(function(){
     var height = $(window).height();
@@ -1152,12 +1144,12 @@ $(window).resize(function(){
     $('.swiper-container, .swiper-slide').height(height);
     $('.swiper-container, .swiper-slide').width(width);
     //Add reInit, because jQuery's resize event handler may occur earlier than Swiper's one
-    swiper.reInit()
+	swiper.reInit();
+	mySwiper.reInit();
 })
-$(window).resize();
-
-
+$(window).resize(); 
 	}
+
 
 //alert('screen heigssssssht = '+window.screen.height + 'screen wsssssidth  = '+ window.screen.width);
 //add listener when device ready
@@ -1331,9 +1323,34 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			$.mobile.changePage('index.html#page');
 		
+if(window.screen.height==568 && window.screen.width==320)
+{
+	
+//	$('.iphone4s').hide();
+	$('.iphone5s').show();
+	alert('5s')
+//	alert('asda');
+	}
+
+if(window.screen.height==480 && window.screen.width==320)
+{
+	$('.iphone4s').show();
+	//startswiperfunction()
+	alert('4s');
+	
+	}
+
+		
+		
+		
+		
 			start_timer();
 			update_timer();
-			startswiperfunction();
+			
+			
+		setTimeout( startswiperfunction() , 3000);
+				
+				
 				
 			navigator.splashscreen.hide()	
 				

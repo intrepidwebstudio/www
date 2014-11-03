@@ -154,15 +154,15 @@ var Swiper = function (selector, params) {
         // Round length values
         roundLengths: false,
         //Auto Height
-        calculateHeight: false,
+        calculateHeight: true,
         //Apply CSS for width and/or height
-        cssWidthAndHeight: false, // or true or 'width' or 'height'
+        cssWidthAndHeight: true, // or true or 'width' or 'height'
         //Images Preloader
         updateOnImagesReady : true,
         //Form elements
         releaseFormElements : true,
         //Watch for active slide, useful when use effects on different slide states
-        watchActiveIndex: false,
+        watchActiveIndex: true,
         //Slides Visibility Fit
         visibilityFullFit : false,
         //Slides Offset
@@ -176,7 +176,7 @@ var Swiper = function (selector, params) {
         queueEndCallbacks : false,
         //Auto Resize
         autoResize : true,
-        resizeReInit : false,
+        resizeReInit : true,
         //DOMAnimation
         DOMAnimation : true,
         //Slides Loader
