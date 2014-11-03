@@ -19,7 +19,7 @@
   
 
   <link rel="stylesheet" href="css/idangerous.swiper.css">
-  
+  <script defer src="js/idangerous.swiper.js"></script>
      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
    <script>
     // Wait for Cordova to load
@@ -463,50 +463,86 @@ background: rgba(255, 255, 255, 0.85) !important;
   <div class="swiper-wrapper">
       <!--First Slide-->
       <div class="swiper-slide"> 
-        	<img src="img/screen1.png" style="width:100% !important; height:100% !important;">
+      
+      
+        	<img src="img/introscreen/320x480/01.jpg" style="width:320px !important; height:480px !important; " class="iphone4s"  >
+            <img src="img/introscreen/640x1136/01.jpg" class="iphone5s" style="width:320px !important; height:568px !important; " >
+            <img src="img/introscreen/1242x2208/01.jpg" class="iphone6plus" style="width:100% !important; ">
+            <img src="img/introscreen/750x1334/01.jpg" class="iphone6" style="width:100% !important; ">
+            
+            
+            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
+            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
+            
+               
+            
       </div>
       
       <!--Second Slide-->
       <div class="swiper-slide">
-      <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >
+      
+      
+   			<img src="img/introscreen/320x480/02.jpg" class="iphone4s" style="width:320px !important; height:480px !important; " >
+            <img src="img/introscreen/640x1136/02.jpg" class="iphone5s" style="width:320px !important; height:568px !important; " >
+            <img src="img/introscreen/1242x2208/02.jpg" class="iphone6plus" style="width:100% !important; ">
+            <img src="img/introscreen/750x1334/02.jpg" class="iphone6" style="width:100% !important; ">
+            
+            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
+            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
+      
+    <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the second slide goes here -->
       </div>
       
       <!--Third Slide-->
-      <div class="swiper-slide noSwipingClass"> 
-      <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >
+      <div class="swiper-slide "> 
+      
+     		 <img src="img/introscreen/320x480/03empty.jpg" class="iphone4s" style="width:320px !important; height:480px !important; " >
+            <img src="img/introscreen/640x1136/03empty.jpg" class="iphone5s" style="width:320px !important; height:568px !important; ">
+            <img src="img/introscreen/1242x2208/03empty.jpg" class="iphone6plus" style="width:100% !important; ">
+            <img src="img/introscreen/750x1334/03empty.jpg" class="iphone6" style="width:100% !important; ">
+            
+            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
+            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
+      
+      
+      
+     <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the third slide goes here -->
         
+        <div style="position:relative; bottom:60%" id="textinput" >
         
-        <div style="position:absolute; top:47% !important;  min-height: 3.2em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;" >
         
-        
-        		<center><img  src="img/eboo-logo.png" style="width:30% !important" ></center>
-        
+        <div style="color:#FFF !important;">
+        		<center><img  src="img/eboo-logo.png" width="20%"  ></center>
          </div>
        
-       
-        <p style=" font-size:1.5em !important; position:absolute; top:57% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; color:#FFF !important; width:24% !important ;
-		cursor:vertical-text; height:25px; text-align:center  !important; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p>
+        <center> <p style=" font-size:18px; color:#FFF !important;
+		cursor:vertical-text; text-align:center  !important; width:70% !important ; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p></center>
         
-        
-        <input type="text" class="ui-input-btn ui-hide-label" id="useremail" style="position:absolute; top:70% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; background-color:#FFF; width:24% !important ;
-         background:rgba(255,255,255,0.7) !important;
-		cursor:vertical-text; height:25px; " data-corners="false"  >
-        
-        
-        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;  position:absolute; top:80% !important;  min-height: 2.8em !important; left:71.5% !important; right:5% !important; width:24% !important ; 
-        								border:none !important; text-shadow:none !important; box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="true" >
+        <center> <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.7) !important;
+		cursor:vertical-text; " data-corners="false"   ></center>
+
+		<center>
+        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;    min-height: 2.8em !important; 
+           								border:none !important; text-shadow:none !important; box-shadow:none !important; width:70% !important ;	" data-corners="false" data-prevent-focus-zoom="true" >
         Start Using Eboo</button>
+        </center>
+        
+        </div>
+        
         
         
         
       </div>
+      
+      
+      
+      
+      
       <!--Etc..-->
   </div>
 </div>
-
-
 
 
 
@@ -739,8 +775,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 <script type="text/javascript" src="js/iscroll.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
-
-<script defer src="js/idangerous.swiper.js"></script>
 
 
 
@@ -1102,8 +1136,8 @@ function startswiperfunction(){
 	freeMode:false,
 	momentumBounce:false,
 	swipeToPrev:true,
-	paginationClickable:true,
-	watchActiveIndex:true
+	paginationClickable:false,
+	watchActiveIndex:false
 	
 	
     //etc..
@@ -1130,11 +1164,7 @@ $(window).resize();
     document.addEventListener("deviceready", onDeviceReady, false);
 	
 	
-	    setTimeout(function() {
-        navigator.splashscreen.hide();
-		
-		
-   			 }, 5000);
+	   
 	
 	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
@@ -1142,11 +1172,17 @@ $(window).resize();
     //function will be called when device ready
     function onDeviceReady(){
 		
+		 setTimeout(function() {
+        navigator.splashscreen.hide();
+		
+		
+   			 }, 1500);
+		
 		 
-    var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+ //   var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
 
 
-alert(deviceType + navigator.userAgent);
+       alert(deviceType + navigator.userAgent);
 	
 		alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
 
