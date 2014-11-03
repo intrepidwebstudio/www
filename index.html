@@ -826,7 +826,7 @@ $(document).keypress(function(e) {
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		
-		
+		window.plugins.spinnerDialog.show();
 		
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID ,
@@ -835,21 +835,21 @@ $(document).keypress(function(e) {
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
-			
-/*			beforeSend: function() {
+			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                        $.mobile.loading('show', {theme:"q",text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+                        $.mobile.loading('show', {theme:"a",text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
                         $.mobile.loading('hide'); // This will hide ajax spinner
                     },
 					
-					*/
 			
 			
 			success: function(data)
 			{
+				
+				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
@@ -988,6 +988,9 @@ function load_trending()
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
+	
+	
+	
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
 			type:'GET',
@@ -995,17 +998,15 @@ function load_trending()
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
-		/*	
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                        $.mobile.loading('show', {theme:"q", text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+                        $.mobile.loading('show', {theme:"a", text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
                         $.mobile.loading('hide'); // This will hide ajax spinner
                     },
 			
-	*/		
 			
 			success: function(data)
 			{
