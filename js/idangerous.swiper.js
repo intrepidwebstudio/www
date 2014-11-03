@@ -110,7 +110,7 @@ var Swiper = function (selector, params) {
       Default Parameters
       ===========================*/
     var defaults = {
-        eventTarget: 'container', // or 'container'
+        eventTarget: 'wrapper', // or 'container'
         mode : 'horizontal', // or 'vertical'
         touchRatio : 1,
         speed : 300,
@@ -128,7 +128,7 @@ var Swiper = function (selector, params) {
         longSwipesRatio: 0.5,
         moveStartThreshold: true,
         onlyExternal : false,
-        createPagination : true,
+        createPagination : false,
         pagination : false,
         paginationElement: 'span',
         paginationClickable: true,
