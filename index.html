@@ -390,6 +390,71 @@ background: rgba(255, 255, 255, 0.85) !important;
 
 <body>
 
+
+
+<div data-role="page" id="page1" data-title="eboo" >
+
+	
+    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
+	  
+    
+        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
+        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
+
+        
+        
+        <div class="topmenucontainer"  >
+        
+     <div class="ui-field-contain forceinline">
+	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div>  
+     
+     <div class="searchsettings " id="top_menu" >
+        
+        <div  class="lefticon" >
+       		<img  src="icons/57x57/search.png" onClick="show_search()" >
+        </div>
+        
+       <!-- <div id="blue">
+        sasdfasdf asdf assdfg sdfg sdfgs gsdf
+        </div>-->
+        
+        
+        <div class="righticon">
+        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
+        </div>
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+    <div  role="main" class="ui-content" >
+    	    
+      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
+        
+        <div class="example-wrapper" data-iscroll >
+        <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
+        
+             
+     
+        </ul>
+       </div> 
+                                    
+                      
+                                     
+    </div><!-- /content -->
+    
+
+</div>
+
 <div data-role="page"   id="page" data-title="eboo" >
 
 
@@ -481,71 +546,6 @@ background: rgba(255, 255, 255, 0.85) !important;
 
 
 </div>
-
-<div data-role="page" id="page1" data-title="eboo" >
-
-	
-    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
-	  
-    
-        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
-        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
-
-        
-        
-        <div class="topmenucontainer"  >
-        
-     <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
-         </div>  
-     
-     <div class="searchsettings " id="top_menu" >
-        
-        <div  class="lefticon" >
-       		<img  src="icons/57x57/search.png" onClick="show_search()" >
-        </div>
-        
-       <!-- <div id="blue">
-        sasdfasdf asdf assdfg sdfg sdfgs gsdf
-        </div>-->
-        
-        
-        <div class="righticon">
-        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
-        </div>
-      </div>  
-        
-        
-        </div>
-                    
-    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
-    </div>
-      
- 
-</div><!-- /header -->
-    <div  role="main" class="ui-content" >
-    	    
-      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
-        
-        <div class="example-wrapper" data-iscroll >
-        <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
-        
-             
-     
-        </ul>
-       </div> 
-                                    
-                      
-                                     
-    </div><!-- /content -->
-    
-
-</div>
-
-
 
   
 
@@ -1162,7 +1162,7 @@ $(window).resize();
         navigator.splashscreen.hide();
 		
 		
-   			 }, 5000);
+   			 }, 8000);
 	
 	
 	
@@ -1181,7 +1181,7 @@ $(window).resize();
 	//	alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
 		
 		
-alert(' width  = '+ window.outerWidth +' height  = '+ window.outerHeight );
+//alert(' width  = '+ window.outerWidth +' height  = '+ window.outerHeight );
 
 if(window.screen.height==568 && window.screen.width==320)
 {
@@ -1192,18 +1192,14 @@ if(window.screen.height==568 && window.screen.width==320)
 //	alert('asda');
 	}
 
-else if(window.screen.height==480 && window.screen.width==320)
+if(window.screen.height==480 && window.screen.width==320)
 {
 	$('.iphone4s').show();
 	//startswiperfunction()
 	//alert('4s');
 	
 	}
-else{
-	
-	$('.ipadmini').show();
-	
-	}
+
 	
 	
 
@@ -1336,18 +1332,14 @@ if(window.screen.height==568 && window.screen.width==320)
 //	alert('asda');
 	}
 
-else if(window.screen.height==480 && window.screen.width==320)
+if(window.screen.height==480 && window.screen.width==320)
 {
 	$('.iphone4s').show();
 	//startswiperfunction()
 //	alert('4s');
 	
 	}
-else{
-	
-	$('.ipadmini').show();
-	
-	}
+
 		
 		
 		
@@ -1356,7 +1348,7 @@ else{
 			update_timer();
 			
 			
-		setTimeout( startswiperfunction() , 2000);
+		setTimeout( startswiperfunction() , 3000);
 				
 				
 				
@@ -1396,13 +1388,13 @@ else{
        		dataType: 'json',
         	crossDomain: true,
 			beforeSend: function() {
-									// This callback function will trigger before data is sent
-									$.mobile.loading('show', {theme:"a",text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
-									},
-									complete: function() {
-									// This callback function will trigger on data sent/received complete
-									$.mobile.loading('hide'); // This will hide ajax spinner
-									},
+			// This callback function will trigger before data is sent
+			$.mobile.loading('show', {theme:"c",text:"Loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+			},
+			complete: function() {
+			// This callback function will trigger on data sent/received complete
+			$.mobile.loading('hide'); // This will hide ajax spinner
+			},
 
 			success: function(data)
 							{
@@ -1489,8 +1481,8 @@ function IsEmail(email) {
 	
 	
 
-	
-         /*
+	/*
+         
 		  
 		  
 		  
@@ -1551,10 +1543,10 @@ function IsEmail(email) {
 
 
 
-	*/
-
 	
 
+	
+*/
 	
 	
 	
