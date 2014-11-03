@@ -354,7 +354,7 @@ background: rgba(255, 255, 255, 0.85) !important;
 
 .iphone4s
 {
-	display:none;
+	display:block;
 	}
 	
 .iphone5s{
@@ -1167,7 +1167,11 @@ $(window).resize();
     document.addEventListener("deviceready", onDeviceReady, false);
 	
 	
-	   
+	    setTimeout(function() {
+        navigator.splashscreen.hide();
+		
+		
+   			 }, 1000);
 	
 	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
@@ -1176,14 +1180,10 @@ $(window).resize();
     function onDeviceReady(){
 		
 			
-		alert('screen height = '+ window.screen.height + 'screen width  = '+ window.screen.width);
+		//alert('screen height = '+ window.screen.height + 'screen width  = '+ window.screen.width);
 
 		
-		 setTimeout(function() {
-        navigator.splashscreen.hide();
 		
-		
-   			 }, 8000);
 			 
 			 
 			
@@ -1298,7 +1298,7 @@ db.transaction(populateDB, errorCB, successCB);
 				for(var i=0; i< length ; i++)
 				{
 			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
-					
+					alert('sadfasdfasdf');
 					EbooUSER_ID = result.rows.item(i).user_id;
 					
 					
@@ -1323,7 +1323,7 @@ db.transaction(populateDB, errorCB, successCB);
 				
 //swipe_list_items();
 	
-
+alert('asdfasdf');
 
 
 
@@ -1332,7 +1332,9 @@ db.transaction(populateDB, errorCB, successCB);
 					
 		}else{
 			
-			$.mobile.changePage('index.html#page');
+			
+			alert('asdfasdf');
+			
 			
 			
 			start_timer();
@@ -1341,6 +1343,7 @@ db.transaction(populateDB, errorCB, successCB);
 			alert('ssss');
 			startswiperfunction();
 				
+		$.mobile.changePage('index.html#page');		
 			navigator.splashscreen.hide()	
 				
 			
