@@ -1189,15 +1189,8 @@ $(window).resize();
 	//	alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
 		
 		
-//alert(' width  = '+ window.innerWidth +' height  = '+ window.innerHeight );
+alert(' width  = '+ window.outerWidth +' height  = '+ window.outerHeight );
 
-if(window.screen.height==480 && window.screen.width==320)
-{
-	$('.iphone4s').show();
-	//startswiperfunction()
-	//alert('4s');
-	
-	}
 if(window.screen.height==568 && window.screen.width==320)
 {
 	
@@ -1206,6 +1199,15 @@ if(window.screen.height==568 && window.screen.width==320)
 //	alert('5s')
 //	alert('asda');
 	}
+
+if(window.screen.height==480 && window.screen.width==320)
+{
+	$('.iphone4s').show();
+	//startswiperfunction()
+	//alert('4s');
+	
+	}
+
 	
 	
 
@@ -1308,9 +1310,6 @@ db.transaction(populateDB, errorCB, successCB);
 				//	alert(EbooUSER_ID);
 				//	console.log(EbooUSER_ID);
 					
-					
-					
-					
 					}
 					
 				//tx.executeSql('DELETE FROM ebooUser');	
@@ -1326,28 +1325,14 @@ db.transaction(populateDB, errorCB, successCB);
 				
 //swipe_list_items();
 	
-
-
-
-
-			
-					
+	
 					
 		}else{
 			
 			$.mobile.changePage('index.html#page');
-			
-						
-						
-			
+		
 			start_timer();
 			update_timer();
-	
-	
-			
-	
-	
-			
 			startswiperfunction();
 				
 			navigator.splashscreen.hide()	
