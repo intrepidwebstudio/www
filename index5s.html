@@ -26,7 +26,7 @@ document.onreadystatechange = function(e)
 {
     if (document.readyState === 'complete')
     {
-	       navigator.splashscreen.show();
+	      // navigator.splashscreen.show();
 	        document.addEventListener("deviceready", onDeviceReady, false);
     }
 };
@@ -1235,9 +1235,9 @@ navigator.splashscreen.hide();
 	
 					
 		}else{
-		//	alert('aaaaa');
+			alert('1');
 			
-		$.mobile.changePage('index5s.html#page');
+	 		$.mobile.changePage('index5s.html#page');
 		
 		   start_timer();
 		   update_timer();
@@ -1246,6 +1246,7 @@ navigator.splashscreen.hide();
 				
 				
 			navigator.splashscreen.hide();	
+			alert('2')
 			
 		}
   
