@@ -1147,6 +1147,12 @@ $(window).resize();
 //alert('sasdasds');
 	    
 	
+	    setTimeout(function() {
+        navigator.splashscreen.hide();
+		
+		
+   			 }, 8000);
+	
 	
 	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
@@ -1281,7 +1287,7 @@ db.transaction(populateDB, errorCB, successCB);
 				
 			alert('1');
 //swipe_list_items();
-navigator.splashscreen.hide();
+
 	alert('aaa');
 	
 					
@@ -1296,7 +1302,7 @@ navigator.splashscreen.hide();
 	       startswiperfunction();
 				
 				
-			navigator.splashscreen.hide();	
+			
 		alert('2')
 			
 		}
