@@ -414,7 +414,7 @@ background: rgba(255, 255, 255, 0.85) !important;
         
         
         <div class="righticon">
-        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
+        	<a href="#settings" onClick="settings_page()" ><img src="icons/57x57/settings.png" ></a>
         </div>
       </div>  
         
@@ -548,7 +548,7 @@ background: rgba(255, 255, 255, 0.85) !important;
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li><a href="#twitterauthorize" onClick="twitterautho()" >
+                <li id="twitterautho" ><a href="#twitterauthorize"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
@@ -1287,8 +1287,6 @@ db.transaction(populateDB, errorCB, successCB);
 				
 			alert('1');
 //swipe_list_items();
-
-	alert('aaa');
 	
 					
 		}else{
@@ -1301,9 +1299,6 @@ db.transaction(populateDB, errorCB, successCB);
 			
 	       startswiperfunction();
 				
-				
-			
-		alert('2')
 			
 		}
   
@@ -1431,19 +1426,18 @@ function IsEmail(email) {
 	
 	
 
-	/*
+	
          
-		  
-		  
-		  
-            function twitterautho(){
-				
-				
+	function settings_page()
+	{		
 				
 				 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
 					
+				 $('#twitterautho').on('touchstart', function() {	
+					
                     OAuth.popup('twitter')
                         .done(function (r) {
+							alert('success');
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
                             r.get('/1.1/account/verify_credentials.json')
@@ -1465,10 +1459,13 @@ function IsEmail(email) {
                         .fail(function (e) {
                             $('#result').html('error: ' + e.message);
                         });
-                }
+						
+				 });
+                
 				
-				function tumblrautho(){
-			 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+	}
+				
+		/*		
 			    OAuth.popup('tumblr')
                         .done(function (r) {
                             // the access_token is available via r.access_token
@@ -1494,14 +1491,10 @@ function IsEmail(email) {
                 }
 
 
-
-
-	
-
-	
 */
 	
 	
+
 	
 	
 
