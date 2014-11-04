@@ -1,0 +1,1535 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Page Title</title> 
+	
+	        <meta name="format-detection" content="telephone=no" />
+        	<meta name="msapplication-tap-highlight" content="no" />
+        
+        <meta name="viewport" content="user-scalable=no, width=device-width , height = device-height, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
+  <!--<script src="phonegap.js"></script>-->
+  
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">	  
+  
+  <link rel="stylesheet" type="text/css" href="css/font.css">	  
+  
+  
+
+  <link rel="stylesheet" href="css/idangerous.swiper.css">
+  
+  <script>
+  
+document.onreadystatechange = function(e)
+{
+    if (document.readyState === 'complete')
+    {
+	       navigator.splashscreen.show();
+	        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+};
+  </script>
+  
+  
+  <script defer src="js/idangerous.swiper.js"></script>
+   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+   <script>
+    // Wait for Cordova to load
+    //
+  
+
+	var feedData;
+
+   var imagepath = 'http://www.safelearners.com/eboo/';
+   var ajax_path = 'http://www.safelearners.com/eboo/app/';
+   
+   
+   var SearchQueryId;
+   
+   var EbooUSER_ID;
+   
+   var feed_conducted=0; 
+	
+   var user_time = 0;
+
+   var user_active = 0;
+
+
+
+	
+	
+	
+
+	 var iabUrl = null;
+        // Global InAppBrowser reference
+        var iabRef = null;
+		
+		
+		
+        function iabLoadStart(event) {
+            //alert(event.type + ' – ' + event.url);
+        }
+        function iabLoadStop(event) {
+            if ( iabUrl != event.url ){
+                iabUrl = event.url;
+          //      alert(event.type + ' – URL CHANGED – ' + event.url);
+		    }
+			
+			
+			// iabRef.executeScript({file: "myscript.js"});
+		//	alert('script dun over');
+			
+		
+   // iabRef.executeSript( alert('12') );
+			
+        }
+        function iabClose(event) {
+          //  alert(event.type);
+            iabRef.removeEventListener('loadstart', iabLoadStart);
+            iabRef.removeEventListener('loadstop', iabLoadStop);
+            iabRef.removeEventListener('exit', iabClose);
+            iabRef.removeEventListener('share', iabClose);
+        }
+        function iabShare(event){
+          //  alert('SHARE:'+event.type);
+            iabRef.removeEventListener('loadstart', iabLoadStart);
+            iabRef.removeEventListener('loadstop', iabLoadStop);
+            iabRef.removeEventListener('exit', iabClose);
+            iabRef.removeEventListener('share', iabClose);
+        }
+        function navigateTo(url,click_id,this_id){
+			
+		//	alert('trueee'+url);
+	
+	        iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+			
+			$.support.cors = true;
+			
+			
+			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
+			
+			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted);
+			
+			
+			$(this_id).css("background-color","#ccc");
+			
+			
+		
+			
+			
+//	        iabRef.addEventListener('exit', iabClose);
+  //          iabRef.addEventListener('share', iabShare);
+   //         iabRef.addEventListener('loadstart', iabLoadStart);
+    //        iabRef.addEventListener('loadstop', iabLoadStop);
+			
+        }
+		
+		
+	
+
+
+function browser_setting()
+	{	
+        $(document).bind( 'mobileinit', function(){
+                         $.mobile.loader.prototype.options.text ="loading";
+                         $.mobile.loader.prototype.options.textVisible = false;
+                         $.mobile.loader.prototype.options.theme ="d";
+                         $.mobile.loader.prototype.options.textonly = false;
+                         $.mobile.loader.prototype.options.html ="<img src='icons/settings.png'/>";
+                         $.mobile.allowCrossDomainPages = true;
+                         });
+						 
+	}
+
+
+
+   </script>
+   
+   
+  
+  <style>
+  
+
+/* Border bottom for the previous button during the transition*/
+li.left a.ui-btn,
+li.right a.ui-btn {
+    border-top-width: 0;
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+li a.ui-btn.border-bottom {
+    border-bottom-width: 1px;
+}
+/* Hide the delete button on touch devices */
+ul.touch li.ui-li-has-alt a.delete {
+	display:none;
+}
+ul.touch li.ui-li-has-alt a.ui-btn {
+    margin-right:0;
+}
+/* Styling for the popup */
+#confirm p {
+    text-align: center;
+    font-size: inherit;
+    margin-bottom: .75em;
+}
+
+
+.title_bac{
+/*	background-color:#F0525B;
+	opacity:.65;
+	
+*/	position:absolute; bottom:0px;
+background: rgba(255, 255, 255, 0.85) !important;
+	}
+	
+		
+	.ui-listview>li p{
+		
+		white-space:normal;
+		max-height:30px;
+		text-overflow:ellipsis !important;
+		}
+	
+    .behind {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 25%;
+        right: 0;
+		bottom:25%;
+		
+    }
+    .behind a.ui-btn {
+        
+        margin: 0px;
+        float: right;
+        border: none;
+		
+    }
+    .behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
+      
+        background-color: #fff;
+        text-shadow: none;
+    }
+	
+	.socialicon{
+		
+		float:right;
+		vertical-align:middle !important;
+		padding: 5px 5px;
+		
+		}
+		
+	.socialicon img {
+		 width:40px;
+	}	
+		
+	.sourceicon{
+				width: 23%;
+				margin-left:3% !important;
+				margin-right:2% !important;
+				padding-top:3% !important;
+				vertical-align:middle !important;
+		}	
+	.lefticon img{
+			
+			float:left;
+			width:6%;
+			max-width:70px;
+			padding-left:3%;
+			
+		}	
+		
+		
+	.righticon img{
+			
+			float:right;
+			width:6%;
+			max-width:70px;	
+			padding-right:3%;
+		}	
+		
+		
+		
+		.ui-boday-a input {
+    border: none !important;
+    border-color: transparent !important;
+}
+	.adddddd{}
+		
+	.topplace{
+		
+		background:rgba(255,255,255,0.5) !important;
+		
+		
+		position:relative !important;
+		top:0px;
+		width:100%;
+		text-align:center !important;
+		z-index:9999px !important;
+		vertical-align:middle;
+		cursor:vertical-text;
+		
+		
+		
+		}
+		
+		.topmenucontainer{
+			
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			}
+		
+		 .searchsettings{
+	 
+	 position:relative !important;
+	 top:10px;
+	 
+	 }
+		
+		
+		
+		
+	.ebooheader{
+		
+		width:100%;   
+		margin-top:0px !important; 
+		max-height:400px;
+		
+		}	
+	
+
+  
+  	
+  .ui-icon-ebootoggleoff {
+    background-image: url("icons/ebootoggleoff.png");
+  }
+
+  .nav .ui-btn .ui-btn-inner {
+    padding-top: 40px !important;
+  }
+
+  .nav .ui-btn .ui-icon-ebootoggleoff {
+    width: 45px!important;
+    height: 35px!important;
+    margin-left: -24px !important;
+    box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    -webkit-border-radius: none !important;
+    border-radius: none !important;
+  }
+
+   .ui-icon-ebootoggleoff {
+    background-image: url(icons/ebootoggleoff.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+	
+	
+	.ebooicons{
+		width:16px;
+		vertical-align:middle !important;
+		}
+	
+	/******************* ADDING CUSTOM UI ICONS ******************/
+	
+		
+		
+		.forceinline{  /* Prevent fieldcontain from doing a BLOCK thing */
+    display:inline !important;
+}
+
+.min_height{
+	min-height:30px !important;
+
+	}
+
+ 
+ 
+.ui-content {
+    padding: 0 !important;
+}
+
+.ui-listview {
+    margin: 0 !important;
+}
+
+.example-wrapper, .example-wrapper div.iscroll-scroller {
+    width: 100% !important;
+}
+
+
+
+
+  </style>
+  
+  
+  
+
+</head>
+
+
+<body>
+
+
+
+<div data-role="page" id="page1" data-title="eboo" >
+
+	
+    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
+	  
+    
+        <img  src="img/1242.jpg"    style="margin-bottom:-5px !important; width:100%" >
+
+
+        
+        
+        <div class="topmenucontainer"  >
+        
+     <div class="ui-field-contain forceinline">
+	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div>  
+     
+     <div class="searchsettings " id="top_menu" >
+        
+        <div  class="lefticon" >
+       		<img  src="icons/57x57/search.png" onClick="show_search()" >
+        </div>
+        
+       <!-- <div id="blue">
+        sasdfasdf asdf assdfg sdfg sdfgs gsdf
+        </div>-->
+        
+        
+        <div class="righticon">
+        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
+        </div>
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+    <div  role="main" class="ui-content" >
+    	    
+      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
+        
+        <div class="example-wrapper" data-iscroll >
+        <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
+        
+             
+     
+        </ul>
+       </div> 
+                                    
+                      
+                                     
+    </div><!-- /content -->
+    
+
+</div>
+
+
+<div data-role="page" data-position="fixed"  id="page" data-title="eboo" >
+
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+      <!--First Slide-->
+      <div class="swiper-slide"> 
+             <img src="img/introscreen/1242x2208/01wcircles.jpg"  style="width:414px !important; height:736px !important; " >
+      </div>
+      
+      <!--Second Slide-->
+      <div class="swiper-slide">
+            <img src="img/introscreen/1242x2208/02wcircles.jpg"  style="width:414px !important; height:736px !important; " >
+     <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
+        <!-- Any HTML content of the second slide goes here -->
+      </div>
+      
+      <!--Third Slide-->
+      <div class="swiper-slide "> 
+             <img src="img/introscreen/1242x2208/03empty.jpg"  style="width:414px !important; height:736px !important; " >
+       <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
+        <!-- Any HTML content of the third slide goes here -->
+        
+        <div style="position:relative; bottom:55%; box-shadow:none !important; border:none !important;  " id="textinput"  >
+        
+        
+        <div style="color:#FFF !important;">
+        		<center><img  src="img/eboo-logo.png" width="20%"  ></center>
+         </div>
+       
+        <center> <p style=" font-size:18px; color:#FFF !important;
+		cursor:vertical-text; text-align:center  !important; width:70% !important ; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p></center>
+        
+        <center> <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.7) !important;
+		cursor:vertical-text; " data-corners="false"   ></center>
+
+		<center>
+        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic ui-input-btn ui-hide-label" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;    min-height: 2.8em !important; 
+           								border:none !important; text-shadow:none !important; box-shadow:none !important; width:70% !important ;	" data-corners="false" data-prevent-focus-zoom="true" >
+        Start Using Eboo</button>
+        </center>
+        
+        </div>
+        
+        
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      <!--Etc..-->
+  </div>
+</div>
+
+
+
+</div>
+  
+
+<div data-role="page" id="settings">
+ 	 
+   
+    <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
+	  
+    
+    
+        <img  src="img/1242.jpg"    style="margin-bottom:-5px !important; width:100%" >
+        
+      
+        
+        <div class="topmenucontainer" >
+        
+        
+       
+     
+     <div class="searchsettings">
+        
+        <div  class="lefticon" >
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+        </div>
+        
+       
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Eboo Testing</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+    
+   
+   	<div  role="main" class="ui-content" >
+    <div class="example-wrapper" data-iscroll >
+          <ul data-role="listview"  data-divider="false"  data-icon="false"  >
+                <li><a href="#twitterauthorize" onClick="twitterautho()" >
+                		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
+                        
+                </a> </li>
+                <li><a href="#facebookauthorize" onClick="facebookautho()" >
+                		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="facebooklogout" ></p>
+                        </p>
+                        
+                </a> </li>
+               
+                <li><a href="#tumblrauthorize" onClick="tumblrautho()" >
+                		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
+                        
+                </a> </li>
+                <li><a href="#linkedinauthorize" onClick="linkedinautho()" >
+                		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
+                        
+                </a> </li>
+                <li><a href="#termsofservice" >
+                		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/terms.png" class="ebooicons" ></p>
+                        
+                </a> </li>
+                <li><a href="#privacy" >
+                		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
+                        
+                </a> </li>
+                
+                
+         </ul>
+        </div> 
+    </div><!-- /content -->
+    
+   
+    	
+    	
+</div>
+
+
+<div data-role="page" id="termsofservice">
+         
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
+	  
+    
+    
+        <img  src="img/1242.jpg"    style="margin-bottom:-5px !important; width:100%" >
+        
+        <div class="topmenucontainer" >
+    
+     
+     <div class="searchsettings">
+        
+       <div  class="lefticon" >
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+        </div>
+        
+                
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Terms of Service</p>
+    </div>
+ 
+</div><!-- /header -->
+	   	<div  role="main" class="ui-content" >
+        <div class="example-wrapper" data-iscroll >
+          <h3 class="Conv_MuseoSans_700">Eboo Terms of Service </h3>
+          <p class="Conv_MuseoSans_500" >
+Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
+By using or accessing the Site in any way, viewing or <strong class="Conv_MuseoSans_700">browsing</strong> the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
+
+<h3 class="Conv_MuseoSans_700" >Heading 2</h3>
+<p class="Conv_MuseoSans_700"  >The Site and all of its original content are the sole property<strong class="Conv_MuseoSans_700">browsing</strong> of Your Nowhere Town and are, as such</p>
+
+<h3 class="Conv_MuseoSans_700" >Links to Other Websites</h3>
+<p>Our Site contain a number of links to other websites and <strong class="Conv_MuseoSans_700">browsing</strong>online resources that are  owned or controlled by eboo.Your app has no control over, and 
+therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
+Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
+
+
+          </p>
+          </div>
+    </div><!-- /content -->
+</div>
+
+
+
+
+
+<div data-role="page" id="privacy">
+         
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
+	  
+    
+    
+    
+        <img  src="img/1242.jpg"    style="margin-bottom:-5px !important; width:100%" >
+   
+
+        
+        
+        <div class="topmenucontainer" >
+    
+     
+     <div class="searchsettings">
+        
+       <div  class="lefticon" >
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+        </div>
+        
+        
+        
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Privacy</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+	   	<div  role="main" class="ui-content" >
+        <div class="example-wrapper" data-iscroll >
+        
+          <h3>Privacy Policy</h3>
+          <p>
+Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
+By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
+
+<h3>Heading 2</h3>
+<p>The Site and all of its original content are the sole property of Your Nowhere Town and are, as such</p>
+
+<h3>Links to Other Websites</h3>
+<p>Our Site contain a number of links to other websites and online resources that are  owned or controlled by eboo.Your app has no control over, and 
+therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
+Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
+
+
+          </p>
+          </div>
+    </div><!-- /content -->
+</div>
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
+  
+ <!-- <script type="text/javascript" src="js/hammer.js"></script>-->
+  
+   <script type="text/javascript" src="js/SocialSharing.js"></script>
+   <script type="text/javascript" src="js/nonbounce.js"></script>
+<script type="text/javascript" src="js/swipeleft.js"></script>
+
+
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
+<script type="text/javascript" src="js/fastbutton.js"></script>
+
+
+
+ <script>
+    
+
+
+ $('#searcharea').hide();
+
+	function show_focus(){
+		
+		$('#searcharea').focus();
+	
+	}
+	
+
+  
+  function show_search()
+  {
+	  
+	  $('#searcharea').show();
+	  $('input').focus();
+	  
+	  $('#searcharea').focus();
+	
+	
+	  } 
+
+ 
+$('#searcharea').on('blur',function(){ 
+									$('#searcharea').hide();	
+										$('#searcharea').blur();
+										  });
+
+   
+//global declarations
+
+
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+		
+		
+		console.log(ajax_path + ' asdasd');
+		
+	   if( $('#searcharea').val()!='')
+	   {
+	   //start  my loader here !!!!
+		$.support.cors = true;
+		
+		
+		
+		$.ajax({
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID ,
+			type:'GET',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                        $.mobile.loading('show', {theme:"a",text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                        $.mobile.loading('hide'); // This will hide ajax spinner
+                    },
+					
+			
+			
+			success: function(data)
+			{
+				
+				
+				feedData=data.Feeds;
+				FeedStatus=data.FeedStatus;
+				
+				SearchQueryId=data.SearchQueryId;
+				
+			//	alert(SearchQueryId);
+				
+				if(FeedStatus=='success')
+				{
+					
+					
+					feed_conducted=1;
+				
+				$('#searchvalue').html($('#searcharea').val());
+				
+				
+				$('#searcharea').hide();
+				$('#searcharea').blur();
+				
+			  	   	var append_data =  '';
+					$.each(feedData, function(index, element) {
+					var article_id = element.id;			
+					var article_title =  element.title ;
+					var article_link = element.article_link ;
+					var source_name = element.source ;
+					var source_image = element.sourceimage ;
+					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+					
+					
+				//	pubdate = pubdate.substr(5,11);
+					// checking the variable length
+					var len = 0;
+					var len=article_title.length;
+					if(len>55)
+					{ 
+					article_title = article_title.substr(0,55);
+					article_title = article_title + '...';	
+						}
+					append_data+='<li><div class="behind">';
+					
+					
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
+					
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';
+					}
+					else{
+					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';	
+					}
+
+					
+					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important;  " class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					
+					
+				//	alert(append_data);
+					
+						}
+							);			
+							
+							$('#list_view').html('');
+						//colose my loader here !!!!
+							$('#list_view').append(append_data);
+									
+										$('#list_view').trigger("create");
+										$('#list_view').listview().listview('refresh');
+											
+									//	$('#list_view').refresh();
+										browser_setting();
+										$.getScript("js/SocialSharing.js");
+										SocialSharing();
+										$.getScript("js/swipeleft.js");
+												
+												
+				}//user data match if
+				else{
+					
+					// user data doent match
+					
+					alert("no match");
+					}
+			
+			
+			$('#searcharea').val('');
+			
+			
+				},
+		error: function(e) {
+       alert('Network error please try after sometime  ');		
+			
+		//	console.log(e.status);
+			
+		}
+			
+			
+			
+			
+			});
+		
+		
+	}//ifclose
+	else{
+		
+		
+		load_trending();
+		
+		
+		}
+    }
+});
+
+
+
+
+
+//Let's say the /profile endpoint on the provider waits for
+//a PATCH request to update the authenticated user's profile 
+//containing the field "name" and returns the field "name" 
+//containing the new name
+
+
+
+
+
+function load_trending()
+{
+	
+	//alert(EbooUSER_ID + 'pronnn');
+	
+
+	$.ajax({
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
+			type:'GET',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                        $.mobile.loading('show', {theme:"a", text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                        $.mobile.loading('hide'); // This will hide ajax spinner
+                    },
+			
+			
+			success: function(data)
+			{
+				
+				feedData=data.Feeds;
+				FeedStatus=data.FeedStatus;
+				
+				if(FeedStatus=='success')
+				{
+					feed_conducted=0;
+					
+					
+				$('#searchvalue').html('Trending');
+				
+				   	var append_data =  '';
+					$.each(feedData, function(index, element) {
+					var article_id = element.id;			
+					var article_title =  element.title ;
+					var article_link = element.article_link ;
+					var source_name = element.source ;
+					var source_image = element.sourceimage ;
+					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+					
+					//pubdate = pubdate.substr(5,11);
+					// checking the variable length
+					var len = 0;
+					var len=article_title.length;
+					if(len>55)
+					{ 
+					article_title = article_title.substr(0,55);
+					article_title = article_title + '...';	
+						}
+						
+					append_data+='<li><div class="behind">';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';
+					}
+					else{
+					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';	
+						}
+					
+					
+					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; " class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right; font-size:10px !important" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+		
+						}
+							);			
+							$('#list_view').html('');
+						//colose my loader here !!!!
+							$('#list_view').append(append_data);
+							//alert(append_data);
+									
+										$('#list_view').trigger("create");
+										$('#list_view').listview().listview('refresh');
+											
+									//	$('#list_view').refresh();
+											
+										browser_setting();
+										$.getScript("js/SocialSharing.js");
+										SocialSharing();
+										$.getScript("js/swipeleft.js");
+												
+												
+				}//user data match if
+				else{
+					// user data doent match
+					alert("no match");
+					}
+			
+			
+				},
+		error: function(e) {
+      
+	  alert('Network problem ');		
+			
+		//	console.log(e);
+			
+		}
+			
+	});
+	
+	
+}
+
+
+	
+	/*
+$(document).on('pagebeforeshow', '#index', function(){ 
+  for(i = 0; i < 30; i++) {
+       $(".example-wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
+  }
+    $('[data-role="content"]').trigger('create');
+    $(".example-wrapper").iscrollview("refresh");
+});
+
+*/
+
+
+
+function startswiperfunction(){
+	var mySwiper = $('.swiper-container').swiper({
+    //Your options here:
+    mode:'horizontal',
+    loop: false,
+	resistance:false,
+	freeMode:false,
+	momentumBounce:false,
+	swipeToPrev:true,
+	paginationClickable:true,
+	watchActiveIndex:true
+  });
+  /* FULLSCREEN SWIPER*/
+$(window).resize(function(){
+    var height = $(window).height();
+    var width  = $(window).width();
+    $('.swiper-container, .swiper-slide').height(height);
+    $('.swiper-container, .swiper-slide').width(width);
+    //Add reInit, because jQuery's resize event handler may occur earlier than Swiper's one
+	mySwiper.reInit();
+	swiper.reInit();
+	
+})
+$(window).resize(); 
+	}
+
+
+//alert('screen heigssssssht = '+window.screen.height + 'screen wsssssidth  = '+ window.screen.width);
+//add listener when device ready
+
+  // device APIs are available
+    //
+  
+
+
+
+   //  document.addEventListener("onDeviceReady", onDeviceReady, false);
+	
+//alert('sasdasds');
+	    
+	
+	
+	
+    var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
+ 
+    //function will be called when device ready
+    function onDeviceReady(){
+		
+		
+	//	alert('called');
+		
+		 
+    var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+
+
+	//alert(deviceType + navigator.userAgent);
+	
+	//	alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
+		
+		
+//	alert(' width  = '+ window.screen.width +' height  = '+ window.screen.height );
+
+	
+
+db.transaction(populateDB, errorCB, successCB);
+
+										
+    }
+	
+	function start_timer(){
+		
+		//alert('aa');
+			 setInterval(
+							function(){
+								
+				//			console.log(user_active+'---time --'+user_time)	
+								//alert('ss');
+							if(user_active==1)
+							{
+							user_time = user_time+30000;
+							user_active=0;	
+								}
+							else{
+							user_active=0;
+							update_timer();	
+							} 
+						}
+							,30000); 
+							
+							
+	}
+	
+	function update_timer(){
+		//					console.log('started update');
+							setInterval( function update_user_time(){
+							
+							if(user_time!=0)
+							{
+								
+							//	console.log('user_id='+EbooUSER_ID+'&seconds='+user_time);
+								
+								$.post(ajax_path+'updatetime.php?user_id='+EbooUSER_ID+'&seconds='+user_time);
+			//					console.log('user_time = '+user_time);
+								
+								user_time= 0;
+								user_active=0;
+								}
+							}	 ,120000 );
+	 
+	}
+	
+
+ 
+    //create table and insert some record
+    function populateDB(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER )');
+		
+       
+    }
+ 
+    //function will be called when an error occurred
+    function errorCB(err) {
+      //  alert("Error processing SQL: "+err.message+' anoyin ?');
+		
+		
+    }
+ 
+    //function will be called when process succeed
+    function successCB() {
+      //  alert("success!");
+        db.transaction(queryDB,errorCB);
+    }
+ 
+    //select all from SoccerPlayer
+    function queryDB(tx){
+        tx.executeSql('SELECT * FROM ebooUser',[],querySuccess,errorCB);
+    }
+ 
+    function querySuccess(tx,result){
+       
+	//   console.log(result.rows.item);
+	   
+	   var length = result.rows.length;
+	//   	console.log("DEMO table: " + length + " rows found.");	
+		
+		
+		
+		if(length >0)
+		{
+			
+			$.mobile.changePage('index6plus.html#page1');
+		
+				for(var i=0; i< length ; i++)
+				{
+			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
+					
+					EbooUSER_ID = result.rows.item(i).user_id;
+					
+					
+				//	alert(EbooUSER_ID);
+				//	console.log(EbooUSER_ID);
+					
+					}
+					
+				//tx.executeSql('DELETE FROM ebooUser');	
+			
+				load_trending();
+				browser_setting();
+				
+				start_timer();
+				
+				update_timer();
+				
+			
+//swipe_list_items();
+navigator.splashscreen.hide();
+	
+	
+					
+		}else{
+		//	alert('aaaaa');
+			
+		$.mobile.changePage('index6plus.html#page');
+		
+		   start_timer();
+		   update_timer();
+			
+	       startswiperfunction();
+				
+				
+			navigator.splashscreen.hide();	
+			
+		}
+  
+    }
+	
+	
+	
+	function ErrorCallBack(err){
+		
+	//	alert('Error'+err.code+'----'+err.message);
+		
+		}
+	
+	function validate_email()
+	{
+	var	useremail = $('#useremail').val();
+	var checkk = 	IsEmail(useremail);
+	if(checkk== false)
+	{
+		alert('enter a vaild email');
+		}
+	else{
+		
+	//	db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );
+		
+		$.ajax({
+			
+			url:ajax_path+'userinsert.php?useremail='+useremail,
+			type:'GET',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+			// This callback function will trigger before data is sent
+			$.mobile.loading('show', {theme:"c",text:"Loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+			},
+			complete: function() {
+			// This callback function will trigger on data sent/received complete
+			$.mobile.loading('hide'); // This will hide ajax spinner
+			},
+
+			success: function(data)
+							{
+								
+							var	login_Response = data.LoginResponse;
+								
+								
+								if(login_Response.status=='100')
+								{
+								//	alert(login_Response.message);
+							//		alert(login_Response.user_id)
+									
+									
+							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
+									
+								}else if(login_Response.status=='101'){
+									
+									
+									//	alert('User Already Exists' );
+									
+									
+									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
+									
+									}
+								else{
+									
+									
+									alert('server error !!');
+									}	
+								
+								},
+			error: function(e)
+				{
+					alert('Network Error,Unable to contact server');
+					
+					
+					}
+			
+			
+			});
+		
+			
+		}	
+    }
+		
+		function insertvalues(tx,parameter1,parameter2)
+		{
+			
+			
+			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2],userinsert);
+			
+			
+		//	console.log(parameter2)
+		}
+		
+		
+		function userinsert()
+		{
+			load_trending();
+				browser_setting();
+			
+			$.mobile.changePage('index.html#page1');
+		}
+		
+
+function IsEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+	
+	
+/*
+	 $('#twitterauthorize').on('click', function() {
+		 
+		 
+		 				
+		 						$('#twitterlogout').css('display','none');
+								$('#twitterlogged').css('display','block');
+
+		 
+		 });
+	
+	*/
+	
+	
+
+	/*
+         
+		  
+		  
+		  
+            function twitterautho(){
+				 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+					
+                    OAuth.popup('twitter')
+                        .done(function (r) {
+                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                            r.get('/1.1/account/verify_credentials.json')
+                                .done(function(data) {
+//                                    $('#result').html("twitter: Hello, " + data.name + " !");
+									
+									
+									console.log("twitter: Hello, " + data.name + " ! ");
+									
+								$('#twitterlogout').css('display','none');
+								$('#twitterlogged').css('display','block');
+
+									
+                                })
+                                .fail(function( jqXHR, textStatus, errorThrown) {
+                                    $('#result').html("req error: " + textStatus);
+                                });
+                        })
+                        .fail(function (e) {
+                            $('#result').html('error: ' + e.message);
+                        });
+                }
+				
+				function tumblrautho(){
+			 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+			    OAuth.popup('tumblr')
+                        .done(function (r) {
+                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                            r.get('/1.1/account/verify_credentials.json')
+                                .done(function(data) {
+									
+									console.log("twitter: Hello, " + data.name + " ! ");
+									
+									$('#tumblrlogout').css('display','none');
+									$('#tumblrlogged').css('display','block');
+									
+									
+                                //    $('#result').html("twitter: Hello, " + data.name + " !");
+                                })
+                                .fail(function( jqXHR, textStatus, errorThrown) {
+                                    $('#result').html("req error: " + textStatus);
+                                });
+                        })
+                        .fail(function (e) {
+                            $('#result').html('error: ' + e.message);
+                        });
+                }
+
+
+
+
+	
+
+	
+*/
+	
+	
+	
+	
+
+
+
+
+$(document).on("tap",function(){
+ 
+user_active = 1;
+ 
+});
+
+$(document).on("taphold",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("swipe",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("swiperight",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("swipeleft",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("scrollstart",function(){
+ 
+ user_active = 1;
+ 
+});
+
+
+function bringdown()
+{
+	
+	
+
+	
+	
+$('#textinput').css('position','relative');
+$('#textinput').animate({'bottom':'55%'},300,'linear');
+
+	
+	}
+
+
+function bringup()
+{
+	
+
+
+  $('#textinput').css('position','relative');
+  $('#textinput').animate({'bottom':'55%'},300,'linear');
+ 
+  
+// See if keyboard is open or not
+
+
+// Get height of open keyboard (including inputAccessoryView toolbar)
+//var height = Keyboard.getHeight();
+
+// The following jQuery events are available:
+// keyboardWillShow, keyboardDidShow, keyboardWillHide, keyboardDidHide
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+ 
+
+
+</body>
+</html>

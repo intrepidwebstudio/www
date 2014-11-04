@@ -19,12 +19,26 @@
   
 
   <link rel="stylesheet" href="css/idangerous.swiper.css">
+  
+  <script>
+  
+document.onreadystatechange = function(e)
+{
+    if (document.readyState === 'complete')
+    {
+	       navigator.splashscreen.show();
+	        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+};
+  </script>
+  
+  
   <script defer src="js/idangerous.swiper.js"></script>
-     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
    <script>
     // Wait for Cordova to load
     //
-   
+  
 
 	var feedData;
 
@@ -352,33 +366,6 @@ background: rgba(255, 255, 255, 0.85) !important;
 
 
 
-.iphone4s
-{
-	display:none;
-	}
-	
-.iphone5s{
-	display:none;
-	
-	}	
-.iphone6
-{display:none;
-	
-	}
-.iphone6plus
-{
-	display:none;
-	}
-.ipadmini{
-	
-	display:none;
-	
-	}		
-.ipadplus{
-	
-	display:none;
-	
-	}
 
   </style>
   
@@ -397,32 +384,14 @@ background: rgba(255, 255, 255, 0.85) !important;
   <div class="swiper-wrapper">
       <!--First Slide-->
       <div class="swiper-slide"> 
-      
-      
-        	<img src="img/introscreen/320x480/01.jpg" style="width:320px !important; height:480px !important; " class="iphone4s"  >
-            <img src="img/introscreen/640x1136/01.jpg" class="iphone5s" style="width:320px !important; height:568px !important; " >
-            <img src="img/introscreen/1242x2208/01.jpg" class="iphone6plus" style="width:100% !important; ">
-            <img src="img/introscreen/750x1334/01.jpg" class="iphone6" style="width:100% !important; ">
-            
-            
-            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
-            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
-            
-               
-            
+        	<img src="img/introscreen/320x480/01wcircles.jpg" style="width:320px !important; height:480px !important; "  >
       </div>
       
       <!--Second Slide-->
       <div class="swiper-slide">
       
       
-   			<img src="img/introscreen/320x480/02.jpg" class="iphone4s" style="width:320px !important; height:480px !important; " >
-            <img src="img/introscreen/640x1136/02.jpg" class="iphone5s" style="width:320px !important; height:568px !important; " >
-            <img src="img/introscreen/1242x2208/02.jpg" class="iphone6plus" style="width:100% !important; ">
-            <img src="img/introscreen/750x1334/02.jpg" class="iphone6" style="width:100% !important; ">
-            
-            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
-            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
+   			<img src="img/introscreen/320x480/02.jpg"  style="width:320px !important; height:480px !important; " >
       
     <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the second slide goes here -->
@@ -431,14 +400,8 @@ background: rgba(255, 255, 255, 0.85) !important;
       <!--Third Slide-->
       <div class="swiper-slide "> 
       
-     		 <img src="img/introscreen/320x480/03empty.jpg" class="iphone4s" style="width:320px !important; height:480px !important; " >
-            <img src="img/introscreen/640x1136/03empty.jpg" class="iphone5s" style="width:320px !important; height:568px !important; ">
-            <img src="img/introscreen/1242x2208/03empty.jpg" class="iphone6plus" style="width:100% !important; ">
-            <img src="img/introscreen/750x1334/03empty.jpg" class="iphone6" style="width:100% !important; ">
-            
-            <img src="img/screen1.png" class="ipadmini" style="width:100% !important; ">
-            <img src="img/screen1.png" class="ipadplus" style="width:100% !important; ">
-      
+     		 <img src="img/introscreen/320x480/03empty.jpg"  style="width:320px !important; height:480px !important; " >
+    
       
       
      <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
@@ -489,9 +452,7 @@ background: rgba(255, 255, 255, 0.85) !important;
 	  
     
         <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
-        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
+
 
         
         
@@ -557,10 +518,6 @@ background: rgba(255, 255, 255, 0.85) !important;
     
     
         <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
-        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
-
         
       
         
@@ -653,10 +610,6 @@ background: rgba(255, 255, 255, 0.85) !important;
     
     
         <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
-        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
-
         
         <div class="topmenucontainer" >
     
@@ -711,10 +664,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     
     
         <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        <img  src="img/320.jpg"  class="iphone6"  style="margin-bottom:-5px !important;" >
-        <img  src="img/320.jpg"  class="iphone6plus"  style="margin-bottom:-5px !important;" >
-
+   
 
         
         
@@ -986,9 +936,7 @@ function load_trending()
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
-	
-	
-	
+
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
 			type:'GET',
@@ -1094,12 +1042,10 @@ function load_trending()
 			
 		}
 			
-	
-		
-		});
+	});
 	
 	
-	}
+}
 
 
 	
@@ -1112,16 +1058,7 @@ $(document).on('pagebeforeshow', '#index', function(){
     $(".example-wrapper").iscrollview("refresh");
 });
 
-
-
 */
-
-
-
-
-
-
-
 
 
 
@@ -1154,24 +1091,28 @@ $(window).resize();
 
 //alert('screen heigssssssht = '+window.screen.height + 'screen wsssssidth  = '+ window.screen.width);
 //add listener when device ready
-    document.addEventListener("deviceready", onDeviceReady, false);
+
+  // device APIs are available
+    //
+  
+
+
+
+   //  document.addEventListener("onDeviceReady", onDeviceReady, false);
 	
+//alert('sasdasds');
+	    
 	
-	
-	
-	    setTimeout(function() {
-        navigator.splashscreen.hide();
-		
-		
-   			 }, 8000);
-	
-	
-	
+setTimeout( startswiperfunction() ,3000);
 	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
  
     //function will be called when device ready
     function onDeviceReady(){
+		
+		
+		
+	//	alert('called');
 		
 		 
     var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
@@ -1182,26 +1123,8 @@ $(window).resize();
 	//	alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
 		
 		
-//alert(' width  = '+ window.outerWidth +' height  = '+ window.outerHeight );
+//	alert(' width  = '+ window.screen.width +' height  = '+ window.screen.height );
 
-if(window.screen.height==568 && window.screen.width==320)
-{
-	
-//	$('.iphone4s').hide();
-	$('.iphone5s').show();
-//	alert('5s')
-//	alert('asda');
-	}
-
-if(window.screen.height==480 && window.screen.width==320)
-{
-	$('.iphone4s').show();
-	//startswiperfunction()
-	//alert('4s');
-	
-	}
-
-	
 	
 
 db.transaction(populateDB, errorCB, successCB);
@@ -1238,7 +1161,6 @@ db.transaction(populateDB, errorCB, successCB);
 							
 							if(user_time!=0)
 							{
-								
 								
 							//	console.log('user_id='+EbooUSER_ID+'&seconds='+user_time);
 								
@@ -1291,7 +1213,7 @@ db.transaction(populateDB, errorCB, successCB);
 		if(length >0)
 		{
 			
-			$.mobile.changePage('index.html#page1');
+			$.mobile.changePage('indexfours.html#page1');
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1314,49 +1236,24 @@ db.transaction(populateDB, errorCB, successCB);
 				
 				update_timer();
 				
-				navigator.splashscreen.hide()
-				
+			
 //swipe_list_items();
+navigator.splashscreen.hide();
 	
 	
 					
 		}else{
+		//	alert('aaaaa');
 			
+		$.mobile.changePage('indexfours.html#page');
+		
+		   start_timer();
+		   update_timer();
 			
-			$.mobile.changePage('index.html#page');
-		
-if(window.screen.height==568 && window.screen.width==320)
-{
-	
-//	$('.iphone4s').hide();
-	$('.iphone5s').show();
-//	alert('5s')
-//	alert('asda');
-	}
-
-if(window.screen.height==480 && window.screen.width==320)
-{
-	$('.iphone4s').show();
-	//startswiperfunction()
-//	alert('4s');
-	
-	}
-
-		
-		
-		
-		
-			start_timer();
-			update_timer();
-			
-			
-		setTimeout( startswiperfunction() , 4000);
+	       startswiperfunction();
 				
 				
-				
-			navigator.splashscreen.hide();
-			
-				
+			navigator.splashscreen.hide();	
 			
 		}
   
@@ -1490,6 +1387,9 @@ function IsEmail(email) {
 		  
 		  
             function twitterautho(){
+				
+				alert('ssss');
+				
 				 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
 					
                     OAuth.popup('twitter')
