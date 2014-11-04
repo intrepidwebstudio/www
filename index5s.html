@@ -103,7 +103,13 @@ document.onreadystatechange = function(e)
 			
 		//	alert('trueee'+url);
 	
-	        iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	     //   iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+		 
+		 
+		 $.mobile.changePage('index5s.html#browserPage');
+		 
+		 $('#IFrame').attr('src',url)
+		 
 			
 			$.support.cors = true;
 			
@@ -705,6 +711,51 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     </div><!-- /content -->
 </div>
 
+
+<div data-role="page" id="browserPage">
+         
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
+	  
+    
+    
+    
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+   
+
+        
+        
+        <div class="topmenucontainer" >
+    
+     
+     <div class="searchsettings">
+        
+       <div  class="lefticon" >
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+        </div>
+        
+        
+        
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Privacy</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+	   	<div  role="main" class="ui-content" >
+        <div class="example-wrapper" data-iscroll >
+        
+          <iframe id="IFrame" frameborder="0" scrolling="yes"   width="100%" height="100%"></iframe>
+          </div>
+    </div><!-- /content -->
+</div>
+
+
+
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
   <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
   
@@ -1104,7 +1155,7 @@ $(window).resize();
     function onDeviceReady(){
 		
 		
-	alert('called');
+//	alert('called');
 		
 		 
     var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
@@ -1235,7 +1286,7 @@ navigator.splashscreen.hide();
 	
 					
 		}else{
-			alert('1');
+	//		alert('1');
 			
 	 		$.mobile.changePage('index5s.html#page');
 		
@@ -1246,7 +1297,7 @@ navigator.splashscreen.hide();
 				
 				
 			navigator.splashscreen.hide();	
-			alert('2')
+	//		alert('2')
 			
 		}
   
@@ -1496,7 +1547,7 @@ function bringdown()
 	
 	
 $('#textinput').css('position','relative');
-$('#textinput').animate({'bottom':'55%'},300,'linear');
+$('#textinput').animate({'bottom':'55%'},150,'linear');
 
 	
 	}
@@ -1508,7 +1559,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'55%'},300,'linear');
+  $('#textinput').animate({'bottom':'85%'},150,'linear');
  
   
 // See if keyboard is open or not
