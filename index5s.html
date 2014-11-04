@@ -103,12 +103,12 @@ document.onreadystatechange = function(e)
 			
 		//	alert('trueee'+url);
 	
-	     //   iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	       iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		 
 		 
-		 $.mobile.changePage('index5s.html#browserPage');
+		// $.mobile.changePage('index5s.html#browserPage');
 		 
-		 $('#IFrame').attr('src',url)
+	//	 $('#IFrame').attr('src',url)
 		 
 			
 			$.support.cors = true;
@@ -188,7 +188,7 @@ ul.touch li.ui-li-has-alt a.ui-btn {
 	opacity:.65;
 	
 */	position:absolute; bottom:0px;
-background: rgba(255, 255, 255, 0.85) !important;
+background: rgba(255, 255, 255, 0.5) !important;
 	}
 	
 		
@@ -606,12 +606,9 @@ background: rgba(255, 255, 255, 0.85) !important;
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
 	  
-    
-    
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+      <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
         
         <div class="topmenucontainer" >
-    
      
      <div class="searchsettings">
         
@@ -658,15 +655,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 <div data-role="page" id="privacy">
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
-	  
-    
-    
     
         <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-   
 
-        
-        
         <div class="topmenucontainer" >
     
      
@@ -711,49 +702,36 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     </div><!-- /content -->
 </div>
 
-
+<!---
 <div data-role="page" id="browserPage">
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
-	  
-    
-    
-    
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-   
-
-        
+       <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
         
         <div class="topmenucontainer" >
     
-     
      <div class="searchsettings">
         
        <div  class="lefticon" >
        		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
         </div>
         
-        
-        
       </div>  
-        
         
         </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Privacy</p>
     </div>
-      
- 
-</div><!-- /header -->
+</div>
 	   	<div  role="main" class="ui-content" >
         <div class="example-wrapper"  >
         
           <iframe id="IFrame" frameborder="0"  data-iscroll   width="100%" height="100%"></iframe>
           </div>
-    </div><!-- /content -->
+    </div>
 </div>
-
+---->
 
 
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
@@ -1285,7 +1263,7 @@ db.transaction(populateDB, errorCB, successCB);
 				
 				update_timer();
 				
-			alert('1');
+		//	alert('1');
 //swipe_list_items();
 	
 					
@@ -1427,43 +1405,7 @@ function IsEmail(email) {
 	
 
 	
-         
-	function settings_page()
-	{		
-				
-				 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
-					
-				 $('#twitterautho').on('touchstart', function() {	
-					
-                    OAuth.popup('twitter')
-                        .done(function (r) {
-							alert('success');
-                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                            r.get('/1.1/account/verify_credentials.json')
-                                .done(function(data) {
-//                                    $('#result').html("twitter: Hello, " + data.name + " !");
-									
-									
-									console.log("twitter: Hello, " + data.name + " ! ");
-									
-								$('#twitterlogout').css('display','none');
-								$('#twitterlogged').css('display','block');
 
-									
-                                })
-                                .fail(function( jqXHR, textStatus, errorThrown) {
-                                    $('#result').html("req error: " + textStatus);
-                                });
-                        })
-                        .fail(function (e) {
-                            $('#result').html('error: ' + e.message);
-                        });
-						
-				 });
-                
-				
-	}
 				
 		/*		
 			    OAuth.popup('tumblr')

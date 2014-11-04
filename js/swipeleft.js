@@ -1,3 +1,5 @@
+
+
 /*
 $(function(){
     var blue = document.getElementById("blue");
@@ -125,5 +127,43 @@ $(function(){
 });
 
 
+         
+	function settings_page()
+	{		
+				
+				 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+					
+				 $('#twitterautho').on('touchstart', function() {	
+					
+                    OAuth.popup('twitter')
+                        .done(function (r) {
+							alert('success');
+                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                            r.get('/1.1/account/verify_credentials.json')
+                                .done(function(data) {
+//                                    $('#result').html("twitter: Hello, " + data.name + " !");
+									
+									
+									console.log("twitter: Hello, " + data.name + " ! ");
+									
+									
+									
+								$('#twitterlogout').css('display','none');
+								$('#twitterlogged').css('display','block');
 
+									
+                                })
+                                .fail(function( jqXHR, textStatus, errorThrown) {
+                                    $('#result').html("req error: " + textStatus);
+                                });
+                        })
+                        .fail(function (e) {
+                            $('#result').html('error: ' + e.message);
+                        });
+						
+				 });
+                
+				
+	}
 
