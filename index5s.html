@@ -1532,7 +1532,7 @@ function bringup()
 var callback = function(buttonIndex) {
     setTimeout(function() {
       // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
-      alert('button index clicked: ' + buttonIndex);
+//      alert('button index clicked: ' + buttonIndex);
 	  
 	  var share_link_name = global_article_link;
 		  var share_title_name = global_article_title;
@@ -1542,7 +1542,7 @@ var callback = function(buttonIndex) {
 	  {
 		  
 		  
-		  window.plugins.socialsharing.shareViaEmail(article_title, null /* img */,article_link) ;
+		  window.plugins.socialsharing.shareViaEmail( " ' "+ article_title +" '  " , null /* img */," ' "+article_link+" '  " );
 		  
 		  	   //append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
 			  //  append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
