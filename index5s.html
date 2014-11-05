@@ -738,9 +738,16 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     </div>
 </div>
 	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper"  >
+        <div class="example-wrapper" data-iscroll  >
+        <div id="deviceready" class="blink">
+    <p class="event listening">Connecting to Device</p>
+    <p class="event received">Device is Ready</p>
+    <button onclick="testShareSheet()">Test Share</button><br/><br/>
+    <button onclick="testDeleteSheet()">Test Delete</button><br/><br/>
+    <button onclick="testLogoutSheet()">Test Logout</button>
+  </div>
         
-          <iframe id="IFrame" frameborder="0"  data-iscroll   width="100%" height="100%"></iframe>
+          <iframe id="IFrame" frameborder="0"  scrolling="yes"    width="100%" height="100%"></iframe>
           </div>
     </div>
 </div>
