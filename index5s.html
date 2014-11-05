@@ -97,6 +97,24 @@ document.onreadystatechange = function(e)
 		 $.mobile.changePage('index5s.html#browserPage');
 		 
 		 $('#IFrame').attr('src',url);
+		 
+		 
+$('#layer').click(function(event){
+    var iframe = $('#theIframe').get(0);
+    var iframeDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
+
+    // Find click position (coordinates)
+    var x = event.offsetX;
+    var y = event.offsetY;
+
+    // Trigger click inside iframe
+    var link = iframeDoc.elementFromPoint(x, y);
+    var newEvent = iframeDoc.createEvent('HTMLEvents');
+    newEvent.initEvent('click', true, true);
+    link.dispatchEvent(newEvent);
+});
+
+		 
 			
 			$.support.cors = true;
 			
@@ -143,6 +161,19 @@ function browser_setting()
    
   
   <style>
+  
+  
+  #layer{
+    position:absolute;
+    opacity:0;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:2
+}
   
 
 /* Border bottom for the previous button during the transition*/
@@ -725,10 +756,17 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     </div>
 </div>
 	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper" data-iscroll  >
         
-          <iframe id="IFrame" frameborder="0"  scrolling="yes"    width="100%" height="100%"></iframe>
-          </div>
+        <div id="wrapper">
+    			<div id="layer"></div>
+        
+       			 <iframe id="IFrame" frameborder="0"  scrolling="yes"    width="100%" height="100%"></iframe>
+		
+        </div>
+        
+        
+      
+      
     </div>
 </div>
 
@@ -1400,6 +1438,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2],userinsert);
 			
+			EbooUSER_ID = parameter2;
 			
 		//	console.log(parameter2)
 		}

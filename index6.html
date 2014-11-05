@@ -1404,7 +1404,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			
 			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2],userinsert);
-			
+			EbooUSER_ID = parameter2;
 			
 		//	console.log(parameter2)
 		}
