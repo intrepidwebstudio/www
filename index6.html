@@ -823,10 +823,25 @@ $(document).keypress(function(e) {
 					var viewstatus=element.viewstatus; 
 					
 					
+					
 				//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
 					var len = 0;
 					var len=article_title.length;
+					
+					 var article_title_unescaped = article_title;
+					 var source_name_unescaped = source_name;
+					 
+					article_title = article_title.replace(/'/g, "\\'");
+					
+					source_name = source_name.replace(/'/g, "\\'");
+					
+					article_link = encodeURI(article_link);
+					
+					
+					
+					
+					
 					if(len>55)
 					{ 
 					article_title = article_title.substr(0,55);
@@ -844,16 +859,16 @@ $(document).keypress(function(e) {
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';
+					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';	
+					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',\''+article_title+'\')" >';
 					}
 
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
-					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important;  " class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important;  " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 					
 					
 				//	alert(append_data);
@@ -976,11 +991,27 @@ function load_trending()
 					// checking the variable length
 					var len = 0;
 					var len=article_title.length;
+					
+				 var article_title_unescaped = article_title;
+					
+				 var source_name_unescaped = source_name;	
+					
+					
+					article_title = article_title.replace(/'/g, "\\'");
+					source_name = source_name.replace(/'/g, "\\'");
+					
+					
+						article_link = encodeURI(article_link);
+					
 					if(len>55)
 					{ 
 					article_title = article_title.substr(0,55);
 					article_title = article_title + '...';	
 						}
+						
+						
+						
+						
 						
 					append_data+='<li><div class="behind">';
 					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a>';
@@ -991,16 +1022,16 @@ function load_trending()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';
+					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';	
+					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
-					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; " class="Conv_MuseoSans_900"  >'+source_name+'</span> <span style="float:right; font-size:10px !important" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 		
 						}
 							);			
