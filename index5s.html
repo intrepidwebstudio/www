@@ -727,14 +727,14 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
     
-    	<p style="width:10% !important; vertical-align:middle !important;float:left ;  " >
+    	<a  data-rel="back"  ><p style="width:10% !important; vertical-align:middle !important;float:left ;  " >
        			<img src="icons/57x57/exit.png" style=" width:90% !important; margin-top:-22% !important; margin-left:25% !important;" >
-        </p>
+        </p></a>
     
     <p style="width:73% !important; float:left !important;  max-height:20px !important; margin-left:4% !important; overflow:hidden !important; white-space: nowrap; vertical-align:middle !important; text-overflow: ellipsis; " class="Conv_MuseoSans-300Italic" > some text in be asdf  asdf asdffas asdf asdf asfa asdfa asdf asdf a asfas asdf asdf asdf twasd a ada asda sasa   sdfg sdfg dfeen</p>
     
     <p style="width:10% !important; vertical-align:middle !important;float:left; " onclick="share_article()" >
-   		  <img src="icons/57x57/share.png" style="width:100% !important; margin-top:-25% !important ; margin-right:20%  !important;">
+   		  <img src="icons/57x57/share.png" style="width:100% !important; margin-top:-25% !important ; margin-right:22%  !important;">
     </p>
                 
                 
@@ -891,7 +891,7 @@ $(document).keypress(function(e) {
 					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';	
+					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',\''+article_title+'\')" >';
 					}
 
 					
@@ -1038,7 +1038,7 @@ function load_trending()
 					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this)" >';	
+					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					
@@ -1536,8 +1536,7 @@ var callback = function(buttonIndex) {
       // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
 //      alert('button index clicked: ' + buttonIndex);
 	  
-	  global_article_link;
-		global_article_title;
+	 
 		  
 		  $.getScript("js/SocialSharing.js");
 		  SocialSharing();
