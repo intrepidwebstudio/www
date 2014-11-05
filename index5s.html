@@ -96,9 +96,10 @@ document.onreadystatechange = function(e)
 		 
 		 $.mobile.changePage('index5s.html#browserPage');
 		 
-		
 		 
 		 $('#IFrame').attr('src',url);
+		 
+		 onborwserPage();
 			
 			$.support.cors = true;
 			
@@ -359,7 +360,17 @@ background: rgba(255, 255, 255, 0.5) !important;
     width: 100% !important;
 }
 
-
+#layer{
+    position:absolute;
+    opacity:0;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:2
+}
 
 
   </style>
@@ -694,9 +705,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
 
-<div data-role="page" id="browserPage" style="overflow:hidden; " >
+<div data-role="page" id="browserPage">
          
-    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;    "   >
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
         
         <div class="topmenucontainer" >
@@ -728,12 +739,16 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 </div>
 	   	<div  role="main" class="ui-content" >
         
-        	
-          <iframe id="IFrame" frameborder="0"  scrolling="yes"  style="overflow:scroll !important;"   width="100%" height="100%"></iframe>
-          
-          
-          </div>
-    
+        
+        <div id="wrapper">
+    <div id="layer"></div>
+     <iframe id="IFrame" frameborder="0"  scrolling="yes"    width="100%" height="100%"></iframe>
+</div>
+        
+     
+        
+      
+    </div>
 </div>
 
 
@@ -1553,11 +1568,26 @@ function bringup()
 
 
 
-
-
-
-
-
+		function onborwserPage(){
+		
+					$('#layer').click(function(event){
+					var iframe = $('#IFrame').get(0);
+					var iframeDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
+					
+					// Find click position (coordinates)
+					var x = event.offsetX;
+					var y = event.offsetY;
+					
+					// Trigger click inside iframe
+					var link = iframeDoc.elementFromPoint(x, y);
+					var newEvent = iframeDoc.createEvent('HTMLEvents');
+					newEvent.initEvent('click', true, true);
+					link.dispatchEvent(newEvent);
+					});
+					
+					
+		}
+		
 
 
 
