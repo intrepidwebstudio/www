@@ -714,9 +714,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     
      <div class="searchsettings">
         
-       <div  class="lefticon" >
+      <!-- <div  class="lefticon" >
        		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
-        </div>
+        </div>-->
         
       </div>  
         
@@ -724,7 +724,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
     
-    	<p style="width:10% !important; vertical-align:middle !important;float:left ;  " >
+    	<p style="width:10% !important; vertical-align:middle !important;float:left ;  " onclick="share_article()" >
         <img src="icons/57x57/share.png" style="width:100% !important; margin-top:-25% !important ; margin-left:25%  !important;">
         </p>
     
@@ -739,13 +739,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 </div>
 	   	<div  role="main" class="ui-content" >
         <div class="example-wrapper" data-iscroll  >
-        <div id="deviceready" class="blink">
-    <p class="event listening">Connecting to Device</p>
-    <p class="event received">Device is Ready</p>
-    <button onclick="testShareSheet()">Test Share</button><br/><br/>
-    <button onclick="testDeleteSheet()">Test Delete</button><br/><br/>
-    <button onclick="testLogoutSheet()">Test Logout</button>
-  </div>
         
           <iframe id="IFrame" frameborder="0"  scrolling="yes"    width="100%" height="100%"></iframe>
           </div>
@@ -1542,14 +1535,14 @@ var callback = function(buttonIndex) {
     });
   };
 
-  function testShareSheet() {
+  function share_article() {
     var options = {
-        'title': 'What do you want with this image?',
-        'buttonLabels': ['Share via Facebook', 'Share via Twitter'],
-        'androidEnableCancelButton' : true, // default false
-        'winphoneEnableCancelButton' : true, // default false
+       // 'title': 'What do you want with this image?',
+        'buttonLabels': ['Twitter' ,'Facebook', 'LinkedIn','Email','Send to Reading List','Open in Safari'],
+        'androidEnableCancelButton' : false, // default false
+        'winphoneEnableCancelButton' : false, // default false
         'addCancelButtonWithLabel': 'Cancel',
-        'addDestructiveButtonWithLabel' : 'Delete it'
+//        'addDestructiveButtonWithLabel' : 'Delete it'
     };
     // Depending on the buttonIndex, you can now call shareViaFacebook or shareViaTwitter
     // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
