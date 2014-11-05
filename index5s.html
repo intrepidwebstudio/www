@@ -106,11 +106,13 @@ document.onreadystatechange = function(e)
 	   //    iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		 
 		 
+		 global_article_title = article_share_title ;
+		 global_article_link = url ;
+
+		 
 		 $.mobile.changePage('index5s.html#browserPage');
 		 
 		 $('#IFrame').attr('src',url);
-		 global_article_title = article_share_title ;
-		 global_article_link = url ;
 			
 			$.support.cors = true;
 			
