@@ -1536,6 +1536,8 @@ var callback = function(buttonIndex) {
 	  
 	  var share_link_name = global_article_link;
 		  var share_title_name = global_article_title;
+		  
+		  SocialSharing();
 	  
 	  
 	  if(buttonIndex == 1)
@@ -1558,6 +1560,10 @@ var callback = function(buttonIndex) {
   };
 
   function share_article() {
+	  
+	  
+	  
+	  
     var options = {
        // 'title': 'What do you want with this image?',
         'buttonLabels': ['Twitter' ,'Facebook', 'LinkedIn','Email','Send to Reading List','Open in Safari'],
