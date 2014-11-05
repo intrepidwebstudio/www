@@ -35,29 +35,13 @@ document.onreadystatechange = function(e)
   
   <script defer src="js/idangerous.swiper.js"></script>
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+   <script type="text/javascript" src="js/settings.js"></script>
+   
+   
    <script>
     // Wait for Cordova to load
     //
-  
 
-	var feedData;
-
-   var imagepath = 'http://www.safelearners.com/eboo/';
-   var ajax_path = 'http://www.safelearners.com/eboo/app/';
-   
-   
-   var SearchQueryId;
-   
-   var EbooUSER_ID;
-   
-   var feed_conducted=0; 
-	
-   var user_time = 0;
-
-   var user_active = 0;
-
-   var global_article_title='';	
-	var global_article_link='';
 	
 	
 	
@@ -146,7 +130,7 @@ function browser_setting()
                          $.mobile.loader.prototype.options.textVisible = false;
                          $.mobile.loader.prototype.options.theme ="d";
                          $.mobile.loader.prototype.options.textonly = false;
-                         $.mobile.loader.prototype.options.html ="<img src='icons/settings.png'/>";
+                        // $.mobile.loader.prototype.options.html ="<img src='icons/settings.png'/>";
                          $.mobile.allowCrossDomainPages = true;
                          });
 						 
@@ -462,7 +446,7 @@ background: rgba(255, 255, 255, 0.5) !important;
       
       <!--Second Slide-->
       <div class="swiper-slide">
-            <img src="img/introscreen/640x1136/02.jpg"  style="width:320px !important; height:568px !important; " >
+            <img src="img/introscreen/640x1136/02wcircles.jpg"  style="width:320px !important; height:568px !important; " >
      <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the second slide goes here -->
       </div>
@@ -1562,70 +1546,8 @@ function bringup()
 
 }
 
-var callback = function(buttonIndex) {
-    setTimeout(function() {
-      // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
-//      alert('button index clicked: ' + buttonIndex);
-	  
-	 
-		  
-		  $.getScript("js/SocialSharing.js");
-		  SocialSharing();
-		  
-		  alert('title = ' + global_article_title + ' link  =  '+ global_article_link );
-	  
-	  
-	  if(buttonIndex == 1)
-	  {
-		  alert('ss');
-		//  window.plugins.socialsharing.shareViaFacebook(  article_title, null, null, function(){alert("ok")}, function(e){alert("error: " + e)});
-		  window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
-		  
-		  }
-		 else if(buttonIndex == 2)
-		 {
-			 window.plugins.socialsharing.shareViaFacebook(global_article_title, null /* img */,global_article_link);
-			 }
-		 else if(buttonIndex == 3)
-		 {
-			 window.plugins.socialsharing.share(global_article_title, null /* img */,global_article_link);
-			 }
-		 else if(buttonIndex == 4)
-		 {
-			 window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
-			 }
-		 else if(buttonIndex == 5)
-		 {
-			 
-			 
-			 }
-		else if(buttonIndex == 6)
-		 {
-			 
-			 }	 
-		 
-	  
-	  
-    });
-  };
 
-  function share_article() {
-	  
-	  
-	  
-	  
-    var options = {
-       // 'title': 'What do you want with this image?',
-        'buttonLabels': ['Twitter' ,'Facebook', 'LinkedIn','Email','Send to Reading List','Open in Safari'],
-        'androidEnableCancelButton' : false, // default false
-        'winphoneEnableCancelButton' : false, // default false
-        'addCancelButtonWithLabel': 'Cancel',
-//        'addDestructiveButtonWithLabel' : 'Delete it'
-    };
-    // Depending on the buttonIndex, you can now call shareViaFacebook or shareViaTwitter
-    // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
-    window.plugins.actionsheet.show(options, callback);
-  };
+
 
 
 

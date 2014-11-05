@@ -35,32 +35,12 @@ document.onreadystatechange = function(e)
   
   <script defer src="js/idangerous.swiper.js"></script>
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
    <script>
     // Wait for Cordova to load
     //
   
 
-	var feedData;
-
-   var imagepath = 'http://www.safelearners.com/eboo/';
-   var ajax_path = 'http://www.safelearners.com/eboo/app/';
-   
-   
-   var SearchQueryId;
-   
-   var EbooUSER_ID;
-   
-   var feed_conducted=0; 
-	
-   var user_time = 0;
-
-   var user_active = 0;
-
-
-
-	
-	
-	
 
 	 var iabUrl = null;
         // Global InAppBrowser reference
@@ -99,11 +79,20 @@ document.onreadystatechange = function(e)
             iabRef.removeEventListener('exit', iabClose);
             iabRef.removeEventListener('share', iabClose);
         }
-        function navigateTo(url,click_id,this_id){
+         function navigateTo(url,click_id,this_id,article_share_title){
 			
 		//	alert('trueee'+url);
 	
-	        iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	   //    iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+		 
+		 
+		 global_article_title = article_share_title ;
+		 global_article_link = url ;
+
+		 
+		 $.mobile.changePage('index6.html#browserPage');
+		 
+		 $('#IFrame').attr('src',url);
 			
 			$.support.cors = true;
 			
@@ -126,7 +115,6 @@ document.onreadystatechange = function(e)
 			
         }
 		
-		
 	
 
 
@@ -137,7 +125,7 @@ function browser_setting()
                          $.mobile.loader.prototype.options.textVisible = false;
                          $.mobile.loader.prototype.options.theme ="d";
                          $.mobile.loader.prototype.options.textonly = false;
-                         $.mobile.loader.prototype.options.html ="<img src='icons/settings.png'/>";
+         //                $.mobile.loader.prototype.options.html ="<img src='icons/settings.png'/>";
                          $.mobile.allowCrossDomainPages = true;
                          });
 						 
@@ -704,6 +692,50 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
           </p>
           </div>
     </div><!-- /content -->
+</div>
+
+
+
+
+
+<div data-role="page" id="browserPage">
+         
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
+       <img  src="img/750.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        
+        <div class="topmenucontainer" >
+    
+     <div class="searchsettings">
+        
+      <!-- <div  class="lefticon" >
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+        </div>-->
+        
+      </div>  
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+    
+    	<a  data-rel="back"  ><p style="width:10% !important; vertical-align:middle !important;float:left ;  " >
+       			<img src="icons/57x57/exit.png" style=" width:90% !important; margin-top:-22% !important; margin-left:25% !important;" >
+        </p></a>
+    
+    <p style="width:73% !important; float:left !important;  max-height:20px !important; margin-left:4% !important; overflow:hidden !important; white-space: nowrap; vertical-align:middle !important; text-overflow: ellipsis; " class="Conv_MuseoSans-300Italic" > some text in be asdf  asdf asdffas asdf asdf asfa asdfa asdf asdf a asfas asdf asdf asdf twasd a ada asda sasa   sdfg sdfg dfeen</p>
+    
+    <p style="width:10% !important; vertical-align:middle !important;float:left; " onclick="share_article()" >
+   		  <img src="icons/57x57/share.png" style="width:100% !important; margin-top:-25% !important ; margin-right:22%  !important;">
+    </p>
+                
+                
+    </div>
+</div>
+	   	<div  role="main" class="ui-content" >
+        <div class="example-wrapper" data-iscroll  >
+        
+          <iframe id="IFrame" frameborder="0"  scrolling="yes"    width="100%" height="100%"></iframe>
+          </div>
+    </div>
 </div>
 
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>

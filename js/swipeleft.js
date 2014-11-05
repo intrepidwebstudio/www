@@ -167,3 +167,73 @@ $(function(){
 				
 	}
 
+
+
+
+
+var callback = function(buttonIndex) {
+    setTimeout(function() {
+      // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
+//      alert('button index clicked: ' + buttonIndex);
+	  
+	 
+		  
+		  $.getScript("js/SocialSharing.js");
+		  SocialSharing();
+		  
+		  alert('title = ' + global_article_title + ' link  =  '+ global_article_link );
+	  
+	  
+	  if(buttonIndex == 1)
+	  {
+		  alert('ss');
+		//  window.plugins.socialsharing.shareViaFacebook(  article_title, null, null, function(){alert("ok")}, function(e){alert("error: " + e)});
+		  window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
+		  
+		  }
+		 else if(buttonIndex == 2)
+		 {
+			 window.plugins.socialsharing.shareViaFacebook(global_article_title, null /* img */,global_article_link);
+			 }
+		 else if(buttonIndex == 3)
+		 {
+			 window.plugins.socialsharing.share(global_article_title, null /* img */,global_article_link);
+			 }
+		 else if(buttonIndex == 4)
+		 {
+			 window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
+			 }
+		 else if(buttonIndex == 5)
+		 {
+			 
+			 
+			 }
+		else if(buttonIndex == 6)
+		 {
+			 
+			 }	 
+		 
+	  
+	  
+    });
+  };
+
+  function share_article() {
+	  
+	  
+	  
+	  
+    var options = {
+       // 'title': 'What do you want with this image?',
+        'buttonLabels': ['Twitter' ,'Facebook', 'LinkedIn','Email','Send to Reading List','Open in Safari'],
+        'androidEnableCancelButton' : false, // default false
+        'winphoneEnableCancelButton' : false, // default false
+        'addCancelButtonWithLabel': 'Cancel',
+//        'addDestructiveButtonWithLabel' : 'Delete it'
+    };
+    // Depending on the buttonIndex, you can now call shareViaFacebook or shareViaTwitter
+    // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
+    window.plugins.actionsheet.show(options, callback);
+  };
+
+
