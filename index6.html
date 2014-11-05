@@ -26,7 +26,7 @@ document.onreadystatechange = function(e)
 {
     if (document.readyState === 'complete')
     {
-	       navigator.splashscreen.show();
+	      // navigator.splashscreen.show();
 	        document.addEventListener("deviceready", onDeviceReady, false);
     }
 };
@@ -182,7 +182,7 @@ ul.touch li.ui-li-has-alt a.ui-btn {
 	opacity:.65;
 	
 */	position:absolute; bottom:0px;
-background: rgba(255, 255, 255, 0.85) !important;
+background: rgba(255, 255, 255, 0.5) !important;
 	}
 	
 		
@@ -237,9 +237,9 @@ background: rgba(255, 255, 255, 0.85) !important;
 	.lefticon img{
 			
 			float:left;
-			width:5%;
-			max-width:70px;
-			padding-left:3%;
+			width:8%;
+			max-width:100px;
+			padding-left:4%;
 			
 		}	
 		
@@ -247,10 +247,11 @@ background: rgba(255, 255, 255, 0.85) !important;
 	.righticon img{
 			
 			float:right;
-			width:5%;
-			max-width:70px;	
-			padding-right:3%;
+			width:8%;
+			max-width:100px;	
+			padding-right:4%;
 		}	
+		
 		
 		
 		
@@ -408,7 +409,7 @@ background: rgba(255, 255, 255, 0.85) !important;
         
         
         <div class="righticon">
-        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
+        	<a href="#settings" onClick="settings_page()" ><img src="icons/57x57/settings.png" ></a>
         </div>
       </div>  
         
@@ -542,7 +543,7 @@ background: rgba(255, 255, 255, 0.85) !important;
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li><a href="#twitterauthorize" onClick="twitterautho()" >
+                 <li id="twitterautho" ><a href="#twitterauthorize"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
@@ -1095,7 +1096,10 @@ $(window).resize();
 	
 //alert('sasdasds');
 	    
-	
+	setTimeout(function() {
+        navigator.splashscreen.hide();
+		
+   			 }, 4000);
 	
 	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
@@ -1230,7 +1234,7 @@ db.transaction(populateDB, errorCB, successCB);
 				
 			
 //swipe_list_items();
-navigator.splashscreen.hide();
+// navigator.splashscreen.hide();
 	
 	
 					
@@ -1245,7 +1249,7 @@ navigator.splashscreen.hide();
 	       startswiperfunction();
 				
 				
-			navigator.splashscreen.hide();	
+		//	navigator.splashscreen.hide();	
 			
 		}
   
@@ -1504,7 +1508,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'80%'},150,'linear');
+  $('#textinput').animate({'bottom':'85%'},150,'linear');
  
   
 // See if keyboard is open or not

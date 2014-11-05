@@ -103,12 +103,12 @@ document.onreadystatechange = function(e)
 			
 		//	alert('trueee'+url);
 	
-	       iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	   //    iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		 
 		 
-		// $.mobile.changePage('index5s.html#browserPage');
+		 $.mobile.changePage('index5s.html#browserPage');
 		 
-	//	 $('#IFrame').attr('src',url)
+		 $('#IFrame').attr('src',url)
 		 
 			
 			$.support.cors = true;
@@ -702,7 +702,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     </div><!-- /content -->
 </div>
 
-<!---
+
+
+
 <div data-role="page" id="browserPage">
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
@@ -721,7 +723,18 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
         </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Privacy</p>
+    
+    	<p style="width:10% !important; vertical-align:middle !important;float:left ;  " >
+        <img src="icons/57x57/share.png" style="width:100% !important; margin-top:-25% !important ; margin-left:25%  !important;">
+        </p>
+    
+    <p style="width:73% !important; float:left !important;  max-height:20px !important; margin-left:4% !important; overflow:hidden !important; white-space: nowrap; vertical-align:middle !important; text-overflow: ellipsis; " class="Conv_MuseoSans-300Italic" > some text in be asdf  asdf asdffas asdf asdf asfa asdfa asdf asdf a asfas asdf asdf asdf twasd a ada asda sasa   sdfg sdfg dfeen</p>
+    
+    <p style="width:10% !important; vertical-align:middle !important;float:left; ">
+   		 <img src="icons/57x57/exit.png" style=" width:80% !important; margin-top:-20% !important; margin-right:25% !important;" >
+    </p>
+                
+                
     </div>
 </div>
 	   	<div  role="main" class="ui-content" >
@@ -731,7 +744,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
           </div>
     </div>
 </div>
----->
+
 
 
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
@@ -1515,7 +1528,44 @@ function bringup()
 
 }
 
+var callback = function(buttonIndex) {
+    setTimeout(function() {
+      // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
+      alert('button index clicked: ' + buttonIndex);
+    });
+  };
 
+  function testShareSheet() {
+    var options = {
+        'title': 'What do you want with this image?',
+        'buttonLabels': ['Share via Facebook', 'Share via Twitter'],
+        'androidEnableCancelButton' : true, // default false
+        'winphoneEnableCancelButton' : true, // default false
+        'addCancelButtonWithLabel': 'Cancel',
+        'addDestructiveButtonWithLabel' : 'Delete it'
+    };
+    // Depending on the buttonIndex, you can now call shareViaFacebook or shareViaTwitter
+    // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
+    window.plugins.actionsheet.show(options, callback);
+  };
+
+  function testDeleteSheet() {
+    var options = {
+        'addCancelButtonWithLabel': 'Cancel',
+        'addDestructiveButtonWithLabel' : 'Delete note'
+    };
+    window.plugins.actionsheet.show(options, callback);
+  };
+
+  function testLogoutSheet() {
+    var options = {
+        'buttonLabels': ['Log out'],
+        'androidEnableCancelButton' : true, // default false
+        'winphoneEnableCancelButton' : true, // default false
+        'addCancelButtonWithLabel': 'Cancel'
+    };
+    window.plugins.actionsheet.show(options, callback);
+  };
 
 
 

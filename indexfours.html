@@ -103,7 +103,13 @@ document.onreadystatechange = function(e)
 			
 		//	alert('trueee'+url);
 	
-	        iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	   //    iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+		 
+		 
+		 $.mobile.changePage('indexfours.html#browserPage');
+		 
+		 $('#IFrame').attr('src',url)
+		 
 			
 			$.support.cors = true;
 			
@@ -377,7 +383,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 
 <body>
 
-<div data-role="page"   id="page" data-title="eboo" >
+<div data-role="page"  data-position="fixed"  id="page" data-title="eboo" >
 
 
 <div class="swiper-container">
@@ -474,7 +480,7 @@ background: rgba(255, 255, 255, 0.5) !important;
         
         
         <div class="righticon">
-        	<a href="#settings" ><img src="icons/57x57/settings.png" ></a>
+        	<a href="#settings" onClick="settings_page()" ><img src="icons/57x57/settings.png" ></a>
         </div>
       </div>  
         
@@ -549,7 +555,7 @@ background: rgba(255, 255, 255, 0.5) !important;
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li><a href="#twitterauthorize" onClick="twitterautho()" >
+                 <li id="twitterautho" ><a href="#twitterauthorize"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
@@ -711,6 +717,49 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
           </div>
     </div><!-- /content -->
 </div>
+
+
+<div data-role="page" id="browserPage">
+         
+    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
+       <img  src="img/320.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        
+        <div class="topmenucontainer" >
+    
+     <div class="searchsettings">
+        
+       <div  class="lefticon" >
+       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+        </div>
+        
+      </div>  
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+    
+    	<p style="width:10% !important; vertical-align:middle !important;float:left ;  " >
+        <img src="icons/57x57/share.png" style="width:100% !important; margin-top:-25% !important ; margin-left:25%  !important;">
+        </p>
+    
+    <p style="width:73% !important; float:left !important;  max-height:20px !important; margin-left:4% !important; overflow:hidden !important; white-space: nowrap; vertical-align:middle !important; text-overflow: ellipsis; " class="Conv_MuseoSans-300Italic" > some text in be asdf  asdf asdffas asdf asdf asfa asdfa asdf asdf a asfas asdf asdf asdf twasd a ada asda sasa   sdfg sdfg dfeen</p>
+    
+    <p style="width:10% !important; vertical-align:middle !important;float:left; ">
+   		 <img src="icons/57x57/exit.png" style=" width:80% !important; margin-top:-20% !important; margin-right:25% !important;" >
+    </p>
+                
+                
+    </div>
+</div>
+	   	<div  role="main" class="ui-content" >
+        <div class="example-wrapper"  data-iscroll >
+        
+          <iframe id="IFrame" frameborder="0"  data-iscroll scrolling="auto" style="overflow:scroll;"  width="100%" height="100%"></iframe>
+          </div>
+    </div>
+</div>
+
+
 
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
   <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
@@ -1102,9 +1151,11 @@ $(window).resize();
 	
 //alert('sasdasds');
 	    
-	
-setTimeout( startswiperfunction() ,3000);
-	
+setTimeout(function() {
+        navigator.splashscreen.hide();
+		
+		
+   			 }, 4000);	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
  
     //function will be called when device ready
@@ -1515,7 +1566,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'75%'},150,'linear');
+  $('#textinput').animate({'bottom':'85%'},150,'linear');
  
   
 // See if keyboard is open or not

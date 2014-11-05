@@ -77,6 +77,11 @@
 	
 	
 	<gap:plugin name="com.oauthio.plugins.oauthio" version="0.2.4" />	
+	
+	<gap:plugin name="nl.x-services.plugins.actionsheet" version="1.1.1" />
+	<feature name="ActionSheet">
+  <param name="ios-package" value="ActionSheet" />
+</feature>
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
