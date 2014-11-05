@@ -1537,6 +1537,7 @@ var callback = function(buttonIndex) {
 	  var share_link_name = global_article_link;
 		  var share_title_name = global_article_title;
 		  
+		  $.getScript("js/SocialSharing.js");
 		  SocialSharing();
 	  
 	  
@@ -1544,7 +1545,9 @@ var callback = function(buttonIndex) {
 	  {
 		  
 		  
-		  window.plugins.socialsharing.shareViaEmail( " ' "+ article_title +" '  " , null /* img */," ' "+article_link+" '  " );
+		  window.plugins.socialsharing.shareViaEmail(article_title , null /* img */,article_link );
+		  
+		  alert( window.plugins.socialsharing.shareViaEmail( " ' "+ article_title +" '  " , null /* img */," ' "+article_link+" '  " ));
 		  
 		  	   //append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
 			  //  append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
