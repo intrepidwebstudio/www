@@ -1544,7 +1544,7 @@ var callback = function(buttonIndex) {
 	  if(buttonIndex == 1)
 	  {
 		  alert('ss');
-		  
+		  window.plugins.socialsharing.shareViaFacebook("message", null, null, function(){alert("ok")}, function(e){alert("error: " + e)});
 	//	  window.plugins.socialsharing.shareViaEmail(article_title , null /* img */,article_link );
 		  
 		  //alert( window.plugins.socialsharing.shareViaFacebook(article_title, null /* img */,article_link));
