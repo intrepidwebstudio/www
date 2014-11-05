@@ -1534,29 +1534,44 @@ var callback = function(buttonIndex) {
       // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
 //      alert('button index clicked: ' + buttonIndex);
 	  
-	  var share_link_name = global_article_link;
-		  var share_title_name = global_article_title;
+	  global_article_link;
+		global_article_title;
 		  
 		  $.getScript("js/SocialSharing.js");
 		  SocialSharing();
+		  
+		  alert('title = ' + global_article_title + ' link  =  '+ global_article_link );
 	  
 	  
 	  if(buttonIndex == 1)
 	  {
 		  alert('ss');
 		//  window.plugins.socialsharing.shareViaFacebook(  article_title, null, null, function(){alert("ok")}, function(e){alert("error: " + e)});
-		  window.plugins.socialsharing.shareViaEmail(share_title_name , null /* img */,share_link_name );
-		  
-		  //alert( window.plugins.socialsharing.shareViaFacebook(article_title, null /* img */,article_link));
-		  
-		  	   //append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
-			  //  append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
-			 //=====append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
-			//		 append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
-					
-		  
+		  window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
 		  
 		  }
+		 else if(buttonIndex == 2)
+		 {
+			 window.plugins.socialsharing.shareViaFacebook(global_article_title, null /* img */,global_article_link);
+			 }
+		 else if(buttonIndex == 3)
+		 {
+			 window.plugins.socialsharing.share(global_article_title, null /* img */,global_article_link);
+			 }
+		 else if(buttonIndex == 4)
+		 {
+			 window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
+			 }
+		 else if(buttonIndex == 5)
+		 {
+			 
+			 
+			 }
+		else if(buttonIndex == 6)
+		 {
+			 
+			 }	 
+		 
 	  
 	  
     });
