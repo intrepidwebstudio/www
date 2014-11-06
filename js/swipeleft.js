@@ -181,12 +181,12 @@ var callback = function(buttonIndex) {
 		  $.getScript("js/SocialSharing.js");
 		  SocialSharing();
 		  
-		  alert('title = ' + global_article_title + ' link  =  '+ global_article_link );
+		//  alert('title = ' + global_article_title + ' link  =  '+ global_article_link );
 	  
 	  
 	  if(buttonIndex == 1)
 	  {
-		  alert('ss');
+	//	  alert('ss');
 		//  window.plugins.socialsharing.shareViaFacebook(  article_title, null, null, function(){alert("ok")}, function(e){alert("error: " + e)});
 		  window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
 		  
