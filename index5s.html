@@ -96,7 +96,7 @@ document.onreadystatechange = function(e)
 		 global_article_link = url ;
 
 		 
-		 $.mobile.changePage('index5s.html#browserPage');
+	 $.mobile.changePage('#browserPage');
 		 
 		 load_page_settingsss();
 		 
@@ -772,9 +772,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
 
-
-
-
  <script>
     
 
@@ -1196,7 +1193,7 @@ $(window).resize();
         navigator.splashscreen.hide();
 		
 		
-   			 }, 3000);
+   			 }, 5000);
 	
 	
 	
@@ -1307,7 +1304,7 @@ db.transaction(populateDB, errorCB, successCB);
 		if(length >0)
 		{
 			
-			$.mobile.changePage('index5s.html#page1');
+			$.mobile.changePage('#page1');
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1337,7 +1334,7 @@ db.transaction(populateDB, errorCB, successCB);
 		}else{
 	//		alert('1');
 			
-	 		$.mobile.changePage('index5s.html#page');
+	 		$.mobile.changePage('#page');
 		
 		   start_timer();
 		   update_timer();
@@ -1446,7 +1443,7 @@ db.transaction(populateDB, errorCB, successCB);
 				browser_setting();
 			
 			 window.plugins.spinnerDialog.hide();
-			$.mobile.changePage('index5s.html#page1');
+			$.mobile.changePage('#page1');
 			
 		}
 		
