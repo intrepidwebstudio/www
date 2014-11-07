@@ -191,7 +191,7 @@ $(function(){
 					
 				 $('#linkedinautho').on('touchstart', function() {	
                     OAuth.popup('linkedin')
-                        .done(function (r) {
+                        .done(function (result) {
 														
 								console.log(JSON.stringify(result));
 						
@@ -200,7 +200,7 @@ $(function(){
 							
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
-                            r.get('/1.1/account/verify_credentials.json')
+                            result.get('/1.1/account/verify_credentials.json')
                                 .done(function(data) {
 									
 																
