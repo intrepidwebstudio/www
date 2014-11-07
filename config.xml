@@ -54,8 +54,6 @@
 	<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
 	<gap:plugin name="com.kerosieben.cordova.plugins.ios7scrollfix" version="0.1.0" />
 	
-	<gap:plugin name="hu.dpal.phonegap.plugins.spinnerdialog" version="1.1.0" />
-	
 	<preference name="IOS7PreventWebViewScrolling" value="true"/>
 	
     <gap:plugin name="org.apache.cordova.battery-status" />

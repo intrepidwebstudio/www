@@ -1,5 +1,3 @@
-
-
 //======================================================== FASTCLICK
          function FastButton(element, handler) {
             this.element = element;
@@ -15,7 +13,7 @@
             }
          };
          FastButton.prototype.onTouchStart = function(event) {
-            
+
 event.stopPropagation();
             this.element.addEventListener('touchend', this, false);
             document.body.addEventListener('touchmove', this, false);
@@ -64,9 +62,9 @@ event.stopPropagation();
          function goSomewhere() {
  var theTarget = document.elementFromPoint(this.startX, this.startY);
  if(theTarget.nodeType == 3) theTarget = theTarget.parentNode;
- 
+
  var theEvent = document.createEvent('MouseEvents');
  theEvent.initEvent('click', true, true);
  theTarget.dispatchEvent(theEvent);
          };
-//========================================================
+//========================================================// JavaScript Document

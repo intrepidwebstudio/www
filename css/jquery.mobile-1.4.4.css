@@ -1913,20 +1913,22 @@ button.ui-btn-icon-notext,
     to { transform: translateX(100%); }
 }
 .slide.out, .slide.in {
-	-webkit-animation-timing-function: ease-out;
+/*	-webkit-animation-timing-function: ease-out;
 	-webkit-animation-duration: 100ms;
 	-moz-animation-timing-function: ease-out;
 	-moz-animation-duration: 100ms;
 	animation-timing-function: ease-out;
 	animation-duration: 100ms;
+	*/
 }
 .slide.out {
-	-webkit-transform: translate3d(-100%,0,0);
+/*	-webkit-transform: translate3d(-100%,0,0);
 	-webkit-animation-name: slideouttoleft;
 	-moz-transform: translateX(-100%);
 	-moz-animation-name: slideouttoleft;
 	transform: translateX(-100%);
 	animation-name: slideouttoleft;
+	*/
 }
 .slide.in {
 	-webkit-transform: translate3d(0,0,0);

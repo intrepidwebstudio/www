@@ -86,34 +86,19 @@ document.onreadystatechange = function(e)
         function navigateTo(url,click_id,this_id,article_share_title){
 			
 		//	alert('trueee'+url);
-		
-		
 	
-	   //    iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	      iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		 
-		 
-		 global_article_title = article_share_title ;
-		 global_article_link = url ;
-
-		 
-	 $.mobile.changePage('#browserPage');
-		 
-		 load_page_settingsss();
-		 
-		 $('#IFrame').attr('src',url);
 			
-			$.support.cors = true;
+		$.support.cors = true;
 			
 			
 			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
 			
 			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted);
-			
-			
 			$(this_id).css("background-color","#ccc");
 			
 			
-		
 //	        iabRef.addEventListener('exit', iabClose);
   //          iabRef.addEventListener('share', iabShare);
    //         iabRef.addEventListener('loadstart', iabLoadStart);
@@ -122,9 +107,6 @@ document.onreadystatechange = function(e)
         }
 		
 		
-	
-
-
 function browser_setting()
 	{	
         $(document).bind( 'mobileinit', function(){
@@ -145,19 +127,6 @@ function browser_setting()
    
   
   <style>
-  
-  * {
-    
-  /*  -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-	*/
-}
-body {
-    overflow: hidden;
-    -webkit-touch-callout: none;
-}
-
   
 
 /* Border bottom for the previous button during the transition*/
@@ -707,52 +676,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
 
-<div data-role="page" id="browserPage">
-         
-    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
-       <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        
-        <div class="topmenucontainer" >
-    
-     <div class="searchsettings">
-        
-      <!-- <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
-        </div>-->
-        
-      </div>  
-        
-        </div>
-                    
-    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-    
-    	<a  data-rel="back"  ><p style="width:10% !important; vertical-align:middle !important;float:left ;  " >
-       			<img src="icons/57x57/exit.png" style=" width:90% !important; margin-top:-22% !important; margin-left:25% !important;" >
-        </p></a>
-    
-    <p style="width:73% !important; float:left !important;  max-height:20px !important; margin-left:4% !important; overflow:hidden !important; white-space: nowrap; vertical-align:middle !important; text-overflow: ellipsis; " class="Conv_MuseoSans-300Italic" > some text in be asdf  asdf asdffas asdf asdf asfa asdfa asdf asdf a asfas asdf asdf asdf twasd a ada asda sasa   sdfg sdfg dfeen</p>
-    
-    <p style="width:10% !important; vertical-align:middle !important;float:left; " onclick="share_article()" >
-   		  <img src="icons/57x57/share.png" style="width:100% !important; margin-top:-25% !important ; margin-right:22%  !important;">
-    </p>
-                
-                
-    </div>
-</div>
 
- <div data-role="ui-content" >
-     
-     
-     	<iframe id="IFrame" frameborder="0" src="http://www.cricinfo.com"  scrolling="yes"     ></iframe>
-    
-    
-   
-   </div>
-    
-    
-         
-   
-</div>
 
 
 
@@ -811,8 +735,6 @@ $(document).keypress(function(e) {
     if(e.which == 13) {
 		
 		
-		window.plugins.spinnerDialog.show();
-		
 		console.log(ajax_path + ' asdasd');
 		
 	   if( $('#searcharea').val()!='')
@@ -829,6 +751,16 @@ $(document).keypress(function(e) {
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                        $.mobile.loading('show', {theme:"a",text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                        $.mobile.loading('hide'); // This will hide ajax spinner
+                    },
+					
+			
 			
 			success: function(data)
 			{
@@ -940,19 +872,12 @@ $(document).keypress(function(e) {
 					alert("no match");
 					}
 			
-			// Hide spinner dialog
-			window.plugins.spinnerDialog.hide();
-			
 			
 			$('#searcharea').val('');
 			
 			
 				},
 		error: function(e) {
-			
-			// Hide spinner dialog
-			window.plugins.spinnerDialog.hide();
-			
        alert('Network error please try after sometime  ');		
 			
 		//	console.log(e.status);
@@ -968,8 +893,6 @@ $(document).keypress(function(e) {
 	}//ifclose
 	else{
 		
-		// Hide spinner dialog
-window.plugins.spinnerDialog.hide();
 		
 		load_trending();
 		
@@ -996,9 +919,6 @@ function load_trending()
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
-	
-	// Show spinner dialog
-window.plugins.spinnerDialog.show();
 
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
@@ -1104,13 +1024,10 @@ window.plugins.spinnerDialog.show();
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 												
-								
-								window.plugins.spinnerDialog.hide();
 												
 				}//user data match if
 				else{
 					// user data doent match
-					window.plugins.spinnerDialog.hide();
 					alert("no match");
 					}
 			
@@ -1118,10 +1035,6 @@ window.plugins.spinnerDialog.show();
 				},
 		error: function(e) {
       
-	  
-	  window.plugins.spinnerDialog.hide();
-
-	  
 	  alert('Network problem ');		
 			
 		//	console.log(e);
@@ -1193,7 +1106,7 @@ $(window).resize();
         navigator.splashscreen.hide();
 		
 		
-   			 }, 5000);
+   			 }, 3000);
 	
 	
 	
@@ -1304,7 +1217,7 @@ db.transaction(populateDB, errorCB, successCB);
 		if(length >0)
 		{
 			
-			$.mobile.changePage('#page1');
+			$.mobile.changePage('index5s.html#page1' , { transition:'slide' });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1334,7 +1247,7 @@ db.transaction(populateDB, errorCB, successCB);
 		}else{
 	//		alert('1');
 			
-	 		$.mobile.changePage('#page');
+	 		$.mobile.changePage('index5s.html#page' , { transition:'slide' });
 		
 		   start_timer();
 		   update_timer();
@@ -1356,16 +1269,10 @@ db.transaction(populateDB, errorCB, successCB);
 	
 	function validate_email()
 	{
-		
-		 window.plugins.spinnerDialog.show();
-		 
-		 
 	var	useremail = $('#useremail').val();
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
 	{
-		 window.plugins.spinnerDialog.hide();
-		 
 		alert('enter a vaild email');
 		}
 	else{
@@ -1380,6 +1287,15 @@ db.transaction(populateDB, errorCB, successCB);
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			beforeSend: function() {
+			// This callback function will trigger before data is sent
+			$.mobile.loading('show', {theme:"c",text:"Loading...", textonly:false, textVisible: true}); // This will show ajax spinner
+			},
+			complete: function() {
+			// This callback function will trigger on data sent/received complete
+			$.mobile.loading('hide'); // This will hide ajax spinner
+			},
+
 			success: function(data)
 							{
 								
@@ -1404,15 +1320,14 @@ db.transaction(populateDB, errorCB, successCB);
 									
 									}
 								else{
-									 window.plugins.spinnerDialog.hide();
+									
 									
 									alert('server error !!');
 									}	
-								 window.plugins.spinnerDialog.hide();
+								
 								},
 			error: function(e)
 				{
-					 window.plugins.spinnerDialog.hide();
 					alert('Network Error,Unable to contact server');
 					
 					
@@ -1442,9 +1357,7 @@ db.transaction(populateDB, errorCB, successCB);
 			load_trending();
 				browser_setting();
 			
-			 window.plugins.spinnerDialog.hide();
-			$.mobile.changePage('#page1');
-			
+			$.mobile.changePage('index5s.html#page1' , { transition:'slide' }  );
 		}
 		
 
@@ -1583,31 +1496,13 @@ function bringup()
 
 
 
-function load_page_settingsss()
-{
 
-/*
-// Autoinsert #layer
-$('<div id="layer"></div>').insertBefore('.article iframe');
 
-$('#layer').click(function(event){
-    var iframe = $('iframe').get(0);
-    var iframeDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
 
-    // Find click position (coordinates)
-    var x = event.offsetX;
-    var y = event.offsetY;
 
-    // Trigger click inside iframe
-    var link = iframeDoc.elementFromPoint(x, y);
-    var newEvent = iframeDoc.createEvent('HTMLEvents');
-    newEvent.initEvent('click', true, true);
-    link.dispatchEvent(newEvent);
-});
 
-*/
 
-}
+
 </script>
  
 
