@@ -146,8 +146,6 @@ $(function(){
 						
 						console.log(JSON.stringify(result));
 						
-						console.log( JSON.parse( result ) );
-						
 							console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
                         // the access_token is available via r.access_token
                        // but the http functions automagically wrap the jquery calls
@@ -157,8 +155,6 @@ $(function(){
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
 									console.log( "details = "+ JSON.stringify(data) );
-									
-									console.log( JSON.parse( data ) );
 									
 									
 									
