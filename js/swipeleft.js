@@ -156,8 +156,7 @@ $(function(){
 									
 									console.log( "details = "+ JSON.stringify(data) );
 									
-									
-									
+																		
 									console.log("twitter: Hello, " + data.name + " ! ");
 									
 									
@@ -187,19 +186,18 @@ $(function(){
 				 });
 				 
 				 
-				 
-				 
 			
-			
-			
-			
-				 
 				  
 					
 				 $('#linkedinautho').on('touchstart', function() {	
                     OAuth.popup('linkedin')
                         .done(function (r) {
-							alert('success');
+														
+								console.log(JSON.stringify(result));
+						
+							console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
+							
+							
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
                             r.get('/1.1/account/verify_credentials.json')
@@ -209,7 +207,9 @@ $(function(){
 									
                                   //  $('#result').html("twitter: Hello, " + data.name + " !");
 									
+									console.log( "details = "+ JSON.stringify(data) );
 									
+																		
 									console.log("twitter: Hello, " + data.name + " ! ");
 									
 									
@@ -238,15 +238,22 @@ $(function(){
 					
 				 $('#tumblrautho').on('touchstart', function() {	
                     OAuth.popup('tumblr')
-                        .done(function (r) {
-							alert('success');
+                        .done(function (result) {
+														
+								console.log(JSON.stringify(result));
+						
+							console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
+							
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
-                            r.get('/1.1/account/verify_credentials.json')
+                            result.get('/1.1/account/verify_credentials.json')
                                 .done(function(data) {
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
 									
+									console.log( "details = "+ JSON.stringify(data) );
+									
+																		
 									console.log("twitter: Hello, " + data.name + " ! ");
 									
 									
