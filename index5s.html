@@ -27,6 +27,8 @@ document.onreadystatechange = function(e)
     if (document.readyState === 'complete')
     {
 	      // navigator.splashscreen.show();
+		  window.plugins.spinnerDialog.show();
+		  
 	        document.addEventListener("deviceready", onDeviceReady, false);
     }
 };
@@ -363,7 +365,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 <body>
 
 
-
+<div class="ui-panel-page-container">
 <div data-role="page" id="5spage1" data-title="eboo" >
 
 	
@@ -393,7 +395,7 @@ background: rgba(255, 255, 255, 0.5) !important;
         
         
         <div class="righticon">
-        	<a href="#5ssettings"  ><img src="icons/57x57/settings.png" ></a>
+        	<a href="#5ssettings" data-prefetch="true" ><img src="icons/57x57/settings.png" ></a>
         </div>
       </div>  
         
@@ -507,7 +509,7 @@ background: rgba(255, 255, 255, 0.5) !important;
      <div class="searchsettings">
         
         <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+       		 <a data-rel="back" data-prefetch="true" ><img src="icons/57x57/back.png" ></a>
         </div>
         
        
@@ -527,7 +529,7 @@ background: rgba(255, 255, 255, 0.5) !important;
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li id="twitterautho" ><a href="#twitterauthorize"  >
+                <li id="twitterautho" ><a href="#twitterauthorize"    >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
@@ -539,7 +541,6 @@ background: rgba(255, 255, 255, 0.5) !important;
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="facebooklogout" ></p>
-                        </p>
                         
                 </a> </li>
                
@@ -557,13 +558,13 @@ background: rgba(255, 255, 255, 0.5) !important;
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
-                <li><a href="#5stermsofservice" >
+                <li><a href="#5stermsofservice" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a href="#5sprivacy" >
+                <li><a href="#5sprivacy" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -645,13 +646,8 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
        <div  class="lefticon" >
        		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
         </div>
-        
-        
-        
       </div>  
-        
-        
-        </div>
+    </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Privacy</p>
@@ -681,7 +677,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     </div><!-- /content -->
 </div>
 
-
+</div>
 
 
 
@@ -742,6 +738,7 @@ $('#searcharea').on('blur',function(){
 $(document).keypress(function(e) {
     if(e.which == 13) {
 		
+		window.plugins.spinnerDialog.hide();
 		
 		console.log(ajax_path + ' asdasd');
 		
@@ -759,17 +756,6 @@ $(document).keypress(function(e) {
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
-			beforeSend: function() {
-                        // This callback function will trigger before data is sent
-                        $.mobile.loading('show', {theme:"a",text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
-                    },
-                    complete: function() {
-                        // This callback function will trigger on data sent/received complete
-                        $.mobile.loading('hide'); // This will hide ajax spinner
-                    },
-					
-			
-			
 			success: function(data)
 			{
 				
@@ -871,12 +857,12 @@ $(document).keypress(function(e) {
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 												
-												
+							window.plugins.spinnerDialog.hide();					
 				}//user data match if
 				else{
 					
 					// user data doent match
-					
+					window.plugins.spinnerDialog.hide();
 					alert("no match");
 					}
 			
@@ -886,6 +872,7 @@ $(document).keypress(function(e) {
 			
 				},
 		error: function(e) {
+			window.plugins.spinnerDialog.hide();
        alert('Network error please try after sometime  ');		
 			
 		//	console.log(e.status);
@@ -906,6 +893,8 @@ $(document).keypress(function(e) {
 		
 		
 		}
+	window.plugins.spinnerDialog.hide();	
+		
     }
 });
 
@@ -927,7 +916,7 @@ function load_trending()
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
-
+window.plugins.spinnerDialog.show();
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
 			type:'GET',
@@ -935,16 +924,6 @@ function load_trending()
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
-			beforeSend: function() {
-                        // This callback function will trigger before data is sent
-                        $.mobile.loading('show', {theme:"a", text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
-                    },
-                    complete: function() {
-                        // This callback function will trigger on data sent/received complete
-                        $.mobile.loading('hide'); // This will hide ajax spinner
-                    },
-			
-			
 			success: function(data)
 			{
 				
@@ -1033,8 +1012,11 @@ function load_trending()
 										$.getScript("js/swipeleft.js");
 												
 												
+						window.plugins.spinnerDialog.hide();
+												
 				}//user data match if
 				else{
+					window.plugins.spinnerDialog.hide();
 					// user data doent match
 					alert("no match");
 					}
@@ -1042,7 +1024,8 @@ function load_trending()
 			
 				},
 		error: function(e) {
-      
+      window.plugins.spinnerDialog.hide();
+	  
 	  alert('Network problem ');		
 			
 		//	console.log(e);
@@ -1124,10 +1107,14 @@ $(window).resize();
     function onDeviceReady(){
 		
 		
+		
+		
+		$.mobile.page.prototype.options.domCache = true;
+		
 //	alert('called');
 		
 		 
-    var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+  //  var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
 
 
 	//alert(deviceType + navigator.userAgent);
@@ -1224,8 +1211,11 @@ db.transaction(populateDB, errorCB, successCB);
 		
 		if(length >0)
 		{
-			
-			$.mobile.changePage('#5spage1' , { transition:'slide' });
+			$( "body" ).pagecontainer( "change", '#5spage1'  ,  { transition:'pop'  });
+
+//		alert('ssss');
+
+		//	$.mobile.changePage('#5spage1' , { transition:'slide' });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1250,18 +1240,21 @@ db.transaction(populateDB, errorCB, successCB);
 				
 		//	alert('1');
 //swipe_list_items();
-	
-					
+		
+		window.plugins.spinnerDialog.hide();
+						
 		}else{
 	//		alert('1');
+	$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
 			
-	 		$.mobile.changePage('#5spage' , { transition:'slide' });
+	 	//	$.mobile.changePage('#5spage' , { transition:'slide' });
 		
 		   start_timer();
 		   update_timer();
 			
 	       startswiperfunction();
 				
+				window.plugins.spinnerDialog.hide();
 			
 		}
   
@@ -1281,6 +1274,8 @@ db.transaction(populateDB, errorCB, successCB);
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
 	{
+		window.plugins.spinnerDialog.hide();
+		
 		alert('enter a vaild email');
 		}
 	else{
@@ -1295,15 +1290,6 @@ db.transaction(populateDB, errorCB, successCB);
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
-			beforeSend: function() {
-			// This callback function will trigger before data is sent
-			$.mobile.loading('show', {theme:"c",text:"Loading...", textonly:false, textVisible: true}); // This will show ajax spinner
-			},
-			complete: function() {
-			// This callback function will trigger on data sent/received complete
-			$.mobile.loading('hide'); // This will hide ajax spinner
-			},
-
 			success: function(data)
 							{
 								
@@ -1315,27 +1301,28 @@ db.transaction(populateDB, errorCB, successCB);
 								//	alert(login_Response.message);
 							//		alert(login_Response.user_id)
 									
-									
+									window.plugins.spinnerDialog.hide();
 							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
 									
 								}else if(login_Response.status=='101'){
 									
 									
 									//	alert('User Already Exists' );
-									
+									window.plugins.spinnerDialog.hide();
 									
 									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
 									
 									}
 								else{
 									
-									
+									window.plugins.spinnerDialog.hide();
 									alert('server error !!');
 									}	
 								
 								},
 			error: function(e)
 				{
+					window.plugins.spinnerDialog.hide();
 					alert('Network Error,Unable to contact server');
 					
 					
@@ -1344,7 +1331,8 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			});
 		
-			
+		
+		
 		}	
     }
 		
@@ -1362,10 +1350,17 @@ db.transaction(populateDB, errorCB, successCB);
 		
 		function userinsert()
 		{
+			
+			
 			load_trending();
 				browser_setting();
 			
+			window.plugins.spinnerDialog.show();
+			
 			$.mobile.changePage('#5spage1' , { transition:'slide' }  );
+			
+			window.plugins.spinnerDialog.hide();
+			
 		}
 		
 
