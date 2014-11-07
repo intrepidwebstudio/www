@@ -175,7 +175,7 @@ $(function(){
 				  
 					
 				 $('#linkedinautho').on('touchstart', function() {	
-                    OAuth.popup('twitter')
+                    OAuth.popup('linkedin')
                         .done(function (r) {
 							alert('success');
                             // the access_token is available via r.access_token
@@ -186,7 +186,7 @@ $(function(){
 									
 									
 									
-                                    $('#result').html("twitter: Hello, " + data.name + " !");
+                                  //  $('#result').html("twitter: Hello, " + data.name + " !");
 									
 									
 									console.log("twitter: Hello, " + data.name + " ! ");
@@ -216,7 +216,7 @@ $(function(){
 				 
 					
 				 $('#tumblrautho').on('touchstart', function() {	
-                    OAuth.popup('twitter')
+                    OAuth.popup('tumblr')
                         .done(function (r) {
 							alert('success');
                             // the access_token is available via r.access_token
