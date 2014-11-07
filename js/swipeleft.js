@@ -131,16 +131,24 @@ $(function(){
 	function settings_page()
 	{		
 				
-				 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+			OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+					
+			
+			
 					
 				 $('#twitterautho').on('touchstart', function() {	
+				 
+				 if($('#twitterlogged').css('display') == 'none')
+				{
+				 
                     OAuth.popup('twitter')
                         .done(function (result) {
 						
-						//	alert('success');
-							
-							console.log('Access token  = '+ result.oauth_token + ' secret key = '+ oauth_token_secret  )
-							
+						console.log(JSON.stringify(result));
+						
+						console.log( JSON.parse( result ) );
+						
+							console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
                         // the access_token is available via r.access_token
                        // but the http functions automagically wrap the jquery calls
                             result.get('/1.1/account/verify_credentials.json')
@@ -149,6 +157,10 @@ $(function(){
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
 									console.log( "details = "+ JSON.stringify(data) );
+									
+									console.log( JSON.parse( data ) );
+									
+									console.dir( data );
 									
 									console.log("twitter: Hello, " + data.name + " ! ");
 									
@@ -160,17 +172,31 @@ $(function(){
 									
                                 })
                                 .fail(function( jqXHR, textStatus, errorThrown) {
-                                    $('#result').html("req error: " + textStatus);
+                                    console.log("req error: " + textStatus);
                                 });
                         })
                         .fail(function (e) {
-                            $('#result').html('error: ' + e.message);
+                            console.log('error: ' + e.message);
                         });
+						
+						
+						}else{
+				
+				
+				
+				
+				}
+						
 						
 				 });
 				 
 				 
 				 
+				 
+			
+			
+			
+			
 				 
 				  
 					
@@ -183,8 +209,7 @@ $(function(){
                             r.get('/1.1/account/verify_credentials.json')
                                 .done(function(data) {
 									
-									
-									
+																
 									
                                   //  $('#result').html("twitter: Hello, " + data.name + " !");
 									
@@ -193,17 +218,17 @@ $(function(){
 									
 									
 									
-								$('#twitterlogout').css('display','none');
-								$('#twitterlogged').css('display','block');
+								$('#linkedinlogout').css('display','none');
+								$('#linkedinlogged').css('display','block');
 
 									
                                 })
                                 .fail(function( jqXHR, textStatus, errorThrown) {
-                                    $('#result').html("req error: " + textStatus);
+                                    console.log("req error: " + textStatus);
                                 });
                         })
                         .fail(function (e) {
-                            $('#result').html('error: ' + e.message);
+                         console.log('error: ' + e.message);
                         });
 						
 				 });
@@ -230,17 +255,17 @@ $(function(){
 									
 									
 									
-								$('#twitterlogout').css('display','none');
-								$('#twitterlogged').css('display','block');
+								$('#tumblrlogout').css('display','none');
+								$('#tumblrlogged').css('display','block');
 
 									
                                 })
                                 .fail(function( jqXHR, textStatus, errorThrown) {
-                                    $('#result').html("req error: " + textStatus);
+                                   console.log("req error: " + textStatus);
                                 });
                         })
                         .fail(function (e) {
-                            $('#result').html('error: ' + e.message);
+                           console.log('error: ' + e.message);
                         });
 						
 				 });
