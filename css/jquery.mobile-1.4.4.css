@@ -1707,19 +1707,19 @@ button.ui-btn-icon-notext,
 }
 .in {
 	-webkit-animation-timing-function: ease-out;
-	-webkit-animation-duration: 20ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-timing-function: ease-out;
-	-moz-animation-duration: 20ms;
+	-moz-animation-duration: 1ms;
 	animation-timing-function: ease-out;
-	animation-duration: 20ms;
+	animation-duration: 1ms;
 }
 .out {
 	-webkit-animation-timing-function: ease-in;
-	-webkit-animation-duration: 10ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-timing-function: ease-in;
-	-moz-animation-duration: 10ms;
+	-moz-animation-duration: 1ms;
 	animation-timing-function: ease-in;
-	animation-duration: 10ms;
+	animation-duration: 1ms;
 }
 @-webkit-keyframes fadein {
     from { opacity: 0; }
@@ -1747,20 +1747,20 @@ button.ui-btn-icon-notext,
 }
 .fade.out {
 	opacity: 0;
-	-webkit-animation-duration: 125ms;
+	-webkit-animation-duration: 1ms;
 	-webkit-animation-name: fadeout;
-	-moz-animation-duration: 125ms;
+	-moz-animation-duration: 1ms;
 	-moz-animation-name: fadeout;
-	animation-duration: 125ms;
+	animation-duration: 1ms;
 	animation-name: fadeout;
 }
 .fade.in {
 	opacity: 1;
-	-webkit-animation-duration: 225ms;
+	-webkit-animation-duration: 1ms;
 	-webkit-animation-name: fadein;
-	-moz-animation-duration: 225ms;
+	-moz-animation-duration: 1ms;
 	-moz-animation-name: fadein;
-	animation-duration: 225ms;
+	animation-duration: 1ms;
 	animation-name: fadein;
 }
 .pop {
@@ -1771,22 +1771,22 @@ button.ui-btn-icon-notext,
 .pop.in {
 	-webkit-transform: scale(1);
 	-webkit-animation-name: popin;
-	-webkit-animation-duration: 150ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: scale(1);
 	-moz-animation-name: popin;
-	-moz-animation-duration: 150ms;
+	-moz-animation-duration: 1ms;
 	transform: scale(1);
 	animation-name: popin;
-	animation-duration: 150ms;
+	animation-duration: 1ms;
     opacity: 1;
 }
 .pop.out {
 	-webkit-animation-name: fadeout;
-	-webkit-animation-duration: 100ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-name: fadeout;
-	-moz-animation-duration: 100ms;
+	-moz-animation-duration: 1ms;
 	animation-name: fadeout;
-	animation-duration: 100ms;
+	animation-duration: 1ms;
 	opacity: 0;
 }
 .pop.in.reverse {
@@ -1913,22 +1913,20 @@ button.ui-btn-icon-notext,
     to { transform: translateX(100%); }
 }
 .slide.out, .slide.in {
-/*	-webkit-animation-timing-function: ease-out;
-	-webkit-animation-duration: 100ms;
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-timing-function: ease-out;
-	-moz-animation-duration: 100ms;
+	-moz-animation-duration: 1ms;
 	animation-timing-function: ease-out;
-	animation-duration: 100ms;
-	*/
+	animation-duration: 1ms;
 }
 .slide.out {
-/*	-webkit-transform: translate3d(-100%,0,0);
+	-webkit-transform: translate3d(-100%,0,0);
 	-webkit-animation-name: slideouttoleft;
 	-moz-transform: translateX(-100%);
 	-moz-animation-name: slideouttoleft;
 	transform: translateX(-100%);
 	animation-name: slideouttoleft;
-	*/
 }
 .slide.in {
 	-webkit-transform: translate3d(0,0,0);
@@ -1957,85 +1955,85 @@ button.ui-btn-icon-notext,
 .slidefade.out {
 	-webkit-transform: translateX(-100%);
 	-webkit-animation-name: slideouttoleft;
-	-webkit-animation-duration: 75ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateX(-100%);
 	-moz-animation-name: slideouttoleft;
-	-moz-animation-duration: 75ms;
+	-moz-animation-duration: 1ms;
 	transform: translateX(-100%);
 	animation-name: slideouttoleft;
-	animation-duration: 75ms;
+	animation-duration: 1ms;
 }
 .slidefade.in {
 	-webkit-transform: translateX(0);
 	-webkit-animation-name: fadein;
-	-webkit-animation-duration: 100ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateX(0);
 	-moz-animation-name: fadein;
-	-moz-animation-duration: 100ms;
+	-moz-animation-duration: 1ms;
 	transform: translateX(0);
 	animation-name: fadein;
-	animation-duration: 100ms;
+	animation-duration: 1ms;
 }
 .slidefade.out.reverse {
 	-webkit-transform: translateX(100%);
 	-webkit-animation-name: slideouttoright;
-	-webkit-animation-duration: 100ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateX(100%);
 	-moz-animation-name: slideouttoright;
-	-moz-animation-duration: 100ms;
+	-moz-animation-duration: 1ms;
 	transform: translateX(100%);
 	animation-name: slideouttoright;
-	animation-duration: 100ms;
+	animation-duration: 1ms;
 }
 .slidefade.in.reverse {
 	-webkit-transform: translateX(0);
 	-webkit-animation-name: fadein;
-	-webkit-animation-duration: 100ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateX(0);
 	-moz-animation-name: fadein;
-	-moz-animation-duration: 100ms;
+	-moz-animation-duration: 1ms;
 	transform: translateX(0);
 	animation-name: fadein;
-	animation-duration: 100ms;
+	animation-duration: 1ms;
 }
 /* slide down */
 .slidedown.out {
 	-webkit-animation-name: fadeout;
-	-webkit-animation-duration: 100ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-name: fadeout;
-	-moz-animation-duration: 100ms;
+	-moz-animation-duration: 1ms;
 	animation-name: fadeout;
-	animation-duration: 100ms;
+	animation-duration: 1ms;
 }
 .slidedown.in {
 	-webkit-transform: translateY(0);
 	-webkit-animation-name: slideinfromtop;
-	-webkit-animation-duration: 150ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateY(0);
 	-moz-animation-name: slideinfromtop;
-	-moz-animation-duration: 150ms;
+	-moz-animation-duration: 1ms;
 	transform: translateY(0);
 	animation-name: slideinfromtop;
-	animation-duration: 150ms;
+	animation-duration: 1ms;
 }
 .slidedown.in.reverse {
 	-webkit-animation-name: fadein;
-	-webkit-animation-duration: 150ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-name: fadein;
-	-moz-animation-duration: 150ms;
+	-moz-animation-duration: 1ms;
 	animation-name: fadein;
-	animation-duration: 150ms;
+	animation-duration: 1ms;
 }
 .slidedown.out.reverse {
 	-webkit-transform: translateY(-100%);
 	-webkit-animation-name: slideouttotop;
-	-webkit-animation-duration: 200ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateY(-100%);
 	-moz-animation-name: slideouttotop;
-	-moz-animation-duration: 200ms;
+	-moz-animation-duration: 1ms;
 	transform: translateY(-100%);
 	animation-name: slideouttotop;
-	animation-duration: 200ms;
+	animation-duration: 1ms;
 }
 @-webkit-keyframes slideinfromtop {
     from { -webkit-transform: translateY(-100%); }
@@ -2064,41 +2062,41 @@ button.ui-btn-icon-notext,
 /* slide up */
 .slideup.out {
 	-webkit-animation-name: fadeout;
-	-webkit-animation-duration: 100ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-name: fadeout;
-	-moz-animation-duration: 100ms;
+	-moz-animation-duration: 1ms;
 	animation-name: fadeout;
-	animation-duration: 100ms;
+	animation-duration: 1ms;
 }
 .slideup.in {
 	-webkit-transform: translateY(0);
 	-webkit-animation-name: slideinfrombottom;
-	-webkit-animation-duration: 150ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateY(0);
 	-moz-animation-name: slideinfrombottom;
-	-moz-animation-duration: 150ms;
+	-moz-animation-duration: 1ms;
 	transform: translateY(0);
 	animation-name: slideinfrombottom;
-	animation-duration: 150ms;
+	animation-duration: 1ms;
 }
 .slideup.in.reverse {
 	-webkit-animation-name: fadein;
-	-webkit-animation-duration: 150ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-name: fadein;
-	-moz-animation-duration: 150ms;
+	-moz-animation-duration: 1ms;
 	animation-name: fadein;
-	animation-duration: 150ms;
+	animation-duration: 1ms;
 }
 .slideup.out.reverse {
 	-webkit-transform: translateY(100%);
 	-webkit-animation-name: slideouttobottom;
-	-webkit-animation-duration: 200ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateY(100%);
 	-moz-animation-name: slideouttobottom;
-	-moz-animation-duration: 200ms;
+	-moz-animation-duration: 1ms;
 	transform: translateY(100%);
 	animation-name: slideouttobottom;
-	animation-duration: 200ms;
+	animation-duration: 1ms;
 }
 @-webkit-keyframes slideinfrombottom {
     from { -webkit-transform: translateY(100%); }
@@ -2147,21 +2145,21 @@ button.ui-btn-icon-notext,
 .flip.out {
 	-webkit-transform: rotateY(-90deg) scale(.9);
 	-webkit-animation-name: flipouttoleft;
-	-webkit-animation-duration: 175ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: rotateY(-90deg) scale(.9);
 	-moz-animation-name: flipouttoleft;
-	-moz-animation-duration: 175ms;
+	-moz-animation-duration: 1ms;
 	transform: rotateY(-90deg) scale(.9);
 	animation-name: flipouttoleft;
-	animation-duration: 175ms;
+	animation-duration: 1ms;
 }
 .flip.in {
 	-webkit-animation-name: flipintoright;
-	-webkit-animation-duration: 225ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-name: flipintoright;
-	-moz-animation-duration: 225ms;
+	-moz-animation-duration: 1ms;
 	animation-name: flipintoright;
-	animation-duration: 225ms;
+	animation-duration: 1ms;
 }
 .flip.out.reverse {
 	-webkit-transform: rotateY(90deg) scale(.9);
@@ -2253,21 +2251,21 @@ button.ui-btn-icon-notext,
 .turn.out {
 	-webkit-transform: rotateY(-90deg) scale(.9);
 	-webkit-animation-name: flipouttoleft;
-	-webkit-animation-duration: 125ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: rotateY(-90deg) scale(.9);
 	-moz-animation-name: flipouttoleft;
-	-moz-animation-duration: 125ms;
+	-moz-animation-duration: 1ms;
 	transform: rotateY(-90deg) scale(.9);
 	animation-name: flipouttoleft;
-	animation-duration: 125ms;
+	animation-duration: 1ms;
 }
 .turn.in {
 	-webkit-animation-name: flipintoright;
-	-webkit-animation-duration: 250ms;
+	-webkit-animation-duration: 1ms;
 	-moz-animation-name: flipintoright;
-	-moz-animation-duration: 250ms;
+	-moz-animation-duration: 1ms;
 	animation-name: flipintoright;
-	animation-duration: 250ms;
+	animation-duration: 1ms;
 	
 }
 .turn.out.reverse {
@@ -2352,29 +2350,29 @@ button.ui-btn-icon-notext,
 	-webkit-transform: translateX(-100%) scale(.7);
 	-webkit-animation-name: flowouttoleft;
 	-webkit-animation-timing-function: ease;
-	-webkit-animation-duration: 350ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateX(-100%) scale(.7);
 	-moz-animation-name: flowouttoleft;
 	-moz-animation-timing-function: ease;
-	-moz-animation-duration: 350ms;
+	-moz-animation-duration: 1ms;
 	transform: translateX(-100%) scale(.7);
 	animation-name: flowouttoleft;
 	animation-timing-function: ease;
-	animation-duration: 350ms;
+	animation-duration: 1ms;
 }
 .flow.in {
 	-webkit-transform: translateX(0) scale(1);
 	-webkit-animation-name: flowinfromright;
 	-webkit-animation-timing-function: ease;
-	-webkit-animation-duration: 350ms;
+	-webkit-animation-duration: 1ms;
 	-moz-transform: translateX(0) scale(1);
 	-moz-animation-name: flowinfromright;
 	-moz-animation-timing-function: ease;
-	-moz-animation-duration: 350ms;
+	-moz-animation-duration: 1ms;
 	transform: translateX(0) scale(1);
 	animation-name: flowinfromright;
 	animation-timing-function: ease;
-	animation-duration: 350ms;
+	animation-duration: 1ms;
 }
 .flow.out.reverse {
 	-webkit-transform: translateX(100%);
@@ -3941,9 +3939,9 @@ div.ui-slider-switch.ui-mini {
 	padding: 0;
 }
 .ui-slider-handle-snapping {
-	-webkit-transition: left 70ms linear;
-	-moz-transition: left 70ms linear;
-	transition: left 70ms linear;
+	-webkit-transition: left 1ms linear;
+	-moz-transition: left 1ms linear;
+	transition: left 1ms linear;
 }
 .ui-slider-switch .ui-slider-label {
 	position: absolute;
@@ -4226,10 +4224,10 @@ textarea.ui-input-text.ui-textinput-autogrow {
 	-moz-transition-property: padding, width, background-color, color, border-color;
 	-o-transition-property: padding, width, background-color, color, border-color;
 	transition-property: padding, width, background-color, color, border-color;
-	-webkit-transition-duration: 100ms;
-	-moz-transition-duration: 100ms;
-	-o-transition-duration: 100ms;
-	transition-duration: 100ms;
+	-webkit-transition-duration: 1ms;
+	-moz-transition-duration: 1ms;
+	-o-transition-duration: 1ms;
+	transition-duration: 1ms;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -4545,10 +4543,10 @@ html .ui-popup .ui-field-contain > label + .ui-flipswitch {
 }
 /* Animate class is added to panel, wrapper and fixed toolbars */
 .ui-panel-animate {
-	-webkit-transition: -webkit-transform 150ms ease;
-	-webkit-transition-duration: 150ms;
-	-moz-transition: -moz-transform 150ms ease;
-	transition: transform 150ms ease;
+	-webkit-transition: -webkit-transform 1ms ease;
+	-webkit-transition-duration: 1ms;
+	-moz-transition: -moz-transform 1ms ease;
+	transition: transform 1ms ease;
 }
 /* Fix for Windows Phone issue #6349: unset the transition for transforms in case of fixed toolbars. */
 @media screen and ( max-device-width: 768px ) {
