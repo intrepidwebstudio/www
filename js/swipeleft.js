@@ -144,7 +144,7 @@ $(function(){
                     OAuth.popup('twitter')
                         .done(function (result) {
 						
-						
+						console.log(JSON.stringify(result));
 						
 						console.log( JSON.parse( result ) );
 						
@@ -156,7 +156,7 @@ $(function(){
 									
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
-									
+									console.log( "details = "+ JSON.stringify(data) );
 									
 									console.log( JSON.parse( data ) );
 									
