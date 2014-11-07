@@ -364,7 +364,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 
 
 
-<div data-role="page" id="page1" data-title="eboo" >
+<div data-role="page" id="5spage1" data-title="eboo" >
 
 	
     <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
@@ -393,7 +393,7 @@ background: rgba(255, 255, 255, 0.5) !important;
         
         
         <div class="righticon">
-        	<a href="#settings"  ><img src="icons/57x57/settings.png" ></a>
+        	<a href="#5ssettings"  ><img src="icons/57x57/settings.png" ></a>
         </div>
       </div>  
         
@@ -426,7 +426,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 </div>
 
 
-<div data-role="page" data-position="fixed"  id="page" data-title="eboo" >
+<div data-role="page" data-position="fixed"  id="5spage" data-title="eboo" >
 
 
 <div class="swiper-container">
@@ -488,7 +488,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 </div>
   
 
-<div data-role="page" id="settings">
+<div data-role="page" id="5ssettings">
  	 
    
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
@@ -557,13 +557,13 @@ background: rgba(255, 255, 255, 0.5) !important;
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
-                <li><a href="#termsofservice" >
+                <li><a href="#5stermsofservice" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a href="#privacy" >
+                <li><a href="#5sprivacy" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -581,7 +581,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 </div>
 
 
-<div data-role="page" id="termsofservice">
+<div data-role="page" id="5stermsofservice">
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
 	  
@@ -631,7 +631,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
 
-<div data-role="page" id="privacy">
+<div data-role="page" id="5sprivacy">
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
     
@@ -1225,7 +1225,7 @@ db.transaction(populateDB, errorCB, successCB);
 		if(length >0)
 		{
 			
-			$.mobile.changePage('index5s.html#page1' , { transition:'slide' });
+			$.mobile.changePage('#5spage1' , { transition:'slide' });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1255,7 +1255,7 @@ db.transaction(populateDB, errorCB, successCB);
 		}else{
 	//		alert('1');
 			
-	 		$.mobile.changePage('index5s.html#page' , { transition:'slide' });
+	 		$.mobile.changePage('#5spage' , { transition:'slide' });
 		
 		   start_timer();
 		   update_timer();
@@ -1365,7 +1365,7 @@ db.transaction(populateDB, errorCB, successCB);
 			load_trending();
 				browser_setting();
 			
-			$.mobile.changePage('index5s.html#page1' , { transition:'slide' }  );
+			$.mobile.changePage('#5spage1' , { transition:'slide' }  );
 		}
 		
 

@@ -96,7 +96,7 @@ $(function(){
         .on('touchmove', function(e) {
 			
 			
-			if(new_rect.left==0)
+			if(new_rect.left > -30)
 			{
 			
 		    var change = e.originalEvent.pageX - x
@@ -134,7 +134,6 @@ $(function(){
 				 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
 					
 				 $('#twitterautho').on('touchstart', function() {	
-					
                     OAuth.popup('twitter')
                         .done(function (r) {
 							alert('success');
