@@ -317,6 +317,12 @@ var callback = function(buttonIndex) {
     // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
     window.plugins.actionsheet.show(options, callback);
   };
+  
+  $('#dragimg').on('dragstart', function(event) {
+	  
+	  
+    event.preventDefault();
+});
 
 
 
