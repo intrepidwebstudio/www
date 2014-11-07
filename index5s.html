@@ -27,7 +27,7 @@ document.onreadystatechange = function(e)
     if (document.readyState === 'complete')
     {
 	      // navigator.splashscreen.show();
-		  window.plugins.spinnerDialog.show();
+	//	  window.plugins.spinnerDialog.show();
 		  
 	        document.addEventListener("deviceready", onDeviceReady, false);
     }
@@ -1245,9 +1245,9 @@ db.transaction(populateDB, errorCB, successCB);
 						
 		}else{
 	//		alert('1');
-	$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
+	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
 			
-	 	//	$.mobile.changePage('#5spage' , { transition:'slide' });
+	 	$.mobile.changePage('#5spage' , { transition:'slide' });
 		
 		   start_timer();
 		   update_timer();
