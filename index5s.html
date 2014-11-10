@@ -98,7 +98,7 @@ document.onreadystatechange = function(e)
 			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
 			
 			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted);
-			$(this_id).css("background-color","#ccc");
+			$(this_id).css("background-color","#ccc !important");
 			
 			
 //	        iabRef.addEventListener('exit', iabClose);
@@ -381,8 +381,8 @@ background: rgba(255, 255, 255, 0.5) !important;
 	
 	}		
 
-ul li a{ background-color: #F00 !important; }
-ul li:nth-child(odd) a{ background-color: #0C3 !important; }
+ul li a{ background-color: #FFFFFF !important; }
+ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
 
   </style>
   
@@ -1010,7 +1010,7 @@ window.plugins.spinnerDialog.show();
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
 					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	

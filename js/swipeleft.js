@@ -117,7 +117,7 @@ $(function(){
 			
 			var left = "0";
 			
-             left = parseInt(e.currentTarget.style.left)
+             left = parseInt(e.currentTarget.style.left);
 			
 			console.log(" LEFTTTT  =" + left );
 			
