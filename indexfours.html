@@ -89,18 +89,18 @@ document.onreadystatechange = function(e)
 			
 		//	alert('trueee'+url);
 	
-	   //    iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	    iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		 
 		 
 		 global_article_title = article_share_title ;
 		 global_article_link = url ;
 
 		 
-		 $.mobile.changePage('indexfours.html#browserPage');
+	//	 $.mobile.changePage('indexfours.html#browserPage');
 		 
-		 $('#IFrame').attr('src',url);
+	//	 $('#IFrame').attr('src',url);
 			
-			$.support.cors = true;
+		$.support.cors = true;
 			
 			
 			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
@@ -573,13 +573,13 @@ background: rgba(255, 255, 255, 0.5) !important;
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
-                <li><a href="#5stermsofservice" data-prefetch="true" >
+                <li><a href="#termsofservice" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a href="#5sprivacy" data-prefetch="true" >
+                <li><a href="#privacy" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -653,25 +653,15 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 <div data-role="page" id="privacy">
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
-	  
-    
-    
-    
+	 
         <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
    
-
-        
-        
-        <div class="topmenucontainer" >
-    
+   <div class="topmenucontainer" >
      
      <div class="searchsettings">
-        
        <div  class="lefticon" >
        		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
         </div>
-        
-        
         
       </div>  
         
@@ -707,45 +697,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 </div>
 
 
-<div data-role="page" id="browserPage">
-         
-    <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
-       <img  src="img/320.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        
-        <div class="topmenucontainer" >
-    
-     <div class="searchsettings">
-        
-      <!-- <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
-        </div>-->
-        
-      </div>  
-        
-        </div>
-                    
-    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-    
-    	<a  data-rel="back"  ><p style="width:10% !important; vertical-align:middle !important;float:left ;  " >
-       			<img src="icons/57x57/exit.png" style=" width:90% !important; margin-top:-22% !important; margin-left:25% !important;" >
-        </p></a>
-    
-    <p style="width:73% !important; float:left !important;  max-height:20px !important; margin-left:4% !important; overflow:hidden !important; white-space: nowrap; vertical-align:middle !important; text-overflow: ellipsis; " class="Conv_MuseoSans-300Italic" > some text in be asdf  asdf asdffas asdf asdf asfa asdfa asdf asdf a asfas asdf asdf asdf twasd a ada asda sasa   sdfg sdfg dfeen</p>
-    
-    <p style="width:10% !important; vertical-align:middle !important;float:left; " onclick="share_article()" >
-   		  <img src="icons/57x57/share.png" style="width:100% !important; margin-top:-25% !important ; margin-right:22%  !important;">
-    </p>
-                
-                
-    </div>
-</div>
-	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper" data-iscroll  >
-        
-          <iframe id="IFrame" frameborder="0"  scrolling="yes"    width="100%" height="100%"></iframe>
-          </div>
-    </div>
-</div>
+
 
 
 

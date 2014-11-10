@@ -96,7 +96,7 @@ $(function(){
         .on('touchmove', function(e) {
 			
 			
-			if(new_rect.left > -30)
+			if(new_rect.left > -50)
 			{
 			
 		    var change = e.originalEvent.pageX - x
@@ -144,9 +144,9 @@ $(function(){
                     OAuth.popup('twitter')
                         .done(function (result) {
 						
-						console.log(JSON.stringify(result));
+					//	console.log(JSON.stringify(result));
 						
-							console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
+				//			console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
                         // the access_token is available via r.access_token
                        // but the http functions automagically wrap the jquery calls
                             result.get('/1.1/account/verify_credentials.json')
@@ -193,9 +193,9 @@ $(function(){
                     OAuth.popup('linkedin')
                         .done(function (result) {
 														
-								console.log(JSON.stringify(result));
+					//			console.log(JSON.stringify(result));
 						
-							console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
+					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
 							
 							
                             // the access_token is available via r.access_token
@@ -203,7 +203,8 @@ $(function(){
                             result.get('/1.1/account/verify_credentials.json')
                                 .done(function(data) {
 									
-																
+								$('#linkedinlogout').css('display','none');
+								$('#linkedinlogged').css('display','block');				
 									
                                   //  $('#result').html("twitter: Hello, " + data.name + " !");
 									
@@ -214,8 +215,7 @@ $(function(){
 									
 									
 									
-								$('#linkedinlogout').css('display','none');
-								$('#linkedinlogged').css('display','block');
+								
 
 									
                                 })
@@ -240,26 +240,30 @@ $(function(){
                     OAuth.popup('tumblr')
                         .done(function (result) {
 														
-								console.log(JSON.stringify(result));
+							//	console.log(JSON.stringify(result));
 						
-							console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
+						//	console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
 							
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
                             result.get('/1.1/account/verify_credentials.json')
                                 .done(function(data) {
+									
+									$('#tumblrlogout').css('display','none');
+								$('#tumblrlogged').css('display','block');
+									
+									
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
 									
 									console.log( "details = "+ JSON.stringify(data) );
 									
 																		
-									console.log("twitter: Hello, " + data.name + " ! ");
+									console.log("tumblr: Hello, " + data.name + " ! ");
 									
 									
 									
-								$('#tumblrlogout').css('display','none');
-								$('#tumblrlogged').css('display','block');
+								
 
 									
                                 })
