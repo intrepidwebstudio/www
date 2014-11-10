@@ -100,15 +100,21 @@ $(function(){
 												{
 												var change = e.originalEvent.pageX - x;
 												console.log(change);
-												change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
+												change = Math.min(Math.max(-300, change), 0 ) // restrict to -100px left, 0px right
 												console.log("change = "+change);
 												
-												if(change < -40)
+												if(change < -50)
 												{
+												disable_scroll(); // disable scroll once we hit 10px horizontal slide
 												e.currentTarget.style.left = change + 'px';
 												
-												}
-												if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
+												}else{
+													
+												e.currentTarget.style.left = change + 'px';
+												enable_scroll();	
+													
+													}
+												
 												}
 											
 		})
@@ -118,8 +124,9 @@ $(function(){
 			
              left = parseInt(e.currentTarget.style.left)
 			
+			console.log(" LEFTTTT  =" + left );
 			
-            var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
+            var new_left = (left > 100 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
             e.currentTarget.style.left = new_left
             enable_scroll()
 			
