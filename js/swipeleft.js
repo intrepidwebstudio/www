@@ -40,20 +40,65 @@ $(function(){
 
 
 
+//SET THE FLAG
+var scrolling = false;
+var endScrolling;
 
-$('.swipe-delete li > a')
+$(window).on("scroll", function() {
+    scrolling = true;
+    endScrolling = window.setTimeout(function() {
+        scrolling = false;
+        window.clearTimeout(endScrolling);
+    }, 20);
+});
+
+
+//$(document).on('touchstart click', '.flip-container ', function(event){                       
+ //    event.preventDefault();
+    //BLOCK THE CLASS TOGGLE IF THE PAGE IS SCROLLING
+  //  if(!scrolling) {
+      //  $(this).find('.flipper').toggleClass('hover');
+   // }
+//}); 
+
+
+
+// JavaScript Document
+ $(function() {
+
+    function prevent_default(e) {
+        e.preventDefault();
+    }
+
+    function disable_scroll() {
+        $(document).on('touchmove', prevent_default);
+    }
+
+    function enable_scroll() {
+        $(document).unbind('touchmove', prevent_default)
+    }
+
+
+
+   
+    var x;
+	
+	var new_rect;
+	
+    $('.swipe-delete li > a')
         .on('touchstart', function(e) {
 			
 			
+				
+				
 			$( ".swipe-delete li > a" ).each(function( index ) {
 				
-			var rect = this.getBoundingClientRect();
+				
+		var rect = this.getBoundingClientRect();
 				
 // console.log(rect.top, rect.right, rect.bottom, rect.left);
 				
-				
-			if( $(this).hasClass('left_item') )	
-			{
+			
 			if(rect.left !=0)
 			{
 			$(this).animate({'left':'0px'},500,'linear',function(){  
@@ -63,48 +108,23 @@ $('.swipe-delete li > a')
 							if(new_rect.left==0)
 							{
 						
-							
-						
 							//	$(this).unbind('onClick');
 															
 								}
-			
-				
-			}) // close em all
-			
-		
-		}
-		
-		
-		
+					}) // close em all
 			}
-			
-	});
-			
-           
-			
-        
-		
-		});
 	
-	      
-    var x;
-	var new_rect;
-	
-    $('.swipe-delete li > a')
-        .on('taphold', function(e) {
+});
 			
-			 x = e.originalEvent.pageX // anchor point
+            x = e.originalEvent.pageX // anchor point
 			
-			})
+		})
         .on('touchmove', function(e) {
 			
-			if( $(this).hasClass('left_item') )
-			{
-				
-				}
-			else{
-				
+			if(!scrolling) {
+			
+			
+			
 			if(new_rect.left==0)
 			{
 			
@@ -113,10 +133,15 @@ $('.swipe-delete li > a')
             e.currentTarget.style.left = change + 'px'
             if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
 			}
-			
-		   }
-        })
+        }
+		
+		}
+		
+		
+		)
         .on('touchend', function(e) {
+			
+			if(!scrolling) {
 			
 			var left = "0";
 			
@@ -124,30 +149,19 @@ $('.swipe-delete li > a')
 			
 			
             var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-            e.currentTarget.style.left = new_left;
-			
-			if(left > -50)
-			{
-				$(this).addClass('left_item');
-				
-				}
-			
-			
-			
-            enable_scroll();
-			
-			
-			
+            e.currentTarget.style.left = new_left
+            enable_scroll()
 			
 			//e.currentTarget.addClass('tocuhedd');
 
 			
-        });
-
-   
+			}
+	  
+	    });
 	
 
 });
+
 
 
          

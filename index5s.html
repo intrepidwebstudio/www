@@ -360,6 +360,28 @@ background: rgba(255, 255, 255, 0.5) !important;
 		padding-right:7% !important
 		
 	}
+	
+	
+.terms_of_service{
+	
+	background-color:#171514 !important  ;
+	
+	}	
+	
+.terms_of_service p{
+	 
+	 color:#9F9F9F !important;
+	
+	}
+	
+.terms_of_service  h3{
+	
+	color:#171514 !important;
+	
+	}		
+
+li { background: #F7F7F7 !important; }
+li:nth-child(odd) { background: #FFFFFF !important; }
 
   </style>
   
@@ -663,7 +685,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper padding_left " data-iscroll >
+        <div class="example-wrapper padding_left terms_of_service " data-iscroll >
         
           <h3>Privacy Policy</h3>
           <p class="Conv_MuseoSans_700 " >
@@ -814,9 +836,6 @@ $(document).keypress(function(e) {
 					article_link = encodeURI(article_link);
 					
 					
-					
-					
-					
 					if(len>55)
 					{ 
 					article_title = article_title.substr(0,55);
@@ -843,7 +862,7 @@ $(document).keypress(function(e) {
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important;  " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important; color:#9F9F9F !important;  " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; color:#9F9F9F !important; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 					
 					
 				//	alert(append_data);
@@ -999,7 +1018,7 @@ window.plugins.spinnerDialog.show();
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 		
 						}
 							);			
