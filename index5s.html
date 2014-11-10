@@ -1155,7 +1155,6 @@ $(window).resize();
 db.transaction(populateDB, errorCB, successCB);
 
 
-enable_scroll();
 
 										
     }
@@ -1541,10 +1540,21 @@ $('#dragimg').on('swipedown',function(){
 	
 	
 	});
+$('.headonstart').on('swipedown',function(){
+	
+	  $('#searcharea').show();
+	  $('input').focus();
+	  
+	  $('#searcharea').focus();
+	
+	alert('swiped_downssssss');
+	
+	
+	
+	}
 
 
-
-
+);
 
 
 
