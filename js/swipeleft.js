@@ -126,7 +126,7 @@ $(function(){
 			
 			console.log(" LEFTTTT  =" + left );
 			
-			if(left < -50)
+			if(left < -60)
 			{
 			
 		 var new_left = -250 + 'px';
@@ -135,7 +135,7 @@ $(function(){
 				}
 			else{
 				
-		 var new_left = 0 + 'px';
+		 var new_left = '0px';
 			e.currentTarget.style.left = new_left;		
 				
 				}			
