@@ -23,19 +23,7 @@ $(function(){
 
 
 // JavaScript Document
- $(function() {
-
-    function prevent_default(e) {
-        e.preventDefault();
-    }
-
-    function disable_scroll() {
-        $(document).on('touchmove', prevent_default);
-    }
-
-    function enable_scroll() {
-        $(document).unbind('touchmove', prevent_default)
-    }
+ 
 
 
 
@@ -119,10 +107,7 @@ $(function(){
             if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
 			}
         
-		}
-		
-		
-		)
+		})
         .on('touchend', function(e) {
 			
 			var left = "0";
