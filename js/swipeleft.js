@@ -55,17 +55,12 @@ $(function(){
     }
 
 
-
-   
     var x;
-	
 	var new_rect;
 	
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
 			
-			
-				
 				
 			$( ".swipe-delete li > a" ).each(function( index ) {
 				
@@ -127,7 +122,15 @@ $(function(){
 			console.log(" LEFTTTT  =" + left );
 			
             var new_left = (left > 100 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-            e.currentTarget.style.left = new_left
+			
+			console.log("NEWWWW LEFFTTT ====" +new_left);
+			
+            if(left > 100)
+			{
+			e.currentTarget.style.left = new_left
+			}
+			
+			
             enable_scroll()
 			
 			//e.currentTarget.addClass('tocuhedd');
