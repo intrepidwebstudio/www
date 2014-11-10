@@ -39,9 +39,10 @@ $(function(){
 
 
 
+   $(document).on('touchstart',prevent_default)
    
+      
     var x;
-	
 	var new_rect;
 	
     $('.swipe-delete li > a')
@@ -50,8 +51,7 @@ $(function(){
 			
 			$( ".swipe-delete li > a" ).each(function( index ) {
 				
-				
-		var rect = this.getBoundingClientRect();
+			var rect = this.getBoundingClientRect();
 				
 // console.log(rect.top, rect.right, rect.bottom, rect.left);
 				
@@ -72,21 +72,10 @@ $(function(){
 				
 			}) // close em all
 			
+		
+		}
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			}
-			
-			
-	
-});
+	});
 			
             x = e.originalEvent.pageX // anchor point
 			
@@ -96,13 +85,13 @@ $(function(){
         .on('touchmove', function(e) {
 			
 			
-			if(new_rect.left > -50)
+			if(new_rect.left==0)
 			{
 			
 		    var change = e.originalEvent.pageX - x
 		    change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
             e.currentTarget.style.left = change + 'px'
-            if (change < -50) disable_scroll() // disable scroll once we hit 10px horizontal slide
+            if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
 			}
         })
         .on('touchend', function(e) {
@@ -112,7 +101,7 @@ $(function(){
              left = parseInt(e.currentTarget.style.left)
 			
 			
-            var new_left = (left > -80 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
+            var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
             e.currentTarget.style.left = new_left
             enable_scroll()
 			
