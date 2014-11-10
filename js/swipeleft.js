@@ -55,12 +55,17 @@ $(function(){
     }
 
 
+
+   
     var x;
+	
 	var new_rect;
 	
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
 			
+			
+				
 				
 			$( ".swipe-delete li > a" ).each(function( index ) {
 				
@@ -105,7 +110,7 @@ $(function(){
 												
 												}else{
 													
-												e.currentTarget.style.left = '0px';
+												e.currentTarget.style.left = change + 'px';
 												enable_scroll();	
 													
 													}
@@ -117,21 +122,17 @@ $(function(){
 			
 			var left = "0";
 			
-             left = parseInt(e.currentTarget.style.left);
+             left = parseInt(e.currentTarget.style.left)
 			
 			console.log(" LEFTTTT  =" + left );
 			
-            var new_left = (left > 100 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-			
-			console.log("NEWWWW LEFFTTT ====" +new_left);
-			
-            if(left > 100)
-			{
-			e.currentTarget.style.left = new_left
-			}
-			
-			
+            var new_left = (left > 50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
+            e.currentTarget.style.left = new_left
             enable_scroll()
+			
+			
+			
+			console.log('new keft  ='+ new_left);
 			
 			//e.currentTarget.addClass('tocuhedd');
 
