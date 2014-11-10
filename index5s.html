@@ -356,9 +356,8 @@ background: rgba(255, 255, 255, 0.5) !important;
 
 .padding_left{
 	
-	width:100% !important;
-
-	padding-left: 5% !important; 
+	padding-left: 3% !important; 
+	padding-right: 3% !important;
 	
 	}
 	
@@ -1525,39 +1524,47 @@ function bringup()
 
 }
 
+
+
+
+
 var y;
 
-
 $('#top_menu').on('touchstart', function(e) {
-	
 			
 			y = e.originalEvent.pageY // anchor point	
 	
 	
-	console.log("staart Poistion = "+ y)
+	console.log("staart Poistion = "+ y);
 	
 		}).on('touchmove',  function(e) {
 											
 												var change = e.originalEvent.pageY - y;
 												console.log(change);
-												change = Math.min(Math.max(30, change), 0 ) // restrict to -100px left, 0px right
+												change = Math.min(Math.max(30, change), 0 ) 
 												console.log("change = "+change);
 												
 												if(change > 5)
 												{
-												disable_scroll(); // disable scroll once we hit 10px horizontal slide
-												e.currentTarget.style.top = change + 'px';
-												
+															$('#searcharea').show();
+															$('input').focus();
+															$('#searcharea').focus();	
+													
 												}else{
-													
-												e.currentTarget.style.top = '13px';
-												enable_scroll();	
-													
+															$('#searcharea').show();
+															$('input').focus();
+															$('#searcharea').focus();
 													}
 												
 											
 		})
         .on('touchend', function(e) {
+			
+			
+									$('#searcharea').show();
+									$('input').focus();
+									$('#searcharea').focus();
+			
 			
 			var top = "13px";
 			
