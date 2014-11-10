@@ -172,8 +172,8 @@ $('#dragimg').on('touchstart', function(e) {
 											
 												var change = e.originalEvent.pageY - y;
 												console.log(change);
-												change = Math.min(Math.max(30, change), 0 ) 
-												console.log("change = "+change);
+												
+												console.log("change = "+ change);
 												
 												if(change > 10)
 												{
