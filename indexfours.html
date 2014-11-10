@@ -36,117 +36,15 @@ document.onreadystatechange = function(e)
   <script defer src="js/idangerous.swiper.js"></script>
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" src="js/settings.js"></script>
-   <script>
-    // Wait for Cordova to load
-    //
-  
-
-
-
-
-	
-	
-	
-
-	 var iabUrl = null;
-        // Global InAppBrowser reference
-        var iabRef = null;
-		
-		
-		
-        function iabLoadStart(event) {
-            //alert(event.type + ' – ' + event.url);
-        }
-        function iabLoadStop(event) {
-            if ( iabUrl != event.url ){
-                iabUrl = event.url;
-          //      alert(event.type + ' – URL CHANGED – ' + event.url);
-		    }
-			
-			
-			// iabRef.executeScript({file: "myscript.js"});
-		//	alert('script dun over');
-			
-		
-   // iabRef.executeSript( alert('12') );
-			
-        }
-        function iabClose(event) {
-          //  alert(event.type);
-            iabRef.removeEventListener('loadstart', iabLoadStart);
-            iabRef.removeEventListener('loadstop', iabLoadStop);
-            iabRef.removeEventListener('exit', iabClose);
-            iabRef.removeEventListener('share', iabClose);
-        }
-        function iabShare(event){
-          //  alert('SHARE:'+event.type);
-            iabRef.removeEventListener('loadstart', iabLoadStart);
-            iabRef.removeEventListener('loadstop', iabLoadStop);
-            iabRef.removeEventListener('exit', iabClose);
-            iabRef.removeEventListener('share', iabClose);
-        }
-       function navigateTo(url,click_id,this_id,article_share_title){
-			
-		//	alert('trueee'+url);
-	
-	    iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no');//presentationstyle: Set to pagesheet, formsheet or fullscreen
-		 
-		 
-		 global_article_title = article_share_title ;
-		 global_article_link = url ;
-
-		 
-	//	 $.mobile.changePage('indexfours.html#browserPage');
-		 
-	//	 $('#IFrame').attr('src',url);
-			
-		$.support.cors = true;
-			
-			
-			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
-			
-			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted);
-			
-			
-			$(this_id).css("background-color","#ccc");
-			
-			
-		
-			
-			
-//	        iabRef.addEventListener('exit', iabClose);
-  //          iabRef.addEventListener('share', iabShare);
-   //         iabRef.addEventListener('loadstart', iabLoadStart);
-    //        iabRef.addEventListener('loadstop', iabLoadStop);
-			
-        }
-		
-		
-	
-
-
-function browser_setting()
-	{	
-        $(document).bind( 'mobileinit', function(){
-                         $.mobile.loader.prototype.options.text ="loading";
-                         $.mobile.loader.prototype.options.textVisible = false;
-                         $.mobile.loader.prototype.options.theme ="d";
-                         $.mobile.loader.prototype.options.textonly = false;
-             //            $.mobile.loader.prototype.options.html ="<img src='icons/settings.png'/>";
-                         $.mobile.allowCrossDomainPages = true;
-                         });
-						 
-	}
-
-
-
-   </script>
-   
-   
+     
   
   <style>
-  
-
+ div
+{
+backface-visibility:hidden !important;
+-webkit-backface-visibility:hidden !important; /* Chrome and Safari */
+-moz-backface-visibility:hidden !important; /* Firefox */
+}
 /* Border bottom for the previous button during the transition*/
 li.left a.ui-btn,
 li.right a.ui-btn {
@@ -170,17 +68,17 @@ ul.touch li.ui-li-has-alt a.ui-btn {
     font-size: inherit;
     margin-bottom: .75em;
 }
-
-
 .title_bac{
 /*	background-color:#F0525B;
 	opacity:.65;
 	
 */	position:absolute; bottom:0px;
+color:#FFF;
+
+ color:#52b7b6 !important;
 background: rgba(255, 255, 255, 0.5) !important;
 	}
-	
-		
+
 	.ui-listview>li p{
 		
 		white-space:normal;
@@ -234,7 +132,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 			float:left;
 			width:8%;
 			max-width:70px;
-			padding-left:4%;
+			padding-left:5%;
 			
 		}	
 		
@@ -242,9 +140,9 @@ background: rgba(255, 255, 255, 0.5) !important;
 	.righticon img{
 			
 			float:right;
-			width:8%;
+			width:4%;
 			max-width:70px;	
-			padding-right:4%;
+			padding-right:5%;
 		}	
 		
 		
@@ -283,7 +181,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 		 .searchsettings{
 	 
 	 position:relative !important;
-	 top:10px;
+	 top:13px !important;
 	 
 	 }
 		
@@ -359,8 +257,34 @@ background: rgba(255, 255, 255, 0.5) !important;
     width: 100% !important;
 }
 
+.padding_left{
+	
+	padding-left: 3% !important; 
+	padding-right: 3% !important;
+	
+	}
+	
+	
+.terms_of_service{
+	
+/*	background-color:#171514 !important  ; */
+	
+	}	
+	
+.terms_of_service p{
+	 
+	 color:#9F9F9F !important;
+	
+	}
+	
+.terms_of_service  h3{
+	
+	color:#171514 !important;
+	
+	}		
 
-
+ul li a{ background-color: #FFFFFF !important; }
+ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
 
   </style>
   
@@ -371,8 +295,70 @@ background: rgba(255, 255, 255, 0.5) !important;
 
 
 <body>
+<div class="ui-panel-page-container">
 
-<div data-role="page"  data-position="fixed"  id="page" data-title="eboo" >
+<div data-role="page" id="4spage1" data-title="eboo" >
+
+	
+    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
+	  
+    
+        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+
+
+        
+        
+        <div class="topmenucontainer"  >
+        
+     <div class="ui-field-contain forceinline">
+	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div>  
+     
+     <div class="searchsettings " id="top_menu" >
+        
+        <div  class="lefticon" id="dragimg" >
+       		<img  src="icons/57x57/search.png" onClick="show_search()" >
+        </div>
+        
+       <!-- <div id="blue">
+        sasdfasdf asdf assdfg sdfg sdfgs gsdf
+        </div>-->
+        
+        
+        <div class="righticon">
+        	<a href="#4ssettings" data-prefetch="true" onClick="settings_page()" ><img src="icons/57x57/settings.png" ></a>
+        </div>
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+    <div  role="main" class="ui-content" >
+    	    
+      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
+        
+        <div class="example-wrapper" data-iscroll >
+        <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
+        
+             
+     
+        </ul>
+       </div> 
+                                    
+                      
+                                     
+    </div><!-- /content -->
+    
+
+</div>
+
+<div data-role="page"  data-position="fixed"  id="4spage" data-title="eboo" >
 
 
 <div class="swiper-container">
@@ -440,79 +426,20 @@ background: rgba(255, 255, 255, 0.5) !important;
 
 </div>
 
-<div data-role="page" id="page1" data-title="eboo" >
 
-	
-    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
-	  
-    
-        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
-
-
-        
-        
-        <div class="topmenucontainer"  >
-        
-     <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
-         </div>  
-     
-     <div class="searchsettings " id="top_menu" >
-        
-        <div  class="lefticon" >
-       		<img  src="icons/57x57/search.png" onClick="show_search()" >
-        </div>
-        
-       <!-- <div id="blue">
-        sasdfasdf asdf assdfg sdfg sdfgs gsdf
-        </div>-->
-        
-        
-        <div class="righticon">
-        	<a href="#settings" onClick="settings_page()" ><img src="icons/57x57/settings.png" ></a>
-        </div>
-      </div>  
-        
-        
-        </div>
-                    
-    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
-    </div>
-      
- 
-</div><!-- /header -->
-    <div  role="main" class="ui-content" >
-    	    
-      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
-        
-        <div class="example-wrapper" data-iscroll >
-        <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
-        
-             
-     
-        </ul>
-       </div> 
-                                    
-                      
-                                     
-    </div><!-- /content -->
-    
-
-</div>
 
 
 
   
 
-<div data-role="page" id="settings">
+<div data-role="page" id="4ssettings">
  	 
    
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
 	  
     
     
-        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
         
       
         
@@ -524,7 +451,7 @@ background: rgba(255, 255, 255, 0.5) !important;
      <div class="searchsettings">
         
         <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+       		 <a data-rel="back" data-prefetch="true" ><img src="icons/57x57/back.png" ></a>
         </div>
         
        
@@ -573,13 +500,13 @@ background: rgba(255, 255, 255, 0.5) !important;
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
-                <li><a href="#termsofservice" data-prefetch="true" >
+                <li><a href="#4stermsofservice" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a href="#privacy" data-prefetch="true" >
+                <li><a href="#4sprivacy" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -597,16 +524,13 @@ background: rgba(255, 255, 255, 0.5) !important;
 </div>
 
 
-<div data-role="page" id="termsofservice">
+<div data-role="page" id="4stermsofservice">
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
 	  
-    
-    
-        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+      <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
         
         <div class="topmenucontainer" >
-    
      
      <div class="searchsettings">
         
@@ -626,14 +550,14 @@ background: rgba(255, 255, 255, 0.5) !important;
  
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper" data-iscroll >
+        <div class="example-wrapper padding_left terms_of_service " data-iscroll >
           <h3 class="Conv_MuseoSans_700">Eboo Terms of Service </h3>
-          <p class="Conv_MuseoSans_500" >
+          <p class="Conv_MuseoSans_500 "  >
 Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
 By using or accessing the Site in any way, viewing or <strong class="Conv_MuseoSans_700">browsing</strong> the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
 
 <h3 class="Conv_MuseoSans_700" >Heading 2</h3>
-<p class="Conv_MuseoSans_700"  >The Site and all of its original content are the sole property<strong class="Conv_MuseoSans_700">browsing</strong> of Your Nowhere Town and are, as such</p>
+<p class="Conv_MuseoSans_700 "  >The Site and all of its original content are the sole property<strong class="Conv_MuseoSans_700">browsing</strong> of Your Nowhere Town and are, as such</p>
 
 <h3 class="Conv_MuseoSans_700" >Links to Other Websites</h3>
 <p>Our Site contain a number of links to other websites and <strong class="Conv_MuseoSans_700">browsing</strong>online resources that are  owned or controlled by eboo.Your app has no control over, and 
@@ -650,23 +574,22 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
 
-<div data-role="page" id="privacy">
+<div data-role="page" id="4sprivacy">
          
     <div data-role="header" data-position="fixed" data-theme="b" data-fullscreen="false" style=" border:none !important;   "  >
-	 
-        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
-   
-   <div class="topmenucontainer" >
+    
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+
+        <div class="topmenucontainer" >
+    
      
      <div class="searchsettings">
+        
        <div  class="lefticon" >
        		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
         </div>
-        
       </div>  
-        
-        
-        </div>
+    </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Privacy</p>
@@ -675,18 +598,18 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper" data-iscroll >
+        <div class="example-wrapper padding_left  " data-iscroll >
         
           <h3>Privacy Policy</h3>
-          <p>
+          <p class="Conv_MuseoSans_700 " >
 Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
 By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
 
 <h3>Heading 2</h3>
-<p>The Site and all of its original content are the sole property of Your Nowhere Town and are, as such</p>
+<p class="Conv_MuseoSans_700 ">The Site and all of its original content are the sole property of Your Nowhere Town and are, as such</p>
 
 <h3>Links to Other Websites</h3>
-<p>Our Site contain a number of links to other websites and online resources that are  owned or controlled by eboo.Your app has no control over, and 
+<p class="Conv_MuseoSans_700 " >Our Site contain a number of links to other websites and online resources that are  owned or controlled by eboo.Your app has no control over, and 
 therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
 Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
 
@@ -697,8 +620,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 </div>
 
 
-
-
+</div>
 
 
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
@@ -755,6 +677,7 @@ $('#searcharea').on('blur',function(){
 $(document).keypress(function(e) {
     if(e.which == 13) {
 		
+		window.plugins.spinnerDialog.hide();
 		
 		console.log(ajax_path + ' asdasd');
 		
@@ -772,17 +695,6 @@ $(document).keypress(function(e) {
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
-			beforeSend: function() {
-                        // This callback function will trigger before data is sent
-                        $.mobile.loading('show', {theme:"a",text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
-                    },
-                    complete: function() {
-                        // This callback function will trigger on data sent/received complete
-                        $.mobile.loading('hide'); // This will hide ajax spinner
-                    },
-					
-			
-			
 			success: function(data)
 			{
 				
@@ -834,9 +746,6 @@ $(document).keypress(function(e) {
 					article_link = encodeURI(article_link);
 					
 					
-					
-					
-					
 					if(len>55)
 					{ 
 					article_title = article_title.substr(0,55);
@@ -863,7 +772,7 @@ $(document).keypress(function(e) {
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important;  " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important; color:#9F9F9F !important;  " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; color:#9F9F9F !important; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 					
 					
 				//	alert(append_data);
@@ -884,12 +793,12 @@ $(document).keypress(function(e) {
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 												
-												
+							window.plugins.spinnerDialog.hide();					
 				}//user data match if
 				else{
 					
 					// user data doent match
-					
+					window.plugins.spinnerDialog.hide();
 					alert("no match");
 					}
 			
@@ -899,6 +808,7 @@ $(document).keypress(function(e) {
 			
 				},
 		error: function(e) {
+			window.plugins.spinnerDialog.hide();
        alert('Network error please try after sometime  ');		
 			
 		//	console.log(e.status);
@@ -919,6 +829,8 @@ $(document).keypress(function(e) {
 		
 		
 		}
+	window.plugins.spinnerDialog.hide();	
+		
     }
 });
 
@@ -940,7 +852,7 @@ function load_trending()
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
-
+window.plugins.spinnerDialog.show();
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
 			type:'GET',
@@ -948,16 +860,6 @@ function load_trending()
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
-			beforeSend: function() {
-                        // This callback function will trigger before data is sent
-                        $.mobile.loading('show', {theme:"a", text:"loading...", textonly:false, textVisible: true}); // This will show ajax spinner
-                    },
-                    complete: function() {
-                        // This callback function will trigger on data sent/received complete
-                        $.mobile.loading('hide'); // This will hide ajax spinner
-                    },
-			
-			
 			success: function(data)
 			{
 				
@@ -1017,7 +919,7 @@ function load_trending()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
 					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
@@ -1026,7 +928,7 @@ function load_trending()
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 		
 						}
 							);			
@@ -1046,8 +948,11 @@ function load_trending()
 										$.getScript("js/swipeleft.js");
 												
 												
+						window.plugins.spinnerDialog.hide();
+												
 				}//user data match if
 				else{
+					window.plugins.spinnerDialog.hide();
 					// user data doent match
 					alert("no match");
 					}
@@ -1055,7 +960,8 @@ function load_trending()
 			
 				},
 		error: function(e) {
-      
+      window.plugins.spinnerDialog.hide();
+	  
 	  alert('Network problem ');		
 			
 		//	console.log(e);
@@ -1087,7 +993,7 @@ function startswiperfunction(){
     //Your options here:
     mode:'horizontal',
     loop: false,
-	resistance:false,
+	resistance:'0%',
 	freeMode:false,
 	momentumBounce:false,
 	swipeToPrev:true,
@@ -1122,11 +1028,15 @@ $(window).resize();
 	
 //alert('sasdasds');
 	    
-  setTimeout(function() {
+	
+	    setTimeout(function() {
         navigator.splashscreen.hide();
 		
 		
    			 }, 3000);
+	
+	
+	
     var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
  
     //function will be called when device ready
@@ -1134,10 +1044,13 @@ $(window).resize();
 		
 		
 		
-	//	alert('called');
+		
+		$.mobile.page.prototype.options.domCache = true;
+		
+//	alert('called');
 		
 		 
-    var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+  //  var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
 
 
 	//alert(deviceType + navigator.userAgent);
@@ -1150,6 +1063,8 @@ $(window).resize();
 	
 
 db.transaction(populateDB, errorCB, successCB);
+
+
 
 										
     }
@@ -1234,8 +1149,11 @@ db.transaction(populateDB, errorCB, successCB);
 		
 		if(length >0)
 		{
-			
-			$.mobile.changePage('indexfours.html#page1');
+		//	$( "body" ).pagecontainer( "change", '#5spage1'  ,  { transition:'pop'  });
+
+//		alert('ssss');
+
+			$.mobile.changePage('#4spage1' , { transition:'slide' });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1258,24 +1176,23 @@ db.transaction(populateDB, errorCB, successCB);
 				
 				update_timer();
 				
-			
+		//	alert('1');
 //swipe_list_items();
-// navigator.splashscreen.hide();
-	
-	
-					
+		
+		window.plugins.spinnerDialog.hide();
+						
 		}else{
-		//	alert('aaaaa');
+	//		alert('1');
+	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
 			
-		$.mobile.changePage('indexfours.html#page');
+	 	$.mobile.changePage('#4spage' , { transition:'slide' });
 		
 		   start_timer();
 		   update_timer();
 			
 	       startswiperfunction();
 				
-				
-	//		navigator.splashscreen.hide();	
+				window.plugins.spinnerDialog.hide();
 			
 		}
   
@@ -1295,6 +1212,8 @@ db.transaction(populateDB, errorCB, successCB);
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
 	{
+		window.plugins.spinnerDialog.hide();
+		
 		alert('enter a vaild email');
 		}
 	else{
@@ -1309,15 +1228,6 @@ db.transaction(populateDB, errorCB, successCB);
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
-			beforeSend: function() {
-			// This callback function will trigger before data is sent
-			$.mobile.loading('show', {theme:"c",text:"Loading...", textonly:false, textVisible: true}); // This will show ajax spinner
-			},
-			complete: function() {
-			// This callback function will trigger on data sent/received complete
-			$.mobile.loading('hide'); // This will hide ajax spinner
-			},
-
 			success: function(data)
 							{
 								
@@ -1329,27 +1239,28 @@ db.transaction(populateDB, errorCB, successCB);
 								//	alert(login_Response.message);
 							//		alert(login_Response.user_id)
 									
-									
+									window.plugins.spinnerDialog.hide();
 							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
 									
 								}else if(login_Response.status=='101'){
 									
 									
 									//	alert('User Already Exists' );
-									
+									window.plugins.spinnerDialog.hide();
 									
 									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
 									
 									}
 								else{
 									
-									
+									window.plugins.spinnerDialog.hide();
 									alert('server error !!');
 									}	
 								
 								},
 			error: function(e)
 				{
+					window.plugins.spinnerDialog.hide();
 					alert('Network Error,Unable to contact server');
 					
 					
@@ -1358,7 +1269,8 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			});
 		
-			
+		
+		
 		}	
     }
 		
@@ -1370,7 +1282,6 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			EbooUSER_ID = parameter2;
 			
-			
 		//	console.log(parameter2)
 		}
 		
@@ -1379,12 +1290,15 @@ db.transaction(populateDB, errorCB, successCB);
 		{
 			
 			
-			
-			
 			load_trending();
 				browser_setting();
 			
-			$.mobile.changePage('indexfours.html#page1');
+			window.plugins.spinnerDialog.show();
+			
+			$.mobile.changePage('#4spage1' , { transition:'slide' }  );
+			
+			window.plugins.spinnerDialog.hide();
+			
 		}
 		
 
@@ -1409,44 +1323,10 @@ function IsEmail(email) {
 	
 	
 
-	/*
-         
-		  
-		  
-		  
-            function twitterautho(){
-				
-				alert('ssss');
-				
-				 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
-					
-                    OAuth.popup('twitter')
-                        .done(function (r) {
-                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                            r.get('/1.1/account/verify_credentials.json')
-                                .done(function(data) {
-//                                    $('#result').html("twitter: Hello, " + data.name + " !");
-									
-									
-									console.log("twitter: Hello, " + data.name + " ! ");
-									
-								$('#twitterlogout').css('display','none');
-								$('#twitterlogged').css('display','block');
+	
 
-									
-                                })
-                                .fail(function( jqXHR, textStatus, errorThrown) {
-                                    $('#result').html("req error: " + textStatus);
-                                });
-                        })
-                        .fail(function (e) {
-                            $('#result').html('error: ' + e.message);
-                        });
-                }
 				
-				function tumblrautho(){
-			 OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+		/*		
 			    OAuth.popup('tumblr')
                         .done(function (r) {
                             // the access_token is available via r.access_token
@@ -1472,14 +1352,10 @@ function IsEmail(email) {
                 }
 
 
-
-
-	
-
-	
 */
 	
 	
+
 	
 	
 
@@ -1531,7 +1407,7 @@ function bringdown()
 	
 	
 $('#textinput').css('position','relative');
-$('#textinput').animate({'bottom':'60%'},150,'linear');
+$('#textinput').animate({'bottom':'55%'},150,'linear');
 
 	
 	}
@@ -1557,10 +1433,6 @@ function bringup()
 
 
 }
-
-
-
-
 
 
 

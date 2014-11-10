@@ -157,6 +157,62 @@ $(function(){
 });
 
 
+var y;
+
+$('#dragimg').on('touchstart', function(e) {
+			
+			y = e.originalEvent.pageY // anchor point	
+	
+	
+	console.log("staart Poistion = "+ y);
+	
+		}).on('touchmove',  function(e) {
+											
+												var change = e.originalEvent.pageY - y;
+												console.log(change);
+												change = Math.min(Math.max(30, change), 0 ) 
+												console.log("change = "+change);
+												
+												if(change > 5)
+												{
+															$('#searcharea').show();
+															$('input').focus();
+															$('#searcharea').focus();	
+													
+												}else{
+															$('#searcharea').show();
+															$('input').focus();
+															$('#searcharea').focus();
+													}
+												
+											
+		})
+        .on('touchend', function(e) {
+			
+			
+									$('#searcharea').show();
+									$('input').focus();
+									$('#searcharea').focus();
+			
+		/*	
+			var top = "13px";
+			
+             top = parseInt(e.currentTarget.style.top)
+			
+			console.log(" topp  =" + top );
+			
+            var new_top = (top > 8 ? '90px' : '50px') // snap back, or leave open, 50px threshold
+            e.currentTarget.style.top = new_top
+            enable_scroll()
+			*/
+			
+			//e.currentTarget.addClass('tocuhedd');
+
+		
+	    });
+
+
+
 
          
 	function settings_page()
