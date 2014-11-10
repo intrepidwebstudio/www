@@ -1525,38 +1525,52 @@ function bringup()
 
 }
 
-
-$('#dragimg').on('swipedown',function(){
-	
-	
-	 
-	  $('#searcharea').show();
-	  $('input').focus();
-	  
-	  $('#searcharea').focus();
-	
-	alert('swiped_down');
-	
-	
-	
-	
-	});
-$('.headonstart').on('swipedown',function(){
-	
-	  $('#searcharea').show();
-	  $('input').focus();
-	  
-	  $('#searcharea').focus();
-	
-	alert('swiped_downssssss');
-	
-	
-	
-	}
+var y;
 
 
-);
+$('#dragimg').on('touchstart', function(e) {
+	
+			
+			y = e.originalEvent.pageY // anchor point	
+	
+	
+		}).on('touchmove',  function(e) {
+											
+												var change = e.originalEvent.pageX - y;
+												console.log(change);
+												change = Math.min(Math.max(-300, change), 0 ) // restrict to -100px left, 0px right
+												console.log("change = "+change);
+												
+												if(change < -50)
+												{
+												disable_scroll(); // disable scroll once we hit 10px horizontal slide
+												e.currentTarget.style.left = change + 'px';
+												
+												}else{
+													
+												e.currentTarget.style.left = change + 'px';
+												enable_scroll();	
+													
+													}
+												
+											
+		})
+        .on('touchend', function(e) {
+			
+			var left = "0";
+			
+             left = parseInt(e.currentTarget.style.left)
+			
+			console.log(" LEFTTTT  =" + left );
+			
+            var new_left = (left > 100 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
+            e.currentTarget.style.left = new_left
+            enable_scroll()
+			
+			//e.currentTarget.addClass('tocuhedd');
 
+		
+	    });
 
 
 
