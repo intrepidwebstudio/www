@@ -1565,7 +1565,7 @@ $('#top_menu').on('touchstart', function(e) {
 			
 			console.log(" topp  =" + top );
 			
-            var new_top = (top > 8 ? '90px' : '13px') // snap back, or leave open, 50px threshold
+            var new_top = (top > 8 ? '90px' : '50px') // snap back, or leave open, 50px threshold
             e.currentTarget.style.top = new_top
             enable_scroll()
 			
