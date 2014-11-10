@@ -110,7 +110,7 @@ $(function(){
 												
 												}else{
 													
-												e.currentTarget.style.left = change + 'px';
+												e.currentTarget.style.left = 0 + 'px';
 												enable_scroll();	
 													
 													}
@@ -126,8 +126,22 @@ $(function(){
 			
 			console.log(" LEFTTTT  =" + left );
 			
-            var new_left = (left > 50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-            e.currentTarget.style.left = new_left
+			if(left < -50)
+			{
+			
+		 var new_left = -250 + 'px';
+			e.currentTarget.style.left = new_left;	
+				
+				}
+			else{
+				
+		 var new_left = 0 + 'px';
+			e.currentTarget.style.left = new_left;		
+				
+				}			
+			
+            
+            
             enable_scroll()
 			
 			
