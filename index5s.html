@@ -1528,27 +1528,29 @@ function bringup()
 var y;
 
 
-$('#dragimg').on('touchstart', function(e) {
+$('#top_menu').on('touchstart', function(e) {
 	
 			
 			y = e.originalEvent.pageY // anchor point	
 	
 	
+	console.log("staart Poistion = "+ y)
+	
 		}).on('touchmove',  function(e) {
 											
-												var change = e.originalEvent.pageX - y;
+												var change = e.originalEvent.pageY - y;
 												console.log(change);
-												change = Math.min(Math.max(-300, change), 0 ) // restrict to -100px left, 0px right
+												change = Math.min(Math.max(30, change), 0 ) // restrict to -100px left, 0px right
 												console.log("change = "+change);
 												
-												if(change < -50)
+												if(change > 5)
 												{
 												disable_scroll(); // disable scroll once we hit 10px horizontal slide
-												e.currentTarget.style.left = change + 'px';
+												e.currentTarget.style.top = change + 'px';
 												
 												}else{
 													
-												e.currentTarget.style.left = change + 'px';
+												e.currentTarget.style.top = '13px';
 												enable_scroll();	
 													
 													}
@@ -1557,14 +1559,14 @@ $('#dragimg').on('touchstart', function(e) {
 		})
         .on('touchend', function(e) {
 			
-			var left = "0";
+			var top = "13px";
 			
-             left = parseInt(e.currentTarget.style.left)
+             top = parseInt(e.currentTarget.style.top)
 			
-			console.log(" LEFTTTT  =" + left );
+			console.log(" topp  =" + top );
 			
-            var new_left = (left > 100 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-            e.currentTarget.style.left = new_left
+            var new_top = (top > 8 ? '90px' : '13px') // snap back, or leave open, 50px threshold
+            e.currentTarget.style.top = new_top
             enable_scroll()
 			
 			//e.currentTarget.addClass('tocuhedd');
