@@ -40,18 +40,6 @@ $(function(){
 
 
 
-//SET THE FLAG
-var scrolling = false;
-var endScrolling;
-
-$(window).on("scroll", function() {
-    scrolling = true;
-    endScrolling = window.setTimeout(function() {
-        scrolling = false;
-        window.clearTimeout(endScrolling);
-    }, 20);
-});
-
 
 //$(document).on('touchstart click', '.flip-container ', function(event){                       
  //    event.preventDefault();
@@ -121,9 +109,6 @@ $(window).on("scroll", function() {
 		})
         .on('touchmove', function(e) {
 			
-			if(!scrolling) {
-			
-			
 			
 			if(new_rect.left==0)
 			{
@@ -133,15 +118,12 @@ $(window).on("scroll", function() {
             e.currentTarget.style.left = change + 'px'
             if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
 			}
-        }
-		
+        
 		}
 		
 		
 		)
         .on('touchend', function(e) {
-			
-			if(!scrolling) {
 			
 			var left = "0";
 			
@@ -154,9 +136,7 @@ $(window).on("scroll", function() {
 			
 			//e.currentTarget.addClass('tocuhedd');
 
-			
-			}
-	  
+		
 	    });
 	
 

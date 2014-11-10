@@ -355,16 +355,16 @@ background: rgba(255, 255, 255, 0.5) !important;
 }
 
 .padding_left{
-		
-		padding-left:7% !important;
-		padding-right:7% !important
-		
+	
+	width:90% !important;
+	text-align:center;	
+	
 	}
 	
 	
 .terms_of_service{
 	
-	background-color:#171514 !important  ;
+/*	background-color:#171514 !important  ; */
 	
 	}	
 	
@@ -423,7 +423,7 @@ li:nth-child(odd) { background: #FFFFFF !important; }
         </div>-->
         
         
-        <div class="righticon">
+        <div class="righticon" >
         	<a href="#5ssettings" data-prefetch="true" onClick="settings_page()" ><img src="icons/57x57/settings.png" ></a>
         </div>
       </div>  
@@ -637,7 +637,7 @@ li:nth-child(odd) { background: #FFFFFF !important; }
  
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper padding_left " data-iscroll >
+        <div class="example-wrapper padding_left terms_of_service " data-iscroll >
           <h3 class="Conv_MuseoSans_700">Eboo Terms of Service </h3>
           <p class="Conv_MuseoSans_500 "  >
 Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
@@ -685,7 +685,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper padding_left terms_of_service " data-iscroll >
+        <div class="example-wrapper padding_left  " data-iscroll >
         
           <h3>Privacy Policy</h3>
           <p class="Conv_MuseoSans_700 " >
@@ -1154,6 +1154,9 @@ $(window).resize();
 
 db.transaction(populateDB, errorCB, successCB);
 
+
+enable_scroll();
+
 										
     }
 	
@@ -1523,7 +1526,21 @@ function bringup()
 }
 
 
-
+$('#dragimg').on('swipedown',function(){
+	
+	
+	 
+	  $('#searcharea').show();
+	  $('input').focus();
+	  
+	  $('#searcharea').focus();
+	
+	alert('swiped_down');
+	
+	
+	
+	
+	});
 
 
 
