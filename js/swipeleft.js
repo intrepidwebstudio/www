@@ -166,14 +166,14 @@ $('#dragimg').on('touchstart', function(e) {
 			y = e.originalEvent.pageY // anchor point	
 	
 	
-	console.log("staart Poistion = "+ y);
+//	console.log("staart Poistion = "+ y);
 	
 		}).on('touchmove',  function(e) {
 											
 												var change = e.originalEvent.pageY - y;
-												console.log(change);
+											//	console.log(change);
 												
-												console.log("change = "+ change);
+										//		console.log("change = "+ change);
 												
 												if(change > 10)
 												{
@@ -237,10 +237,10 @@ $('#dragimg').on('touchstart', function(e) {
 									
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
-									console.log( "details = "+ JSON.stringify(data) );
+							//		console.log( "details = "+ JSON.stringify(data) );
 									
 																		
-									console.log("twitter: Hello, " + data.name + " ! ");
+								//	console.log("twitter: Hello, " + data.name + " ! ");
 									
 									
 									
@@ -250,11 +250,11 @@ $('#dragimg').on('touchstart', function(e) {
 									
                                 })
                                 .fail(function( jqXHR, textStatus, errorThrown) {
-                                    console.log("req error: " + textStatus);
+                                 //   console.log("req error: " + textStatus);
                                 });
                         })
                         .fail(function (e) {
-                            console.log('error: ' + e.message);
+                           // console.log('error: ' + e.message);
                         });
 						
 						
@@ -291,10 +291,10 @@ $('#dragimg').on('touchstart', function(e) {
 									
                                   //  $('#result').html("twitter: Hello, " + data.name + " !");
 									
-									console.log( "details = "+ JSON.stringify(data) );
+							//		console.log( "details = "+ JSON.stringify(data) );
 									
 																		
-									console.log("twitter: Hello, " + data.name + " ! ");
+								//	console.log("twitter: Hello, " + data.name + " ! ");
 									
 									
 									
@@ -303,11 +303,11 @@ $('#dragimg').on('touchstart', function(e) {
 									
                                 })
                                 .fail(function( jqXHR, textStatus, errorThrown) {
-                                    console.log("req error: " + textStatus);
+                             //       console.log("req error: " + textStatus);
                                 });
                         })
                         .fail(function (e) {
-                         console.log('error: ' + e.message);
+                    //     console.log('error: ' + e.message);
                         });
 						
 				 });
@@ -339,10 +339,10 @@ $('#dragimg').on('touchstart', function(e) {
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
 									
-									console.log( "details = "+ JSON.stringify(data) );
+						//			console.log( "details = "+ JSON.stringify(data) );
 									
 																		
-									console.log("tumblr: Hello, " + data.name + " ! ");
+						//			console.log("tumblr: Hello, " + data.name + " ! ");
 									
 									
 									
@@ -351,11 +351,11 @@ $('#dragimg').on('touchstart', function(e) {
 									
                                 })
                                 .fail(function( jqXHR, textStatus, errorThrown) {
-                                   console.log("req error: " + textStatus);
+                //                   console.log("req error: " + textStatus);
                                 });
                         })
                         .fail(function (e) {
-                           console.log('error: ' + e.message);
+              //             console.log('error: ' + e.message);
                         });
 						
 				 });
@@ -433,11 +433,6 @@ var callback = function(buttonIndex) {
     window.plugins.actionsheet.show(options, callback);
   };
   
-  $('#dragimg').on('dragstart', function(event) {
-	  
-	  
-    event.preventDefault();
-});
-
+ 
 
 
