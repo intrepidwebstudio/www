@@ -96,8 +96,7 @@ $(function(){
 			
 		})
         .on('touchmove',  function(e) {
-												if(new_rect.left==0)
-												{
+												
 												var change = e.originalEvent.pageX - x;
 												console.log(change);
 												change = Math.min(Math.max(-300, change), 0 ) // restrict to -100px left, 0px right
@@ -115,7 +114,8 @@ $(function(){
 													
 													}
 												
-												}
+												
+												
 											
 		})
         .on('touchend', function(e) {
