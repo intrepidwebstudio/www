@@ -126,7 +126,7 @@ $(function(){
 			
 			console.log(" LEFTTTT  =" + left );
 			
-			if(left < -60)
+			if(left < -90)
 			{
 			
 		 var new_left = -250 + 'px';
@@ -158,6 +158,8 @@ $(function(){
 
 
 var y;
+var new_position;
+
 
 $('#dragimg').on('touchstart', function(e) {
 			
@@ -173,27 +175,21 @@ $('#dragimg').on('touchstart', function(e) {
 												change = Math.min(Math.max(30, change), 0 ) 
 												console.log("change = "+change);
 												
-												if(change > 5)
+												if(change > 10)
 												{
-															$('#searcharea').show();
-															$('input').focus();
-															$('#searcharea').focus();	
-													
-												}else{
-															$('#searcharea').show();
-															$('input').focus();
-															$('#searcharea').focus();
-													}
+												 new_position = change;
+												}
 												
 											
 		})
         .on('touchend', function(e) {
 			
-			
+						if( new_position > 20)
+						 {
 									$('#searcharea').show();
 									$('input').focus();
 									$('#searcharea').focus();
-			
+						 }
 		/*	
 			var top = "13px";
 			
