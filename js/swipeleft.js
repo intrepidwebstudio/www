@@ -38,48 +38,11 @@ $(function(){
     }
 
 
+
+
+
 $('.swipe-delete li > a')
         .on('touchstart', function(e) {
- 
-   
-   $( ".swipe-delete li > a" ).each(function( index ) {
-				
-			var rect = this.getBoundingClientRect();
-				
-// console.log(rect.top, rect.right, rect.bottom, rect.left);
-				
-			
-			if(rect.left !=0)
-			{
-			$(this).animate({'left':'0px'},500,'linear',function(){  
-			
-							 new_rect = this.getBoundingClientRect();
-						
-							if(new_rect.left==0)
-							{
-						
-							//	$(this).unbind('onClick');
-															
-								}
-			
-				
-			}) // close em all
-			
-		
-		}
-			
-	});
-	
-		});
-	
-	
-   
-      
-    var x;
-	var new_rect;
-	
-    $('.swipe-delete li > a')
-        .on('taphold', function(e) {
 			
 			
 			$( ".swipe-delete li > a" ).each(function( index ) {
@@ -88,7 +51,9 @@ $('.swipe-delete li > a')
 				
 // console.log(rect.top, rect.right, rect.bottom, rect.left);
 				
-			
+				
+			if( $(this).hasClass('left_item') )	
+			{
 			if(rect.left !=0)
 			{
 			$(this).animate({'left':'0px'},500,'linear',function(){  
@@ -97,6 +62,8 @@ $('.swipe-delete li > a')
 						
 							if(new_rect.left==0)
 							{
+						
+							
 						
 							//	$(this).unbind('onClick');
 															
@@ -107,17 +74,37 @@ $('.swipe-delete li > a')
 			
 		
 		}
+		
+		
+		
+			}
 			
 	});
 			
-            x = e.originalEvent.pageX // anchor point
+           
 			
         
 		
-		})
+		});
+	
+	      
+    var x;
+	var new_rect;
+	
+    $('.swipe-delete li > a')
+        .on('taphold', function(e) {
+			
+			 x = e.originalEvent.pageX // anchor point
+			
+			})
         .on('touchmove', function(e) {
 			
-			
+			if( $(this).hasClass('left_item') )
+			{
+				
+				}
+			else{
+				
 			if(new_rect.left==0)
 			{
 			
@@ -126,6 +113,8 @@ $('.swipe-delete li > a')
             e.currentTarget.style.left = change + 'px'
             if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
 			}
+			
+		   }
         })
         .on('touchend', function(e) {
 			
@@ -135,8 +124,20 @@ $('.swipe-delete li > a')
 			
 			
             var new_left = (left > -50 ? '0px' : '-250px') // snap back, or leave open, 50px threshold
-            e.currentTarget.style.left = new_left
-            enable_scroll()
+            e.currentTarget.style.left = new_left;
+			
+			if(left > -50)
+			{
+				$(this).addClass('left_item');
+				
+				}
+			
+			
+			
+            enable_scroll();
+			
+			
+			
 			
 			//e.currentTarget.addClass('tocuhedd');
 
