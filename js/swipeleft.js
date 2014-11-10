@@ -95,25 +95,22 @@ $(function(){
             x = e.originalEvent.pageX // anchor point
 			
 		})
-        .on('touchmove', function(e) {
-			
-			
-			if(new_rect.left==0)
-			{
-			
-		    var change = e.originalEvent.pageX - x;
-			
-			console.log(change);
-
-			
-		    change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
-			
-			console.log("change = "+change);
-			
-            e.currentTarget.style.left = change + 'px'
-            if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
-			}
-        
+        .on('touchmove',  function(e) {
+												if(new_rect.left==0)
+												{
+												var change = e.originalEvent.pageX - x;
+												console.log(change);
+												change = Math.min(Math.max(-250, change), 0 ) // restrict to -100px left, 0px right
+												console.log("change = "+change);
+												
+												if(change < -40)
+												{
+												e.currentTarget.style.left = change + 'px';
+												
+												}
+												if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
+												}
+											
 		})
         .on('touchend', function(e) {
 			
