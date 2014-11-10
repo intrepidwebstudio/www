@@ -38,15 +38,48 @@ $(function(){
     }
 
 
-
-   $(document).on('touchstart',prevent_default)
+$('.swipe-delete li > a')
+        .on('touchstart', function(e) {
+ 
+   
+   $( ".swipe-delete li > a" ).each(function( index ) {
+				
+			var rect = this.getBoundingClientRect();
+				
+// console.log(rect.top, rect.right, rect.bottom, rect.left);
+				
+			
+			if(rect.left !=0)
+			{
+			$(this).animate({'left':'0px'},500,'linear',function(){  
+			
+							 new_rect = this.getBoundingClientRect();
+						
+							if(new_rect.left==0)
+							{
+						
+							//	$(this).unbind('onClick');
+															
+								}
+			
+				
+			}) // close em all
+			
+		
+		}
+			
+	});
+	
+		});
+	
+	
    
       
     var x;
 	var new_rect;
 	
     $('.swipe-delete li > a')
-        .on('touchstart', function(e) {
+        .on('taphold', function(e) {
 			
 			
 			$( ".swipe-delete li > a" ).each(function( index ) {
