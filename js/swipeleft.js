@@ -160,12 +160,11 @@ $(function(){
 var y;
 var new_position;
 
-
+/*
 $('#dragimg').on('touchstart', function(e) {
 			
 			y = e.originalEvent.pageY // anchor point	
-	
-	
+
 //	console.log("staart Poistion = "+ y);
 	
 		}).on('touchmove',  function(e) {
@@ -205,7 +204,7 @@ $('#dragimg').on('touchstart', function(e) {
 			//e.currentTarget.addClass('tocuhedd');
 
 		
-	    });
+	//    });
 
 
 
