@@ -338,7 +338,7 @@ ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
         </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
+        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Most Popular Articles</p>
     </div>
       
  
@@ -670,9 +670,9 @@ $('#searcharea').on('blur',function(){
 $(document).keypress(function(e) {
     if(e.which == 13) {
 		
-		window.plugins.spinnerDialog.show();
 		
-		console.log(ajax_path + ' asdasd');
+		
+	//	console.log(ajax_path + ' asdasd');
 		
 	   if( $('#searcharea').val()!='')
 	   {
@@ -688,6 +688,14 @@ $(document).keypress(function(e) {
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     window.plugins.spinnerDialog.hide();  
+                    },
 			success: function(data)
 			{
 				
@@ -853,6 +861,14 @@ window.plugins.spinnerDialog.show();
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     window.plugins.spinnerDialog.hide();  
+                    },
 			success: function(data)
 			{
 				
@@ -864,7 +880,7 @@ window.plugins.spinnerDialog.show();
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Trending');
+				$('#searchvalue').html('Most Popular Articles');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1201,7 +1217,10 @@ db.transaction(populateDB, errorCB, successCB);
 		}
 	
 	function validate_email()
-	{
+	{ 
+	window.plugins.spinnerDialog.show();
+	
+	
 	var	useremail = $('#useremail').val();
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
