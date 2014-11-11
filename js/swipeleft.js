@@ -110,7 +110,7 @@ $(function(){
 												}else{
 													
 											//	e.currentTarget.style.left = 0 + 'px';
-												enable_scroll();	
+											//	enable_scroll();	
 													
 													}
 												
