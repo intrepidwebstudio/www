@@ -277,6 +277,10 @@ $('#dragimg').on('touchstart', function(e) {
 														
 								console.log(JSON.stringify(result));
 						
+						
+								
+								$('#linkedinlogout').css('display','none');
+								$('#linkedinlogged').css('display','block');	
 					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
 							
 							
@@ -284,9 +288,7 @@ $('#dragimg').on('touchstart', function(e) {
                             // but the http functions automagically wrap the jquery calls
                             result.get('/1.1/account/verify_credentials.json')
                                 .done(function(data) {
-									
-								$('#linkedinlogout').css('display','none');
-								$('#linkedinlogged').css('display','block');				
+										
 									
                                // $('#result').html("twitter: Hello, " + data.name + " !");
 									
@@ -322,7 +324,11 @@ $('#dragimg').on('touchstart', function(e) {
                     OAuth.popup('tumblr')
                         .done(function (result) {
 														
-							//	console.log(JSON.stringify(result));
+							console.log(JSON.stringify(result));
+							
+								$('#tumblrlogout').css('display','none');
+								$('#tumblrlogged').css('display','block');
+									
 						
 						//	console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
 							
@@ -331,9 +337,7 @@ $('#dragimg').on('touchstart', function(e) {
                             result.get('/1.1/account/verify_credentials.json')
                                 .done(function(data) {
 									
-									$('#tumblrlogout').css('display','none');
-								$('#tumblrlogged').css('display','block');
-									
+								
 									
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
