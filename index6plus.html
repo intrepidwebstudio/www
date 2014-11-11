@@ -47,7 +47,11 @@ backface-visibility:hidden !important;
 -webkit-backface-visibility:hidden !important; /* Chrome and Safari */
 -moz-backface-visibility:hidden !important; /* Firefox */
 }
+
+
+
 /* Border bottom for the previous button during the transition*/
+/*
 li.left a.ui-btn,
 li.right a.ui-btn {
     border-top-width: 0;
@@ -57,13 +61,21 @@ li.right a.ui-btn {
 li a.ui-btn.border-bottom {
     border-bottom-width: 1px;
 }
+
 /* Hide the delete button on touch devices */
+
+/*
 ul.touch li.ui-li-has-alt a.delete {
 	display:none;
 }
+
+
 ul.touch li.ui-li-has-alt a.ui-btn {
     margin-right:0;
 }
+
+*/
+
 /* Styling for the popup */
 #confirm p {
     text-align: center;
@@ -119,32 +131,15 @@ background: rgba(255, 255, 255, 0.5) !important;
 		}
 		
 	.socialicon img {
-		 width:43px;
+		 width:40px;
 	}	
 		
 	.sourceicon{
-				width: 24%;
+				width: 23%;
 				margin-left:3% !important;
 				margin-right:2% !important;
 				padding-top:3% !important;
 				vertical-align:middle !important;
-		}	
-	.lefticon img{
-			
-			float:left;
-			width:8%;
-			max-width:70px;
-			padding-left:5%;
-			
-		}	
-		
-		
-	.righticon img{
-			
-			float:right;
-			width:8%;
-			max-width:70px;	
-			padding-right:5%;
 		}	
 		
 		
@@ -157,20 +152,61 @@ background: rgba(255, 255, 255, 0.5) !important;
 		
 	.topplace{
 		
-		background:rgba(255,255,255,0.5) !important;
+		background-image:url("img/inputbackground.png") ;
+		background-size:cover;
+		background-repeat:no-repeat;
+		opacity:.5;
+	
+	/*	background:rgba(255,255,255,0.5) !important; */
 		
+
 		
 		position:relative !important;
 		top:0px;
 		width:100%;
 		text-align:center !important;
-		z-index:9999px !important;
+		z-index:-999px !important;
 		vertical-align:middle;
 		cursor:vertical-text;
 		
 		
 		
 		}
+
+topplace_empty{
+			position:relative !important;
+		top:0px;
+		width:100%;
+
+	
+	}	
+	
+	.lefticon img{
+			
+			float:left;
+			width:7%;
+			max-width:70px;
+			padding-left:13px;
+			
+		}	
+		
+		
+	.righticon img{
+			
+			float:right;
+			width:7%;
+			max-width:70px;	
+			padding-right:13px;
+		}	
+		
+	 .searchsettings{
+	 
+	 position:relative !important;
+	 top:16px !important;
+	 
+	 }		
+	
+	
 		
 		.topmenucontainer{
 			
@@ -180,12 +216,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 			width:100%;
 			}
 		
-		 .searchsettings{
-	 
-	 position:relative !important;
-	 top:13px !important;
-	 
-	 }
+	
 		
 		
 		
@@ -261,7 +292,9 @@ background: rgba(255, 255, 255, 0.5) !important;
 
 .padding_left{
 	
-	text-align:justify !important
+	text-align:justify !important;
+	
+	
 	}
 .padding_left p{
 	 margin-left:5%;
@@ -273,6 +306,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 	 margin-right:5%;
 	}		
 	
+	
 .terms_of_service{
 	
 /*	background-color:#171514 !important  ; */
@@ -282,6 +316,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 .terms_of_service p{
 	 
 	 color:#9F9F9F !important;
+	 
 	
 	}
 	
@@ -291,8 +326,38 @@ background: rgba(255, 255, 255, 0.5) !important;
 	
 	}		
 
-ul li a{ background-color: #FFFFFF !important; }
+ul li a{ background-color: #FFFFFF  !important; }
 ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
+
+
+
+input{
+	
+			vertical-align:middle !important;
+		text-align:center !important;
+		cursor:vertical-text !important;
+
+	
+	}
+
+::-webkit-input-placeholder {
+   color: #999 !important;
+  
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #999 !important;
+  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #999 !important;
+}
+
+:-ms-input-placeholder {  
+   color: #999 !important;
+}
+
 
   </style>
   
@@ -312,6 +377,16 @@ ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
     <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
 	  
     
+    
+    	<div class="clear_button" style="position:absolute; top:5px; z-index:99999px !important;  right:10px;  vertical-align:middle" >	
+        	<img src="icons/57x57/exit.png" class="search_empty" style="width:25px !important; z-index:99999px !important;"  >
+        </div>
+    
+	      <div class="ui-field-contain forceinline">
+	          <input type="text" id="searcharea"  data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div>  
+    
+    
         <img  src="img/1242.jpg"    style="margin-bottom:-5px !important; width:100%" >
 
 
@@ -319,9 +394,9 @@ ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
         
         <div class="topmenucontainer"  >
         
-     <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
-         </div>  
+        
+             <div class="search_empty topplace_empty" style=" min-height:37px !important;  ;display:none !important;" >&emsp;</div>
+        
      
      <div class="searchsettings " id="top_menu" >
         
@@ -343,8 +418,8 @@ ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
         </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
-    </div>
+        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Most Popular Articles</p>
+    </div>      
       
  
 </div><!-- /header -->
@@ -395,32 +470,26 @@ ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
         
         
         <div style="color:#FFF !important;">
-        		<center><img  src="img/eboo-logo.png" width="20%"  ></center>
+        		<center><img  src="img/eboo-logo.png" width="32%"  ></center>
          </div>
        
-        <center> <p style=" font-size:18px; color:#FFF !important;
-		cursor:vertical-text; text-align:center  !important; width:70% !important ; " class="Conv_MuseoSans-300Italic"  >Feed <strong>Your Curiosity</strong></p></center>
+        <center> <div style=" font-size:19px; color:#FFF !important; padding-bottom:5% !important;
+		cursor:vertical-text; text-align:center  !important; width:70% !important ; text-height:font-size; letter-spacing:1px !important; text-height:max-size;font-weight:400 !important " class="Conv_MuseoSans-100"  >Feed <strong><span class="Conv_MuseoSans-300Italic" style="font-size:20px; font-weight:600">your curiousity.</span></strong></div></center>
         
-        <center> <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.7) !important;
-		cursor:vertical-text; " data-corners="false"   ></center>
+        <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
+		cursor:vertical-text; " data-corners="false" placeholder="E-mail Address"   ></center>
 
 		<center>
-        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic ui-input-btn ui-hide-label" style="color:#FFF !important ; background-color:#27F1F4 !important; opacity: 0.7 !important;    min-height: 2.8em !important; 
+        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic ui-input-btn ui-hide-label" style="color:#FFF !important ; background-color:#0a9bb8 !important;   min-height: 2.8em !important; 
            								border:none !important; text-shadow:none !important; box-shadow:none !important; width:70% !important ;	" data-corners="false" data-prevent-focus-zoom="true" >
         Start Using Eboo</button>
         </center>
         
         </div>
-        
-        
-        
-        
+         
       </div>
       
-      
-      
-      
-      
+     
       <!--Etc..-->
   </div>
 </div>
@@ -624,6 +693,8 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
  $('#searcharea').hide();
+ $('.search_empty').hide();
+ 
 
 	function show_focus(){
 		
@@ -637,6 +708,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
   {
 	  
 	  $('#searcharea').show();
+	   $('.search_empty').show();
 	  $('input').focus();
 	  
 	  $('#searcharea').focus();
@@ -647,7 +719,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 $('#searcharea').on('blur',function(){ 
 									$('#searcharea').hide();	
+									 $('.search_empty').hide();
 										$('#searcharea').blur();
+										$('.search_empty').blur();
 										  });
 
    
@@ -657,10 +731,10 @@ $('#searcharea').on('blur',function(){
 $(document).keypress(function(e) {
     if(e.which == 13) {
 		
-		window.plugins.spinnerDialog.hide();
 		
-		console.log(ajax_path + ' asdasd');
 		
+	//	console.log(ajax_path + ' asdasd');
+	window.plugins.spinnerDialog.show();	
 	   if( $('#searcharea').val()!='')
 	   {
 	   //start  my loader here !!!!
@@ -675,6 +749,14 @@ $(document).keypress(function(e) {
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     window.plugins.spinnerDialog.hide();  
+                    },
 			success: function(data)
 			{
 				
@@ -696,7 +778,9 @@ $(document).keypress(function(e) {
 				
 				
 				$('#searcharea').hide();
+				 $('.search_empty').hide();
 				$('#searcharea').blur();
+				$('.search_empty').blur();
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -743,7 +827,7 @@ $(document).keypress(function(e) {
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
 					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',\''+article_title+'\')" >';
@@ -840,6 +924,14 @@ window.plugins.spinnerDialog.show();
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     window.plugins.spinnerDialog.hide();  
+                    },
 			success: function(data)
 			{
 				
@@ -851,7 +943,7 @@ window.plugins.spinnerDialog.show();
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Trending');
+				$('#searchvalue').html('Most Popular Articles');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1010,8 +1102,11 @@ $(window).resize();
 	    
 	
 	    setTimeout(function() {
+			
+		//	startswiperfunction();
         navigator.splashscreen.hide();
 		
+	//	window.plugins.spinnerDialog.show();
 		
    			 }, 3000);
 	
@@ -1133,7 +1228,7 @@ db.transaction(populateDB, errorCB, successCB);
 
 //		alert('ssss');
 
-			$.mobile.changePage('#6ppage1' , { transition:'slide' });
+			$.mobile.changePage('#4spage1' , { transition:'slide' });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1165,7 +1260,7 @@ db.transaction(populateDB, errorCB, successCB);
 	//		alert('1');
 	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
 			
-	 	$.mobile.changePage('#6ppage' , { transition:'slide' });
+	 	$.mobile.changePage('#4spage' , { transition:'slide' });
 		
 		   start_timer();
 		   update_timer();
@@ -1187,7 +1282,10 @@ db.transaction(populateDB, errorCB, successCB);
 		}
 	
 	function validate_email()
-	{
+	{ 
+	window.plugins.spinnerDialog.show();
+	
+	
 	var	useremail = $('#useremail').val();
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
@@ -1275,7 +1373,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			window.plugins.spinnerDialog.show();
 			
-			$.mobile.changePage('#6ppage1' , { transition:'slide' }  );
+			$.mobile.changePage('#4spage1' , { transition:'slide' }  );
 			
 			window.plugins.spinnerDialog.hide();
 			
@@ -1334,7 +1432,6 @@ function IsEmail(email) {
 
 */
 	
-	
 
 	
 	
@@ -1355,7 +1452,7 @@ $(document).on("taphold",function(){
 });
 
 $(document).on("swipe",function(){
- 
+
  user_active = 1;
  
 });
@@ -1387,7 +1484,7 @@ function bringdown()
 	
 	
 $('#textinput').css('position','relative');
-$('#textinput').animate({'bottom':'55%'},150,'linear');
+$('#textinput').animate({'bottom':'60%'},100,'linear');
 
 	
 	}
@@ -1399,7 +1496,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'85%'},150,'linear');
+  $('#textinput').animate({'bottom':'90%'},100,'linear');
  
   
 // See if keyboard is open or not

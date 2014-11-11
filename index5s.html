@@ -506,11 +506,7 @@ input{
    
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
 	  
-    
-    
-        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        
-      
+       <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
         
         <div class="topmenucontainer" >
         
@@ -738,11 +734,14 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
  
 $('#searcharea').on('blur',function(){ 
-									$('#searcharea').hide();	
-									 $('.search_empty').hide();
+								    	$('#searcharea').hide();	
+									    $('.search_empty').hide();
 										$('#searcharea').blur();
 										$('.search_empty').blur();
+										 
 										  });
+
+
 
    
 //global declarations
@@ -754,7 +753,7 @@ $(document).keypress(function(e) {
 		
 		
 	//	console.log(ajax_path + ' asdasd');
-		
+		window.plugins.spinnerDialog.show();
 	   if( $('#searcharea').val()!='')
 	   {
 	   //start  my loader here !!!!
@@ -857,7 +856,6 @@ $(document).keypress(function(e) {
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
 					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:10px !important; color:#9F9F9F !important;  " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; color:#9F9F9F !important; font-size:10px !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
-					
 					
 				//	alert(append_data);
 					
@@ -1452,12 +1450,7 @@ function IsEmail(email) {
 
 */
 	
-	$("#dragimg").on("swipe",function(){
- alert('asda');
- user_active = 1;
- 
-});
-
+	
 	
 	
 
@@ -1477,7 +1470,7 @@ $(document).on("taphold",function(){
 });
 
 $(document).on("swipe",function(){
- alert('ss');
+
  user_active = 1;
  
 });

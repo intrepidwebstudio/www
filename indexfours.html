@@ -373,12 +373,13 @@ input{
     <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
 	  
       
-      <div class="clear_button" style="position:absolute; top:5px; z-index:99999px !important;  right:10px;  vertical-align:middle" >	
+    	<div class="clear_button" style="position:absolute; top:5px; z-index:99999px !important;  right:10px;  vertical-align:middle" >	
         	<img src="icons/57x57/exit.png" class="search_empty" style="width:25px !important; z-index:99999px !important;"  >
         </div>
-          <div class="ui-field-contain forceinline">
+    
+	      <div class="ui-field-contain forceinline">
 	          <input type="text" id="searcharea"  data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
-         </div> 
+         </div>  
     
         <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
 
@@ -410,9 +411,8 @@ input{
         </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Trending</p>
-    </div>
-      
+        		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Most Popular Articles</p>
+    </div>      
  
 </div><!-- /header -->
     <div  role="main" class="ui-content" >
@@ -512,29 +512,16 @@ input{
  	 
    
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
-	  
-    
-    
         <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        
-      
-        
-        <div class="topmenucontainer" >
-        
-        
-       
+    <div class="topmenucontainer" >
      
      <div class="searchsettings">
-        
         <div  class="lefticon" >
        		 <a data-rel="back" data-prefetch="true" ><img src="icons/57x57/back.png" ></a>
         </div>
+     </div>  
         
-       
-      </div>  
-        
-        
-        </div>
+    </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Settings</p>
@@ -723,6 +710,8 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
  $('#searcharea').hide();
+ $('.search_empty').hide();
+ 
 
 	function show_focus(){
 		
@@ -736,6 +725,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
   {
 	  
 	  $('#searcharea').show();
+	   $('.search_empty').show();
 	  $('input').focus();
 	  
 	  $('#searcharea').focus();
@@ -746,7 +736,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 $('#searcharea').on('blur',function(){ 
 									$('#searcharea').hide();	
+									 $('.search_empty').hide();
 										$('#searcharea').blur();
+										$('.search_empty').blur();
 										  });
 
    
@@ -756,10 +748,10 @@ $('#searcharea').on('blur',function(){
 $(document).keypress(function(e) {
     if(e.which == 13) {
 		
+		
+		
+	//	console.log(ajax_path + ' asdasd');
 		window.plugins.spinnerDialog.show();
-		
-		//console.log(ajax_path + ' asdasd');
-		
 	   if( $('#searcharea').val()!='')
 	   {
 	   //start  my loader here !!!!
@@ -774,6 +766,14 @@ $(document).keypress(function(e) {
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     window.plugins.spinnerDialog.hide();  
+                    },
 			success: function(data)
 			{
 				
@@ -795,7 +795,9 @@ $(document).keypress(function(e) {
 				
 				
 				$('#searcharea').hide();
+				 $('.search_empty').hide();
 				$('#searcharea').blur();
+				$('.search_empty').blur();
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -842,7 +844,7 @@ $(document).keypress(function(e) {
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
 					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',\''+article_title+'\')" >';
@@ -939,6 +941,14 @@ window.plugins.spinnerDialog.show();
         	async: true,
        		dataType: 'json',
         	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     window.plugins.spinnerDialog.hide();  
+                    },
 			success: function(data)
 			{
 				
@@ -950,7 +960,7 @@ window.plugins.spinnerDialog.show();
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Trending');
+				$('#searchvalue').html('Most Popular Articles');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1109,9 +1119,12 @@ $(window).resize();
 	    
 	
 	    setTimeout(function() {
+			
+		//	startswiperfunction();
         navigator.splashscreen.hide();
 		
-		window.plugins.spinnerDialog.show();
+	//	window.plugins.spinnerDialog.show();
+		
    			 }, 3000);
 	
 	
@@ -1286,7 +1299,10 @@ db.transaction(populateDB, errorCB, successCB);
 		}
 	
 	function validate_email()
-	{
+	{ 
+	window.plugins.spinnerDialog.show();
+	
+	
 	var	useremail = $('#useremail').val();
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
@@ -1433,7 +1449,6 @@ function IsEmail(email) {
 
 */
 	
-	
 
 	
 	
@@ -1454,7 +1469,7 @@ $(document).on("taphold",function(){
 });
 
 $(document).on("swipe",function(){
- 
+
  user_active = 1;
  
 });
@@ -1486,7 +1501,7 @@ function bringdown()
 	
 	
 $('#textinput').css('position','relative');
-$('#textinput').animate({'bottom':'55%'},150,'linear');
+$('#textinput').animate({'bottom':'60%'},100,'linear');
 
 	
 	}
@@ -1498,7 +1513,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'85%'},150,'linear');
+  $('#textinput').animate({'bottom':'90%'},100,'linear');
  
   
 // See if keyboard is open or not

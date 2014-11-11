@@ -77,7 +77,7 @@ $(function(){
 			
 			if(rect.left !=0)
 			{
-			$(this).animate({'left':'0px'},500,'linear',function(){  
+			$(this).animate({'left':'0px'},250,'linear',function(){  
 			
 							 new_rect = this.getBoundingClientRect();
 						
@@ -231,8 +231,8 @@ $('#dragimg').on('touchstart', function(e) {
 				//			console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
                         // the access_token is available via r.access_token
                        // but the http functions automagically wrap the jquery calls
-                            result.get('/1.1/account/verify_credentials.json')
-                                .done(function(data) {
+                       //     result.get('/1.1/account/verify_credentials.json')
+                        //        .done(function(data) {
 									
 //                                    $('#result').html("twitter: Hello, " + data.name + " !");
 									
@@ -247,10 +247,10 @@ $('#dragimg').on('touchstart', function(e) {
 								$('#twitterlogged').css('display','block');
 
 									
-                                })
-                                .fail(function( jqXHR, textStatus, errorThrown) {
+                          //      })
+                            //    .fail(function( jqXHR, textStatus, errorThrown) {
                                  //   console.log("req error: " + textStatus);
-                                });
+                              //  });
                         })
                         .fail(function (e) {
                            // console.log('error: ' + e.message);
@@ -286,26 +286,26 @@ $('#dragimg').on('touchstart', function(e) {
 							
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
-                            result.get('/1.1/account/verify_credentials.json')
-                                .done(function(data) {
+                      //      result.get('/1.1/account/verify_credentials.json')
+                      ///          .done(function(data) {
 										
 									
                                // $('#result').html("twitter: Hello, " + data.name + " !");
 									
-									console.log( "details = "+ JSON.stringify(data) );
+				//					console.log( "details = "+ JSON.stringify(data) );
 									
 																		
-								console.log("twitter: Hello, " + data.name + " ! ");
+			//					console.log("twitter: Hello, " + data.name + " ! ");
 									
 									
 									
 								
 
 									
-                                })
-                                .fail(function( jqXHR, textStatus, errorThrown) {
-                                  console.log("req error: " + textStatus);
-                                });
+              //                  })
+                  //              .fail(function( jqXHR, textStatus, errorThrown) {
+                //                  console.log("req error: " + textStatus);
+                    //            });
                         })
                         .fail(function (e) {
                         console.log('error: ' + e.message);
@@ -334,8 +334,8 @@ $('#dragimg').on('touchstart', function(e) {
 							
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
-                            result.get('/1.1/account/verify_credentials.json')
-                                .done(function(data) {
+                    //        result.get('/1.1/account/verify_credentials.json')
+                     //           .done(function(data) {
 									
 								
 									
@@ -352,10 +352,10 @@ $('#dragimg').on('touchstart', function(e) {
 								
 
 									
-                                })
-                                .fail(function( jqXHR, textStatus, errorThrown) {
+                       //         })
+                        //        .fail(function( jqXHR, textStatus, errorThrown) {
                 //                   console.log("req error: " + textStatus);
-                                });
+                         //       });
                         })
                         .fail(function (e) {
               //             console.log('error: ' + e.message);
