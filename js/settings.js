@@ -64,6 +64,8 @@
 			
 		//	alert('trueee'+url);
 	
+	$(this_id).css("background-color","#ccc");
+	
 	      iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		 
 			
@@ -73,7 +75,7 @@
 			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
 			
 			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted);
-			$(this_id).css("background-color","#ccc !important");
+			
 			
 			
 //	        iabRef.addEventListener('exit', iabClose);

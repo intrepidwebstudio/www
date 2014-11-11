@@ -677,9 +677,9 @@ $('#searcharea').on('blur',function(){
 $(document).keypress(function(e) {
     if(e.which == 13) {
 		
-		window.plugins.spinnerDialog.hide();
+		window.plugins.spinnerDialog.show();
 		
-		console.log(ajax_path + ' asdasd');
+		//console.log(ajax_path + ' asdasd');
 		
 	   if( $('#searcharea').val()!='')
 	   {
@@ -1032,7 +1032,7 @@ $(window).resize();
 	    setTimeout(function() {
         navigator.splashscreen.hide();
 		
-		
+		window.plugins.spinnerDialog.show();
    			 }, 3000);
 	
 	
