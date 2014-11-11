@@ -64,7 +64,7 @@
 			
 		//	alert('trueee'+url);
 	
-	$(this_id).style("background-color","none", "important");
+	$(this_id).css("background-color","none", "important");
 	
 //	$(this_id).css("background-color","none");
 //	$(this_id).css("background-color","#ccc !important");
