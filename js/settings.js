@@ -64,8 +64,10 @@
 			
 		//	alert('trueee'+url);
 	
-	$(this_id).css("background-color","none");
-	$(this_id).css("background-color","#ccc !important");
+	$(this_id).style("background-color","none", "important");
+	
+//	$(this_id).css("background-color","none");
+//	$(this_id).css("background-color","#ccc !important");
 	
 	      iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		 
