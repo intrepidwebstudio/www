@@ -418,6 +418,9 @@ var callback = function(buttonIndex) {
     });
   };
 
+
+
+
   function share_article() {
 	  
 	  
@@ -438,4 +441,10 @@ var callback = function(buttonIndex) {
   
  
 
+
+$("#search_show_bar").live("tap", function(event){
+	
+	show_search();
+  
+});
 
