@@ -1531,7 +1531,19 @@ function bringup()
 }
 
 
+setInterval(
+function(){
 
+ var is_open = Keyboard.isOpen();
+ 
+ if(!is_open)
+ {
+	$('.search_empty').hide(); 
+	 
+	 }
+	 
+	 
+}, 30 );
 
 
 </script>
