@@ -103,3 +103,10 @@ function browser_setting()
                          });
 						 
 	}
+	
+	
+	$("#search_show_bar").on('touchstart',function(){ 
+	
+			show_search();
+	
+	 });
