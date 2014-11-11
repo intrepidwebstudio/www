@@ -275,7 +275,7 @@ $('#dragimg').on('touchstart', function(e) {
                     OAuth.popup('linkedin')
                         .done(function (result) {
 														
-					//			console.log(JSON.stringify(result));
+								console.log(JSON.stringify(result));
 						
 					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
 							
@@ -288,12 +288,12 @@ $('#dragimg').on('touchstart', function(e) {
 								$('#linkedinlogout').css('display','none');
 								$('#linkedinlogged').css('display','block');				
 									
-                                  //  $('#result').html("twitter: Hello, " + data.name + " !");
+                               // $('#result').html("twitter: Hello, " + data.name + " !");
 									
-							//		console.log( "details = "+ JSON.stringify(data) );
+									console.log( "details = "+ JSON.stringify(data) );
 									
 																		
-								//	console.log("twitter: Hello, " + data.name + " ! ");
+								console.log("twitter: Hello, " + data.name + " ! ");
 									
 									
 									
@@ -302,11 +302,11 @@ $('#dragimg').on('touchstart', function(e) {
 									
                                 })
                                 .fail(function( jqXHR, textStatus, errorThrown) {
-                             //       console.log("req error: " + textStatus);
+                                  console.log("req error: " + textStatus);
                                 });
                         })
                         .fail(function (e) {
-                    //     console.log('error: ' + e.message);
+                        console.log('error: ' + e.message);
                         });
 						
 				 });
