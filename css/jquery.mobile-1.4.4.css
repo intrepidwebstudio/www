@@ -3574,8 +3574,8 @@ fieldset.ui-controlgroup {
 .ui-listview > .ui-li-static,
 .ui-listview > .ui-li-divider,
 .ui-listview > li > a.ui-btn {
-	border-width: 1px 0 0 0;
-	border-style: solid;
+	border-width: 0px 0 0 0 !important;
+	
 }
 .ui-listview-inset > .ui-li-static,
 .ui-listview-inset > .ui-li-divider,

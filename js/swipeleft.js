@@ -171,9 +171,9 @@ $('#dragimg').on('touchstart', function(e) {
 		}).on('touchmove',  function(e) {
 											
 												var change = e.originalEvent.pageY - y;
-											//	console.log(change);
+											console.log(change);
 												
-										//		console.log("change = "+ change);
+											console.log("change = "+ change);
 												
 												if(change > 10)
 												{
