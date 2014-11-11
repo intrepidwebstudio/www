@@ -140,23 +140,6 @@ background: rgba(255, 255, 255, 0.5) !important;
 				padding-top:3% !important;
 				vertical-align:middle !important;
 		}	
-	.lefticon img{
-			
-			float:left;
-			width:8%;
-			max-width:70px;
-			padding-left:4%;
-			
-		}	
-		
-		
-	.righticon img{
-			
-			float:right;
-			width:8%;
-			max-width:70px;	
-			padding-right:4%;
-		}	
 		
 		
 		
@@ -168,20 +151,61 @@ background: rgba(255, 255, 255, 0.5) !important;
 		
 	.topplace{
 		
-		background:rgba(255,255,255,0.5) !important;
+		background-image:url("img/inputbackground.png") ;
+		background-size:cover;
+		background-repeat:no-repeat;
+		opacity:.5;
+	
+	/*	background:rgba(255,255,255,0.5) !important; */
 		
+
 		
 		position:relative !important;
 		top:0px;
 		width:100%;
 		text-align:center !important;
-		z-index:9999px !important;
+		z-index:-999px !important;
 		vertical-align:middle;
 		cursor:vertical-text;
 		
 		
 		
 		}
+
+topplace_empty{
+			position:relative !important;
+		top:0px;
+		width:100%;
+
+	
+	}	
+	
+	.lefticon img{
+			
+			float:left;
+			width:7%;
+			max-width:70px;
+			padding-left:13px;
+			
+		}	
+		
+		
+	.righticon img{
+			
+			float:right;
+			width:7%;
+			max-width:70px;	
+			padding-right:13px;
+		}	
+		
+	 .searchsettings{
+	 
+	 position:relative !important;
+	 top:16px !important;
+	 
+	 }		
+	
+	
 		
 		.topmenucontainer{
 			
@@ -191,12 +215,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 			width:100%;
 			}
 		
-		 .searchsettings{
-	 
-	 position:relative !important;
-	 top:13px !important;
-	 
-	 }
+	
 		
 		
 		
@@ -309,6 +328,36 @@ background: rgba(255, 255, 255, 0.5) !important;
 ul li a{ background-color: #FFFFFF  !important; }
 ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
 
+
+
+input{
+	
+			vertical-align:middle !important;
+		text-align:center !important;
+		cursor:vertical-text !important;
+
+	
+	}
+
+::-webkit-input-placeholder {
+   color: #999 !important;
+  
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #999 !important;
+  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #999 !important;
+}
+
+:-ms-input-placeholder {  
+   color: #999 !important;
+}
+
+
   </style>
   
   
@@ -322,24 +371,30 @@ ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
 
 <div class="ui-panel-page-container">
 
+
+
 <div data-role="page" id="5spage1" data-title="eboo" >
 
 	
     <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
-	  
+    
+    
+    	<div class="clear_button" style="position:absolute; top:5px; z-index:99999px !important;  right:10px;  vertical-align:middle" >	
+        	<img src="icons/57x57/exit.png" class="search_empty" style="width:25px !important; z-index:99999px !important;"  >
+        </div>
+    
+	      <div class="ui-field-contain forceinline">
+	          <input type="text" id="searcharea"  data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div>  
     
         <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
 
-
-        
-        
         <div class="topmenucontainer"  >
         
-     <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea"  data-transition="fade" class=" Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
-         </div>  
-     
-     <div class="searchsettings " id="top_menu" >
+        <div class="search_empty topplace_empty" style=" min-height:37px !important;  ;display:none !important;" >&emsp;</div>
+        
+        
+        <div class="searchsettings " id="top_menu" >
         
         <div  class="lefticon" id="dragimg" >
        		<img  src="icons/57x57/search.png" onClick="show_search()" >
@@ -411,13 +466,13 @@ ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
         
         
         <div style="color:#FFF !important;">
-        		<center><img  src="img/eboo-logo.png" width="35%"  ></center>
+        		<center><img  src="img/eboo-logo.png" width="32%"  ></center>
          </div>
        
-        <center> <p style=" font-size:18px; color:#FFF !important;
-		cursor:vertical-text; text-align:center  !important; width:70% !important ; " class="Conv_MuseoSans-300Italic"  >Feed <strong><span style="font-weight:bold !important;"> Your Curiosity</span></strong></p></center>
+        <center> <div style=" font-size:19px; color:#FFF !important; padding-bottom:5% !important;
+		cursor:vertical-text; text-align:center  !important; width:70% !important ; text-height:font-size; letter-spacing:1px !important; text-height:max-size;font-weight:400 !important " class="Conv_MuseoSans-100"  >Feed <strong><span class="Conv_MuseoSans-300Italic" style="font-size:20px; font-weight:600">your curiousity.</span></strong></div></center>
         
-        <center> <input type="text" class="ui-input-btn ui-hide-label" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
+        <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
 		cursor:vertical-text; " data-corners="false" placeholder="E-mail Address"   ></center>
 
 		<center>
@@ -658,6 +713,8 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
  $('#searcharea').hide();
+ $('.search_empty').hide();
+ 
 
 	function show_focus(){
 		
@@ -671,6 +728,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
   {
 	  
 	  $('#searcharea').show();
+	   $('.search_empty').show();
 	  $('input').focus();
 	  
 	  $('#searcharea').focus();
@@ -681,6 +739,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 $('#searcharea').on('blur',function(){ 
 									$('#searcharea').hide();	
+									 $('.search_empty').hide();
 										$('#searcharea').blur();
 										  });
 
@@ -738,6 +797,7 @@ $(document).keypress(function(e) {
 				
 				
 				$('#searcharea').hide();
+				 $('.search_empty').hide();
 				$('#searcharea').blur();
 				
 			  	   	var append_data =  '';
@@ -1060,6 +1120,8 @@ $(window).resize();
 	    
 	
 	    setTimeout(function() {
+			
+		//	startswiperfunction();
         navigator.splashscreen.hide();
 		
 	//	window.plugins.spinnerDialog.show();
@@ -1441,7 +1503,7 @@ function bringdown()
 	
 	
 $('#textinput').css('position','relative');
-$('#textinput').animate({'bottom':'55%'},150,'linear');
+$('#textinput').animate({'bottom':'60%'},100,'linear');
 
 	
 	}
@@ -1453,7 +1515,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'85%'},150,'linear');
+  $('#textinput').animate({'bottom':'90%'},100,'linear');
  
   
 // See if keyboard is open or not
