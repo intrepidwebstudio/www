@@ -105,7 +105,15 @@ function hex(x) {
 			
 							 new_rect = this.getBoundingClientRect();
 							 
+							 
 						
+						
+							if(new_rect.left==0)
+							{
+						
+							//	$(this).unbind('onClick');
+															
+								}
 					}) // close em all
 			}
 	
@@ -132,13 +140,40 @@ function hex(x) {
 												if(change < -50)
 												{
 												
-											//	e.currentTarget.style.setProperty( 'background-color', '#DFE3E7', 'important' );	
+													
+												e.currentTarget.style.setProperty( 'background-color', '#DFE3E7', 'important' );	
 													
 												disable_scroll(); // disable scroll once we hit 10px horizontal slide
 												e.currentTarget.style.left = change + 'px';
 												
 												}else{
-												
+													
+													
+													
+											
+														
+												 bgcolor_rgba = $(this).css('backgroundColor');
+												 console.log("RGBA  = "+ bgcolor_rgba);
+												 bgcolor = rgb2hex(bgcolor_rgba);
+												 console.log("HEx color = "+ bgcolor);
+												 
+													
+											var	 bgcolor_rgba_this = $(this).css('backgroundColor');
+											console.log("RGBA  = "+ bgcolor_rgba);
+											var	 bgcolor_this = rgb2hex(bgcolor_rgba);
+												if( bgcolor_this == '#CCC' ) 
+												{
+												 e.currentTarget.style.setProperty('background-color', '#CCC', 'important' );
+												}else{
+													
+													  e.currentTarget.style.setProperty('background-color', bgcolor, 'important' );
+													}
+													
+													
+													
+											//	e.currentTarget.style.setProperty('background-color', bgcolor, 'important' );
+													
+													
 											//	e.currentTarget.style.left = 0 + 'px';
 											//	enable_scroll();	
 													
@@ -161,14 +196,30 @@ function hex(x) {
 			
 		 var new_left = -240 + 'px';
 			e.currentTarget.style.left = new_left;	
+			
 				
 				}
 			else{
 				
 		 var new_left = '0px';
-			e.currentTarget.style.left = new_left;		
-	
-	//		e.currentTarget.style.setProperty('background-color', bgcolor, 'important' );
+		 
+		 e.currentTarget.style.left = new_left;		
+				
+				
+				/* 
+										    var	 bgcolor_rgba_this = $(this).css('backgroundColor');
+											console.log("RGBA  = "+ bgcolor_rgba);
+											var	 bgcolor_this = rgb2hex(bgcolor_rgba);
+												if( bgcolor_this == '#CCC' ) 
+												{
+												 e.currentTarget.style.setProperty('background-color', '#CCC', 'important' );
+												}else{
+													  e.currentTarget.style.setProperty('background-color', bgcolor, 'important' );
+													}
+								*/					
+		 
+			
+		//	e.currentTarget.style.setProperty('background-color', bgcolor, 'important' );
 				
 				}			
 			
@@ -184,49 +235,6 @@ function hex(x) {
 
 		
 	    });
-		
-		
-		
-		
-		
-		
-		
-		$('.socialicon').on('touchstart', function(e) {
-			
-			
-		console.log('touch started');	
-		
-		
-		$(this).children('.image_icon').css("opacity",".6");
-			
-			
-
-//	console.log("staart Poistion = "+ y);
-	
-		}).on('touchmove',  function(e) {
-											
-											
-											
-		})
-        .on('touchend', function(e) {
-			
-				console.log('touch_end');
-				$(this).children('.image_icon').css("opacity","1.0");
-				
-				
-				
-			var title_aaa =	$(this).attr('data-value');
-			var title_linkkk = $(this).attr('data-value1');
-			
-			console.log('TITLEE = '+ title_aaa);
-			console.log('LINKKK = '+ title_linkkk);
-				
-
-		});
-
-		
-		
-		
 	
 
 });

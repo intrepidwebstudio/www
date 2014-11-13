@@ -101,41 +101,75 @@ background: rgba(255, 255, 255, 0.5) !important;
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 25%;
         right: 0;
-		bottom:25%;
-		
+	
     }
+	
+	.behind  a{
+			
+			height:100% !important;
+			vertical-align:middle !important;
+			
+		
+		}
+		
+		
+	.behind a img{
+	
+			padding-top:25px;
+			padding-bottom:25px;	
+			padding-right:5px;
+			padding-left:2px;
+		
+		}
+	
+	
+	
+	
     .behind a.ui-btn {
         
-        margin: 0px;
         float: right;
         border: none;
+		
 		
     }
     .behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
       
-        background-color: #fff;
+	  	
         text-shadow: none;
     }
+	
+	
+	
+
 	
 	.socialicon{
 		
 		float:right;
 		vertical-align:middle !important;
-		padding: 5px 5px;
+		
+		
 		
 		}
 		
 	.socialicon img {
 		 width:40px;
+		 
 	}	
+	
+	.socialicon a{
+	
+		background-color:#FF0 !important;	
+		
+		}
+	
 		
 	.sourceicon{
-				width: 23%;
-				margin-left:3% !important;
-				margin-right:2% !important;
-				padding-top:3% !important;
+				padding-left:7px;
+				padding-top:7px;
+				padding-bottom:10px;
+				
+				width: 23% !important;
 				vertical-align:middle !important;
 		}	
 		
@@ -152,11 +186,10 @@ background: rgba(255, 255, 255, 0.5) !important;
 		background-image:url("img/inputbackground.png") ;
 		background-size:cover;
 		background-repeat:no-repeat;
-		opacity:.5;
+		opacity:.7;
 	
 	/*	background:rgba(255,255,255,0.5) !important; */
 		
-
 		
 		position:relative !important;
 		top:0px;
@@ -164,7 +197,8 @@ background: rgba(255, 255, 255, 0.5) !important;
 		text-align:center !important;
 		z-index:-999px !important;
 		vertical-align:middle;
-		cursor:vertical-text;
+		cursor:vertical-text #FFF !important;
+		
 		
 		
 		
@@ -199,7 +233,7 @@ topplace_empty{
 	 .searchsettings{
 	 
 	 position:relative !important;
-	 top:16px !important;
+	 top:13px !important;
 	 
 	 }		
 	
@@ -323,8 +357,21 @@ topplace_empty{
 	
 	}		
 
-ul li a{ background-color: #FFFFFF  !important; }
-ul li:nth-child(odd) a{ background-color: #F7F7F7 !important; }
+ul li a.outer_a{ background-color: #FFFFFF  !important; }
+ul li:nth-child(odd) a.outer_a{ background-color: #F7F7F7 !important; }
+
+
+ul li div{ background-color:#F7F7F7 !important;	} 
+ul li:nth-child(odd) div{ background-color:#FFFFFF !important;  }
+
+
+
+
+
+
+.behind a.socialicon , .behind a.socialicon img , .behind{
+		
+		}
 
 
 
@@ -356,6 +403,7 @@ input{
 }
 
 
+
   </style>
   
   
@@ -365,27 +413,26 @@ input{
 
 
 <body>
+
+
 <div class="ui-panel-page-container">
 
 <div data-role="page" id="4spage1" data-title="eboo" >
 
 	
     <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
-	  
-      
-    	<div class="clear_button" style="position:absolute; top:13px; z-index:99999px !important;  right:16px;  vertical-align:middle !important" >	
-        	<img src="icons/57x57/exit.png" class="search_empty" style="width:16px !important; z-index:99999px !important;"  >
+    
+    
+    	<div class="clear_button" style="position:absolute; top:11.5px; z-index:99999 !important;  right:16px;  vertical-align:middle !important" >	
+        	<img src="icons/57x57/exit.png" class="search_empty" style="width:16px !important;"   >
         </div>
     
 	      <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea"  data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+	          <input type="text" id="searcharea"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
     
-        <img  src="img/320.jpg"  class="iphone4s"  style="margin-bottom:-5px !important;" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
 
-
-        
-        
         <div class="topmenucontainer"  >
         
         <div class="search_empty topplace_empty" style=" min-height:37px !important;  ;display:none !important;" >&emsp;</div>
@@ -394,7 +441,7 @@ input{
         <div class="searchsettings " id="top_menu" >
         
         <div  class="lefticon" id="dragimg" >
-       		<img  src="icons/57x57/search.png" onClick="show_search()" >
+       		<a onClick="show_search()" data-role='ui-btn'  ><img  src="icons/57x57/search.png"  ></a>
         </div>
         
        <!-- <div id="blue">
@@ -410,9 +457,10 @@ input{
         
         </div>
                     
-    <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+    <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" id="searchvalue" class="Conv_MuseoSans-300Italic">Most Popular Articles</p>
-    </div>      
+    </div>
+      
  
 </div><!-- /header -->
     <div  role="main" class="ui-content" >
@@ -625,7 +673,7 @@ By using or accessing the Site in any way, viewing or <strong class="Conv_MuseoS
 <p class="Conv_MuseoSans_700 "  >The Site and all of its original content are the sole property<strong class="Conv_MuseoSans_700">browsing</strong> of Your Nowhere Town and are, as such</p>
 
 <h3 class="Conv_MuseoSans_700" >Links to Other Websites</h3>
-<p>Our Site contain a number of links to other websites and <strong class="Conv_MuseoSans_700">browsing</strong>online resources that are  owned or controlled by eboo.Your app has no control over, and 
+<p class="Conv_MuseoSans_700" >Our Site contain a number of links to other websites and <strong class="Conv_MuseoSans_700">browsing</strong>online resources that are  owned or controlled by eboo.Your app has no control over, and 
 therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
 Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
 
@@ -696,7 +744,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
   
    <script type="text/javascript" src="js/SocialSharing.js"></script>
    <script type="text/javascript" src="js/nonbounce.js"></script>
-<script type="text/javascript" src="js/swipeleft.js"></script>
+<script type="text/javascript" src="js/swipeleft4s.js"></script>
 
 
 <script type="text/javascript" src="js/iscroll.js"></script>
@@ -728,6 +776,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 	   $('.search_empty').show();
 	  $('input').focus();
 	  
+	  
+	  
+	  
 	  $('#searcharea').focus();
 	
 	
@@ -735,11 +786,18 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
  
 $('#searcharea').on('blur',function(){ 
-									$('#searcharea').hide();	
-									 $('.search_empty').hide();
+								    	$('#searcharea').hide();	
+									    $('.search_empty').hide();
 										$('#searcharea').blur();
 										$('.search_empty').blur();
+										 
 										  });
+
+
+$('#search_empty').on('blur',function(){
+						    $('.search_empty').hide();
+			
+	});
 
    
 //global declarations
@@ -751,7 +809,7 @@ $(document).keypress(function(e) {
 		
 		
 	//	console.log(ajax_path + ' asdasd');
-		window.plugins.spinnerDialog.show();
+		//window.plugins.spinnerDialog.show();
 	   if( $('#searcharea').val()!='')
 	   {
 	   //start  my loader here !!!!
@@ -768,11 +826,11 @@ $(document).keypress(function(e) {
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -832,19 +890,19 @@ $(document).keypress(function(e) {
 					article_title = article_title.substr(0,55);
 					article_title = article_title + '...';	
 						}
-					append_data+='<li><div class="behind">';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
+					append_data+='<li><div class="behind" >';
+					append_data+='<a href="#" class="socialicon email_img" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\'), change_opacity(this)" ><img src="socialicons/email.png" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon linkedin_img" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\'), change_opacity(this)" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon tumblr_img" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\'), change_opacity(this)" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
+					append_data+='<a href="#" class="socialicon facebook_img" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\'), change_opacity(this)" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
+					append_data+='<a href="#" class="socialicon twitter_img" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\'), change_opacity(this)" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
 					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					
@@ -866,14 +924,14 @@ $(document).keypress(function(e) {
 										browser_setting();
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
-										$.getScript("js/swipeleft.js");
+										$.getScript("js/swipeleft4s.js");
 												
-							window.plugins.spinnerDialog.hide();					
+							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
 				else{
 					
 					// user data doent match
-					window.plugins.spinnerDialog.hide();
+					//window.plugins.spinnerDialog.hide();
 					alert("no match");
 					}
 			
@@ -883,7 +941,7 @@ $(document).keypress(function(e) {
 			
 				},
 		error: function(e) {
-			window.plugins.spinnerDialog.hide();
+			//window.plugins.spinnerDialog.hide();
        alert('Network error please try after sometime  ');		
 			
 		//	console.log(e.status);
@@ -904,7 +962,7 @@ $(document).keypress(function(e) {
 		
 		
 		}
-	window.plugins.spinnerDialog.hide();	
+	//window.plugins.spinnerDialog.hide();	
 		
     }
 });
@@ -927,7 +985,7 @@ function load_trending()
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
-window.plugins.spinnerDialog.show();
+//window.plugins.spinnerDialog.show();
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
 			type:'GET',
@@ -937,11 +995,11 @@ window.plugins.spinnerDialog.show();
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -993,19 +1051,19 @@ window.plugins.spinnerDialog.show();
 						
 						
 						
-					append_data+='<li><div class="behind">';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\')" ><img src="socialicons/email.png" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
+					append_data+='<li><div class="behind"  >';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					
@@ -1028,14 +1086,14 @@ window.plugins.spinnerDialog.show();
 										browser_setting();
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
-										$.getScript("js/swipeleft.js");
+										$.getScript("js/swipeleft4s.js");
 												
 												
-						window.plugins.spinnerDialog.hide();
+						//window.plugins.spinnerDialog.hide();
 												
 				}//user data match if
 				else{
-					window.plugins.spinnerDialog.hide();
+					//window.plugins.spinnerDialog.hide();
 					// user data doent match
 					alert("no match");
 					}
@@ -1043,7 +1101,7 @@ window.plugins.spinnerDialog.show();
 			
 				},
 		error: function(e) {
-      window.plugins.spinnerDialog.hide();
+      //window.plugins.spinnerDialog.hide();
 	  
 	  alert('Network problem ');		
 			
@@ -1117,7 +1175,7 @@ $(window).resize();
 		//	startswiperfunction();
         navigator.splashscreen.hide();
 		
-	//	window.plugins.spinnerDialog.show();
+	//	//window.plugins.spinnerDialog.show();
 		
    			 }, 3000);
 	
@@ -1265,7 +1323,7 @@ db.transaction(populateDB, errorCB, successCB);
 		//	alert('1');
 //swipe_list_items();
 		
-		window.plugins.spinnerDialog.hide();
+		//window.plugins.spinnerDialog.hide();
 						
 		}else{
 	//		alert('1');
@@ -1278,7 +1336,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 	       startswiperfunction();
 				
-				window.plugins.spinnerDialog.hide();
+				//window.plugins.spinnerDialog.hide();
 			
 		}
   
@@ -1294,14 +1352,14 @@ db.transaction(populateDB, errorCB, successCB);
 	
 	function validate_email()
 	{ 
-	window.plugins.spinnerDialog.show();
+	//window.plugins.spinnerDialog.show();
 	
 	
 	var	useremail = $('#useremail').val();
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
 	{
-		window.plugins.spinnerDialog.hide();
+		//window.plugins.spinnerDialog.hide();
 		
 		alert('enter a vaild email');
 		}
@@ -1328,28 +1386,28 @@ db.transaction(populateDB, errorCB, successCB);
 								//	alert(login_Response.message);
 							//		alert(login_Response.user_id)
 									
-									window.plugins.spinnerDialog.hide();
+									//window.plugins.spinnerDialog.hide();
 							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
 									
 								}else if(login_Response.status=='101'){
 									
 									
 									//	alert('User Already Exists' );
-									window.plugins.spinnerDialog.hide();
+									//window.plugins.spinnerDialog.hide();
 									
 									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
 									
 									}
 								else{
 									
-									window.plugins.spinnerDialog.hide();
+									//window.plugins.spinnerDialog.hide();
 									alert('server error !!');
 									}	
 								
 								},
 			error: function(e)
 				{
-					window.plugins.spinnerDialog.hide();
+					//window.plugins.spinnerDialog.hide();
 					alert('Network Error,Unable to contact server');
 					
 					
@@ -1382,11 +1440,11 @@ db.transaction(populateDB, errorCB, successCB);
 			load_trending();
 				browser_setting();
 			
-			window.plugins.spinnerDialog.show();
+			//window.plugins.spinnerDialog.show();
 			
 			$.mobile.changePage('#4spage1' , { transition:'slide' }  );
 			
-			window.plugins.spinnerDialog.hide();
+			//window.plugins.spinnerDialog.hide();
 			
 		}
 		
@@ -1443,7 +1501,7 @@ function IsEmail(email) {
 
 */
 	
-
+	
 	
 	
 
@@ -1521,6 +1579,9 @@ function bringup()
 
 
 }
+
+
+
 
 
 
