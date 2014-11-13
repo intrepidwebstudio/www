@@ -129,7 +129,7 @@ $(function(){
 			if(left < -90)
 			{
 			
-		 var new_left = -250 + 'px';
+		 var new_left = -230 + 'px';
 			e.currentTarget.style.left = new_left;	
 				
 				}
