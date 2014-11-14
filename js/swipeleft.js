@@ -51,7 +51,7 @@ function rgb2hex(rgb) {
  return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
  
  
- console.log("#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]));
+ //console.log("#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]));
 }
 
 
@@ -102,9 +102,9 @@ function hex(x) {
 		})
         .on('touchmove',  function(e) {
 												var change = e.originalEvent.pageX - x;
-												console.log(change);
+												//console.log(change);
 												change = Math.min(Math.max(-300, change), 0 ) // restrict to -100px left, 0px right
-												console.log("change = "+change);
+												//console.log("change = "+change);
 												if(change < -50)
 												{
 											//	e.currentTarget.style.setProperty( 'background-color', '#DFE3E7', 'important' );	
@@ -118,7 +118,7 @@ function hex(x) {
         .on('touchend', function(e) {
 			var left = "0";
 	         left = parseInt(e.currentTarget.style.left)
-			console.log(" LEFTTTT  =" + left );
+		//	console.log(" LEFTTTT  =" + left );
 			if(left < -90)
 			{
 		 var new_left = -240 + 'px';
@@ -130,7 +130,7 @@ function hex(x) {
 	//		e.currentTarget.style.setProperty('background-color', bgcolor, 'important' );
 				}			
             enable_scroll()
-			console.log('new keft  ='+ new_left);
+		//	console.log('new keft  ='+ new_left);
 		//e.currentTarget.addClass('tocuhedd');
 	    });
 		
@@ -139,13 +139,13 @@ function hex(x) {
 		
 		
 		$('.socialicon').on('touchstart', function(e) {
-		console.log('touch started');	
+		//console.log('touch started');	
 		$(this).children('.image_icon').css("opacity",".6");
 	//	console.log("staart Poistion = "+ y);
 			}).on('touchmove',  function(e) {
 		})
         .on('touchend', function(e) {
-				console.log('touch_end');
+				//console.log('touch_end');
 				$(this).children('.image_icon').css("opacity","1.0");
 				
 				
@@ -155,7 +155,7 @@ function hex(x) {
 			var title_linkkk = $(this).attr('data-value1');
 			var media_link = $(this).attr('data-value2');
 			
-			console.log("media LINK ="+ media_link);
+		//	console.log("media LINK ="+ media_link);
 			
 			if( media_link == "twitter" )
 			{
@@ -179,8 +179,8 @@ function hex(x) {
 						
 					
 			
-			console.log('TITLEE = '+ title_aaa);
-			console.log('LINKKK = '+ title_linkkk);
+		//	console.log('TITLEE = '+ title_aaa);
+		//	console.log('LINKKK = '+ title_linkkk);
 				
 
 		});
@@ -353,7 +353,7 @@ $('#dragimg').on('touchstart', function(e) {
                     OAuth.popup('linkedin')
                         .done(function (result) {
 														
-								console.log(JSON.stringify(result));
+							//	console.log(JSON.stringify(result));
 						
 						
 								
@@ -386,7 +386,7 @@ $('#dragimg').on('touchstart', function(e) {
                     //            });
                         })
                         .fail(function (e) {
-                        console.log('error: ' + e.message);
+                       // console.log('error: ' + e.message);
                         });
 						
 				 });
@@ -402,7 +402,7 @@ $('#dragimg').on('touchstart', function(e) {
                     OAuth.popup('tumblr')
                         .done(function (result) {
 														
-							console.log(JSON.stringify(result));
+		//					console.log(JSON.stringify(result));
 							
 								$('#tumblrlogout').css('display','none');
 								$('#tumblrlogged').css('display','block');
