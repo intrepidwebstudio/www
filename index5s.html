@@ -477,7 +477,7 @@ input{
       
  
 </div><!-- /header -->
-   <div class="example-wrapper" data-iscroll >
+    <div class="example-wrapper" data-iscroll >
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
      
@@ -489,9 +489,7 @@ input{
            
                                      
     </div><!-- /content -->
-    
-
-</div>
+ </div>
 
 
 <div data-role="page" data-position="fixed"  id="5spage" data-title="eboo" >
@@ -571,29 +569,18 @@ input{
 </div>
   
 
-<div data-role="page" id="5ssettings">
- 	 
-   
+<div data-role="page" id="5ssettings" data-transition="slide">
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
-	  
-       <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        
-        <div class="topmenucontainer" >
-        
-        
-       
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+    <div class="topmenucontainer" >
      
      <div class="searchsettings">
-        
         <div  class="lefticon" >
-       		 <a data-rel="back" data-prefetch="true" ><img src="icons/57x57/back.png" ></a>
+       		 <a data-rel="back" class="backbutton" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
         </div>
+     </div>  
         
-       
-      </div>  
-        
-        
-        </div>
+    </div>
                     
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Settings</p>
@@ -606,14 +593,14 @@ input{
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li id="twitterautho" ><a href="#twitterauthorize"    >
+                <li id="twitterautho" ><a class="settingsmenu" href="#twitterauthorize"    >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li id="facebookautho"  ><a href="#facebookauthorize" onClick="facebookautho()" >
+                <li id="facebookautho"  ><a class="settingsmenu" href="#facebookauthorize" onClick="facebookautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -621,27 +608,27 @@ input{
                         
                 </a> </li>
                
-                <li id="tumblrautho" ><a href="#tumblrauthorize" onClick="tumblrautho()" >
+                <li id="tumblrautho" ><a class="settingsmenu" href="#tumblrauthorize" onClick="tumblrautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
                         
                 </a> </li>
-                <li id="linkedinautho" ><a href="#linkedinauthorize" onClick="linkedinautho()" >
+                <li id="linkedinautho" ><a class="settingsmenu" href="#linkedinauthorize" onClick="linkedinautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
-                <li><a href="#5stermsofservice" data-prefetch="true" >
+                <li><a class="settingsmenu" href="#5stermsofservice" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a href="#5sprivacy" data-prefetch="true" >
+                <li><a class="settingsmenu" href="#5sprivacy" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -670,7 +657,7 @@ input{
      <div class="searchsettings">
         
        <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+       		 <a data-rel="back" class="backbutton" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
         </div>
         
                 
@@ -684,23 +671,30 @@ input{
     </div>
  
 </div><!-- /header -->
-	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper padding_left terms_of_service " data-iscroll >
+	   	<div  role="main" class="ui-content"  >
+        
+        <div class="example-wrapper padding_left terms_of_service " data-iscroll  >
+        
           <h3 class="Conv_MuseoSans_700">Eboo Terms of Service </h3>
-          <p class="Conv_MuseoSans_500 "  >
+          <p class="Conv_MuseoSans_500  "  >
 Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
 By using or accessing the Site in any way, viewing or <strong class="Conv_MuseoSans_700">browsing</strong> the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
 
 <h3 class="Conv_MuseoSans_700" >Heading 2</h3>
-<p class="Conv_MuseoSans_700 "  >The Site and all of its original content are the sole property<strong class="Conv_MuseoSans_700">browsing</strong> of Your Nowhere Town and are, as such</p>
+<p class="Conv_MuseoSans_500 "  >The Site and all of its original content are the sole property<strong class="Conv_MuseoSans_700">browsing</strong> of Your Nowhere Town and are, as such</p>
 
 <h3 class="Conv_MuseoSans_700" >Links to Other Websites</h3>
-<p>Our Site contain a number of links to other websites and <strong class="Conv_MuseoSans_700">browsing</strong>online resources that are  owned or controlled by eboo.Your app has no control over, and 
+<p class="Conv_MuseoSans_500" >Our Site contain a number of links to other websites and <strong class="Conv_MuseoSans_700">browsing</strong>online resources that are  owned or controlled by eboo.Your app has no control over, and 
 therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
 Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
 
 
           </p>
+          
+          
+        
+          
+                    
           </div>
     </div><!-- /content -->
 </div>
