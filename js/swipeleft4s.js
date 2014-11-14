@@ -149,7 +149,8 @@ function hex(x) {
 				$(this).children('.image_icon').css("opacity","1.0");
 				
 				
-				
+				 $.getScript("js/SocialSharing.js");
+		  SocialSharing();
 				
 			var title_aaa =	$(this).attr('data-value');
 			var title_linkkk = $(this).attr('data-value1');
@@ -223,6 +224,7 @@ $('#settingspage').on('touchstart', function(e) {
 }).on('touchend',function(){
 	$(this).children('.settingsimg').css("opacity","1");
 	$.mobile.changePage('#4ssettings' , { transition:'slide' });
+	settings_page();
 	
 	})
 	

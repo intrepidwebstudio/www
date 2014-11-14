@@ -117,15 +117,38 @@ background: rgba(255, 255, 255, 0.5) !important;
 		
 		}
 		
-		
-	.behind a img{
+	
+	
+	.behind a:first-child img{
 	
 			padding-top:25px;
 			padding-bottom:25px;	
-			padding-right:5px;
-			padding-left:2px;
+			padding-right:16px;
 		
 		}
+		
+	.behind a img{
+		
+			padding-top:25px;
+			padding-bottom:25px;	
+			padding-left:8px;
+		
+		}	
+		
+		.behind a:last-child img{
+			padding-top:25px;
+			padding-bottom:25px;	
+			padding-left:10px;
+		
+		}	
+	
+			
+	.socialicon img {
+		 width:35px;
+		 
+	}	
+	
+	
 	
 	
 	
@@ -156,10 +179,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 		
 		}
 		
-	.socialicon img {
-		 width:40px;
-		 
-	}	
+	
 	
 	.socialicon a{
 	
@@ -460,7 +480,7 @@ input{
         
         
         <div class="righticon" >
-        	<a  id="settingspage" data-prefetch="true"  onClick="settings_page()" ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
+        	<a  id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
         </div>
       </div>  
         
@@ -522,18 +542,17 @@ input{
         Start Using Eboo</button>
         </center>
         
-        
-          <a  href="#wrongemail" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
-          <div data-role="popup" id="wrongemail"   data-dismissible="false" style="max-width:300px; background-color:#FFF;"  >
+        <a  href="#wrongemail" id="popup_alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
+          <div data-role="popup" id="wrongemail"   data-dismissible="false" style="max-width:300px; padding:22px; background-color:#FFF;"  >
 	                    <div data-role="header" style="background-color:#CCC" >
-    			            <h1>Eboo Warning</h1>
+    			            <h1>Eboo</h1>
                 		</div>
                		<div role="main" class="ui-content">
                 		<p class="ui-title">Please Enter a Valid E-mail Address</p>
                 		<p>example :  sample@gmail.com </p>
                 		<center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
                 	</div>
-               	    </div>
+               	  </div>
                 
         
         
@@ -920,6 +939,9 @@ $(document).keypress(function(e) {
 					}
 			
 			
+			last_search = $('#searcharea').val();
+			
+			
 			$('#searcharea').val('');
 			
 			
@@ -965,10 +987,9 @@ $(document).keypress(function(e) {
 
 function load_trending()
 {
+	last_search ='';
 	
-	
-	pageCount = 0;
-	contentCount = 2;
+
 	
 	
 	//alert(EbooUSER_ID + 'pronnn');
@@ -1340,7 +1361,7 @@ db.transaction(populateDB, errorCB, successCB);
 	{
 		//window.plugins.spinnerDialog.hide();
 		
-		$('#wrongemail').trigger('click');
+		$('#popup_alert').trigger('click');
 	//	alert('enter a vaild email');
 		}
 	else{
@@ -1558,8 +1579,12 @@ function get_more_data()
 {
 	
 	
-	if( $('#searcharea').val() =='')
+	if( $('#searcharea').val() =='' && last_search =='' )
 	{
+		
+		
+		
+		
  		$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
 			type:'GET',
@@ -1673,7 +1698,7 @@ function get_more_data()
 			
 	});
 	
-	}else{
+	}else if(last_search!=''){
 		
 		
 		

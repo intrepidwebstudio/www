@@ -120,16 +120,34 @@ background: rgba(255, 255, 255, 0.5) !important;
 		}
 		
 		
-	.behind a img{
+	.behind a:first-child img{
 	
 			padding-top:25px;
 			padding-bottom:25px;	
-			padding-right:5px;
-			padding-left:2px;
+			padding-right:16px;
 		
 		}
+		
+	.behind a img{
+		
+			padding-top:25px;
+			padding-bottom:25px;	
+			padding-left:8px;
+		
+		}	
+		
+		.behind a:last-child img{
+			padding-top:25px;
+			padding-bottom:25px;	
+			padding-left:10px;
+		
+		}	
 	
-	
+			
+	.socialicon img {
+		 width:35px;
+		 
+	}	
 	
 	
     .behind a.ui-btn {
@@ -157,11 +175,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 		
 		
 		}
-		
-	.socialicon img {
-		 width:40px;
-		 
-	}	
+
 	
 	.socialicon a{
 	
@@ -464,7 +478,7 @@ input{
         
         
         <div class="righticon" >
-        	<a  id="settingspage" data-prefetch="true"  onClick="settings_page()" ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
+        	<a  id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
         </div>
       </div>  
         
@@ -539,7 +553,7 @@ input{
           <a  href="#wrongemail" id="popup_alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
           <div data-role="popup" id="wrongemail"   data-dismissible="false" style="max-width:300px; padding:22px; background-color:#FFF;"  >
 	                    <div data-role="header" style="background-color:#CCC" >
-    			            <h1>Eboo Warning</h1>
+    			            <h1>Eboo</h1>
                 		</div>
                		<div role="main" class="ui-content">
                 		<p class="ui-title">Please Enter a Valid E-mail Address</p>
@@ -937,6 +951,9 @@ $(document).keypress(function(e) {
 					}
 			
 			
+			last_search = $('#searcharea').val();
+			
+			
 			$('#searcharea').val('');
 			
 			
@@ -982,10 +999,9 @@ $(document).keypress(function(e) {
 
 function load_trending()
 {
+	last_search = '';
 	
 	
-	pageCount = 0;
-	contentCount = 2;
 	
 	
 	//alert(EbooUSER_ID + 'pronnn');
@@ -1569,8 +1585,10 @@ function get_more_data()
 {
 	
 	
-	if( $('#searcharea').val() =='')
+	if( $('#searcharea').val() =='' && last_search =='' )
 	{
+		last_search='';
+		
  		$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
 			type:'GET',
@@ -1684,14 +1702,13 @@ function get_more_data()
 			
 	});
 	
-	}else{
+	}else if(last_search!=''){
 		
-		
-		
+	
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
+			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
 			type:'GET',
 			contentType: "application/json",
         	async: true,

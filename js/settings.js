@@ -23,6 +23,8 @@
 	var pageCount = 0;
 var contentCount = 2;
 
+var last_search;
+
 
 var search_pageCount = 0;
 		var search_contentCount = 2;

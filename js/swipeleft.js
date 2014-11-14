@@ -225,6 +225,8 @@ $('#settingspage').on('touchstart', function(e) {
 	$(this).children('.settingsimg').css("opacity","1");
 	$.mobile.changePage('#5ssettings' , { transition:'slide' });
 	
+	settings_page();
+	
 	})
 	
 	
