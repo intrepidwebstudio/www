@@ -213,7 +213,7 @@ $('#showsearch').on('touchstart', function(e) {
 	$(this).children('.searchimg').css("opacity",".6");
 }).on('touchend',function(){
 	$(this).children('.searchimg').css("opacity","1");
-	})
+	});
 	
 	
 	
@@ -227,15 +227,41 @@ $('#settingspage').on('touchstart', function(e) {
 	
 	settings_page();
 	
-	})
+	});
 	
 	
 	
-	$('.backbutton').on('touchstart', function(e) {
+	$('#backbutton_search').on('touchstart', function(e) {
 	$(this).children('.backimg').css("opacity",".6");
 }).on('touchend',function(){
+	
+	$.mobile.changePage('#5spage1' , { transition:'slide' });
+	
 	$(this).children('.backimg').css("opacity","1");
-	})
+	});
+	
+	
+	$('#backbutton_privacy').on('touchstart', function(e) {
+	$(this).children('.backimg').css("opacity",".6");
+}).on('touchend',function(){
+	
+	$.mobile.changePage('#5ssettings' , { transition:'slide' });
+	
+	$(this).children('.backimg').css("opacity","1");
+	});
+	
+	$('#backbutton_terms').on('touchstart', function(e) {
+	$(this).children('.backimg').css("opacity",".6");
+}).on('touchend',function(){
+	
+	$.mobile.changePage('#5ssettings' , { transition:'slide' });
+	
+	$(this).children('.backimg').css("opacity","1");
+	});
+	
+	
+	
+	
 	
 
 
