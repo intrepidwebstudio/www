@@ -81,6 +81,10 @@ ul.touch li.ui-li-has-alt a.ui-btn {
     font-size: inherit;
     margin-bottom: .75em;
 }
+
+
+
+
 .title_bac{
 /*	background-color:#F0525B;
 	opacity:.65;
@@ -199,7 +203,8 @@ background: rgba(255, 255, 255, 0.5) !important;
 		text-align:center !important;
 		z-index:-999px !important;
 		vertical-align:middle;
-		cursor:vertical-text;
+		cursor:vertical-text #FFF !important;
+		
 		
 		
 		
@@ -348,9 +353,12 @@ topplace_empty{
 .terms_of_service p{
 	 
 	 color:#9F9F9F !important;
-	 
-	
+	 font-size:12px !important;
 	}
+.privacy p{
+	 font-size:12px !important;
+	
+	}	
 	
 .terms_of_service  h3{
 	
@@ -365,6 +373,9 @@ ul li:nth-child(odd) a.outer_a{ background-color: #F7F7F7 !important; }
 ul li div{ background-color:#F7F7F7 !important;	} 
 ul li:nth-child(odd) div{ background-color:#FFFFFF !important;  }
 
+
+ul li a.settingsmenu{ background-color: #FFFFFF  !important; }
+ul li:nth-child(odd) a.settingsmenu{ background-color: #F7F7F7 !important; }
 
 
 
@@ -444,7 +455,7 @@ input{
         <div class="searchsettings " id="top_menu" >
         
         <div  class="lefticon" id="dragimg" >
-       		<a onClick="show_search()" ><img  src="icons/57x57/search.png"  ></a>
+       		<a id="showsearch" data-role='ui-btn'  ><img  class="searchimg" src="icons/57x57/search.png"  ></a>
         </div>
         
        <!-- <div id="blue">
@@ -453,7 +464,7 @@ input{
         
         
         <div class="righticon" >
-        	<a href="#5ssettings" data-prefetch="true" onClick="settings_page()" ><img src="icons/57x57/settings.png" ></a>
+        	<a  id="settingspage" data-prefetch="true"  onClick="settings_page()" ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
         </div>
       </div>  
         
@@ -466,19 +477,16 @@ input{
       
  
 </div><!-- /header -->
-    <div  role="main" class="ui-content" >
-    	    
-      <!--  <button id="fb-connect" >Facebook loginh auth</button> -->
-        
-        <div class="example-wrapper" data-iscroll >
+   <div class="example-wrapper" data-iscroll >
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
-             
      
         </ul>
-       </div> 
-                                    
-                      
+          <div class="iscroll-pullup">
+          <center><span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="loading please wait" >loading ...</span></center>
+        </div>
+          
+           
                                      
     </div><!-- /content -->
     
@@ -695,7 +703,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
      <div class="searchsettings">
         
        <div  class="lefticon" >
-       		 <a data-rel="back"  ><img src="icons/57x57/back.png" ></a>
+       		 <a data-rel="back" class="backbutton" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
         </div>
       </div>  
     </div>
@@ -707,18 +715,18 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content" >
-        <div class="example-wrapper padding_left  " data-iscroll >
+        <div class="example-wrapper padding_left terms_of_service  " data-iscroll >
         
-          <h3>Privacy Policy</h3>
-          <p class="Conv_MuseoSans_700 " >
+          <h3 class="Conv_MuseoSans_700" >Privacy Policy</h3>
+          <p class="Conv_MuseoSans_500 " >
 Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
 By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
 
-<h3>Heading 2</h3>
-<p class="Conv_MuseoSans_700 ">The Site and all of its original content are the sole property of Your Nowhere Town and are, as such</p>
+<h3 class="Conv_MuseoSans_700" >Heading 2</h3>
+<p class="Conv_MuseoSans_500 ">The Site and all of its original content are the sole property of Your Nowhere Town and are, as such</p>
 
-<h3>Links to Other Websites</h3>
-<p class="Conv_MuseoSans_700 " >Our Site contain a number of links to other websites and online resources that are  owned or controlled by eboo.Your app has no control over, and 
+<h3 class="Conv_MuseoSans_700" >Links to Other Websites</h3>
+<p class="Conv_MuseoSans_500 " >Our Site contain a number of links to other websites and online resources that are  owned or controlled by eboo.Your app has no control over, and 
 therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
 Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
 
@@ -751,6 +759,8 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
 
 
+
+
  <script>
     
 
@@ -773,10 +783,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 	  $('#searcharea').show();
 	   $('.search_empty').show();
 	  $('input').focus();
-	  
-	  
-	  
-	  
 	  $('#searcharea').focus();
 	
 	
@@ -787,15 +793,12 @@ $('#searcharea').on('blur',function(){
 								    	$('#searcharea').hide();	
 									    $('.search_empty').hide();
 										$('#searcharea').blur();
-										$('.search_empty').blur();
+										
 										 
 										  });
 
 
-$('#search_empty').on('blur',function(){
-						    $('.search_empty').hide();
-			
-	});
+
 
    
 //global declarations
@@ -813,10 +816,11 @@ $(document).keypress(function(e) {
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		
+		search_pageCount = 0;
 		
 		
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID ,
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount, 
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -843,13 +847,8 @@ $(document).keypress(function(e) {
 				
 				if(FeedStatus=='success')
 				{
-					
-					
 					feed_conducted=1;
-				
 				$('#searchvalue').html($('#searcharea').val());
-				
-				
 				$('#searcharea').hide();
 				 $('.search_empty').hide();
 				$('#searcharea').blur();
@@ -865,9 +864,6 @@ $(document).keypress(function(e) {
 					var pubdate = element.pubdate ;
 					
 					var viewstatus=element.viewstatus; 
-					
-					
-					
 				//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
 					var len = 0;
@@ -889,11 +885,11 @@ $(document).keypress(function(e) {
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon email_img" onclick="window.plugins.socialsharing.shareViaEmail(\''+article_title+'\', null /* img */,\''+article_link+'\'), change_opacity(this)" ><img src="socialicons/email.png" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon linkedin_img" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\'), change_opacity(this)" ><img src="socialicons/linkedin.png" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon tumblr_img" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\'), change_opacity(this)" ><img src="socialicons/tumblr.png" alt="tumblr"  ></a>';
-					append_data+='<a href="#" class="socialicon facebook_img" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\'), change_opacity(this)" ><img src="socialicons/facebook.png" alt="facebook"  ></a>';
-					append_data+='<a href="#" class="socialicon twitter_img" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\'), change_opacity(this)" ><img src="socialicons/twitter.png" alt="twitter" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
@@ -902,9 +898,7 @@ $(document).keypress(function(e) {
 					else{
 					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
-					
-					
-					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+ 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
 					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 		
@@ -977,15 +971,19 @@ $(document).keypress(function(e) {
 
 
 
-
 function load_trending()
 {
+	
+	
+	pageCount = 0;
+	contentCount = 2;
+	
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
 //window.plugins.spinnerDialog.show();
 	$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbooUSER_ID,
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1045,16 +1043,12 @@ function load_trending()
 					article_title = article_title + '...';	
 						}
 						
-						
-						
-						
-						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.share(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaFacebook(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon" onclick="window.plugins.socialsharing.shareViaTwitter(\''+article_title+'\', null /* img */, \''+article_link+'\')" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
@@ -1063,7 +1057,6 @@ function load_trending()
 					else{
 					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
-					
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
@@ -1075,20 +1068,16 @@ function load_trending()
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
 							//alert(append_data);
-									
-										$('#list_view').trigger("create");
+											$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
-											
-									//	$('#list_view').refresh();
-											
+										//	$('#list_view').refresh();
 										browser_setting();
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
-												
-												
 						//window.plugins.spinnerDialog.hide();
-												
+						pageCount = pageCount +1;
+						
 				}//user data match if
 				else{
 					//window.plugins.spinnerDialog.hide();
@@ -1359,7 +1348,8 @@ db.transaction(populateDB, errorCB, successCB);
 	{
 		//window.plugins.spinnerDialog.hide();
 		
-		alert('enter a vaild email');
+		$('#wrongemail').trigger('click');
+	//	alert('enter a vaild email');
 		}
 	else{
 		
@@ -1375,40 +1365,27 @@ db.transaction(populateDB, errorCB, successCB);
         	crossDomain: true,
 			success: function(data)
 							{
-								
 							var	login_Response = data.LoginResponse;
-								
-								
 								if(login_Response.status=='100')
 								{
 								//	alert(login_Response.message);
 							//		alert(login_Response.user_id)
-									
 									//window.plugins.spinnerDialog.hide();
 							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
-									
 								}else if(login_Response.status=='101'){
-									
-									
 									//	alert('User Already Exists' );
 									//window.plugins.spinnerDialog.hide();
-									
 									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
-									
 									}
 								else{
-									
 									//window.plugins.spinnerDialog.hide();
 									alert('server error !!');
 									}	
-								
 								},
 			error: function(e)
 				{
 					//window.plugins.spinnerDialog.hide();
 					alert('Network Error,Unable to contact server');
-					
-					
 					}
 			
 			
@@ -1577,6 +1554,365 @@ function bringup()
 
 
 }
+
+
+function get_more_data()
+{
+	
+	
+	if( $('#searcharea').val() =='')
+	{
+ 		$.ajax({
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
+			type:'GET',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       //window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     //window.plugins.spinnerDialog.hide();  
+                    },
+			success: function(data)
+			{
+				
+				feedData=data.Feeds;
+				FeedStatus=data.FeedStatus;
+				
+				if(FeedStatus=='success')
+				{
+					feed_conducted=0;
+					
+					
+				$('#searchvalue').html('Most Popular Articles');
+				
+				   	var append_data =  '';
+					$.each(feedData, function(index, element) {
+					var article_id = element.id;			
+					var article_title =  element.title ;
+					var article_link = element.article_link ;
+					var source_name = element.source ;
+					var source_image = element.sourceimage ;
+					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+					
+					//pubdate = pubdate.substr(5,11);
+					// checking the variable length
+					var len = 0;
+					var len=article_title.length;
+					
+				 var article_title_unescaped = article_title;
+					
+				 var source_name_unescaped = source_name;	
+					
+					
+					article_title = article_title.replace(/'/g, "\\'");
+					source_name = source_name.replace(/'/g, "\\'");
+					
+					
+						article_link = encodeURI(article_link);
+					
+					if(len>55)
+					{ 
+					article_title = article_title.substr(0,55);
+					article_title = article_title + '...';	
+						}
+						
+					append_data+='<li><div class="behind"  >';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a  style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					}
+					else{
+					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						}
+					
+					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+		
+						}
+							);			
+							
+						//colose my loader here !!!!
+							$('#list_view').append(append_data);
+							//alert(append_data);
+											$('#list_view').trigger("create");
+										$('#list_view').listview().listview('refresh');
+										//	$('#list_view').refresh();
+										browser_setting();
+										$.getScript("js/SocialSharing.js");
+										SocialSharing();
+										$.getScript("js/swipeleft.js");
+						//window.plugins.spinnerDialog.hide();
+				}//user data match if
+				
+				
+
+			pageCount = pageCount+1;
+			
+			
+				},
+		error: function(e) {
+      //window.plugins.spinnerDialog.hide();
+	  
+	  alert('Network problem ');		
+			
+		//	console.log(e);
+			
+		}
+			
+	});
+	
+	}else{
+		
+		
+		
+	   //start  my loader here !!!!
+		$.support.cors = true;
+		$.ajax({
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
+			type:'GET',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       //window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     //window.plugins.spinnerDialog.hide();  
+                    },
+			success: function(data)
+			{
+				
+				
+				feedData=data.Feeds;
+				FeedStatus=data.FeedStatus;
+				
+				SearchQueryId=data.SearchQueryId;
+				
+			//	alert(SearchQueryId);
+				
+				if(FeedStatus=='success')
+				{
+					
+					
+					feed_conducted=1;
+				
+				$('#searchvalue').html($('#searcharea').val());
+				
+				
+				$('#searcharea').hide();
+				 $('.search_empty').hide();
+				$('#searcharea').blur();
+				$('.search_empty').blur();
+				
+			  	   	var append_data =  '';
+					$.each(feedData, function(index, element) {
+					var article_id = element.id;			
+					var article_title =  element.title ;
+					var article_link = element.article_link ;
+					var source_name = element.source ;
+					var source_image = element.sourceimage ;
+					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+				//	pubdate = pubdate.substr(5,11);
+					// checking the variable length
+					var len = 0;
+					var len=article_title.length;
+					
+					 var article_title_unescaped = article_title;
+					 var source_name_unescaped = source_name;
+					 
+					article_title = article_title.replace(/'/g, "\\'");
+					
+					source_name = source_name.replace(/'/g, "\\'");
+					
+					article_link = encodeURI(article_link);
+					
+					
+					if(len>55)
+					{ 
+					article_title = article_title.substr(0,55);
+					article_title = article_title + '...';	
+						}
+					append_data+='<li><div class="behind" >';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					}
+					else{
+					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						}
+ 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+		
+						}
+							);			
+							
+						
+						//colose my loader here !!!!
+							$('#list_view').append(append_data);
+									
+										$('#list_view').trigger("create");
+										$('#list_view').listview().listview('refresh');
+											
+									//	$('#list_view').refresh();
+										browser_setting();
+										$.getScript("js/SocialSharing.js");
+										SocialSharing();
+										$.getScript("js/swipeleft.js");
+												
+							//window.plugins.spinnerDialog.hide();					
+				}//user data match if
+				
+			
+			$('#searcharea').val('');
+			
+			
+			search_pageCount = search_pageCount+1;
+			
+			
+				},
+		error: function(e) {
+			//window.plugins.spinnerDialog.hide();
+       alert('Network error   ');		
+			
+		//	console.log(e.status);
+			
+		}
+			
+			
+			
+			
+			});
+		
+		
+	
+		
+		
+		}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+/*jslint browser: true, sloppy: true, white: true, nomen: true, plusplus:true, maxerr: 50, indent: 2 */
+/*global jQuery:false, iScroll:false */
+
+/*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true,
+         undef:true, curly:true, browser:true, jquery:true, indent:2, maxerr:50,
+         white:false, nomen:false */
+
+//-------------------------------------------------------
+// Pull-Up and Pull-Down callbacks for "Pull" page
+//-------------------------------------------------------
+(function pullPagePullImplementation($) {
+  "use strict";
+  var pullDownGeneratedCount = 0,
+      pullUpGeneratedCount = 0,
+      listSelector = "div.5spage1 ul.ui-listview",
+      lastItemSelector = listSelector + " > li:last-child";
+    
+  /* For this example, I prepend three rows to the list with the pull-down, and append
+   * 3 rows to the list with the pull-up. This is only to make a clear illustration that the
+   * action has been performed. A pull-down or pull-up might prepend, append, replace or modify
+   * the list in some other way, modify some other page content, or may not change the page 
+   * at all. It just performs whatever action you'd like to perform when the gesture has been 
+   * completed by the user.
+   */
+  function gotPullDownData(event, data) {
+    var i,
+        newContent = "";        
+    for (i=0; i<3; i+=1) {  // Generate some fake new content
+      newContent = "<li>Pulldown-generated row " + (++pullDownGeneratedCount) + "</li>" + newContent;
+      }
+	  
+    $(listSelector).prepend(newContent).listview("refresh");  // Prepend new content and refresh listview
+    data.iscrollview.refresh();    // Refresh the iscrollview
+    }
+  
+  function gotPullUpData(event, data) {
+    var i,
+        iscrollview = data.iscrollview,
+        newContent = "";
+		get_more_data();
+		
+	  
+    $(listSelector).append(newContent).listview("refresh");
+  
+    // The refresh is a bit different for the pull-up, because I want to demonstrate the use
+    // of refresh() callbacks. The refresh() function has optional pre and post-refresh callbacks.
+    // Here, I use a post-refresh callback to do a timed scroll to the bottom of the list
+    // after the new elements are added. The scroller will smoothly scroll to the bottom over
+    // a 400mSec period. It's important to use the refresh() callback to insure that the scroll
+    // isn't started until the scroller has first been refreshed.
+    iscrollview.refresh(null, null,
+      $.proxy(function afterRefreshCallback(iscrollview) { 
+        this.scrollToElement(lastItemSelector, 400); 
+        }, iscrollview) ); 
+    }
+  
+  // This is the callback that is called when the user has completed the pull-down gesture.
+  // Your code should initiate retrieving data from a server, local database, etc.
+  // Typically, you will call some function like jQuery.ajax() that will make a callback
+  // once data has been retrieved.
+  //
+  // For demo, we just use timeout to simulate the time required to complete the operation.
+  function onPullDown (event, data) { 
+    setTimeout(function fakeRetrieveDataTimeout() {
+      gotPullDownData(event, data);
+      }, 
+      1500); 
+    }    
+
+  // Called when the user completes the pull-up gesture.
+  function onPullUp (event, data) { 
+    setTimeout(function fakeRetrieveDataTimeout() {
+      gotPullUpData(event, data);
+      }, 
+      1500); 
+    }    
+  
+  // Set-up jQuery event callbacks
+  $(document).delegate("#5spage1", "pageinit", 
+    function bindPullPagePullCallbacks(event) {
+      $(".iscroll-wrapper", this).bind( {
+      iscroll_onpulldown : onPullDown,
+      iscroll_onpullup   : onPullUp
+      } );
+    } );  
+
+  }(jQuery));
 
 
 

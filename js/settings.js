@@ -20,7 +20,13 @@
    var global_article_title='';	
 	var global_article_link='';
 	
-	
+	var pageCount = 0;
+var contentCount = 2;
+
+
+var search_pageCount = 0;
+		var search_contentCount = 2;
+
 	
 	//*************************************** settings complete here ***************************************
 	 var iabUrl = null;
@@ -104,3 +110,5 @@ function browser_setting()
 						 
 	}
 	
+
+

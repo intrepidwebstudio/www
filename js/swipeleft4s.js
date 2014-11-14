@@ -87,136 +87,97 @@ function hex(x) {
 	
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
-			
-			
-				
-				
 			$( ".swipe-delete li > a" ).each(function( index ) {
-				
-				
 		var rect = this.getBoundingClientRect();
-				
 // console.log(rect.top, rect.right, rect.bottom, rect.left);
-				
-			
 			if(rect.left !=0 )
 			{
 			$(this).animate({'left':'0px'},200,'linear',function(){  
-			
 							 new_rect = this.getBoundingClientRect();
-							 
-						
 					}) // close em all
 			}
 	
-	
-												
-
-	
-	
 });
-			
-            x = e.originalEvent.pageX // anchor point
-			
+	        x = e.originalEvent.pageX // anchor point
 		})
         .on('touchmove',  function(e) {
-												
 												var change = e.originalEvent.pageX - x;
 												console.log(change);
 												change = Math.min(Math.max(-300, change), 0 ) // restrict to -100px left, 0px right
 												console.log("change = "+change);
-												
-												 
-												 
-												 
 												if(change < -50)
 												{
-												
 											//	e.currentTarget.style.setProperty( 'background-color', '#DFE3E7', 'important' );	
-													
 												disable_scroll(); // disable scroll once we hit 10px horizontal slide
 												e.currentTarget.style.left = change + 'px';
-												
 												}else{
-												
 											//	e.currentTarget.style.left = 0 + 'px';
 											//	enable_scroll();	
-													
 													}
-												
-												
-												
-											
 		})
         .on('touchend', function(e) {
-			
 			var left = "0";
-			
-             left = parseInt(e.currentTarget.style.left)
-			
+	         left = parseInt(e.currentTarget.style.left)
 			console.log(" LEFTTTT  =" + left );
-			
 			if(left < -90)
 			{
-			
 		 var new_left = -240 + 'px';
 			e.currentTarget.style.left = new_left;	
-				
 				}
 			else{
-				
 		 var new_left = '0px';
 			e.currentTarget.style.left = new_left;		
-	
 	//		e.currentTarget.style.setProperty('background-color', bgcolor, 'important' );
-				
 				}			
-			
-            
-            
             enable_scroll()
-			
-			
-			
 			console.log('new keft  ='+ new_left);
-			
-			//e.currentTarget.addClass('tocuhedd');
-
-		
+		//e.currentTarget.addClass('tocuhedd');
 	    });
 		
 		
 		
 		
 		
-		
-		
 		$('.socialicon').on('touchstart', function(e) {
-			
-			
 		console.log('touch started');	
-		
-		
 		$(this).children('.image_icon').css("opacity",".6");
-			
-			
-
-//	console.log("staart Poistion = "+ y);
-	
-		}).on('touchmove',  function(e) {
-											
-											
-											
+	//	console.log("staart Poistion = "+ y);
+			}).on('touchmove',  function(e) {
 		})
         .on('touchend', function(e) {
-			
 				console.log('touch_end');
 				$(this).children('.image_icon').css("opacity","1.0");
 				
 				
 				
+				
 			var title_aaa =	$(this).attr('data-value');
 			var title_linkkk = $(this).attr('data-value1');
+			var media_link = $(this).attr('data-value2');
+			
+			console.log("media LINK ="+ media_link);
+			
+			if( media_link == "twitter" )
+			{
+				
+			window.plugins.socialsharing.shareViaTwitter(title_aaa, null /* img */,title_linkkk);	
+				}
+			else if( media_link == "facebook")
+			{
+			window.plugins.socialsharing.shareViaFacebook(title_aaa, null /* img */,title_linkkk);	
+				
+				}
+			else if( media_link == "email" )
+			{
+			window.plugins.socialsharing.shareViaEmail(title_aaa , null /* img */,title_linkkk );
+				}
+			else 
+			{
+				
+			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);			
+				}
+						
+					
 			
 			console.log('TITLEE = '+ title_aaa);
 			console.log('LINKKK = '+ title_linkkk);
@@ -224,9 +185,6 @@ function hex(x) {
 
 		});
 
-		
-		
-		
 	
 
 });
@@ -234,6 +192,51 @@ function hex(x) {
 
 var y;
 var new_position;
+
+
+
+$("#search_show_bar").on('click', function() {
+   
+	  show_search()
+	
+});
+
+
+$('#showsearch').on('click', function(e) {
+	show_search();
+});
+
+
+
+$('#showsearch').on('touchstart', function(e) {
+	$(this).children('.searchimg').css("opacity",".6");
+}).on('touchend',function(){
+	$(this).children('.searchimg').css("opacity","1");
+	})
+	
+	
+	
+	
+
+$('#settingspage').on('touchstart', function(e) {
+	$(this).children('.settingsimg').css("opacity",".6");
+}).on('touchend',function(){
+	$(this).children('.settingsimg').css("opacity","1");
+	$.mobile.changePage('#4ssettings' , { transition:'slide' });
+	
+	})
+	
+	
+	
+	$('.backbutton').on('touchstart', function(e) {
+	$(this).children('.backimg').css("opacity",".6");
+}).on('touchend',function(){
+	$(this).children('.backimg').css("opacity","1");
+	})
+	
+
+
+
 
 /*
 $('#dragimg').on('touchstart', function(e) {
@@ -476,7 +479,7 @@ var callback = function(buttonIndex) {
 			 }
 		 else if(buttonIndex == 4)
 		 {
-			 window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
+			 window.plugins.socialsharing.shareViaTwitter(global_article_title , null /* img */,global_article_link );
 			 }
 		 else if(buttonIndex == 5)
 		 {
