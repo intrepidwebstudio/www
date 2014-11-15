@@ -149,10 +149,6 @@ background: rgba(255, 255, 255, 0.5) !important;
 	}	
 	
 	
-	
-	
-	
-	
     .behind a.ui-btn {
         
         float: right;
@@ -166,10 +162,6 @@ background: rgba(255, 255, 255, 0.5) !important;
         text-shadow: none;
     }
 	
-	
-	
-
-	
 	.socialicon{
 		
 		float:right;
@@ -179,8 +171,6 @@ background: rgba(255, 255, 255, 0.5) !important;
 		
 		}
 		
-	
-	
 	.socialicon a{
 	
 		background-color:#FF0 !important;	
@@ -261,8 +251,6 @@ topplace_empty{
 	 
 	 }		
 	
-	
-		
 		.topmenucontainer{
 			
 			position:absolute;
@@ -272,10 +260,6 @@ topplace_empty{
 			}
 		
 	
-		
-		
-		
-		
 	.ebooheader{
 		
 		width:100%;   
@@ -570,14 +554,14 @@ input{
 
   
 
-<div data-role="page" id="4ssettings" data-transition="slide">
+<div data-role="page" id="4ssettings" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
         <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
      
      <div class="searchsettings">
         <div  class="lefticon" >
-       		 <a data-rel="back" class="backbutton" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
+       		 <a data-rel="back"  class="backbutton" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
         </div>
      </div>  
         
@@ -594,14 +578,14 @@ input{
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li id="twitterautho" ><a class="settingsmenu" href="#twitterauthorize"    >
+                <li id="twitterautho" ><a class="settingsmenu"   >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li id="facebookautho"  ><a class="settingsmenu" href="#facebookauthorize" onClick="facebookautho()" >
+                <li id="facebookautho"  ><a class="settingsmenu" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -609,7 +593,7 @@ input{
                         
                 </a> </li>
                
-                <li id="tumblrautho" ><a class="settingsmenu" href="#tumblrauthorize" onClick="tumblrautho()" >
+                <li id="tumblrautho" ><a class="settingsmenu"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
@@ -623,13 +607,13 @@ input{
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
-                <li><a class="settingsmenu" href="#4stermsofservice" data-prefetch="true" >
+                <li><a class="settingsmenu" href="#4stermsofservice" data-transition="slide" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a class="settingsmenu" href="#4sprivacy" data-prefetch="true" >
+                <li><a class="settingsmenu" href="#4sprivacy" data-transition="slide" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -767,7 +751,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/pullrequest.js"></script>
-
+<script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
 
 
 

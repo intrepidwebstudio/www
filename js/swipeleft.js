@@ -245,8 +245,6 @@ $(this).children('.backimg').css("opacity","1");
 	
 
 
-
-
 /*
 $('#dragimg').on('touchstart', function(e) {
 			
@@ -306,8 +304,6 @@ $('#dragimg').on('touchstart', function(e) {
 			
 					
 				 $('#twitterautho').on('touchstart', function() {	
-				  
-				  
 				  
 				  
 				  }).on('touchmove',function(){})
@@ -449,12 +445,7 @@ $('#dragimg').on('touchstart', function(e) {
 																		
 						//			console.log("tumblr: Hello, " + data.name + " ! ");
 									
-									
-									
-								
-
-									
-                       //         })
+					   //         })
                         //        .fail(function( jqXHR, textStatus, errorThrown) {
                 //                   console.log("req error: " + textStatus);
                          //       });
@@ -466,6 +457,80 @@ $('#dragimg').on('touchstart', function(e) {
 				 });
 				 
                 
+				
+				
+				
+				
+				
+				
+				
+				       
+             var login = function () {
+                if (!window.cordova) {
+                    var appId = prompt("Enter FB Application ID", "1585940284960511");
+                    facebookConnectPlugin.browserInit(appId);
+                }
+                facebookConnectPlugin.login( ["email"], 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            }
+            
+            var showDialog = function () { 
+                facebookConnectPlugin.showDialog( { method: "feed" }, 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            }
+            
+            var apiTest = function () { 
+                facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) }); 
+            }
+
+            var getAccessToken = function () { 
+                facebookConnectPlugin.getAccessToken( 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            }
+            
+            var getStatus = function () { 
+                facebookConnectPlugin.getLoginStatus( 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            }
+
+            var logout = function () { 
+                facebookConnectPlugin.logout( 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            }
+     
+				 
+				 
+				 
+				  $('#facebookautho').on('touchstart', function() {	
+				  
+				 if($('#facebooklogged').css('display') == 'none')
+				{
+					
+					login();
+					
+					
+					
+						}else{
+				
+				}
+						
+						
+				 });
+
+				
+				
+				
+				
+				
+				
+				
 				
 	}
 
