@@ -161,7 +161,7 @@ if (!window.cordova) {
                 version = "v2.0";
             }
             FB.init({
-                appId      : appId,
+                appId      : 1585940284960511,
                 cookie     : true,
                 xfbml      : true,
                 version    : version
