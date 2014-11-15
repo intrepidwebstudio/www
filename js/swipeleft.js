@@ -211,9 +211,12 @@ $('#showsearch').on('click', function(e) {
 
 $('#showsearch').on('touchstart', function(e) {
 	$(this).children('.searchimg').css("opacity",".6");
-}).on('touchend',function(){
+})
+.on('touchmove',function(){
+})
+.on('touchend',function(){
 	$(this).children('.searchimg').css("opacity","1");
-	})
+	});
 	
 	
 	
@@ -221,21 +224,24 @@ $('#showsearch').on('touchstart', function(e) {
 
 $('#settingspage').on('touchstart', function(e) {
 	$(this).children('.settingsimg').css("opacity",".6");
-}).on('touchend',function(){
+})
+.on('touchmove',function(){
+})
+.on('touchend',function(){
 	$(this).children('.settingsimg').css("opacity","1");
-	$.mobile.changePage('#5ssettings' , { transition:'slide' });
-	
 	settings_page();
-	
 	});
 	
 	
 	
-	$('.backbutton').on('touchstart', function(e) {
-	$(this).children('.backimg').css("opacity",".6");
-}).on('touchend',function(){
-	$(this).children('.backimg').css("opacity","1");
-	});
+$('.backbutton').on('touchstart', function(e) {
+$(this).children('.backimg').css("opacity",".6");
+})
+.on('touchmove',function(){
+})
+.on('touchend',function(){
+$(this).children('.backimg').css("opacity","1");
+});
 	
 
 
@@ -300,6 +306,13 @@ $('#dragimg').on('touchstart', function(e) {
 			
 					
 				 $('#twitterautho').on('touchstart', function() {	
+				  
+				  
+				  
+				  
+				  }).on('touchmove',function(){})
+				  .on('touchend',function(){
+				 
 				 
 				 if($('#twitterlogged').css('display') == 'none')
 				{
@@ -353,13 +366,16 @@ $('#dragimg').on('touchstart', function(e) {
 				  
 					
 				 $('#linkedinautho').on('touchstart', function() {	
+				  
+				  
+				  }).on('touchmove',function(){})
+				  .on('touchend',function(){
+				 
                     OAuth.popup('linkedin')
                         .done(function (result) {
 														
 							//	console.log(JSON.stringify(result));
 						
-						
-								
 								$('#linkedinlogout').css('display','none');
 								$('#linkedinlogged').css('display','block');	
 					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
@@ -402,6 +418,11 @@ $('#dragimg').on('touchstart', function(e) {
 				 
 					
 				 $('#tumblrautho').on('touchstart', function() {	
+				  
+				  
+				  }).on('touchmove',function(){})
+				  .on('touchend',function(){
+				 
                     OAuth.popup('tumblr')
                         .done(function (result) {
 														

@@ -1,5 +1,9 @@
 // JavaScript Document
   
+$(document).bind("mobileinit", function(){
+$.mobile.pushStateEnabled = false;
+});
+
 
 	var feedData;
 
