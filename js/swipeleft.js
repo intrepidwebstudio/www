@@ -467,7 +467,7 @@ $('#dragimg').on('touchstart', function(e) {
 				       
              var login = function () {
                 if (!window.cordova) {
-                    var appId = 1585940284960511;
+                    var appId = '1585940284960511';
                     facebookConnectPlugin.browserInit(appId);
                 }
                 facebookConnectPlugin.login( ["email"], 
