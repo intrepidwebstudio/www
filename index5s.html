@@ -505,6 +505,20 @@ input{
            
                                      
     </div><!-- /content -->
+    
+   <a  href="#popup_alert" id="alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
+          <div data-role="popup" id="popup_alert"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
+	                    <div data-role="header" style="background-color:#CCC" >
+    			            <h1>Eboo</h1>
+                		</div>
+               		<div role="main" class="ui-content">
+                		
+                		<p id="alertmessage" ></p>
+                		<center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
+                	</div>
+               	    </div>
+    
+    
  </div>
 
 
@@ -563,6 +577,21 @@ input{
                 		<center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
                 	</div>
                	    </div>
+                    
+            <a  href="#popup_alert2" id="alert1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
+          <div data-role="popup" id="popup_alert2"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
+	                    <div data-role="header" style="background-color:#CCC" >
+    			            <h1>Eboo</h1>
+                		</div>
+               		<div role="main" class="ui-content">
+                		
+                		<p id="alertmessage1" ></p>
+                		<center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
+                	</div>
+               	    </div>
+           
+                    
+                    
                 
         
         </div>
@@ -948,7 +977,13 @@ $(document).keypress(function(e) {
 					
 					// user data doent match
 					//window.plugins.spinnerDialog.hide();
-					alert("no match");
+					
+					
+					
+			$('#alert').triggrt('click');
+			$('#alertmessage').html('No data to load');
+
+										
 					}
 			
 			
@@ -961,9 +996,17 @@ $(document).keypress(function(e) {
 				},
 		error: function(e) {
 			//window.plugins.spinnerDialog.hide();
-       alert('Network error please try after sometime  ');		
 			
-		//	console.log(e.status);
+			
+			
+			
+			$('#alert').triggrt('click');
+			$('#alertmessage').html('Network error');
+			
+     //  alert(' please try after sometime');		
+	//	console.log(e.status);
+	
+			
 			
 		}
 			
@@ -1108,7 +1151,12 @@ function load_trending()
 				else{
 					//window.plugins.spinnerDialog.hide();
 					// user data doent match
-					alert("no match");
+					
+					
+					
+			$('#alert').triggrt('click');
+			$('#alertmessage').html('No data to load');
+					
 					}
 			
 			
@@ -1116,7 +1164,9 @@ function load_trending()
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
 	  
-	  alert('Network problem ');		
+	 			$('#alert').triggrt('click');
+			$('#alertmessage').html('Newtwork problem');
+		
 			
 		//	console.log(e);
 			
@@ -1405,13 +1455,19 @@ db.transaction(populateDB, errorCB, successCB);
 									}
 								else{
 									//window.plugins.spinnerDialog.hide();
-									alert('server error !!');
+									
+											$('#alert1').triggrt('click');
+											$('#alertmessage1').html('server error !!');
+								
 									}	
 								},
 			error: function(e)
 				{
 					//window.plugins.spinnerDialog.hide();
-					alert('Network Error,Unable to contact server');
+					
+					$('#alert1').triggrt('click');
+					$('#alertmessage1').html('Network Error !!');
+					
 					}
 			
 			
