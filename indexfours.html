@@ -816,6 +816,8 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
  
 $('#searcharea').on('blur',function(){ 
+										$('#searcharea').val('');		
+
 								    	$('#searcharea').hide();	
 									    $('.search_empty').hide();
 										$('#searcharea').blur();
@@ -953,7 +955,7 @@ $(document).keypress(function(e) {
 					
 					
 					
-			$('#alert').triggrt('click');
+			$('#alert').trigger('click');
 			$('#alertmessage').html('No data to load');
 
 										
@@ -973,7 +975,7 @@ $(document).keypress(function(e) {
 			
 			
 			
-			$('#alert').triggrt('click');
+			$('#alert').trigger('click');
 			$('#alertmessage').html('Network error');
 			
      //  alert(' please try after sometime');		
@@ -1127,7 +1129,7 @@ function load_trending()
 					
 					
 					
-			$('#alert').triggrt('click');
+			$('#alert').trigger('click');
 			$('#alertmessage').html('No data to load');
 					
 					}
@@ -1137,7 +1139,7 @@ function load_trending()
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
 	  
-	 			$('#alert').triggrt('click');
+	 			$('#alert').trigger('click');
 			$('#alertmessage').html('Newtwork problem');
 		
 			
@@ -1429,7 +1431,7 @@ db.transaction(populateDB, errorCB, successCB);
 								else{
 									//window.plugins.spinnerDialog.hide();
 									
-											$('#alert1').triggrt('click');
+											$('#alert1').trigger('click');
 											$('#alertmessage1').html('server error !!');
 								
 									}	
@@ -1438,7 +1440,7 @@ db.transaction(populateDB, errorCB, successCB);
 				{
 					//window.plugins.spinnerDialog.hide();
 					
-					$('#alert1').triggrt('click');
+					$('#alert1').trigger('click');
 					$('#alertmessage1').html('Network Error !!');
 					
 					}
