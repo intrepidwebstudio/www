@@ -118,6 +118,8 @@ function hex(x) {
 			
 		//	console.log("media LINK ="+ media_link);
 			
+			//com.apple.social.[facebook | twitter | sinaweibo | tencentweibo
+			
 			if( media_link == "twitter" )
 			{
 				
@@ -135,7 +137,7 @@ function hex(x) {
 			else 
 			{
 				
-			window.plugins.socialsharing.shareVia('com.apple.social.tumblr',title_aaa, null /* img */,title_linkkk);			
+			window.plugins.socialsharing.shareVia('com.apple.social.sinaweibo',title_aaa, null /* img */,title_linkkk, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)});			
 				}
 						
 					
