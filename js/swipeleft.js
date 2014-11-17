@@ -1,45 +1,5 @@
 
 
-/*
-$(function(){
-    var blue = document.getElementById("blue");
-    
-    Hammer(blue).on("swipeleft", function() {
-		
-		
-		
-          $(blue).animate({left: "-=100"}, 500)  
-    });
-    
-    Hammer(document.getElementById("blue")).on("swiperight", function() {
-		
-          $(blue).animate({left: "+=100"}, 500)  
-    });
-})
-
-*/
-
-
-
-
-// JavaScript Document
- 
-
-
-
-
-
-//$(document).on('touchstart click', '.flip-container ', function(event){                       
- //    event.preventDefault();
-    //BLOCK THE CLASS TOGGLE IF THE PAGE IS SCROLLING
-  //  if(!scrolling) {
-      //  $(this).find('.flipper').toggleClass('hover');
-   // }
-//}); 
-
-
-
-
 var hexDigits = new Array
         ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"); 
 
@@ -175,7 +135,7 @@ function hex(x) {
 			else 
 			{
 				
-			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);			
+			window.plugins.socialsharing.shareVia('com.apple.social.tumblr',title_aaa, null /* img */,title_linkkk);			
 				}
 						
 					
@@ -245,52 +205,6 @@ $(this).children('.backimg').css("opacity","1");
 	
 
 
-/*
-$('#dragimg').on('touchstart', function(e) {
-			
-			y = e.originalEvent.pageY // anchor point	
-
-//	console.log("staart Poistion = "+ y);
-	
-		}).on('touchmove',  function(e) {
-											
-												var change = e.originalEvent.pageY - y;
-											console.log(change);
-												
-											console.log("change = "+ change);
-												
-												if(change > 10)
-												{
-												 new_position = change;
-												}
-												
-											
-		})
-        .on('touchend', function(e) {
-			
-						if( new_position > 20)
-						 {
-									$('#searcharea').show();
-									$('input').focus();
-									$('#searcharea').focus();
-						 }
-		/*	
-			var top = "13px";
-			
-             top = parseInt(e.currentTarget.style.top)
-			
-			console.log(" topp  =" + top );
-			
-            var new_top = (top > 8 ? '90px' : '50px') // snap back, or leave open, 50px threshold
-            e.currentTarget.style.top = new_top
-            enable_scroll()
-			*/
-			
-			//e.currentTarget.addClass('tocuhedd');
-
-		
-	//    });
-
 
 
 
@@ -298,120 +212,29 @@ $('#dragimg').on('touchstart', function(e) {
 	function settings_page()
 	{		
 				
-			OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
-					
-			
-			
-					
-				 $('#twitterautho').on('touchstart', function() {	
-				  
-				  
-				  }).on('touchmove',function(){})
+			 $('#twitterautho').on('touchstart', function() {	
+			  
+				  }).on('touchmove',function(){
+					  
+					  
+					  })
 				  .on('touchend',function(){
 				 
-				 
-				 if($('#twitterlogged').css('display') == 'none')
-				{
-				 
-                    OAuth.popup('twitter')
-                        .done(function (result) {
-						
-					//	console.log(JSON.stringify(result));
-						
-				//			console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
-                        // the access_token is available via r.access_token
-                       // but the http functions automagically wrap the jquery calls
-                       //     result.get('/1.1/account/verify_credentials.json')
-                        //        .done(function(data) {
-									
-//                                    $('#result').html("twitter: Hello, " + data.name + " !");
-									
-							//		console.log( "details = "+ JSON.stringify(data) );
-									
-																		
-								//	console.log("twitter: Hello, " + data.name + " ! ");
-									
-									
-									
 								$('#twitterlogout').css('display','none');
 								$('#twitterlogged').css('display','block');
-
-									
-                          //      })
-                            //    .fail(function( jqXHR, textStatus, errorThrown) {
-                                 //   console.log("req error: " + textStatus);
-                              //  });
-                        })
-                        .fail(function (e) {
-                           // console.log('error: ' + e.message);
-                        });
-						
-						
-						}else{
-				
-				
-				
-				
-				}
-						
-						
-				 });
+			 });
 				 
-				 
-			
+		 $('#linkedinautho').on('touchstart', function() {	
 				  
-					
-				 $('#linkedinautho').on('touchstart', function() {	
-				  
-				  
-				  }).on('touchmove',function(){})
+				  }).on('touchmove',function(){
+					  })
 				  .on('touchend',function(){
 				 
-                    OAuth.popup('linkedin')
-                        .done(function (result) {
-														
-							//	console.log(JSON.stringify(result));
-						
+                  	
 								$('#linkedinlogout').css('display','none');
 								$('#linkedinlogged').css('display','block');	
-					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
-							
-							
-                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                      //      result.get('/1.1/account/verify_credentials.json')
-                      ///          .done(function(data) {
-										
-									
-                               // $('#result').html("twitter: Hello, " + data.name + " !");
-									
-				//					console.log( "details = "+ JSON.stringify(data) );
-									
-																		
-			//					console.log("twitter: Hello, " + data.name + " ! ");
-									
-									
-									
-								
-
-									
-              //                  })
-                  //              .fail(function( jqXHR, textStatus, errorThrown) {
-                //                  console.log("req error: " + textStatus);
-                    //            });
-                        })
-                        .fail(function (e) {
-                       // console.log('error: ' + e.message);
-                        });
-						
-				 });
-				 
-				 
-				 
-				 
-				 
-				 
-				 
+					    });
+					
 					
 				 $('#tumblrautho').on('touchstart', function() {	
 				  
@@ -419,116 +242,11 @@ $('#dragimg').on('touchstart', function(e) {
 				  }).on('touchmove',function(){})
 				  .on('touchend',function(){
 				 
-                    OAuth.popup('tumblr')
-                        .done(function (result) {
-														
-		//					console.log(JSON.stringify(result));
-							
-								$('#tumblrlogout').css('display','none');
+                 				$('#tumblrlogout').css('display','none');
 								$('#tumblrlogged').css('display','block');
 									
 						
-						//	console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
-							
-                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                    //        result.get('/1.1/account/verify_credentials.json')
-                     //           .done(function(data) {
-									
-								
-									
-//                                    $('#result').html("twitter: Hello, " + data.name + " !");
-									
-									
-						//			console.log( "details = "+ JSON.stringify(data) );
-									
-																		
-						//			console.log("tumblr: Hello, " + data.name + " ! ");
-									
-					   //         })
-                        //        .fail(function( jqXHR, textStatus, errorThrown) {
-                //                   console.log("req error: " + textStatus);
-                         //       });
-                        })
-                        .fail(function (e) {
-              //             console.log('error: ' + e.message);
-                        });
-						
 				 });
-				 
-                
-				
-				
-				
-				
-				
-				
-				
-				       
-             var login = function () {
-                if (!window.cordova) {
-                    var appId = '1585940284960511';
-                    facebookConnectPlugin.browserInit(appId);
-                }
-                facebookConnectPlugin.login( ["email"], 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-            
-            var showDialog = function () { 
-                facebookConnectPlugin.showDialog( { method: "feed" }, 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-            
-            var apiTest = function () { 
-                facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) }); 
-            }
-
-            var getAccessToken = function () { 
-                facebookConnectPlugin.getAccessToken( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-            
-            var getStatus = function () { 
-                facebookConnectPlugin.getLoginStatus( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-
-            var logout = function () { 
-                facebookConnectPlugin.logout( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-     
-				 
-				 
-				 
-				  $('#facebookautho').on('touchstart', function() {	
-				  
-				 if($('#facebooklogged').css('display') == 'none')
-				{
-					
-					login();
-					
-					
-					
-						}else{
-				
-				}
-						
-						
-				 });
-
-				
-				
-				
-				
-				
 				
 				
 				
