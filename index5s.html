@@ -1136,6 +1136,11 @@ function load_trending()
 							$('#list_view').html('');
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
+							
+							
+							console.log('append_data = '+ append_data);
+							
+							
 							//alert(append_data);
 										$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
