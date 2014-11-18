@@ -26,7 +26,7 @@ document.onreadystatechange = function(e)
     if (document.readyState === 'complete')
     {
 	      // navigator.splashscreen.show();
-	//	  //window.plugins.spinnerDialog.show();
+	//	  ////window.plugins.spinnerDialog.show();
 		  
 	        document.addEventListener("deviceready", onDeviceReady, false);
     }
@@ -855,7 +855,7 @@ $(document).keypress(function(e) {
 		
 		
 	//	console.log(ajax_path + ' asdasd');
-		//window.plugins.spinnerDialog.show();
+		////window.plugins.spinnerDialog.show();
 	   if( $('#searcharea').val()!='')
 	   {
 	   //start  my loader here !!!!
@@ -873,11 +873,11 @@ $(document).keypress(function(e) {
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -964,12 +964,12 @@ $(document).keypress(function(e) {
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 												
-							//window.plugins.spinnerDialog.hide();					
+							////window.plugins.spinnerDialog.hide();					
 				}//user data match if
 				else{
 					
 					// user data doent match
-					//window.plugins.spinnerDialog.hide();
+					////window.plugins.spinnerDialog.hide();
 					
 					
 					
@@ -988,7 +988,7 @@ $(document).keypress(function(e) {
 			
 				},
 		error: function(e) {
-			//window.plugins.spinnerDialog.hide();
+			////window.plugins.spinnerDialog.hide();
 			
 			
 			
@@ -1025,7 +1025,7 @@ $(document).keypress(function(e) {
 		
 		
 		}
-	//window.plugins.spinnerDialog.hide();	
+	////window.plugins.spinnerDialog.hide();	
 		
     }
 });
@@ -1048,7 +1048,7 @@ function load_trending()
 	
 //alert(EbooUSER_ID + 'pronnn');
 	
-//window.plugins.spinnerDialog.show();
+////window.plugins.spinnerDialog.show();
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
 			type:'GET',
@@ -1062,11 +1062,11 @@ function load_trending()
 						
 						
 						
-                     window.plugins.spinnerDialog.show();
+                     //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -1146,12 +1146,12 @@ function load_trending()
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
-						//window.plugins.spinnerDialog.hide();
+						////window.plugins.spinnerDialog.hide();
 						pageCount = pageCount +1;
 						
 				}//user data match if
 				else{
-					//window.plugins.spinnerDialog.hide();
+					////window.plugins.spinnerDialog.hide();
 					// user data doent match
 					
 					
@@ -1164,7 +1164,7 @@ function load_trending()
 			
 				},
 		error: function(e) {
-      //window.plugins.spinnerDialog.hide();
+      ////window.plugins.spinnerDialog.hide();
 	  
 	 			$('#alert').trigger('click');
 			$('#alertmessage').html('Newtwork problem');
@@ -1240,7 +1240,7 @@ $(window).resize();
 		//	startswiperfunction();
         navigator.splashscreen.hide();
 		
-	//	//window.plugins.spinnerDialog.show();
+	//	////window.plugins.spinnerDialog.show();
 		
    			 }, 3000);
 	
@@ -1457,7 +1457,7 @@ db.transaction(populateDB, errorCB, successCB);
 		//	alert('1');
 //swipe_list_items();
 		
-		//window.plugins.spinnerDialog.hide();
+		////window.plugins.spinnerDialog.hide();
 						
 		}else{
 	//		alert('1');
@@ -1470,7 +1470,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 	       startswiperfunction();
 				
-				//window.plugins.spinnerDialog.hide();
+				////window.plugins.spinnerDialog.hide();
 			
 		}
   
@@ -1486,14 +1486,14 @@ db.transaction(populateDB, errorCB, successCB);
 	
 	function validate_email()
 	{ 
-	//window.plugins.spinnerDialog.show();
+	////window.plugins.spinnerDialog.show();
 	
 	
 	var	useremail = $('#useremail').val();
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
 	{
-		//window.plugins.spinnerDialog.hide();
+		////window.plugins.spinnerDialog.hide();
 		
 		
 	
@@ -1529,15 +1529,15 @@ db.transaction(populateDB, errorCB, successCB);
 								{
 								//	alert(login_Response.message);
 							//		alert(login_Response.user_id)
-									//window.plugins.spinnerDialog.hide();
+									////window.plugins.spinnerDialog.hide();
 							 		db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
 								}else if(login_Response.status=='101'){
 									//	alert('User Already Exists' );
-									//window.plugins.spinnerDialog.hide();
+									////window.plugins.spinnerDialog.hide();
 									db.transaction( function(tx){ insertvalues(tx, useremail , login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
 									}
 								else{
-									//window.plugins.spinnerDialog.hide();
+									////window.plugins.spinnerDialog.hide();
 									
 											$('#alert1').trigger('click');
 											$('#alertmessage1').html('server error !!');
@@ -1546,7 +1546,7 @@ db.transaction(populateDB, errorCB, successCB);
 								},
 			error: function(e)
 				{
-					//window.plugins.spinnerDialog.hide();
+					////window.plugins.spinnerDialog.hide();
 					
 					$('#alert1').trigger('click');
 					$('#alertmessage1').html('Network Error !!');
@@ -1589,11 +1589,11 @@ db.transaction(populateDB, errorCB, successCB);
 			load_trending();
 			browser_setting();
 			
-		window.plugins.spinnerDialog.show();
+		//window.plugins.spinnerDialog.show();
 			
 			$.mobile.changePage('#6page1' , { transition:'slide' }  );
 			
-		window.plugins.spinnerDialog.hide();
+		//window.plugins.spinnerDialog.hide();
 			
 		}
 		
@@ -1747,14 +1747,14 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                     window.plugins.spinnerDialog.show();
+                     //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
-			{ window.plugins.spinnerDialog.hide(); 
+			{ //window.plugins.spinnerDialog.hide(); 
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1842,7 +1842,7 @@ function get_more_data()
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
-						//window.plugins.spinnerDialog.hide();
+						////window.plugins.spinnerDialog.hide();
 				}//user data match if
 				
 				
@@ -1852,7 +1852,7 @@ function get_more_data()
 			
 				},
 		error: function(e) {
-      //window.plugins.spinnerDialog.hide();
+      ////window.plugins.spinnerDialog.hide();
 	  
 	 			$('#alert').trigger('click');
 			$('#alertmessage').html('Network error');
@@ -1878,15 +1878,15 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                     window.plugins.spinnerDialog.show();
+                     //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
-				 window.plugins.spinnerDialog.hide();
+				 //window.plugins.spinnerDialog.hide();
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1973,7 +1973,7 @@ function get_more_data()
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 												
-							//window.plugins.spinnerDialog.hide();					
+							////window.plugins.spinnerDialog.hide();					
 				}//user data match if
 				
 			
@@ -1985,7 +1985,7 @@ function get_more_data()
 			
 				},
 		error: function(e) {
-			//window.plugins.spinnerDialog.hide();
+			////window.plugins.spinnerDialog.hide();
      			$('#alert').trigger('click');
 			$('#alertmessage').html('Network error');
 	
