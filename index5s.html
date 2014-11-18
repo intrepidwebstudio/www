@@ -866,7 +866,7 @@ $(document).keypress(function(e) {
 		
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount, 
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1012,8 +1012,6 @@ $(document).keypress(function(e) {
 	}//ifclose
 	else{
 		
-
-		
 		
 		load_trending();
 		
@@ -1045,7 +1043,7 @@ function load_trending()
 //window.plugins.spinnerDialog.show();
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1069,11 +1067,11 @@ function load_trending()
 					feed_conducted=0;
 					
 				$('#searcharea').hide();
-				 $('.search_empty').hide();
+				$('.search_empty').hide();
 				$('#searcharea').blur();
 				$('.search_empty').blur();
-	
-					
+
+
 					
 					
 				$('#searchvalue').html('Most Popular Articles');
@@ -1506,7 +1504,7 @@ db.transaction(populateDB, errorCB, successCB);
 		$.ajax({
 			
 			url:ajax_path+'userinsert.php?useremail='+useremail,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1737,7 +1735,7 @@ function get_more_data()
 		
  		$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1767,7 +1765,7 @@ function get_more_data()
 					
 					
 				$('#searcharea').hide();
-	 	        $('.search_empty').hide();
+				$('.search_empty').hide();
 				$('#searcharea').blur();
 				$('.search_empty').blur();
 
@@ -1870,7 +1868,7 @@ function get_more_data()
 		$.support.cors = true;
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
