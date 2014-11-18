@@ -31,7 +31,7 @@ var last_search;
 
 
 var search_pageCount = 0;
-		var search_contentCount = 3;
+var search_contentCount = 3;
 		
 		
 		

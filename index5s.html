@@ -491,7 +491,7 @@ input{
      
         </ul>
           <div class="iscroll-pullup">
-          <center><span class="iscroll-pull-icon"></span></center>
+          <center><span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="loading please wait" >loading ...</span></center>
         </div>
           
            
@@ -873,11 +873,11 @@ $(document).keypress(function(e) {
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -1053,11 +1053,11 @@ function load_trending()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -1750,13 +1750,6 @@ function get_more_data()
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
-								$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
-
-				
-				
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
@@ -1964,7 +1957,7 @@ function get_more_data()
 				}//user data match if
 				
 			
-			//$('#searcharea').val('');
+			$('#searcharea').val('');
 			
 			
 			search_pageCount = search_pageCount+1;
