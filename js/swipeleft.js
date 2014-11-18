@@ -273,6 +273,10 @@ $(this).children('.backimg').css("opacity","1");
 		alert(err.message);
 		
 		}
+		
+	function updateData(tx,eboo_twitter){	
+	tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,[eboo_twitter] , successSettings , errorSettings);	
+	}
          
 	function settings_page()
 	{		
@@ -302,7 +306,7 @@ $(this).children('.backimg').css("opacity","1");
 						 
 						 } 
 					  
-			db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,[eboo_twitter] ); }, successSettings  , errorSettings );	
+			db.transaction( function(tx){ updateData(tx, eboo_twitter) }, successSettings  , errorSettings );	
 				 
 		 
 						
