@@ -275,6 +275,8 @@ $(this).children('.backimg').css("opacity","1");
 		}
 		
 	function updateData(tx,eboo_twitter){	
+	console.log("database ")
+	
 	tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,[eboo_twitter] , successSettings , errorSettings);	
 	}
          
@@ -306,7 +308,7 @@ $(this).children('.backimg').css("opacity","1");
 						 
 						 } 
 					  
-			db.transaction( function(tx){ updateData(tx, eboo_twitter) }, successSettings  , errorSettings );	
+			db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
 				 
 		 
 						
