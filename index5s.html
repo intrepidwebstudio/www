@@ -873,11 +873,11 @@ $(document).keypress(function(e) {
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+                       window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                     window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -901,6 +901,7 @@ $(document).keypress(function(e) {
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
+						
 					var article_id = element.id;			
 					var article_title =  element.title ;
 					var article_link = element.article_link ;
@@ -909,13 +910,13 @@ $(document).keypress(function(e) {
 					var pubdate = element.pubdate ;
 					
 					var viewstatus=element.viewstatus; 
-				//	pubdate = pubdate.substr(5,11);
+					//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
 					var len = 0;
 					var len=article_title.length;
 					
-					 var article_title_unescaped = article_title;
-					 var source_name_unescaped = source_name;
+					var article_title_unescaped = article_title;
+					var source_name_unescaped = source_name;
 					 
 					article_title = article_title.replace(/'/g, "\\'");
 					
