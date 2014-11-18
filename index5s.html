@@ -1316,20 +1316,20 @@ db.transaction(populateDB, errorCB, successCB);
  
     //create table and insert some record
     function populateDB(tx) {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER , twitter  INTEGER, tumblr INTEGER , facebook INTEGER , linkedin INTEGER )');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER , twitter INTEGER, tumblr INTEGER , facebook INTEGER , linkedin INTEGER )');
 		
     }
  
     //function will be called when an error occurred
     function errorCB(err) {
-      //  alert("Error processing SQL: "+err.message+' anoyin ?');
+      alert("Error processing SQL: "+err.message+' anoyin ?');
 		
 		
     }
  
     //function will be called when process succeed
     function successCB() {
-      //  alert("success!");
+      alert("success!");
         db.transaction(queryDB,errorCB);
     }
  
@@ -1340,10 +1340,10 @@ db.transaction(populateDB, errorCB, successCB);
  
     function querySuccess(tx,result){
        
-	//   console.log(result.rows.item);
+	  console.log(result.rows.item);
 	   
 	   var length = result.rows.length;
-	//   	console.log("DEMO table: " + length + " rows found.");	
+	  	console.log("DEMO table: " + length + " rows found.");	
 		
 		
 		
@@ -1357,7 +1357,7 @@ db.transaction(populateDB, errorCB, successCB);
 		
 				for(var i=0; i< length ; i++)
 				{
-			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
+					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
 					
 					EbooUSER_ID = result.rows.item(i).user_id;
 					
@@ -1407,7 +1407,7 @@ db.transaction(populateDB, errorCB, successCB);
 	
 	function ErrorCallBack(err){
 		
-	//	alert('Error'+err.code+'----'+err.message);
+		alert('Error'+err.code+'----'+err.message);
 		
 		}
 	
@@ -1500,7 +1500,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			
 			
-		//	console.log(parameter2)
+		console.log(parameter2)
 		}
 		
 		
@@ -1511,7 +1511,7 @@ db.transaction(populateDB, errorCB, successCB);
 			load_trending();
 			browser_setting();
 			
-			//window.plugins.spinnerDialog.show();
+		window.plugins.spinnerDialog.show();
 			
 			$.mobile.changePage('#5spage1' , { transition:'slide' }  );
 			
