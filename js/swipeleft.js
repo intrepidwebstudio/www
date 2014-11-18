@@ -265,7 +265,7 @@ function updatesettings(tx , eboo_twitter)
 				{
 					alert(twitter_p);
 					
-					tx.executeSql("UPDATE ebooUser SET twitter = " + eboo_twitter  + " WHERE user_id = " + EbooUSER_ID, [], updateCB, errorCB_settings);
+					tx.executeSql("UPDATE ebooUser SET twitter = " + eboo_twitter  + " WHERE user_id = " + EbooUSER_ID,updateCB, errorCB_settings);
 				}
 				
 				
@@ -330,7 +330,7 @@ function updatesettings(tx , eboo_twitter)
 	function settings_page()
 	{		
 				
-		 db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it		
+		 	
 				
 				
 				
@@ -358,6 +358,8 @@ function updatesettings(tx , eboo_twitter)
 						  eboo_twitter = '1';
 						 
 						 } 
+					 db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it	
+					 
 					 
 					  db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings4 );	
 					 // db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings4 );	
