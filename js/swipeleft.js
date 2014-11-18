@@ -281,7 +281,7 @@ function updatesettings(tx , twitter_p)
 				function queryDB_settings(){
 					
 					
-					tx.executeSql('SELECT * FROM ebooUser ',[],querySuccess_settings,errorCB_settings);
+					tx.executeSql('SELECT * FROM ebooUser ',[],querySuccess_settings,errorCB_settings4);
 					
 					}	
 					
@@ -352,7 +352,7 @@ function updatesettings(tx , twitter_p)
 						 
 						 } 
 					  
-					  db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings );	
+					  db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings4 );	
 				 
 		 
 						
