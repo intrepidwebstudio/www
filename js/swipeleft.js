@@ -320,7 +320,7 @@ function updatesettings(tx , eboo_twitter)
     alert("Error processing SQL: "+err.message+' anoyi444444n ?');
 	 }
  function errorCB_settings(err) {
-    alert("Error processing SQL: "+err.message+' anoyi444444n ?');
+    alert("Error processing SQL: "+err.message+' 444 ?');
 	 }
  
  
@@ -329,6 +329,10 @@ function updatesettings(tx , eboo_twitter)
          
 	function settings_page()
 	{		
+				
+		 db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it		
+				
+				
 				
 			 $('#twitterautho').on('touchstart', function() {	
 			  
