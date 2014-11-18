@@ -8,6 +8,8 @@
    var imagepath = 'http://www.safelearners.com/eboo/';
    var ajax_path = 'http://www.safelearners.com/eboo/app/';
    
+   var security_token = '123456789geteboo987654321';
+   
    
    var SearchQueryId;
    

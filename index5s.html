@@ -1510,7 +1510,7 @@ db.transaction(populateDB, errorCB, successCB);
 		$.ajax({
 			
 			url:ajax_path+'userinsert.php?useremail='+useremail,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
