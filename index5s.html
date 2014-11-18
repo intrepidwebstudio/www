@@ -1752,7 +1752,9 @@ function get_more_data()
                      window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
-			{ window.plugins.spinnerDialog.hide(); 
+			{ 
+			
+			//window.plugins.spinnerDialog.hide(); 
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1884,7 +1886,7 @@ function get_more_data()
                     },
 			success: function(data)
 			{
-				 window.plugins.spinnerDialog.hide();
+				// window.plugins.spinnerDialog.hide();
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1975,7 +1977,7 @@ function get_more_data()
 				}//user data match if
 				
 			
-			$('#searcharea').val('');
+		//	$('#searcharea').val('');
 			
 			
 			search_pageCount = search_pageCount+1;
