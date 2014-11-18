@@ -290,17 +290,18 @@ $(this).children('.backimg').css("opacity","1");
 					  
 					  if( eboo_twitter == '1' )
 					  {
-						  eboo_twitter = '0';
+						 
+						  change_twitter = '0';
 						$('#twitterlogout').css('display','block');
 						$('#twitterlogged').css('display','none');
 						
-						 console.log('first if ='+eboo_twitter);
+						 
 	
 						  }
 					 else{
-						 eboo_twitter = '1';
+						 change_twitter = '1';
 						 
-						 console.log('second else ='+eboo_twitter);
+						 
 						 
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');
@@ -309,20 +310,26 @@ $(this).children('.backimg').css("opacity","1");
 						 
 						 } 
 						 
+						 console.log("Change Twitter = "+ change_twitter);
 						 
+						 
+
 					  
 		//	db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,['1'] , successSettings , errorSettings); });	
-				db.transaction( function(tx){ updatevalues(tx, eboo_twitter)}, ErrorCallBack );	
+				db.transaction( function(tx){ updatevalues(tx, change_twitter)}, ErrorCallBack );	
 		 
 						
 			 });
 			 
-			 function updatevalues(tx, eboo_twitter)
+			 function updatevalues(tx, change_twitter)
 			 {
+				 
+				 
+				 eboo_twitter = change_twitter;
 				 
 				 console.log("my values = "+eboo_twitter);
 				 
-				var myvalue = eboo_twitter;
+				var myvalue = '1';
 				 
 				tx.executeSql('UPDATE ebooUser SET twitter = ? ' ,[myvalue] , successSettings , errorSettings);
 				 
