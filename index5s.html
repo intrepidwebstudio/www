@@ -1862,11 +1862,15 @@ function get_more_data()
                      window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
+						
+						 window.plugins.spinnerDialog.hide();  
+						  window.plugins.spinnerDialog.hide();  
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                    
                     },
 			success: function(data)
 			{
+				 window.plugins.spinnerDialog.hide();  
 				
 				
 				feedData=data.Feeds;
@@ -1957,9 +1961,6 @@ function get_more_data()
 							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
 				
-			
-			$('#searcharea').val('');
-			
 			
 			search_pageCount = search_pageCount+1;
 			
