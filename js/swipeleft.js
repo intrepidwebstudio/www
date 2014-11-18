@@ -309,7 +309,7 @@ $(this).children('.backimg').css("opacity","1");
 					 
 						  eboo_twitter = '1';
 						  
-						  					  console.log("changing  = "+eboo_twitter);
+						  					  console.log("changing111  = "+eboo_twitter);
 			db.transaction( function(tx){ updateData(tx, eboo_twitter)}, ErrorCallBack );	
 
 						 
