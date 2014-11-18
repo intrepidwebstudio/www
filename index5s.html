@@ -1329,7 +1329,7 @@ db.transaction(populateDB, errorCB, successCB);
  
     //function will be called when process succeed
     function successCB() {
-      alert("success!");
+      alert("successaa!");
         db.transaction(queryDB,errorCB);
     }
  
@@ -1488,7 +1488,7 @@ db.transaction(populateDB, errorCB, successCB);
 		{
 			
 			
-			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
+			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
 			
 			EbooUSER_ID = parameter2;
 			
