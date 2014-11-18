@@ -867,9 +867,9 @@ $(document).keypress(function(e) {
 		$.ajax({
 			url:ajax_path+'feedsearch.php',
 			type:'POST',
-			contentType: "application/json",
+			// contentType: "application/json",
 			data:'q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount, 
-        	async: true,
+        	async: false,
        		dataType: 'json',
         	crossDomain: true,
 			beforeSend: function() {
@@ -1047,8 +1047,8 @@ function load_trending()
 	$.ajax({
 			url:ajax_path+'trending.php',
 			type:'POST',
-			contentType: "application/json",
-        	async: true,
+			// contentType: "application/json",
+        	async: false,
 			data:'user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
        		dataType: 'json',
         	crossDomain: true,
@@ -1509,9 +1509,9 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			url:ajax_path+'userinsert.php',
 			type:'POST',
-			contentType: "application/json",
+			// contentType: "application/json",
 			data:'useremail='+useremail,
-        	async: true,
+        	async: false,
        		dataType: 'json',
         	crossDomain: true,
 			success: function(data)
@@ -1742,8 +1742,8 @@ function get_more_data()
 			url:ajax_path+'trending.php',
 			type:'POST',
 			data:'user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
-			contentType: "application/json",
-        	async: true,
+			// contentType: "application/json",
+        	async: false,
        		dataType: 'json',
         	crossDomain: true,
 			beforeSend: function() {
@@ -1875,9 +1875,9 @@ function get_more_data()
 		$.ajax({
 			url:ajax_path+'feedsearch.php',
 			type:'POST',
-			data:'q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
-			contentType: "application/json",
-        	async: true,
+			data:'q='+ last_search +'& user_id='+EbooUSER_ID+'& search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
+			// contentType: "application/json",
+        	async: false,
        		dataType: 'json',
         	crossDomain: true,
 			beforeSend: function() {
