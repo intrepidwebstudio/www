@@ -577,7 +577,7 @@ input{
                 		</div>
                		<div role="main" class="ui-content">
                 		
-                		<p id="alertmessage1" ></p>
+                		<center><p id="alertmessage1" ></p></center>
                 		<center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
                 	</div>
                	    </div>
@@ -1833,7 +1833,9 @@ function get_more_data()
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
 	  
-	  alert('Network problem ');		
+	 			$('#alert').trigger('click');
+			$('#alertmessage').html('Network error');
+	
 			
 		//	console.log(e);
 			
@@ -1963,7 +1965,9 @@ function get_more_data()
 				},
 		error: function(e) {
 			//window.plugins.spinnerDialog.hide();
-       alert('Network error   ');		
+     			$('#alert').trigger('click');
+			$('#alertmessage').html('Network error');
+	
 			
 		//	console.log(e.status);
 			
