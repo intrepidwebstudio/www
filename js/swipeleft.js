@@ -311,7 +311,7 @@ $(this).children('.backimg').css("opacity","1");
 						 
 						 
 					  
-			db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,['1'] , successSettings , errorSettings); });	
+		//	db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,['1'] , successSettings , errorSettings); });	
 				 
 		 
 						
