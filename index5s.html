@@ -1358,7 +1358,10 @@ db.transaction(populateDB, errorCB, successCB);
 		
 				for(var i=0; i< length ; i++)
 				{
-					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
+					
+					
+					
+					
 					
 					EbooUSER_ID = result.rows.item(i).user_id;
 					
@@ -1368,6 +1371,8 @@ db.transaction(populateDB, errorCB, successCB);
 					eboo_facebook= result.rows.item(i).facebook;
 					
 					
+					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email + "Twitter = "+ eboo_twitter + "Tumblr = "+eboo_tumblr +"linked_in =  "+ eboo_linkedin + "facebook = "+ eboo_facebook );
+			
 				//	alert(EbooUSER_ID);
 				//	console.log(EbooUSER_ID);
 					
