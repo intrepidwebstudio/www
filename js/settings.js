@@ -43,7 +43,7 @@ var search_pageCount = 0;
 
 	
 	//*************************************** settings complete here ***************************************
-	var db;
+	
 	
 		var	eboo_twitter;
 		var	eboo_tumblr;

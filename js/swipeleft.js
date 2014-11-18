@@ -302,7 +302,7 @@ $(this).children('.backimg').css("opacity","1");
 						 
 						 } 
 					  
-			db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,[update_twitter] , successSettings , errorSettings); }, successSettings  , errorSettings );	
+			db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,[eboo_twitter] , successSettings , errorSettings); }, successSettings  , errorSettings );	
 				 
 		 
 						
