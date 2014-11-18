@@ -275,77 +275,107 @@ $(this).children('.backimg').css("opacity","1");
 		}
 		
 		
-         
+			 function updatevalues(tx, change_value,socialName)
+			 {
+				 
+				 
+				 
+				if(socialName == "twitter") 
+				{ 
+				 eboo_twitter = change_value;
+				 console.log("my values = "+eboo_twitter);
+				 var myvalue = change_value;
+				 tx.executeSql('UPDATE ebooUser SET twitter = ? ' ,[myvalue] , successSettings , errorSettings);
+				}
+				else if(socialName == "tumblr")
+				{
+	
+				 eboo_tumblr = change_value;
+				 console.log("my values = "+eboo_tumblr);
+				 var myvalue = change_value;
+				 tx.executeSql('UPDATE ebooUser SET tumblr = ? ' ,[myvalue] , successSettings , errorSettings);
+									
+					}
+				else if(socialName == "linkedin")
+				{
+				 eboo_linkedin = change_value;
+				 console.log("my values = "+eboo_linkedin);
+				 var myvalue = change_value;
+				 tx.executeSql('UPDATE ebooUser SET linkedin = ? ' ,[myvalue] , successSettings , errorSettings);
+				
+					}
+				else if(socialName == "facebook")
+				{
+					
+				 eboo_facebook = change_value;
+				 console.log("my values = "+eboo_facebook);
+				 var myvalue = change_value;
+				 tx.executeSql('UPDATE ebooUser SET facebook = ? ' ,[myvalue] , successSettings , errorSettings);
+	
+					
+					}		
+				
+				
+				
+				
+				
+			 }
+		
+		
+		
+      var change_value;   
 	function settings_page()
 	{		
 				
 			 $('#twitterautho').on('touchstart', function() {	
-			  
 				  }).on('touchmove',function(){
-					  
-					  
 					  })
 				  .on('touchend',function(){
-					  
-					  
 					  if( eboo_twitter == '1' )
 					  {
-						 
-						  change_twitter = '0';
+						  change_value = '0';
 						$('#twitterlogout').css('display','block');
 						$('#twitterlogged').css('display','none');
-						
-						 
-	
 						  }
 					 else{
-						 change_twitter = '1';
-						 
-						 
-						 
+						 change_value = '1';
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');
-					 
-						  
-						 
 						 } 
-						 
-						 console.log("Change Twitter = "+ change_twitter);
-						 
-						 
-
-					  
-		//	db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,['1'] , successSettings , errorSettings); });	
-				db.transaction( function(tx){ updatevalues(tx, change_twitter)}, ErrorCallBack );	
-		 
-						
+	//					 console.log("Change Twitter = "+ change_value);
+	
+				var socialName = 'twitter';
+	
+			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 			 });
 			 
-			 function updatevalues(tx, change_twitter)
-			 {
-				 
-				 
-				 eboo_twitter = change_twitter;
-				 
-				 console.log("my values = "+eboo_twitter);
-				 
-				var myvalue = '1';
-				 
-				tx.executeSql('UPDATE ebooUser SET twitter = ? ' ,[myvalue] , successSettings , errorSettings);
-				 
-				 
-				 }
 			 
-				 
+
 		 $('#linkedinautho').on('touchstart', function() {	
 				  
 				  }).on('touchmove',function(){
 					  })
 				  .on('touchend',function(){
 				 
-                  	
-								$('#linkedinlogout').css('display','none');
-								$('#linkedinlogged').css('display','block');	
+				 
+					  if( eboo_linkedin == '1' )
+					  {
+						  change_value = '0';
+						$('#linkedinlogout').css('display','block');
+						$('#linkedinlogged').css('display','none');
+						  }
+					 else{
+						 change_value = '1';
+						$('#linkedinlogout').css('display','none');
+						$('#linkedinlogged').css('display','block');
+						 } 
+	//					 console.log("Change Twitter = "+ change_value);
+	
+				var socialName = 'linkedin';
+	
+			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+				 
+				 			
 					    });
 					
 					
@@ -354,13 +384,54 @@ $(this).children('.backimg').css("opacity","1");
 				  
 				  }).on('touchmove',function(){})
 				  .on('touchend',function(){
-				 
-                 				$('#tumblrlogout').css('display','none');
-								$('#tumblrlogged').css('display','block');
-									
+
+					  if( eboo_tumblr == '1' )
+					  {
+						  change_value = '0';
+						$('#tumblrlogout').css('display','block');
+						$('#tumblrlogged').css('display','none');
+						  }
+					 else{
+						 change_value = '1';
+						$('#tumblrlogout').css('display','none');
+						$('#tumblrlogged').css('display','block');
+						 } 
+	//					 console.log("Change Twitter = "+ change_value);
+	
+				var socialName = 'tumblr';
+	
+			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+
 						
 				 });
 				
+				
+			 $('#facebookautho').on('touchstart', function() {	
+				  
+				  
+				  }).on('touchmove',function(){})
+				  .on('touchend',function(){
+
+					  if( eboo_facebook == '1' )
+					  {
+						  change_value = '0';
+						$('#facebooklogout').css('display','block');
+						$('#facebooklogged').css('display','none');
+						  }
+					 else{
+						 change_value = '1';
+						$('#facebooklogout').css('display','none');
+						$('#facebooklogged').css('display','block');
+						 } 
+	//					 console.log("Change Twitter = "+ change_value);
+	
+				var socialName = 'facebook';
+	
+			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+
+						
+				 });
+
 				
 				
 	}
