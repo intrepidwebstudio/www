@@ -866,7 +866,7 @@ $(document).keypress(function(e) {
 		
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount, 
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -881,7 +881,7 @@ $(document).keypress(function(e) {
                     },
 			success: function(data)
 			{
-				
+				 window.plugins.spinnerDialog.hide();  
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1043,7 +1043,7 @@ function load_trending()
 //window.plugins.spinnerDialog.show();
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1058,20 +1058,13 @@ function load_trending()
                     },
 			success: function(data)
 			{
-				
+				 window.plugins.spinnerDialog.hide();  
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
-					
-				$('#searcharea').hide();
-				$('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
-
-
 					
 					
 				$('#searchvalue').html('Most Popular Articles');
@@ -1504,7 +1497,7 @@ db.transaction(populateDB, errorCB, successCB);
 		$.ajax({
 			
 			url:ajax_path+'userinsert.php?useremail='+useremail,
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1735,7 +1728,7 @@ function get_more_data()
 		
  		$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1745,15 +1738,11 @@ function get_more_data()
                      window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
-						
-						 window.plugins.spinnerDialog.hide();  
-						  window.plugins.spinnerDialog.hide();  
                         // This callback function will trigger on data sent/received complete
-                    
+                     window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
-			{
-				 window.plugins.spinnerDialog.hide();  
+			{  window.plugins.spinnerDialog.hide();  
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1761,15 +1750,6 @@ function get_more_data()
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
-					
-					
-					
-				$('#searcharea').hide();
-				$('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
-
-					
 					
 					
 				$('#searchvalue').html('Most Popular Articles');
@@ -1868,7 +1848,7 @@ function get_more_data()
 		$.support.cors = true;
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1878,16 +1858,12 @@ function get_more_data()
                      window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
-						
-						 window.plugins.spinnerDialog.hide();  
-						  window.plugins.spinnerDialog.hide();  
                         // This callback function will trigger on data sent/received complete
-                    
+                     window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
 				 window.plugins.spinnerDialog.hide();  
-				
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1977,6 +1953,9 @@ function get_more_data()
 							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
 				
+			
+			$('#searcharea').val('');
+			
 			
 			search_pageCount = search_pageCount+1;
 			
