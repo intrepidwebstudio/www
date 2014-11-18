@@ -1013,14 +1013,6 @@ $(document).keypress(function(e) {
 	else{
 		
 		
-						$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
-				
-
-		
-		
 		load_trending();
 		
 		
@@ -1046,7 +1038,10 @@ function load_trending()
 {
 	last_search = '';
 	
-//alert(EbooUSER_ID + 'pronnn');
+	
+	
+	
+	//alert(EbooUSER_ID + 'pronnn');
 	
 //window.plugins.spinnerDialog.show();
 	$.ajax({
@@ -1058,9 +1053,7 @@ function load_trending()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-						
-					
-                     window.plugins.spinnerDialog.show();
+                       window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
@@ -1136,13 +1129,8 @@ function load_trending()
 							$('#list_view').html('');
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
-							
-							
-							console.log('append_data = '+ append_data);
-							
-							
 							//alert(append_data);
-										$('#list_view').trigger("create");
+											$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
 										//	$('#list_view').refresh();
 										browser_setting();
@@ -1750,29 +1738,23 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                     window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
-			{ 
-			
-			window.plugins.spinnerDialog.hide(); 
+			{
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
-				
-								
-				$('#searcharea').hide();
+								$('#searcharea').hide();
 				 $('.search_empty').hide();
 				$('#searcharea').blur();
 				$('.search_empty').blur();
-				
 
-				
 				
 				
 				if(FeedStatus=='success')
@@ -1883,15 +1865,15 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                     window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
-				window.plugins.spinnerDialog.hide();
+				
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1906,7 +1888,7 @@ function get_more_data()
 					
 					feed_conducted=1;
 				
-			//	$('#searchvalue').html($('#searcharea').val());
+				$('#searchvalue').html($('#searcharea').val());
 				
 				
 				$('#searcharea').hide();
@@ -1982,7 +1964,7 @@ function get_more_data()
 				}//user data match if
 				
 			
-		//	$('#searcharea').val('');
+			//$('#searcharea').val('');
 			
 			
 			search_pageCount = search_pageCount+1;
@@ -2087,7 +2069,7 @@ function get_more_data()
     setTimeout(function fakeRetrieveDataTimeout() {
       gotPullDownData(event, data);
       }, 
-      1000); 
+      1500); 
     }    
 
   // Called when the user completes the pull-up gesture.
@@ -2095,7 +2077,7 @@ function get_more_data()
     setTimeout(function fakeRetrieveDataTimeout() {
       gotPullUpData(event, data);
       }, 
-      1000); 
+      1500); 
     }    
   
   // Set-up jQuery event callbacks
