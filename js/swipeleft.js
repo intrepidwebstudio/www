@@ -83,11 +83,13 @@ function hex(x) {
 			{
 		 var new_left = -240 + 'px';
 			e.currentTarget.style.left = new_left;	
+			
+		e.currentTarget.style.setProperty('background-color', '#DFE3E7', 'important' );	
 				}
 			else{
 		 var new_left = '0px';
 			e.currentTarget.style.left = new_left;		
-	//		e.currentTarget.style.setProperty('background-color', bgcolor, 'important' );
+		
 				}			
             enable_scroll()
 		//	console.log('new keft  ='+ new_left);
@@ -131,7 +133,7 @@ function hex(x) {
 					
 					}
 				}
-			else if( media_link == "facebook" && eboo_facebook == "1" )
+			else if( media_link == "facebook"  )
 			{
 				
 				if( eboo_facebook == "1" ){
@@ -265,12 +267,12 @@ $(this).children('.backimg').css("opacity","1");
 	function successSettings(){
 		
 		
-		alert("successsssss");
+	//	alert("successsssss");
 		}
 	function errorSettings(err)
 	{
 		
-		alert("ERRORR = "+err.message);
+	//	alert("ERRORR = "+err.message);
 		
 		}
 		

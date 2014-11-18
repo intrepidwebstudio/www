@@ -112,7 +112,7 @@ var search_pageCount = 0;
 			
 			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted);
 			
-			this_id.style.setProperty( 'background-color', '#ccc', 'important' );
+			this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
 			
 //	        iabRef.addEventListener('exit', iabClose);
   //          iabRef.addEventListener('share', iabShare);
