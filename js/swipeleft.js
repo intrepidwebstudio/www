@@ -265,7 +265,7 @@ function updatesettings(tx , eboo_twitter)
 				{
 					alert(twitter_p);
 					
-					tx.executeSql("UPDATE ebooUser SET twitter = " + eboo_twitter  + " WHERE user_id = " + EbooUSER_ID, [], updateCB, errorCB_settings4);
+					tx.executeSql("UPDATE ebooUser SET twitter = " + eboo_twitter  + " WHERE user_id = " + EbooUSER_ID, [], updateCB, errorCB_settings);
 				}
 				
 				
@@ -319,6 +319,9 @@ function updatesettings(tx , eboo_twitter)
 	function errorCB_settings4(err) {
     alert("Error processing SQL: "+err.message+' anoyi444444n ?');
 	 }
+ function errorCB_settings(err) {
+    alert("Error processing SQL: "+err.message+' anoyi444444n ?');
+	 }
  
  
 
@@ -352,8 +355,8 @@ function updatesettings(tx , eboo_twitter)
 						 
 						 } 
 					 
-					  
 					  db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings4 );	
+					 // db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings4 );	
 				 
 		 
 						
