@@ -1329,13 +1329,14 @@ db.transaction(populateDB, errorCB, successCB);
  
     //function will be called when process succeed
     function successCB() {
-      alert("successaa!");
+      
         db.transaction(queryDB,errorCB);
+		alert("successaa!");
     }
  
-    //select all from SoccerPlayer
+    //select all from table
     function queryDB(tx){
-        tx.executeSql('SELECT * FROM ebooUser',[],querySuccess,errorCB);
+        tx.executeSql('SELECT * FROM ebooUser ',[],querySuccess,errorCB);
     }
  
     function querySuccess(tx,result){
@@ -1487,6 +1488,7 @@ db.transaction(populateDB, errorCB, successCB);
 		function insertvalues(tx,parameter1,parameter2,p3,p4,p5,p6)
 		{
 			
+			alert('ss');
 			
 			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
 			
