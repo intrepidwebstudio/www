@@ -914,8 +914,8 @@ $(document).keypress(function(e) {
 					var len = 0;
 					var len=article_title.length;
 					
-					 var article_title_unescaped = article_title;
-					 var source_name_unescaped = source_name;
+					var article_title_unescaped = article_title;
+					var source_name_unescaped = source_name;
 					 
 					article_title = article_title.replace(/'/g, "\\'");
 					
@@ -962,6 +962,10 @@ $(document).keypress(function(e) {
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
+										
+										
+					search_pageCount = search_pageCount + 1;					
+										
 												
 							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
@@ -1845,6 +1849,7 @@ function get_more_data()
 	
 	}else if(last_search!=''){
 		
+		alert('last_search = '+ last_search);
 	
 	   //start  my loader here !!!!
 		$.support.cors = true;
@@ -1880,7 +1885,7 @@ function get_more_data()
 					
 					feed_conducted=1;
 				
-				$('#searchvalue').html($('#searcharea').val());
+		//		$('#searchvalue').html($('#searcharea').val());
 				
 				
 				$('#searcharea').hide();
@@ -1956,7 +1961,7 @@ function get_more_data()
 				}//user data match if
 				
 			
-			$('#searcharea').val('');
+		//	$('#searcharea').val('');
 			
 			
 			search_pageCount = search_pageCount+1;
