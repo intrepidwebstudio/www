@@ -865,7 +865,7 @@ $(document).keypress(function(e) {
 		
 		
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount, 
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token = '+security_token, 
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1048,7 +1048,7 @@ function load_trending()
 	
 //window.plugins.spinnerDialog.show();
 	$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token = '+security_token,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1304,7 +1304,7 @@ db.transaction(populateDB, errorCB, successCB);
 								
 							//	console.log('user_id='+EbooUSER_ID+'&seconds='+user_time);
 								
-								$.post(ajax_path+'updatetime.php?user_id='+EbooUSER_ID+'&seconds='+user_time);
+								$.post(ajax_path+'updatetime.php?user_id='+EbooUSER_ID+'&seconds='+user_time+'&security_token = '+security_token);
 			//					console.log('user_time = '+user_time);
 								
 								user_time= 0;
@@ -1502,7 +1502,7 @@ db.transaction(populateDB, errorCB, successCB);
 		
 		$.ajax({
 			
-			url:ajax_path+'userinsert.php?useremail='+useremail,
+			url:ajax_path+'userinsert.php?useremail='+useremail+'&security_token = '+security_token,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1733,7 +1733,7 @@ function get_more_data()
 		last_search='';
 		
  		$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token = '+security_token,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1854,7 +1854,7 @@ function get_more_data()
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
+			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token = '+security_token,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
