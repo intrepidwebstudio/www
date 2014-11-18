@@ -263,6 +263,8 @@ $(this).children('.backimg').css("opacity","1");
 
 function updatesettings(tx , twitter_p) 
 				{
+					alert(twitter_p);
+					
 					tx.executeSql("UPDATE ebooUser SET twitter = " + twitter_p  + " WHERE user_id = " + EbooUSER_ID, [], updateCB, errorCB_settings);
 				}
 				
@@ -272,12 +274,50 @@ function updatesettings(tx , twitter_p)
 					
 					alert( "success" );
 					
+				db.transaction(queryDB_settings,errorCB_settings);	
+					
 					}
+					
+				function queryDB_settings(){
+					
+					
+					tx.executeSql('SELECT * FROM ebooUser ',[],querySuccess_settings,errorCB_settings);
+					
+					}	
+					
+				function querySuccess_settings(tx,result)
+				{
+					 var length = result.rows.length;
+	  	console.log("DEMO table: " + length + " rows found.");	
+		
+		
+		for(var i=0; i< length ; i++)
+				{
+					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
+					
+					EbooUSER_ID = result.rows.item(i).user_id;
+					
+					eboo_twitter= result.rows.item(i).twitter;
+					eboo_tumblr= result.rows.item(i).tumblr;
+					eboo_linkedin= result.rows.item(i).linkedin;
+					eboo_facebook= result.rows.item(i).facebook;
+					
+					
+				console.log("Twitter = "+ eboo_twitter + "Tumblr = "+eboo_tumblr +"linked_in =  "+ eboo_linkedin + "facebook = "+ eboo_facebook);	
+					
+				//	alert(EbooUSER_ID);
+				//	console.log(EbooUSER_ID);
+					
+					}
+		
+					
+					}
+					
 				
 				
 
 	function errorCB_settings(err) {
-    alert("Error processing SQL: "+err.message+' anoyin ?');
+    alert("Error processing SQL: "+err.message+' anoyi444444n ?');
 	 }
  
  
@@ -301,13 +341,10 @@ function updatesettings(tx , twitter_p)
 						  eboo_twitter = '0';
 						$('#twitterlogout').css('display','block');
 						$('#twitterlogged').css('display','none');
-						  alert('0');
+						 
 	
 						  }
 					 else{
-							 eboo_twitter = '1';
-	
-	alert('1');
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');
 					 
