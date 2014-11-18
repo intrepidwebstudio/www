@@ -25,9 +25,6 @@ document.onreadystatechange = function(e)
 {
     if (document.readyState === 'complete')
     {
-		
-		
-		
 	      // navigator.splashscreen.show();
 	//	  //window.plugins.spinnerDialog.show();
 		  
@@ -1268,6 +1265,8 @@ db.transaction(populateDB, errorCB, successCB);
 
 
 
+
+
 										
     }
 	
@@ -1317,9 +1316,8 @@ db.transaction(populateDB, errorCB, successCB);
  
     //create table and insert some record
     function populateDB(tx) {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER )');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER , twitter  INTEGER, tumblr INTEGER , facebook INTEGER , linkedin INTEGER )');
 		
-       
     }
  
     //function will be called when an error occurred
@@ -1362,6 +1360,11 @@ db.transaction(populateDB, errorCB, successCB);
 			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
 					
 					EbooUSER_ID = result.rows.item(i).user_id;
+					
+					eboo_twitter= result.rows.item(i).twitter;
+					eboo_tumblr= result.rows.item(i).tumblr;
+					eboo_linkedin= result.rows.item(i).linkedin;
+					eboo_facebook= result.rows.item(i).facebook;
 					
 					
 				//	alert(EbooUSER_ID);
@@ -1437,16 +1440,24 @@ db.transaction(populateDB, errorCB, successCB);
 			success: function(data)
 							{
 							var	login_Response = data.LoginResponse;
+							
+					eboo_twitter= '0';
+					eboo_tumblr= '0';
+					eboo_linkedin= '0';
+					eboo_facebook= '0';
+							
+							
+							
 								if(login_Response.status=='100')
 								{
 								//	alert(login_Response.message);
 							//		alert(login_Response.user_id)
 									//window.plugins.spinnerDialog.hide();
-							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
+							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id,eboo_twitter,eboo_tumblr,eboo_facebook,eboo_linkedin)}, ErrorCallBack );	
 								}else if(login_Response.status=='101'){
 									//	alert('User Already Exists' );
 									//window.plugins.spinnerDialog.hide();
-									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
+									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id,eboo_twitter,eboo_tumblr,eboo_facebook,eboo_linkedin)}, ErrorCallBack );	
 									}
 								else{
 									//window.plugins.spinnerDialog.hide();
@@ -1473,13 +1484,21 @@ db.transaction(populateDB, errorCB, successCB);
 		}	
     }
 		
-		function insertvalues(tx,parameter1,parameter2)
+		function insertvalues(tx,parameter1,parameter2,p3,p4,p5,p6)
 		{
 			
 			
-			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2],userinsert);
+			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
 			
 			EbooUSER_ID = parameter2;
+			
+			eboo_twitter= p3;
+			eboo_tumblr= p4;
+			eboo_linkedin= p5;
+			eboo_facebook= p6;
+			
+			
+			
 			
 		//	console.log(parameter2)
 		}
@@ -1490,7 +1509,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			
 			load_trending();
-				browser_setting();
+			browser_setting();
 			
 			//window.plugins.spinnerDialog.show();
 			

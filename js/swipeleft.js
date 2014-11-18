@@ -122,24 +122,72 @@ function hex(x) {
 			
 			if( media_link == "twitter" )
 			{
-				
+				if( eboo_twitter == "1" ){
 			window.plugins.socialsharing.shareViaTwitter(title_aaa, null /* img */,title_linkkk);	
+				}else{
+					
+							$('#alert').trigger('click');
+							$('#alertmessage').html('Please check the twitter from settings page');
+					
+					}
 				}
-			else if( media_link == "facebook")
+			else if( media_link == "facebook" && eboo_facebook == "1" )
 			{
-			window.plugins.socialsharing.shareViaFacebook(title_aaa, null /* img */,title_linkkk);	
+				
+				if( eboo_facebook == "1" ){
+			window.plugins.socialsharing.shareViaFacebook(title_aaa, null /* img */,title_linkkk);
+				}else{
+	
+							$('#alert').trigger('click');
+							$('#alertmessage').html('Please check the facebook from settings page');
+					
+					
+					}
+				
+				
 				
 				}
-			else if( media_link == "email" )
+			else if( media_link == "email"  )
 			{
+				
 			window.plugins.socialsharing.shareViaEmail(title_aaa , null /* img */,title_linkkk );
 				}
-			else 
+				
+			else if( media_link == "tumblr") 
 			{
 				
-			window.plugins.socialsharing.shareVia('com.apple.social.sinaweibo',title_aaa, null /* img */,title_linkkk, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)});			
+				if( eboo_tumblr == "1" ){
+					
+			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);	
+			
+				}else{
+
+							$('#alert').trigger('click');
+							$('#alertmessage').html('Please check the tumblr from settings page');
+
+					
+					
+					}
+				
+					
 				}
+			else if( media_link == "linkedin")
+			  { 
+			  
+			  
+			  if( eboo_linkedin == "1" ){
+			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);
+				}else{
+					
+							$('#alert').trigger('click');
+							$('#alertmessage').html('Please check the linkedin from settings page');
+					}
+			
+			
+				}	
 						
+						
+//							window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)});					
 					
 			
 		//	console.log('TITLEE = '+ title_aaa);
@@ -208,6 +256,31 @@ $(this).children('.backimg').css("opacity","1");
 
 
 
+//db.transaction(updatesettings, errorCB_settings);
+
+
+
+
+function updatesettings(tx , twitter_p) 
+				{
+					tx.executeSql("UPDATE ebooUser SET twitter = " + twitter_p  + " WHERE user_id = " + EbooUSER_ID, [], updateCB, errorCB_settings);
+				}
+				
+				
+				
+				function updateCB(){
+					
+					alert( "success" );
+					
+					}
+				
+				
+
+	function errorCB_settings(err) {
+    alert("Error processing SQL: "+err.message+' anoyin ?');
+	 }
+ 
+ 
 
 
          
@@ -221,9 +294,30 @@ $(this).children('.backimg').css("opacity","1");
 					  
 					  })
 				  .on('touchend',function(){
+					  
+					  
+					  if( eboo_twitter == '1' )
+					  {
+						  eboo_twitter = '0';
+						$('#twitterlogout').css('display','block');
+						$('#twitterlogged').css('display','none');
+						  
+	
+						  }
+					 else{
+							 eboo_twitter = '1';
+	
+						$('#twitterlogout').css('display','none');
+						$('#twitterlogged').css('display','block');
+					 
+						  eboo_twitter = '1';
+						 
+						 } 
+					  
+					  db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings );	
 				 
-								$('#twitterlogout').css('display','none');
-								$('#twitterlogged').css('display','block');
+		 
+						
 			 });
 				 
 		 $('#linkedinautho').on('touchstart', function() {	

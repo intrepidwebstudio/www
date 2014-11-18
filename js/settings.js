@@ -23,16 +23,37 @@
 	var global_article_link='';
 	
 	var pageCount = 0;
-var contentCount = 2;
+var contentCount = 10;
 
 var last_search;
 
 
 var search_pageCount = 0;
-		var search_contentCount = 2;
+		var search_contentCount = 10;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	
 	//*************************************** settings complete here ***************************************
+	
+	
+		var	eboo_twitter;
+		var	eboo_tumblr;
+		var	eboo_linkedin;
+		var	eboo_facebook;		
+	
+	
+	
+	
+	
 	 var iabUrl = null;
         // Global InAppBrowser reference
         var iabRef = null;
