@@ -1838,7 +1838,7 @@ function get_more_data()
       //window.plugins.spinnerDialog.hide();
 	  
 	 			$('#alert').trigger('click');
-				$('#alertmessage').html('Network error');
+			$('#alertmessage').html('Network error');
 	
 			
 		//	console.log(e);
@@ -1849,7 +1849,7 @@ function get_more_data()
 	
 	}else if(last_search!=''){
 		
-		alert('last_search = '+ last_search);
+	//	alert('last_search = '+ last_search);
 	
 	   //start  my loader here !!!!
 		$.support.cors = true;
@@ -1937,7 +1937,7 @@ function get_more_data()
 		
 						}
 							);			
-							console.log('appended data = '+ append_data);
+							//console.log('appended data = ');
 						
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
