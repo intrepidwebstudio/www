@@ -1373,6 +1373,65 @@ db.transaction(populateDB, errorCB, successCB);
 					
 					}
 					
+					
+					if( eboo_twitter == '0' )
+					{
+						
+						$('#twitterlogout').css('display','block');
+						$('#twitterlogged').css('display','none');
+						
+						}else{
+							
+						$('#twitterlogout').css('display','none');
+						$('#twitterlogged').css('display','block');	
+							
+							}
+
+
+					if( eboo_tumblr == '0' )
+					{
+						$('#tumblrlogout').css('display','block');
+						$('#tumblrlogged').css('display','none');
+						
+						}else{
+							
+						$('#tumblrlogout').css('display','none');
+						$('#tumblrlogged').css('display','block');	
+
+							}
+
+
+
+					if( eboo_facebook == '0' )
+					{
+						$('#facebooklogout').css('display','block');
+						$('#facebooklogged').css('display','none');
+						
+						}else{
+							
+						$('#facebooklogout').css('display','none');
+						$('#facebooklogged').css('display','block');	
+							
+							}
+					
+	
+	
+					if( eboo_linkedin == '0' )
+					{
+						$('#linkedinlogout').css('display','block');
+						$('#linkedinlogged').css('display','none');
+						
+						}else{
+							
+						$('#linkedinlogout').css('display','none');
+						$('#linkedinlogged').css('display','block');	
+							
+							}
+				
+	
+					
+					
+					
 				//tx.executeSql('DELETE FROM ebooUser');	
 			
 				load_trending();

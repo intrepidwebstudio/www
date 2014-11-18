@@ -301,12 +301,13 @@ function updatesettings(tx , twitter_p)
 						  eboo_twitter = '0';
 						$('#twitterlogout').css('display','block');
 						$('#twitterlogged').css('display','none');
-						  
+						  alert('0');
 	
 						  }
 					 else{
 							 eboo_twitter = '1';
 	
+	alert('1');
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');
 					 
