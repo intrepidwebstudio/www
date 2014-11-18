@@ -275,9 +275,9 @@ $(this).children('.backimg').css("opacity","1");
 		}
 		
 	function updateData(tx,eboo_twitter){	
-	console.log("database ")
+	console.log("database =" + eboo_twitter);
 	
-	tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,[eboo_twitter] , successSettings , errorSettings);	
+	tx.executeSql('UPDATE ebooUse SET twitter = ?' ,[eboo_twitter] , successSettings , errorSettings);	
 	}
          
 	function settings_page()
@@ -298,6 +298,9 @@ $(this).children('.backimg').css("opacity","1");
 						$('#twitterlogout').css('display','block');
 						$('#twitterlogged').css('display','none');
 						 
+						 					  console.log("changing  = "+eboo_twitter);
+			db.transaction( function(tx){ updateData(tx, eboo_twitter)}, ErrorCallBack );	
+
 	
 						  }
 					 else{
@@ -305,10 +308,12 @@ $(this).children('.backimg').css("opacity","1");
 						$('#twitterlogged').css('display','block');
 					 
 						  eboo_twitter = '1';
+						  
+						  					  console.log("changing  = "+eboo_twitter);
+			db.transaction( function(tx){ updateData(tx, eboo_twitter)}, ErrorCallBack );	
+
 						 
 						 } 
-					  
-			db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
 				 
 		 
 						
