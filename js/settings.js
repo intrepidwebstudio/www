@@ -8,7 +8,7 @@
    var imagepath = 'http://www.safelearners.com/eboo/';
    var ajax_path = 'http://www.safelearners.com/eboo/app/';
    
-   var security_token = '123456789geteboo987654321';
+   var security_token =123456789;
    
    
    var SearchQueryId;
@@ -25,13 +25,13 @@
 	var global_article_link='';
 	
 	var pageCount = 0;
-var contentCount = 3;
+var contentCount = 10;
 
 var last_search;
 
 
 var search_pageCount = 0;
-var search_contentCount = 3;
+var search_contentCount = 10;
 		
 		
 		
@@ -112,7 +112,7 @@ var search_contentCount = 3;
 			
 			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
 			
-			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+security_token);
+			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+ security_token);
 			
 			this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
 			
