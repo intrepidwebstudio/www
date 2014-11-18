@@ -112,7 +112,7 @@ var search_contentCount = 3;
 			
 			//alert('id='+click_id + 'user_id='+EbooUSER_ID+'search_query_id='+SearchQueryId+'feed_conducted='+feed_conducted);
 			
-			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted);
+			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+security_token);
 			
 			this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
 			
