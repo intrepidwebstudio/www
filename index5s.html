@@ -558,7 +558,7 @@ input{
         
         
          
-          <a  href="#wrongemail" id="popup_alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
+          <a  href="#wrongemail" id="popup_alert2" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
           <div data-role="popup" id="wrongemail"   data-dismissible="false" style="max-width:300px; padding:22px; background-color:#FFF;"  >
 	                    <div data-role="header" style="background-color:#CCC" >
     			            <h1>Eboo</h1>
@@ -1322,7 +1322,7 @@ db.transaction(populateDB, errorCB, successCB);
  
     //function will be called when an error occurred
     function errorCB(err) {
-      alert("Error processing SQL: "+err.message+' anoyin ?');
+//      alert("Error processing SQL: "+err.message+' anoyin ?');
 		
 		
     }
@@ -1331,7 +1331,7 @@ db.transaction(populateDB, errorCB, successCB);
     function successCB() {
       
         db.transaction(queryDB,errorCB);
-		alert("successaa!");
+//		alert("successaa!");
     }
  
     //select all from table
@@ -1472,7 +1472,7 @@ db.transaction(populateDB, errorCB, successCB);
 	
 	function ErrorCallBack(err){
 		
-		alert('Error'+err.code+'----'+err.message);
+	//	alert('Error'+err.code+'----'+err.message);
 		
 		}
 	
@@ -1488,10 +1488,10 @@ db.transaction(populateDB, errorCB, successCB);
 		//window.plugins.spinnerDialog.hide();
 		
 		
-		alert('errrr');
+	
 		
 		
-		$('#popup_alert').trigger('click');
+		$('#popup_alert2').trigger('click');
 	//	alert('enter a vaild email');
 		}
 	else{
@@ -1556,7 +1556,7 @@ db.transaction(populateDB, errorCB, successCB);
 		function insertvalues(tx,parameter1,parameter2,p3,p4,p5,p6)
 		{
 			
-			alert('ss');
+		//	alert('ss');
 			
 			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , tumblr , facebook , linkedin) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
 			

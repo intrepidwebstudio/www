@@ -258,14 +258,9 @@ $(this).children('.backimg').css("opacity","1");
 
 //db.transaction(updatesettings, errorCB_settings);
 
-function update_data(tx,update_twitter)
-{
-//	tx.executeSql('UPDATE birdstabla1' +      ' SET location = ?, Observations = ?' +           ' WHERE RegNum = ?',         [mydata2, mydata4, id]);
 
 
-	tx.executeSql('UPDATE ebooUser'  +'SET twitter = ? '+' WHERE user_id= ?' ,[update_twitter,EbooUSER_ID] , successSettings , errorSettings);
 	
-	}
 	
 	function successSettings(){
 		
@@ -307,7 +302,7 @@ function update_data(tx,update_twitter)
 						 
 						 } 
 					  
-					db.transaction( function(tx){ update_data(tx, update_twitter)}, ErrorCallBack );	
+			db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,[update_twitter] , successSettings , errorSettings); }, successSettings  , errorSettings );	
 				 
 		 
 						
