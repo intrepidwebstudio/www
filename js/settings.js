@@ -25,13 +25,13 @@
 	var global_article_link='';
 	
 	var pageCount = 0;
-var contentCount = 10;
+var contentCount = 3;
 
 var last_search;
 
 
 var search_pageCount = 0;
-		var search_contentCount = 10;
+		var search_contentCount = 3;
 		
 		
 		
