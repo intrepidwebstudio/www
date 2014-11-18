@@ -866,7 +866,7 @@ $(document).keypress(function(e) {
 		
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount, 
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1045,7 +1045,7 @@ function load_trending()
 //window.plugins.spinnerDialog.show();
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1506,7 +1506,7 @@ db.transaction(populateDB, errorCB, successCB);
 		$.ajax({
 			
 			url:ajax_path+'userinsert.php?useremail='+useremail,
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1737,7 +1737,7 @@ function get_more_data()
 		
  		$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1870,7 +1870,7 @@ function get_more_data()
 		$.support.cors = true;
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
-			type:'POST',
+			type:'GET',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
