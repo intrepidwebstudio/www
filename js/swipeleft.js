@@ -258,81 +258,29 @@ $(this).children('.backimg').css("opacity","1");
 
 //db.transaction(updatesettings, errorCB_settings);
 
+function update_data(tx,update_twitter)
+{
+//	tx.executeSql('UPDATE birdstabla1' +      ' SET location = ?, Observations = ?' +           ' WHERE RegNum = ?',         [mydata2, mydata4, id]);
 
 
-
-function updatesettings(tx , eboo_twitter) 
-				{
-					alert(twitter_p);
-					
-					tx.executeSql("UPDATE ebooUser SET twitter = " + eboo_twitter  + " WHERE user_id = " + EbooUSER_ID,updateCB, errorCB_settings);
-				}
-				
-				
-				
-				function updateCB(){
-					
-					alert( "success" );
-					
-				db.transaction(queryDB_settings,errorCB_settings);	
-					
-					}
-					
-				function queryDB_settings(){
-					
-					
-					tx.executeSql('SELECT * FROM ebooUser ',[],querySuccess_settings,errorCB_settings4);
-					
-					}	
-					
-				function querySuccess_settings(tx,result)
-				{
-					 var length = result.rows.length;
-	  	console.log("DEMO table: " + length + " rows found.");	
+	tx.executeSql('UPDATE ebooUser'  +'SET twitter = ? '+' WHERE user_id= ?' ,[update_twitter,EbooUSER_ID] , successSettings , errorSettings);
+	
+	}
+	
+	function successSettings(){
 		
 		
-		for(var i=0; i< length ; i++)
-				{
-					console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
-					
-					EbooUSER_ID = result.rows.item(i).user_id;
-					
-					eboo_twitter= result.rows.item(i).twitter;
-					eboo_tumblr= result.rows.item(i).tumblr;
-					eboo_linkedin= result.rows.item(i).linkedin;
-					eboo_facebook= result.rows.item(i).facebook;
-					
-					
-				console.log("Twitter = "+ eboo_twitter + "Tumblr = "+eboo_tumblr +"linked_in =  "+ eboo_linkedin + "facebook = "+ eboo_facebook);	
-					
-				//	alert(EbooUSER_ID);
-				//	console.log(EbooUSER_ID);
-					
-					}
+		alert("successsssss");
+		}
+	function errorSettings(err)
+	{
 		
-					
-					}
-					
-				
-				
-
-	function errorCB_settings4(err) {
-    alert("Error processing SQL: "+err.message+' anoyi444444n ?');
-	 }
- function errorCB_settings(err) {
-    alert("Error processing SQL: "+err.message+' 444 ?');
-	 }
- 
- 
-
-
+		alert(err.message);
+		
+		}
          
 	function settings_page()
 	{		
-				
-		 	
-				
-				
 				
 			 $('#twitterautho').on('touchstart', function() {	
 			  
@@ -358,11 +306,8 @@ function updatesettings(tx , eboo_twitter)
 						  eboo_twitter = '1';
 						 
 						 } 
-					 db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it	
-					 
-					 
-					  db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings4 );	
-					 // db.transaction( function(tx){ updatesettings(tx, eboo_twitter)}, errorCB_settings4 );	
+					  
+					db.transaction( function(tx){ update_data(tx, update_twitter)}, ErrorCallBack );	
 				 
 		 
 						
