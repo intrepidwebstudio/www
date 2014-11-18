@@ -444,7 +444,7 @@ input{
 
 
 
-<div data-role="page" id="6page1" data-title="eboo" >
+<div data-role="page" id="6ppage1" data-title="eboo" >
 
 	
     <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
@@ -472,7 +472,7 @@ input{
         </div>
         
         <div class="righticon" >
-        	<a href="#6settings" data-transition="slide" id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
+        	<a href="#6psettings" data-transition="slide" id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
         </div>
       </div>  
         
@@ -514,7 +514,7 @@ input{
  </div>
 
 
-<div data-role="page" data-position="fixed"  id="6page" data-title="eboo" >
+<div data-role="page" data-position="fixed"  id="6ppage" data-title="eboo" >
 
 
 <div class="swiper-container">
@@ -606,7 +606,7 @@ input{
 </div>
   
 
-<div data-role="page" id="6settings" data-transition="slide">
+<div data-role="page" id="6psettings" data-transition="slide">
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
         <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
@@ -665,7 +665,7 @@ input{
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a class="settingsmenu" data-transition="slide" href="#6privacy" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="slide" href="#6pprivacy" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -737,7 +737,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 </div>
 
 
-<div data-role="page" id="6privacy">
+<div data-role="page" id="6pprivacy">
          
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
     
@@ -1013,6 +1013,14 @@ $(document).keypress(function(e) {
 	else{
 		
 		
+						$('#searcharea').hide();
+				 $('.search_empty').hide();
+				$('#searcharea').blur();
+				$('.search_empty').blur();
+				
+
+		
+		
 		load_trending();
 		
 		
@@ -1052,6 +1060,8 @@ function load_trending()
                         // This callback function will trigger before data is sent
 						
 						
+						
+						
                      window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
@@ -1061,21 +1071,8 @@ function load_trending()
 			success: function(data)
 			{
 				
-				
-				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				
-				
-				
-								
-				$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
-				
-
-				
 				
 				if(FeedStatus=='success')
 				{
@@ -1365,7 +1362,7 @@ db.transaction(populateDB, errorCB, successCB);
 
 //		alert('ssss');
 
-			$.mobile.changePage('#6page1' , { transition:'slide' });
+			$.mobile.changePage('#6ppage1' , { transition:'slide' });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1466,7 +1463,7 @@ db.transaction(populateDB, errorCB, successCB);
 	//		alert('1');
 	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
 			
-	 	$.mobile.changePage('#6page' , { transition:'slide' });
+	 	$.mobile.changePage('#6ppage' , { transition:'slide' });
 		
 		   start_timer();
 		   update_timer();
@@ -1594,7 +1591,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 		window.plugins.spinnerDialog.show();
 			
-			$.mobile.changePage('#6page1' , { transition:'slide' }  );
+			$.mobile.changePage('#6ppage1' , { transition:'slide' }  );
 			
 		window.plugins.spinnerDialog.hide();
 			
@@ -1980,7 +1977,7 @@ function get_more_data()
 				}//user data match if
 				
 			
-		//	$('#searcharea').val('');
+			$('#searcharea').val('');
 			
 			
 			search_pageCount = search_pageCount+1;
@@ -2033,7 +2030,7 @@ function get_more_data()
   "use strict";
   var pullDownGeneratedCount = 0,
       pullUpGeneratedCount = 0,
-      listSelector = "div.6page1 ul.ui-listview",
+      listSelector = "div.6ppage1 ul.ui-listview",
       lastItemSelector = listSelector + " > li:last-child";
     
   /* For this example, I prepend three rows to the list with the pull-down, and append
@@ -2097,7 +2094,7 @@ function get_more_data()
     }    
   
   // Set-up jQuery event callbacks
-  $(document).delegate("#6page1", "pageinit", 
+  $(document).delegate("#6ppage1", "pageinit", 
     function bindPullPagePullCallbacks(event) {
       $(".iscroll-wrapper", this).bind( {
       iscroll_onpulldown : onPullDown,
