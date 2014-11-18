@@ -1013,6 +1013,14 @@ $(document).keypress(function(e) {
 	else{
 		
 		
+						$('#searcharea').hide();
+				 $('.search_empty').hide();
+				$('#searcharea').blur();
+				$('.search_empty').blur();
+				
+
+		
+		
 		load_trending();
 		
 		
@@ -1052,6 +1060,8 @@ function load_trending()
                         // This callback function will trigger before data is sent
 						
 						
+						
+						
                      window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
@@ -1061,21 +1071,8 @@ function load_trending()
 			success: function(data)
 			{
 				
-				
-				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				
-				
-				
-								
-				$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
-				
-
-				
 				
 				if(FeedStatus=='success')
 				{
@@ -1980,7 +1977,7 @@ function get_more_data()
 				}//user data match if
 				
 			
-		//	$('#searcharea').val('');
+			$('#searcharea').val('');
 			
 			
 			search_pageCount = search_pageCount+1;

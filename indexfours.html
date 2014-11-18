@@ -1,6 +1,5 @@
 <!DOCTYPE html> 
-<html> 
-	<head> 
+<html><head> 
 	<title>Page Title</title> 
 	
 	        <meta name="format-detection" content="telephone=no" />
@@ -26,7 +25,9 @@ document.onreadystatechange = function(e)
 {
     if (document.readyState === 'complete')
     {
-	     //  navigator.splashscreen.show();
+	      // navigator.splashscreen.show();
+	//	  //window.plugins.spinnerDialog.show();
+		  
 	        document.addEventListener("deviceready", onDeviceReady, false);
     }
 };
@@ -35,8 +36,8 @@ document.onreadystatechange = function(e)
   
   <script defer src="js/idangerous.swiper.js"></script>
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" src="js/settings.js"></script>
-  
+   <script type="text/javascript" src="js/settings.js"></script>
+   
   <style>
  div
 {
@@ -117,8 +118,7 @@ background: rgba(255, 255, 255, 0.5) !important;
 		
 		}
 		
-	
-	
+		
 	.behind a:first-child img{
 	
 			padding-top:25px;
@@ -162,6 +162,10 @@ background: rgba(255, 255, 255, 0.5) !important;
         text-shadow: none;
     }
 	
+	
+	
+
+	
 	.socialicon{
 		
 		float:right;
@@ -170,7 +174,8 @@ background: rgba(255, 255, 255, 0.5) !important;
 		
 		
 		}
-		
+
+	
 	.socialicon a{
 	
 		background-color:#FF0 !important;	
@@ -251,6 +256,8 @@ topplace_empty{
 	 
 	 }		
 	
+	
+		
 		.topmenucontainer{
 			
 			position:absolute;
@@ -260,6 +267,10 @@ topplace_empty{
 			}
 		
 	
+		
+		
+		
+		
 	.ebooheader{
 		
 		width:100%;   
@@ -431,6 +442,8 @@ input{
 
 <div class="ui-panel-page-container">
 
+
+
 <div data-role="page" id="4spage1" data-title="eboo" >
 
 	
@@ -458,13 +471,8 @@ input{
        		<a id="showsearch" data-role='ui-btn'  ><img  class="searchimg" src="icons/57x57/search.png"  ></a>
         </div>
         
-       <!-- <div id="blue">
-        sasdfasdf asdf assdfg sdfg sdfgs gsdf
-        </div>-->
-        
-        
         <div class="righticon" >
-        	<a  id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
+        	<a href="#4ssettings" data-transition="slide" id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
         </div>
       </div>  
         
@@ -477,22 +485,21 @@ input{
       
  
 </div><!-- /header -->
-   <div class="example-wrapper" data-iscroll >
+    <div class="example-wrapper" data-iscroll >
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         
      
         </ul>
           <div class="iscroll-pullup">
-          <center><span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="loading please wait" >loading ...</span></center>
+          <center><span class="iscroll-pull-icon"></span></center>
         </div>
           
            
                                      
     </div><!-- /content -->
     
-
-	                <a  href="#popup_alert" id="alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
-    	            <div data-role="popup" id="popup_alert"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
+                    <a  href="#popup_alert" id="alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
+                    <div data-role="popup" id="popup_alert"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
                     <div data-role="header" style="background-color:#CCC" >
                     <h1>Eboo</h1>
                     </div>
@@ -502,97 +509,111 @@ input{
                     <center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
                     </div>
                     </div>
+    
+    
+ </div>
 
 
+<div data-role="page" data-position="fixed"  id="4spage" data-title="eboo" >
 
 
-</div>
-
-<div data-role="page"  data-position="fixed"  id="4spage" data-title="eboo" >
 <div class="swiper-container">
   <div class="swiper-wrapper">
       <!--First Slide-->
       <div class="swiper-slide"> 
-        	<img src="img/introscreen/320x480/01wcircles.jpg" style="width:320px !important; height:480px !important; "  >
+             <img src="img/introscreen/320x480/01wcircles.jpg"  style="width:320px !important; height:480px !important; " >
       </div>
+      
       <!--Second Slide-->
       <div class="swiper-slide">
-   			<img src="img/introscreen/320x480/02wcircles.jpg"  style="width:320px !important; height:480px !important; " >
-    <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
+            <img src="img/introscreen/320x480/02wcircles.jpg"  style="width:320px !important; height:480px !important; " >
+     <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the second slide goes here -->
       </div>
+      
       <!--Third Slide-->
-      <div class="swiper-slide"> 
-     		 <img src="img/introscreen/320x480/03empty.jpg"  style="width:320px !important; height:480px !important; " >
-     <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
+      <div class="swiper-slide "> 
+             <img src="img/introscreen/320x480/03empty.jpg"  style="width:320px !important; height:480px !important; " >
+       <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the third slide goes here -->
+        
         <div style="position:relative; bottom:55%; box-shadow:none !important; border:none !important;  " id="textinput"  >
+        
+        
         <div style="color:#FFF !important;">
         		<center><img  src="img/eboo-logo.png" width="32%"  ></center>
          </div>
+       
         <center> <div style=" font-size:19px; color:#FFF !important; padding-bottom:5% !important;
 		cursor:vertical-text; text-align:center  !important; width:70% !important ; text-height:font-size; letter-spacing:1px !important; text-height:max-size;font-weight:400 !important " class="Conv_MuseoSans-100"  >Feed <strong><span class="Conv_MuseoSans-300Italic" style="font-size:20px; font-weight:600">your curiousity.</span></strong></div></center>
+        
         <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
 		cursor:vertical-text; " data-corners="false" placeholder="E-mail Address"   ></center>
-        
+
 		<center>
         <button onClick="validate_email()" class="Conv_MuseoSans-300Italic ui-input-btn ui-hide-label" style="color:#FFF !important ; background-color:#0a9bb8 !important;   min-height: 2.8em !important; 
            								border:none !important; text-shadow:none !important; box-shadow:none !important; width:70% !important ;	" data-corners="false" data-prevent-focus-zoom="true" >
         Start Using Eboo</button>
         </center>
         
-                <a  href="#wrongemail" id="popup_alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
-                <div data-role="popup" id="wrongemail"   data-dismissible="false" style="max-width:300px; padding:22px; background-color:#FFF;"  >
-                <div data-role="header" style="background-color:#CCC" >
-                <h1>Eboo</h1>
-                </div>
-                <div role="main" class="ui-content">
-                <p class="ui-title">Please Enter a Valid E-mail Address</p>
-                <p>example :  sample@gmail.com </p>
-                <center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
-                </div>
-                </div>
-
-
-                <a  href="#popup_alert2" id="alert1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
-                <div data-role="popup" id="popup_alert2"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
-                <div data-role="header" style="background-color:#CCC" >
-                <h1>Eboo</h1>
-                </div>
-                <div role="main" class="ui-content">
-                
-                <p id="alertmessage1" ></p>
-                <center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
-                </div>
-                </div>
-          
-                  
-                  
-                
         
+         
+          <a  href="#wrongemail" id="popup_alert2" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
+          <div data-role="popup" id="wrongemail"   data-dismissible="false" style="max-width:300px; padding:22px; background-color:#FFF;"  >
+	                    <div data-role="header" style="background-color:#CCC" >
+    			            <h1>Eboo</h1>
+                		</div>
+               		<div role="main" class="ui-content">
+                		<p class="ui-title">Please Enter a Valid E-mail Address</p>
+                		<p>example :  sample@gmail.com </p>
+                		<center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
+                	</div>
+               	    </div>
+                    
+            <a  href="#popup_alert2" id="alert1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
+          <div data-role="popup" id="popup_alert2"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
+	                    <div data-role="header" style="background-color:#CCC" >
+    			            <h1>Eboo</h1>
+                		</div>
+               		<div role="main" class="ui-content">
+                		
+                		<center><p id="alertmessage1" ></p></center>
+                		<center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
+                	</div>
+               	    </div>
+           
+                    
+                    
+                
         
         </div>
-     </div>
+        
+        
+        
+        
+      </div>
+      
+      
+      
+      
       
       <!--Etc..-->
   </div>
 </div>
+
+
+
 </div>
-
-
-
-
-
   
 
-<div data-role="page" id="4ssettings" >
+<div data-role="page" id="4ssettings" data-transition="slide">
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
         <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
      
      <div class="searchsettings">
         <div  class="lefticon" >
-       		 <a data-rel="back"  class="backbutton" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
+       		 <a data-rel="back" class="backbutton" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
         </div>
      </div>  
         
@@ -609,14 +630,14 @@ input{
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  data-divider="false"  data-icon="false"  >
-                <li id="twitterautho" ><a class="settingsmenu"   >
+                <li id="twitterautho" ><a class="settingsmenu" data-transition="slide"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li id="facebookautho"  ><a class="settingsmenu" >
+                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"  onClick="facebookautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -624,27 +645,27 @@ input{
                         
                 </a> </li>
                
-                <li id="tumblrautho" ><a class="settingsmenu"  >
+                <li id="tumblrautho" ><a class="settingsmenu" data-transition="slide" onClick="tumblrautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
                         
                 </a> </li>
-                <li id="linkedinautho" ><a class="settingsmenu" href="#linkedinauthorize" onClick="linkedinautho()" >
+                <li id="linkedinautho" ><a class="settingsmenu" data-transition="slide"  onClick="linkedinautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
                         
                 </a> </li>
-                <li><a class="settingsmenu" href="#4stermsofservice" data-transition="slide" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="slide" href="#4stermsofservice" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a class="settingsmenu" href="#4sprivacy" data-transition="slide" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="slide" href="#4sprivacy" data-prefetch="true" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -716,9 +737,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 </div>
 
 
-
-
-
 <div data-role="page" id="4sprivacy">
          
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
@@ -764,8 +782,11 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     </div><!-- /content -->
 </div>
 
-
 </div>
+
+
+
+
 
 
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
@@ -775,15 +796,13 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
   
    <script type="text/javascript" src="js/SocialSharing.js"></script>
    <script type="text/javascript" src="js/nonbounce.js"></script>
-<script type="text/javascript" src="js/swipeleft4s.js"></script>
+<script type="text/javascript" src="js/swipeleft.js"></script>
 
 
 <script type="text/javascript" src="js/iscroll.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
-<script type="text/javascript" src="js/pullrequest.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-
 
 
 
@@ -816,8 +835,6 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
  
 $('#searcharea').on('blur',function(){ 
-										$('#searcharea').val('');		
-
 								    	$('#searcharea').hide();	
 									    $('.search_empty').hide();
 										$('#searcharea').blur();
@@ -856,11 +873,11 @@ $(document).keypress(function(e) {
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+                       window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                     window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -884,6 +901,7 @@ $(document).keypress(function(e) {
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
+						
 					var article_id = element.id;			
 					var article_title =  element.title ;
 					var article_link = element.article_link ;
@@ -892,13 +910,13 @@ $(document).keypress(function(e) {
 					var pubdate = element.pubdate ;
 					
 					var viewstatus=element.viewstatus; 
-				//	pubdate = pubdate.substr(5,11);
+					//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
 					var len = 0;
 					var len=article_title.length;
 					
-					 var article_title_unescaped = article_title;
-					 var source_name_unescaped = source_name;
+					var article_title_unescaped = article_title;
+					var source_name_unescaped = source_name;
 					 
 					article_title = article_title.replace(/'/g, "\\'");
 					
@@ -1020,10 +1038,7 @@ function load_trending()
 {
 	last_search = '';
 	
-	
-	
-	
-	//alert(EbooUSER_ID + 'pronnn');
+//alert(EbooUSER_ID + 'pronnn');
 	
 //window.plugins.spinnerDialog.show();
 	$.ajax({
@@ -1035,17 +1050,32 @@ function load_trending()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+						
+						
+                     window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                     window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
 				
+				
+				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
+				
+				
+				
+								
+				$('#searcharea').hide();
+				 $('.search_empty').hide();
+				$('#searcharea').blur();
+				$('.search_empty').blur();
+				
+
+				
 				
 				if(FeedStatus=='success')
 				{
@@ -1112,7 +1142,7 @@ function load_trending()
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
 							//alert(append_data);
-											$('#list_view').trigger("create");
+										$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
 										//	$('#list_view').refresh();
 										browser_setting();
@@ -1297,35 +1327,35 @@ db.transaction(populateDB, errorCB, successCB);
  
     //create table and insert some record
     function populateDB(tx) {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER )');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER , twitter INTEGER, tumblr INTEGER , facebook INTEGER , linkedin INTEGER )');
 		
-       
     }
  
     //function will be called when an error occurred
     function errorCB(err) {
-      //  alert("Error processing SQL: "+err.message+' anoyin ?');
+//      alert("Error processing SQL: "+err.message+' anoyin ?');
 		
 		
     }
  
     //function will be called when process succeed
     function successCB() {
-      //  alert("success!");
+      
         db.transaction(queryDB,errorCB);
+//		alert("successaa!");
     }
  
-    //select all from SoccerPlayer
+    //select all from table
     function queryDB(tx){
-        tx.executeSql('SELECT * FROM ebooUser',[],querySuccess,errorCB);
+        tx.executeSql('SELECT * FROM ebooUser ',[],querySuccess,errorCB);
     }
  
     function querySuccess(tx,result){
        
-	//   console.log(result.rows.item);
+	  console.log(result.rows.item);
 	   
 	   var length = result.rows.length;
-	//   	console.log("DEMO table: " + length + " rows found.");	
+	  	console.log("DEMO table: " + length + " rows found.");	
 		
 		
 		
@@ -1339,15 +1369,84 @@ db.transaction(populateDB, errorCB, successCB);
 		
 				for(var i=0; i< length ; i++)
 				{
-			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email );
+					
+					
+					
+					
 					
 					EbooUSER_ID = result.rows.item(i).user_id;
 					
+					eboo_twitter= result.rows.item(i).twitter;
+					eboo_tumblr= result.rows.item(i).tumblr;
+					eboo_linkedin= result.rows.item(i).linkedin;
+					eboo_facebook= result.rows.item(i).facebook;
 					
+					
+			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email + "Twitter = "+ eboo_twitter + "Tumblr = "+eboo_tumblr +"linked_in =  "+ eboo_linkedin + "facebook = "+ eboo_facebook );
+			
 				//	alert(EbooUSER_ID);
 				//	console.log(EbooUSER_ID);
 					
 					}
+					
+					
+					if( eboo_twitter == '0' )
+					{
+						
+						$('#twitterlogout').css('display','block');
+						$('#twitterlogged').css('display','none');
+						
+						}else{
+							
+						$('#twitterlogout').css('display','none');
+						$('#twitterlogged').css('display','block');	
+							
+							}
+
+
+					if( eboo_tumblr == '0' )
+					{
+						$('#tumblrlogout').css('display','block');
+						$('#tumblrlogged').css('display','none');
+						
+						}else{
+							
+						$('#tumblrlogout').css('display','none');
+						$('#tumblrlogged').css('display','block');	
+
+							}
+
+
+
+					if( eboo_facebook == '0' )
+					{
+						$('#facebooklogout').css('display','block');
+						$('#facebooklogged').css('display','none');
+						
+						}else{
+							
+						$('#facebooklogout').css('display','none');
+						$('#facebooklogged').css('display','block');	
+							
+							}
+					
+	
+	
+					if( eboo_linkedin == '0' )
+					{
+						$('#linkedinlogout').css('display','block');
+						$('#linkedinlogged').css('display','none');
+						
+						}else{
+							
+						$('#linkedinlogout').css('display','none');
+						$('#linkedinlogged').css('display','block');	
+							
+							}
+				
+	
+					
+					
 					
 				//tx.executeSql('DELETE FROM ebooUser');	
 			
@@ -1399,7 +1498,11 @@ db.transaction(populateDB, errorCB, successCB);
 	{
 		//window.plugins.spinnerDialog.hide();
 		
-		$('#popup_alert').trigger('click');
+		
+	
+		
+		
+		$('#popup_alert2').trigger('click');
 	//	alert('enter a vaild email');
 		}
 	else{
@@ -1417,16 +1520,24 @@ db.transaction(populateDB, errorCB, successCB);
 			success: function(data)
 							{
 							var	login_Response = data.LoginResponse;
+							
+					eboo_twitter= '0';
+					eboo_tumblr= '0';
+					eboo_linkedin= '0';
+					eboo_facebook= '0';
+							
+							
+							
 								if(login_Response.status=='100')
 								{
 								//	alert(login_Response.message);
 							//		alert(login_Response.user_id)
 									//window.plugins.spinnerDialog.hide();
-							 		db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
+							 		db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
 								}else if(login_Response.status=='101'){
 									//	alert('User Already Exists' );
 									//window.plugins.spinnerDialog.hide();
-									db.transaction( function(tx){ insertvalues(tx, useremail,login_Response.user_id)}, ErrorCallBack );	
+									db.transaction( function(tx){ insertvalues(tx, useremail , login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
 									}
 								else{
 									//window.plugins.spinnerDialog.hide();
@@ -1453,15 +1564,24 @@ db.transaction(populateDB, errorCB, successCB);
 		}	
     }
 		
-		function insertvalues(tx,parameter1,parameter2)
+		function insertvalues(tx,parameter1,parameter2,p3,p4,p5,p6)
 		{
 			
+		//	alert('ss');
 			
-			tx.executeSql('INSERT INTO ebooUser(email,user_id) VALUES (?,?)',[parameter1,parameter2],userinsert);
+			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , tumblr , facebook , linkedin) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
 			
 			EbooUSER_ID = parameter2;
 			
-		//	console.log(parameter2)
+			eboo_twitter= p3;
+			eboo_tumblr= p4;
+			eboo_linkedin= p5;
+			eboo_facebook= p6;
+			
+			
+			
+			
+		console.log(parameter2)
 		}
 		
 		
@@ -1470,13 +1590,13 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			
 			load_trending();
-				browser_setting();
+			browser_setting();
 			
-			//window.plugins.spinnerDialog.show();
+		window.plugins.spinnerDialog.show();
 			
 			$.mobile.changePage('#4spage1' , { transition:'slide' }  );
 			
-			//window.plugins.spinnerDialog.hide();
+		window.plugins.spinnerDialog.hide();
 			
 		}
 		
@@ -1630,17 +1750,28 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+                     window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                     window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
-			{
+			{ window.plugins.spinnerDialog.hide(); 
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
+				
+				
+								
+				$('#searcharea').hide();
+				 $('.search_empty').hide();
+				$('#searcharea').blur();
+				$('.search_empty').blur();
+				
+
+				
+				
 				
 				if(FeedStatus=='success')
 				{
@@ -1726,7 +1857,9 @@ function get_more_data()
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
 	  
-	  alert('Network problem ');		
+	 			$('#alert').trigger('click');
+			$('#alertmessage').html('Network error');
+	
 			
 		//	console.log(e);
 			
@@ -1748,15 +1881,15 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+                     window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                     window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
-				
+				 window.plugins.spinnerDialog.hide();
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1771,7 +1904,7 @@ function get_more_data()
 					
 					feed_conducted=1;
 				
-				$('#searchvalue').html($('#searcharea').val());
+			//	$('#searchvalue').html($('#searcharea').val());
 				
 				
 				$('#searcharea').hide();
@@ -1847,7 +1980,7 @@ function get_more_data()
 				}//user data match if
 				
 			
-			$('#searcharea').val('');
+		//	$('#searcharea').val('');
 			
 			
 			search_pageCount = search_pageCount+1;
@@ -1856,7 +1989,9 @@ function get_more_data()
 				},
 		error: function(e) {
 			//window.plugins.spinnerDialog.hide();
-       alert('Network error   ');		
+     			$('#alert').trigger('click');
+			$('#alertmessage').html('Network error');
+	
 			
 		//	console.log(e.status);
 			
@@ -1950,7 +2085,7 @@ function get_more_data()
     setTimeout(function fakeRetrieveDataTimeout() {
       gotPullDownData(event, data);
       }, 
-      1500); 
+      1000); 
     }    
 
   // Called when the user completes the pull-up gesture.
@@ -1958,7 +2093,7 @@ function get_more_data()
     setTimeout(function fakeRetrieveDataTimeout() {
       gotPullUpData(event, data);
       }, 
-      1500); 
+      1000); 
     }    
   
   // Set-up jQuery event callbacks
