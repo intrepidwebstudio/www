@@ -312,10 +312,23 @@ $(this).children('.backimg').css("opacity","1");
 						 
 					  
 		//	db.transaction( function(tx){ tx.executeSql('UPDATE ebooUser'  +'SET twitter = ?' ,['1'] , successSettings , errorSettings); });	
-				 
+				db.transaction( function(tx){ updatevalues(tx, eboo_twitter)}, ErrorCallBack );	
 		 
 						
 			 });
+			 
+			 function updatevalues(tx, eboo_twitter)
+			 {
+				 
+				 console.log("my values = "+eboo_twitter);
+				 
+				var myvalue = eboo_twitter;
+				 
+				tx.executeSql('UPDATE ebooUser SET twitter = ? ' ,[myvalue] , successSettings , errorSettings);
+				 
+				 
+				 }
+			 
 				 
 		 $('#linkedinautho').on('touchstart', function() {	
 				  
