@@ -470,7 +470,7 @@ $(this).children('.backimg').css("opacity","1");
 								
 								
 								
-									result.post('/shares', {
+									result.post('/people/~/shares', {
 									data: {
 									post_field: 'TESSSTTTTTTTT',
 									// ...
