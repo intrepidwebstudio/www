@@ -467,8 +467,41 @@ $(this).children('.backimg').css("opacity","1");
                         .done(function (result) {
 														
 								console.log(JSON.stringify(result));
+								
+								
+								
+									result.post('https://api.linkedin.com/v1/people/~/shares', {
+									data: {
+									post_field: 'TESSSTTTTTTTT',
+									// ...
+									}
+									})
+									.done(function (response) {
+									// response is an object containing the response fields
+									
+									console.log('Response = '+ error);
+									
+									})
+									.fail(function (error) {
+									// handle errors here
+									console.log('Error = '+ error);
+									
+									});
+									
+								
+								
+								
+								
+								
 								$('#linkedinlogout').css('display','none');
 								$('#linkedinlogged').css('display','block');	
+								
+								
+								 change_value = '1';
+						$('#linkedinlogout').css('display','none');
+						$('#linkedinlogged').css('display','block');
+								
+								
 								
 								
 								
@@ -492,9 +525,7 @@ $(this).children('.backimg').css("opacity","1");
 						 
 						 
 						 
-						 change_value = '1';
-						$('#linkedinlogout').css('display','none');
-						$('#linkedinlogged').css('display','block');
+						
 						 } 
 	//					 console.log("Change Twitter = "+ change_value);
 	

@@ -2,11 +2,11 @@
 <head>
 <title>LinkedIn JavaScript API Sample Application</title>
 <!-- Load in the JavaScript framework and register a callback function when it's loaded -->
-<script type="text/javascript" src="http://platform.linkedin.com/in.js">/*
-api_key: s6nVKvpJ35zFoeAVntLuSYPyVxKU1N7PuJNii4bkKhAOF7_RdIZHlun0gTRIbgai
+<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+api_key: '7751h1gpn2ctt3'
 onLoad: onLinkedInLoad
 authorize: true
-*/</script>
+</script>
  
 <script type="text/javascript">
 function onLinkedInLoad() {
@@ -79,7 +79,7 @@ function displayPeopleSearch(peopleSearch) {
 }
 </script>
 </head>
-<body>
+<body onLoad="onLinkedInLoad()">
 <script type="IN/Login"></script>
 <div id="peopleSearchForm"></div>
 <div id="peopleSearchResults"></div>
