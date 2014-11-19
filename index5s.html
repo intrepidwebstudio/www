@@ -1361,41 +1361,25 @@ db.transaction(populateDB, errorCB, successCB);
 		
 				for(var i=0; i< length ; i++)
 				{
-					
-					
-					
-					
-					
 					EbooUSER_ID = result.rows.item(i).user_id;
-					
 					eboo_twitter= result.rows.item(i).twitter;
 					eboo_tumblr= result.rows.item(i).tumblr;
 					eboo_linkedin= result.rows.item(i).linkedin;
 					eboo_facebook= result.rows.item(i).facebook;
-					
-					
 			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email + "Twitter = "+ eboo_twitter + "Tumblr = "+eboo_tumblr +"linked_in =  "+ eboo_linkedin + "facebook = "+ eboo_facebook );
-			
-				//	alert(EbooUSER_ID);
+					//	alert(EbooUSER_ID);
 				//	console.log(EbooUSER_ID);
-					
 					}
 					
 					
 					if( eboo_twitter == '0' )
 					{
-						
 						$('#twitterlogout').css('display','block');
 						$('#twitterlogged').css('display','none');
-						
 						}else{
-							
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');	
-							
 							}
-
-
 					if( eboo_tumblr == '0' )
 					{
 						$('#tumblrlogout').css('display','block');
@@ -1405,21 +1389,14 @@ db.transaction(populateDB, errorCB, successCB);
 							
 						$('#tumblrlogout').css('display','none');
 						$('#tumblrlogged').css('display','block');	
-
-							}
-
-
-
+						}
 					if( eboo_facebook == '0' )
 					{
 						$('#facebooklogout').css('display','block');
 						$('#facebooklogged').css('display','none');
-						
 						}else{
-							
 						$('#facebooklogout').css('display','none');
 						$('#facebooklogged').css('display','block');	
-							
 							}
 					
 	
