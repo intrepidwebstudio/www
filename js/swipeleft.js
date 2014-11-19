@@ -468,7 +468,13 @@ $(this).children('.backimg').css("opacity","1");
 						
 						console.log(info.response.user.blogs[0].url);
 						
+						var hostname = info.response.user.blogs[0].url
+						
 						console.log(JSON.stringify(info.response.user.blogs[0].url));
+						
+						
+						
+						r.post('http://api.tumblr.com/v2/blog/'+hostname+'/post')
 						
 						
 						
@@ -477,15 +483,32 @@ $(this).children('.backimg').css("opacity","1");
 					var oath_secret_token = r.oauth_token_secret;
 					
 					
-						var tumblr = require('tumblr/lib/tumblr.js');
+						var tumblr = require('tumblr/index.js');
 						var client = tumblr.createClient({
 						consumer_key: 'jiShds82DRrk1ejO9hSOKAmocPsplYYn3FhHa4a9Nysn4rc35N',
 						consumer_secret: 'q6b286hbT4caFCDwyg0JlQ28amIe6tiN5a6Mial78LA1Uc7SEc',
 						token: oath_token,
 						token_secret: oath_secret_token
 						});
+						
+						
+						
+	client.userInfo(function (err, data) {
+    data.user.blogs.forEach(function (blog) {
+        console.log(blog.name);
+    });
+});					
+						
 
 						console.log("CLIENT ="+client);		
+						
+						
+						
+						client.userInfo(function (err, data) {
+    data.user.blogs.forEach(function (blog) {
+        console.log(blog.name);
+    });
+});
 						
 						
 						}
