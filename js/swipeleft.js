@@ -461,7 +461,7 @@ $(this).children('.backimg').css("opacity","1");
 				.done(function (r) {
 					
 					
-					r.get('/user/info')
+					r.get('http://api.tumblr.com/v2/user/info')
 					.done(function(info){
 						
 						console.log("DATA = "+ JSON.stringify(info));
@@ -470,7 +470,7 @@ $(this).children('.backimg').css("opacity","1");
 					)
 					.fail(function(err){
 						
-						console.log("ERRORR = "+ err.message);
+						console.log("ERRORR = "+ JSON.stringify(info));
 						
 						});
 					
