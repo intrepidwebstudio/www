@@ -207,100 +207,6 @@ function hex(x) {
 
 
 
-function settings_page()
-	{		
-				
-			OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
-					
-				 $('#linkedinautho').on('touchstart', function() {	
-				  
-				  
-				  }).on('touchmove',function(){})
-				  .on('touchend',function(){
-				 
-                    OAuth.popup('linkedin')
-                        .done(function (result) {
-														
-								console.log(JSON.stringify(result));
-								$('#linkedinlogout').css('display','none');
-								$('#linkedinlogged').css('display','block');	
-					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
-	                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                      //      result.get('/1.1/account/verify_credentials.json')
-                      ///          .done(function(data) {
-	                           // $('#result').html("twitter: Hello, " + data.name + " !");
-				//					console.log( "details = "+ JSON.stringify(data) );
-			//					console.log("twitter: Hello, " + data.name + " ! ");
-	          //                  })
-                  //              .fail(function( jqXHR, textStatus, errorThrown) {
-                //                  console.log("req error: " + textStatus);
-                    //            });
-                        })
-                        .fail(function (e) {
-                       // console.log('error: ' + e.message);
-                        });
-						
-				 });
-				 
-				 
-				 
-				 
-				 
-				 
-				 
-					
-				 $('#tumblrautho').on('touchstart', function() {	
-				  
-				  
-				  }).on('touchmove',function(){})
-				  .on('touchend',function(){
-				 
-                    OAuth.popup('tumblr')
-                        .done(function (result) {
-														
-		//					console.log(JSON.stringify(result));
-							
-								$('#tumblrlogout').css('display','none');
-								$('#tumblrlogged').css('display','block');
-									
-						
-						//	console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
-							
-                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                    //        result.get('/1.1/account/verify_credentials.json')
-                     //           .done(function(data) {
-									
-								
-									
-//                                    $('#result').html("twitter: Hello, " + data.name + " !");
-									
-									
-						//			console.log( "details = "+ JSON.stringify(data) );
-									
-																		
-						//			console.log("tumblr: Hello, " + data.name + " ! ");
-									
-					   //         })
-                        //        .fail(function( jqXHR, textStatus, errorThrown) {
-                //                   console.log("req error: " + textStatus);
-                         //       });
-                        })
-                        .fail(function (e) {
-              //             console.log('error: ' + e.message);
-                        });
-						
-				 });
-				 
-   			
-				
-				
-				
-	}
-
-
-
 
 
 var y;
@@ -534,6 +440,56 @@ $(this).children('.backimg').css("opacity","1");
 						
 				 });
 
+				
+				
+				
+				
+							OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+					
+				 $('#linkedinautho').on('touchstart', function() {	
+				  
+				  
+				  }).on('touchmove',function(){})
+				  .on('touchend',function(){
+				 
+                    OAuth.popup('linkedin')
+                        .done(function (result) {
+														
+								console.log(JSON.stringify(result));
+								$('#linkedinlogout').css('display','none');
+								$('#linkedinlogged').css('display','block');	
+					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
+	                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                      //      result.get('/1.1/account/verify_credentials.json')
+                      ///          .done(function(data) {
+	                           // $('#result').html("twitter: Hello, " + data.name + " !");
+				//					console.log( "details = "+ JSON.stringify(data) );
+			//					console.log("twitter: Hello, " + data.name + " ! ");
+	          //                  })
+                  //              .fail(function( jqXHR, textStatus, errorThrown) {
+                //                  console.log("req error: " + textStatus);
+                    //            });
+                        })
+                        .fail(function (e) {
+                       // console.log('error: ' + e.message);
+                        });
+						
+				 });
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+					
+		
+				 
+   			
+				
+
+				
 				
 				
 	}
