@@ -470,7 +470,7 @@ $(this).children('.backimg').css("opacity","1");
 								
 								
 								
-									result.post('/v1/people/~/shares', {
+									result.post('https://api.linkedin.com/v1/people/~/shares', {
 									data: {
 									post_field: 'TESSSTTTTTTTT',
 									// ...
@@ -479,15 +479,12 @@ $(this).children('.backimg').css("opacity","1");
 									.done(function (response) {
 									// response is an object containing the response fields
 									
-									console.log('Response = '+ response);
+									console.log('Response = '+ error);
 									
 									})
 									.fail(function (error) {
 									// handle errors here
-									console.log(JSON.stringify(error));
-									
-									
-									console.log('Error = '+ error.message);
+									console.log('Error = '+ error);
 									
 									});
 									
