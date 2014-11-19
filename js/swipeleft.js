@@ -178,7 +178,20 @@ function hex(x) {
 			  
 			  
 			  if( eboo_linkedin == "1" ){
-			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);
+				  
+				  
+				  
+			<!-- NOTE: be sure to set onLoad = onLinkedInLoad -->
+							OAuth.initialize('x4SuUm1iHBNilIhqxeB3sg60JGY')
+							OAuth.popup('linkedin', {
+								state: stateFromServer
+							}).done(function(result) {
+								console.log(result)
+							})			
+			
+			
+			
+			
 				}else{
 					
 							$('#alert').trigger('click');
