@@ -485,7 +485,7 @@ $(this).children('.backimg').css("opacity","1");
 						token_secret: oath_secret_token
 						});
 
-						
+						console.log("CLIENT ="+client);		
 						
 						
 						}
