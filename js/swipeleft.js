@@ -461,6 +461,18 @@ $(this).children('.backimg').css("opacity","1");
 				.done(function (r) {
 					
 					
+					r.get('/user/info')
+					.done(function(info){
+						
+						console.log("DATA = "+ JSON.stringify(info));
+						
+						}
+					)
+					.fail(function(err){
+						
+						console.log("ERRORR = "+ err.message);
+						
+						});
 					
 					
 														
@@ -472,7 +484,7 @@ $(this).children('.backimg').css("opacity","1");
 					var oath_secret_token = r.oauth_token_secret;
 					
 					
-						var tumblr = require('js/tumblr.js');
+						var tumblr = require('tumblr');
 						var client = tumblr.createClient({
 						consumer_key: 'jiShds82DRrk1ejO9hSOKAmocPsplYYn3FhHa4a9Nysn4rc35N',
 						consumer_secret: 'q6b286hbT4caFCDwyg0JlQ28amIe6tiN5a6Mial78LA1Uc7SEc',
