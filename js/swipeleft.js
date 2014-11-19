@@ -484,7 +484,7 @@ $(this).children('.backimg').css("opacity","1");
 									})
 									.fail(function (error) {
 									// handle errors here
-									console.log('Error = '+ error);
+									console.log('Error = '+ error.message);
 									
 									});
 									
