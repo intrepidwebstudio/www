@@ -479,7 +479,7 @@ $(this).children('.backimg').css("opacity","1");
 									.done(function (response) {
 									// response is an object containing the response fields
 									
-									console.log('Response = '+ error);
+									console.log('Response = '+ response);
 									
 									})
 									.fail(function (error) {
