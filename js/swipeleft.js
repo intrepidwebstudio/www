@@ -388,7 +388,7 @@ $(this).children('.backimg').css("opacity","1");
 				 			
 					    });
 					*/
-					
+		/*			
 				 $('#tumblrautho').on('touchstart', function() {	
 				  
 				  
@@ -415,6 +415,7 @@ $(this).children('.backimg').css("opacity","1");
 						
 				 });
 				
+				*/
 				
 			 $('#facebookautho').on('touchstart', function() {	
 				  
@@ -447,6 +448,43 @@ $(this).children('.backimg').css("opacity","1");
 				
 				
 							OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
+							
+							
+							
+			 $('#tumblrautho').on('touchstart', function() {	
+				  
+				  
+				  }).on('touchmove',function(){})
+				  .on('touchend',function(){
+							
+				OAuth.popup('tumblr')
+				.done(function (result) {
+														
+					console.log(JSON.stringify(result));
+							
+								$('#tumblrlogout').css('display','none');
+								$('#tumblrlogged').css('display','block');
+								
+						})
+						  .fail(function (e) {
+                       console.log('error: ' + e.message);
+                        });
+							
+						
+						
+				  });	
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 				 $('#linkedinautho').on('touchstart', function() {	
 				  
