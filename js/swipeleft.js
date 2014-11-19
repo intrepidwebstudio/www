@@ -452,12 +452,26 @@ $(this).children('.backimg').css("opacity","1");
 				  }).on('touchmove',function(){})
 				  .on('touchend',function(){
 				 
-                    OAuth.popup('linkedin')
+				 
+				 
+				if( eboo_linkedin == '1' )
+					  {
+						  change_value = '0';
+						$('#linkedinlogout').css('display','block');
+						$('#linkedinlogged').css('display','none');
+						  }
+					 else{
+						 
+						 
+						    OAuth.popup('linkedin')
                         .done(function (result) {
 														
 								console.log(JSON.stringify(result));
 								$('#linkedinlogout').css('display','none');
 								$('#linkedinlogged').css('display','block');	
+								
+								
+								
 					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
 	                            // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
@@ -472,8 +486,23 @@ $(this).children('.backimg').css("opacity","1");
                     //            });
                         })
                         .fail(function (e) {
-                       // console.log('error: ' + e.message);
+                       console.log('error: ' + e.message);
                         });
+						 
+						 
+						 
+						 
+						 change_value = '1';
+						$('#linkedinlogout').css('display','none');
+						$('#linkedinlogged').css('display','block');
+						 } 
+	//					 console.log("Change Twitter = "+ change_value);
+	
+				var socialName = 'linkedin';
+	
+			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+				 
+                 
 						
 				 });
 				 
