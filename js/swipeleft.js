@@ -458,9 +458,13 @@ $(this).children('.backimg').css("opacity","1");
 				  .on('touchend',function(){
 							
 				OAuth.popup('tumblr')
-				.done(function (result) {
+				.done(function (r) {
 														
-					console.log(JSON.stringify(result));
+					console.log(JSON.stringify(r));
+					
+						console.log(r.oauth_token +"---------"+r.oauth_token_secret);
+						
+					
 							
 								$('#tumblrlogout').css('display','none');
 								$('#tumblrlogged').css('display','block');
