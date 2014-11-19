@@ -182,12 +182,6 @@ function hex(x) {
 				  
 				  
 			<!-- NOTE: be sure to set onLoad = onLinkedInLoad -->
-							OAuth.initialize('x4SuUm1iHBNilIhqxeB3sg60JGY')
-							OAuth.popup('linkedin', {
-								state: stateFromServer
-							}).done(function(result) {
-								console.log(result)
-							})			
 			
 			
 			
@@ -313,10 +307,25 @@ $(this).children('.backimg').css("opacity","1");
 					}
 				else if(socialName == "linkedin")
 				{
+				
+				
+											OAuth.initialize('x4SuUm1iHBNilIhqxeB3sg60JGY')
+							OAuth.popup('linkedin', {
+								state: stateFromServer
+							}).done(function(result) {
+								console.log(result)
+							})			
+
+				
+				
+				/*
 				 eboo_linkedin = change_value;
 				 console.log("my values = "+eboo_linkedin);
 				 var myvalue = change_value;
 				 tx.executeSql('UPDATE ebooUser SET linkedin = ? ' ,[myvalue] , successSettings , errorSettings);
+				 
+				 */
+				 
 				
 					}
 				else if(socialName == "facebook")
