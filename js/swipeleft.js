@@ -178,14 +178,7 @@ function hex(x) {
 			  
 			  
 			  if( eboo_linkedin == "1" ){
-				  
-				  
-				  
-			<!-- NOTE: be sure to set onLoad = onLinkedInLoad -->
-			
-			
-			
-			
+			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);
 				}else{
 					
 							$('#alert').trigger('click');
@@ -367,18 +360,7 @@ $(this).children('.backimg').css("opacity","1");
 				  .on('touchend',function(){
 				 
 				 
-													 OAuth.initialize('x4SuUm1iHBNilIhqxeB3sg60JGY')
-										OAuth.popup('linkedin').done(function(result) {
-										console.log(result)
-										// do some stuff with result
-										})
-	
-	
-	
-	
-				 
-				 
-					/*  if( eboo_linkedin == '1' )
+					  if( eboo_linkedin == '1' )
 					  {
 						  change_value = '0';
 						$('#linkedinlogout').css('display','block');
@@ -394,8 +376,6 @@ $(this).children('.backimg').css("opacity","1");
 				var socialName = 'linkedin';
 	
 			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-			
-			/*
 				 
 				 			
 					    });
