@@ -459,11 +459,40 @@ $(this).children('.backimg').css("opacity","1");
 							
 				OAuth.popup('tumblr')
 				.done(function (r) {
+					
+					
+					
+					
 														
 					console.log(JSON.stringify(r));
 					
 						console.log(r.oauth_token +"---------"+r.oauth_token_secret);
 						
+					var oath_token = r.oauth_token ;
+					var oath_secret_token = r.oauth_token_secret;
+					
+					
+						var tumblr = require('js/tumblr.js');
+						var client = tumblr.createClient({
+						consumer_key: 'jiShds82DRrk1ejO9hSOKAmocPsplYYn3FhHa4a9Nysn4rc35N',
+						consumer_secret: 'q6b286hbT4caFCDwyg0JlQ28amIe6tiN5a6Mial78LA1Uc7SEc',
+						token: oath_token,
+						token_secret: oath_secret_token
+						});
+
+
+					client.posts('seejohasdasd df asdfg nrun', { type: 'text' }, function (err, resp) {
+  resp.posts; // use them for something
+  
+  console.log(resp.posts);
+  
+  console.log("ERRRR = "+ JSON.stringify(err) );
+  
+});					
+					
+					
+					
+					
 					
 							
 								$('#tumblrlogout').css('display','none');
