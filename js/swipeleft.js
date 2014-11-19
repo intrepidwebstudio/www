@@ -366,17 +366,18 @@ $(this).children('.backimg').css("opacity","1");
 					  })
 				  .on('touchend',function(){
 				 
-					OAuth.initialize('x4SuUm1iHBNilIhqxeB3sg60JGY')
-							OAuth.popup('linkedin', {
-								state: stateFromServer
-							}).done(function(result) {
-								console.log(result)
-							})			
-
- 
-				
-				
-				
+				 
+													 OAuth.initialize('x4SuUm1iHBNilIhqxeB3sg60JGY')
+										OAuth.popup('linkedin').done(function(result) {
+										console.log(result)
+										// do some stuff with result
+										})
+	
+	
+	
+	
+				 
+				 
 					/*  if( eboo_linkedin == '1' )
 					  {
 						  change_value = '0';
@@ -388,13 +389,13 @@ $(this).children('.backimg').css("opacity","1");
 						$('#linkedinlogout').css('display','none');
 						$('#linkedinlogged').css('display','block');
 						 } 
-						 
-				*/		 
 	//					 console.log("Change Twitter = "+ change_value);
 	
 				var socialName = 'linkedin';
 	
 			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+			
+			/*
 				 
 				 			
 					    });
