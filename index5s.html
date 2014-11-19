@@ -437,7 +437,7 @@ input{
 </head>
 
 
-<body>
+<body onLoad="onLinkedInLoad">
 
 
 <div class="ui-panel-page-container">
@@ -455,7 +455,7 @@ input{
         </div>
     
 	      <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+	          <input type="text" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
     
         <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
@@ -606,7 +606,7 @@ input{
 </div>
   
 
-<div data-role="page" id="5ssettings" data-transition="slide">
+<div data-role="page" id="5ssettings" data-transition="slide" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
         <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
@@ -652,7 +652,8 @@ input{
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
                         
                 </a> </li>
-                <li id="linkedinautho" ><a class="settingsmenu" data-transition="slide"  onClick="linkedinautho()" >
+                <li id="linkedinautho" >
+                <a class="settingsmenu" data-transition="slide"  onClick="linkedinautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >

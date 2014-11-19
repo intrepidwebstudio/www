@@ -456,7 +456,7 @@ input{
         </div>
     
 	      <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+	          <input type="text" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
     
         <img  src="img/1242.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
@@ -866,7 +866,7 @@ $(document).keypress(function(e) {
 		
 		
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount, 
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token = '+security_token, 
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -874,11 +874,11 @@ $(document).keypress(function(e) {
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -902,7 +902,6 @@ $(document).keypress(function(e) {
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
-						
 					var article_id = element.id;			
 					var article_title =  element.title ;
 					var article_link = element.article_link ;
@@ -911,7 +910,7 @@ $(document).keypress(function(e) {
 					var pubdate = element.pubdate ;
 					
 					var viewstatus=element.viewstatus; 
-					//	pubdate = pubdate.substr(5,11);
+				//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
 					var len = 0;
 					var len=article_title.length;
@@ -940,7 +939,7 @@ $(document).keypress(function(e) {
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
 					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
@@ -964,6 +963,10 @@ $(document).keypress(function(e) {
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
+										
+										
+					search_pageCount = search_pageCount + 1;					
+										
 												
 							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
@@ -1014,14 +1017,6 @@ $(document).keypress(function(e) {
 	else{
 		
 		
-						$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
-				
-
-		
-		
 		load_trending();
 		
 		
@@ -1047,11 +1042,14 @@ function load_trending()
 {
 	last_search = '';
 	
-//alert(EbooUSER_ID + 'pronnn');
+	
+	
+	
+	//alert(EbooUSER_ID + 'pronnn');
 	
 //window.plugins.spinnerDialog.show();
 	$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token = '+security_token,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1059,15 +1057,11 @@ function load_trending()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-						
-						
-						
-						
-                     window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
@@ -1124,7 +1118,7 @@ function load_trending()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
 					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
@@ -1140,7 +1134,7 @@ function load_trending()
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
 							//alert(append_data);
-										$('#list_view').trigger("create");
+											$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
 										//	$('#list_view').refresh();
 										browser_setting();
@@ -1311,7 +1305,7 @@ db.transaction(populateDB, errorCB, successCB);
 								
 							//	console.log('user_id='+EbooUSER_ID+'&seconds='+user_time);
 								
-								$.post(ajax_path+'updatetime.php?user_id='+EbooUSER_ID+'&seconds='+user_time);
+								$.post(ajax_path+'updatetime.php?user_id='+EbooUSER_ID+'&seconds='+user_time+'&security_token = '+security_token);
 			//					console.log('user_time = '+user_time);
 								
 								user_time= 0;
@@ -1509,7 +1503,7 @@ db.transaction(populateDB, errorCB, successCB);
 		
 		$.ajax({
 			
-			url:ajax_path+'userinsert.php?useremail='+useremail,
+			url:ajax_path+'userinsert.php?useremail='+useremail+'&security_token = '+security_token,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1740,7 +1734,7 @@ function get_more_data()
 		last_search='';
 		
  		$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount,
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token = '+security_token,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1748,28 +1742,17 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                     window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
-			{ window.plugins.spinnerDialog.hide(); 
+			{
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				
-				
-								
-				$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
-				
-
-				
-				
 				
 				if(FeedStatus=='success')
 				{
@@ -1820,7 +1803,7 @@ function get_more_data()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
 					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
@@ -1867,11 +1850,12 @@ function get_more_data()
 	
 	}else if(last_search!=''){
 		
+	//	alert('last_search = '+ last_search);
 	
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount,
+			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token = '+security_token,
 			type:'GET',
 			contentType: "application/json",
         	async: true,
@@ -1879,15 +1863,15 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                     window.plugins.spinnerDialog.show();
+                       //window.plugins.spinnerDialog.show();
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     window.plugins.spinnerDialog.hide();  
+                     //window.plugins.spinnerDialog.hide();  
                     },
 			success: function(data)
 			{
-				 window.plugins.spinnerDialog.hide();
+				
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1902,13 +1886,7 @@ function get_more_data()
 					
 					feed_conducted=1;
 				
-			//	$('#searchvalue').html($('#searcharea').val());
-				
-				
-				$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
+		//		$('#searchvalue').html($('#searcharea').val());
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1949,7 +1927,7 @@ function get_more_data()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#CCC !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
 					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
@@ -1960,7 +1938,7 @@ function get_more_data()
 		
 						}
 							);			
-							
+							//console.log('appended data = ');
 						
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
@@ -1975,13 +1953,17 @@ function get_more_data()
 										$.getScript("js/swipeleft.js");
 												
 							//window.plugins.spinnerDialog.hide();					
+							
+							
+							search_pageCount = search_pageCount+1;
+							
 				}//user data match if
 				
 			
-			$('#searcharea').val('');
+		//	$('#searcharea').val('');
 			
 			
-			search_pageCount = search_pageCount+1;
+			
 			
 			
 				},
@@ -2083,7 +2065,7 @@ function get_more_data()
     setTimeout(function fakeRetrieveDataTimeout() {
       gotPullDownData(event, data);
       }, 
-      1000); 
+      1500); 
     }    
 
   // Called when the user completes the pull-up gesture.
@@ -2091,7 +2073,7 @@ function get_more_data()
     setTimeout(function fakeRetrieveDataTimeout() {
       gotPullUpData(event, data);
       }, 
-      1000); 
+      1500); 
     }    
   
   // Set-up jQuery event callbacks
