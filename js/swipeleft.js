@@ -1,4 +1,6 @@
 
+var linkedin_data;
+
 
 var hexDigits = new Array
         ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"); 
@@ -177,8 +179,35 @@ function hex(x) {
 			  { 
 			  
 			  
-			  if( eboo_linkedin == "1" ){
-			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);
+			  if( eboo_linkedin == "1" || eboo_linkedin !="1" ){
+				  
+				  				result.post('/people/~/shares', {
+									data: {
+									post_field: 'TESSSTTTTTTTT',
+									// ...
+									}
+									})
+									.done(function (response) {
+									// response is an object containing the response fields
+									
+									console.log('Response = '+ error);
+									
+									})
+									.fail(function (error) {
+									// handle errors here
+									
+									alert('RESPONSE' + error.responseText );
+									
+									console.log('Error = '+ error.message + 'Error Code  = '+ error.code);
+									console.log(JSON.stringify(error))
+									
+									
+									
+									});
+
+				  
+//			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);
+			
 				}else{
 					
 							$('#alert').trigger('click');
@@ -469,33 +498,7 @@ $(this).children('.backimg').css("opacity","1");
 								console.log(JSON.stringify(result));
 								
 								
-								
-									result.post('/people/~/shares', {
-									data: {
-									post_field: 'TESSSTTTTTTTT',
-									// ...
-									}
-									})
-									.done(function (response) {
-									// response is an object containing the response fields
-									
-									console.log('Response = '+ error);
-									
-									})
-									.fail(function (error) {
-									// handle errors here
-									
-									alert('RESPONSE' + error.responseText );
-									
-									console.log('Error = '+ error.message + 'Error Code  = '+ error.code);
-									console.log(JSON.stringify(error))
-									
-									
-									
-									});
-									
-								
-								
+								linkedin_data = result;
 								
 								
 								
