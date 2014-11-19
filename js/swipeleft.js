@@ -307,25 +307,10 @@ $(this).children('.backimg').css("opacity","1");
 					}
 				else if(socialName == "linkedin")
 				{
-				
-				
-											OAuth.initialize('x4SuUm1iHBNilIhqxeB3sg60JGY')
-							OAuth.popup('linkedin', {
-								state: stateFromServer
-							}).done(function(result) {
-								console.log(result)
-							})			
-
-				
-				
-				/*
 				 eboo_linkedin = change_value;
 				 console.log("my values = "+eboo_linkedin);
 				 var myvalue = change_value;
 				 tx.executeSql('UPDATE ebooUser SET linkedin = ? ' ,[myvalue] , successSettings , errorSettings);
-				 
-				 */
-				 
 				
 					}
 				else if(socialName == "facebook")
@@ -381,8 +366,18 @@ $(this).children('.backimg').css("opacity","1");
 					  })
 				  .on('touchend',function(){
 				 
-				 
-					  if( eboo_linkedin == '1' )
+					OAuth.initialize('x4SuUm1iHBNilIhqxeB3sg60JGY')
+							OAuth.popup('linkedin', {
+								state: stateFromServer
+							}).done(function(result) {
+								console.log(result)
+							})			
+
+ 
+				
+				
+				
+					/*  if( eboo_linkedin == '1' )
 					  {
 						  change_value = '0';
 						$('#linkedinlogout').css('display','block');
@@ -393,6 +388,8 @@ $(this).children('.backimg').css("opacity","1");
 						$('#linkedinlogout').css('display','none');
 						$('#linkedinlogged').css('display','block');
 						 } 
+						 
+				*/		 
 	//					 console.log("Change Twitter = "+ change_value);
 	
 				var socialName = 'linkedin';
