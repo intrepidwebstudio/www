@@ -470,7 +470,7 @@ $(this).children('.backimg').css("opacity","1");
 								
 								
 								
-									result.post('/shares', {
+									result.post('https://api.linkedin.com/v1/people/~/shares', {
 									data: {
 									post_field: 'TESSSTTTTTTTT',
 									// ...
@@ -484,6 +484,9 @@ $(this).children('.backimg').css("opacity","1");
 									})
 									.fail(function (error) {
 									// handle errors here
+									console.log(JSON.stringify(error));
+									
+									
 									console.log('Error = '+ error.message);
 									
 									});
