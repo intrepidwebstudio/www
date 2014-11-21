@@ -583,8 +583,8 @@ $(this).children('.backimg').css("opacity","1");
 		//  iabRef = window.open('http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 	    
 		
-//		 location_url = 'http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID;
-		  location_url = 'http://www.google.com';
+	 location_url = 'http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID;
+	//	  location_url = 'http://www.google.com';
 		 
 		 
 		 			navigateTo(location_url,'','','');

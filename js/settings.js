@@ -64,10 +64,29 @@ var search_contentCount = 10;
             //alert(event.type + ' – ' + event.url);
         }
         function iabLoadStop(event) {
-            if ( iabUrl != event.url ){
-                iabUrl = event.url;
-          //      alert(event.type + ' – URL CHANGED – ' + event.url);
-		    }
+
+			localStorage.setItem( "name", this.name.value );
+			
+                    iabRef.executeScript({ code: "localStorage.setItem( 'name', '' );" });
+                    var loop = setInterval(function() {
+                        iabRef.executeScript(
+                            {
+                                code: "localStorage.getItem( 'name' )"
+                            },
+                            function( values ) {
+                                var name = values[ 0 ];
+                                if ( name ) {
+                                    clearInterval( loop );
+                                    iabRef.close();
+									
+									
+                                    alert("Welcome " + name + "!" );
+                                }
+                            }
+                        );
+                    });
+                
+
 			
 //		 iabRef.executeScript({file: "myscript.js"});
 		//	alert('script dun over');
