@@ -177,15 +177,23 @@ function hex(x) {
 				}
 			else if( media_link == "linkedin")
 			  { 
+		
+		
+		
+		  $.support.cors = true;
+	  	  $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?linkedin_user_id='+EbooUSER_ID);
+		
 			  
 			  
-			  if( eboo_linkedin == "1" ){
-			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);
-				}else{
+//			  if( eboo_linkedin == "1" ){
+				  
+//			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);
+			
+	//			}else{
 					
-							$('#alert').trigger('click');
-							$('#alertmessage').html('Please check the linkedin from settings page');
-					}
+	//						$('#alert').trigger('click');
+	//						$('#alertmessage').html('Please check the linkedin from settings page');
+	//				}
 			
 			
 				}	
@@ -577,19 +585,8 @@ $(this).children('.backimg').css("opacity","1");
 					 else{
 						 
 						 
-						 
-		console.log("EbooUSER_ID = "+EbooUSER_ID);
-		
-		//  iabRef = window.open('http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
-	    
-		
-	 location_url = 'http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID;
-	//	  location_url = 'http://www.google.com';
+						 $('#linkedin_login').trigger('click');
 		 
-		 
-		 			navigateTo(location_url,'','','');
-						 
-						 
 						 
 						 
 						 } 
