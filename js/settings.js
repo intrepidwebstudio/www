@@ -81,6 +81,8 @@ var search_contentCount = 10;
         }
         function iabClose(event) {
           //  alert(event.type);
+		  
+		  	iabRef.close();
             iabRef.removeEventListener('loadstart', iabLoadStart);
             iabRef.removeEventListener('loadstop', iabLoadStop);
             iabRef.removeEventListener('exit', iabClose);
