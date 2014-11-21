@@ -95,9 +95,15 @@ var search_contentCount = 10;
         }
         function navigateTo(url,click_id,this_id,article_share_title){
 	      iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+		  
+		  if(article_share_title ==!'')
+		  {
+		  
 	      $.support.cors = true;
 	  	  $.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+ security_token);
     	  this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
+		  
+		  }
 			
 	        iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);

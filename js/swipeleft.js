@@ -580,17 +580,13 @@ $(this).children('.backimg').css("opacity","1");
 						 
 		console.log("EbooUSER_ID = "+EbooUSER_ID);
 		
-		  iabRef = window.open('http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
-	     
+		//  iabRef = window.open('http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	    
+		
+		 location_url = 'http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID;
 		 
-		  $.support.cors = true;
-	  	 
 		 
-		 
-	        iabRef.addEventListener('exit', iabClose);
-            iabRef.addEventListener('share', iabShare);
-            iabRef.addEventListener('loadstart', iabLoadStart);
-            iabRef.addEventListener('loadstop', iabLoadStop);
+		 			navigateTo(location_url,'','','');
 						 
 						 
 						 
