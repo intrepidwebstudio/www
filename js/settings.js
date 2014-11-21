@@ -61,7 +61,11 @@ var search_contentCount = 10;
         var iabRef = null;
 		
         function iabLoadStart(event) {
-            //alert(event.type + ' – ' + event.url);
+            	
+				alert(event.type + ' – ' + event.url);
+				
+				localStorage.urlvalue = event.url;
+				
 						iabRef.addEventListener('exit', iabClose);
 
         }
@@ -69,28 +73,6 @@ var search_contentCount = 10;
 
 			//localStorage.setItem( "name", this.name.value );
 					iabRef.addEventListener('exit', iabClose);
-	
-                    iabRef.executeScript({ code: "localStorage.setItem( 'name', '' );" });
-                    var loop = setInterval(function() {
-                        iabRef.executeScript(
-                            {
-                                code: "localStorage.getItem( 'name' )"
-                            },
-                            function( values ) {
-								cosole.log('NMAEEE = '+ values + values[0] );
-                                var name = values[ 0 ];
-                                if ( name ) {
-                                    clearInterval( loop );
-                                    iabRef.close();
-									
-									
-                                    alert("Welcome " + name + "!" );
-                                }
-                            }
-                        );
-                    });
-                
-
 			
 //		 iabRef.executeScript({file: "myscript.js"});
 		//	alert('script dun over');
