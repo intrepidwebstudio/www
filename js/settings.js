@@ -60,8 +60,6 @@ var search_contentCount = 10;
         // Global InAppBrowser reference
         var iabRef = null;
 		
-		
-		
         function iabLoadStart(event) {
             //alert(event.type + ' – ' + event.url);
         }
@@ -71,22 +69,18 @@ var search_contentCount = 10;
           //      alert(event.type + ' – URL CHANGED – ' + event.url);
 		    }
 			
-			
-			// iabRef.executeScript({file: "myscript.js"});
+//		 iabRef.executeScript({file: "myscript.js"});
 		//	alert('script dun over');
-			
-		
-   // iabRef.executeSript( alert('12') );
-			
-        }
+	   // iabRef.executeSript( alert('12') );
+	    }
         function iabClose(event) {
-          //  alert(event.type);
+            alert(event.type);
 		  
 		  	iabRef.close();
-            iabRef.removeEventListener('loadstart', iabLoadStart);
-            iabRef.removeEventListener('loadstop', iabLoadStop);
-            iabRef.removeEventListener('exit', iabClose);
-            iabRef.removeEventListener('share', iabClose);
+           // iabRef.removeEventListener('loadstart', iabLoadStart);
+          //  iabRef.removeEventListener('loadstop', iabLoadStop);
+         //   iabRef.removeEventListener('exit', iabClose);
+           // iabRef.removeEventListener('share', iabClose);
         }
         function iabShare(event){
           //  alert('SHARE:'+event.type);
@@ -96,6 +90,13 @@ var search_contentCount = 10;
             iabRef.removeEventListener('share', iabClose);
         }
         function navigateTo(url,click_id,this_id,article_share_title){
+			
+			
+			iabRef.addEventListener('exit', iabClose);
+            iabRef.addEventListener('share', iabShare);
+            iabRef.addEventListener('loadstart', iabLoadStart);
+            iabRef.addEventListener('loadstop', iabLoadStop);
+			
 	      iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		  
 		  if(article_share_title ==!'')
@@ -107,10 +108,7 @@ var search_contentCount = 10;
 		  
 		  }
 			
-	        iabRef.addEventListener('exit', iabClose);
-            iabRef.addEventListener('share', iabShare);
-            iabRef.addEventListener('loadstart', iabLoadStart);
-            iabRef.addEventListener('loadstop', iabLoadStop);
+	        
 			
         }
 		
