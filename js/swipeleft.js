@@ -446,10 +446,7 @@ $(this).children('.backimg').css("opacity","1");
 				
 				
 				
-				
-							OAuth.initialize("x4SuUm1iHBNilIhqxeB3sg60JGY");
-							
-							
+					
 							
 			 $('#tumblrautho').on('touchstart', function() {	
 				  
@@ -571,8 +568,6 @@ $(this).children('.backimg').css("opacity","1");
 				  }).on('touchmove',function(){})
 				  .on('touchend',function(){
 				 
-				 
-				 
 				if( eboo_linkedin == '1' )
 					  {
 						  change_value = '0';
@@ -582,78 +577,24 @@ $(this).children('.backimg').css("opacity","1");
 					 else{
 						 
 						 
-						    OAuth.popup('linkedin')
-                        .done(function (result) {
-														
-								console.log(JSON.stringify(result));
-								
-								
-								linkedin_data = result;
-								
-								
-								
-									result.post('/people/~/shares', {
-									data: {
-									post_field: 'TESSSTTTTTTTT',
-									// ...
-									}
-									})
-									.done(function (response) {
-									// response is an object containing the response fields
-									
-									console.log('Response = '+ error);
-									
-									})
-									.fail(function (error) {
-									// handle errors here
-									
-									alert('RESPONSE' + error.responseText );
-									
-									console.log('Error = '+ error.message + 'Error Code  = '+ error.code);
-									console.log(JSON.stringify(error))
-									
-									
-									
-									});
-									
-								
-								
-								
-								
-								
-								$('#linkedinlogout').css('display','none');
-								$('#linkedinlogged').css('display','block');	
-								
-								
-								 change_value = '1';
-						$('#linkedinlogout').css('display','none');
-						$('#linkedinlogged').css('display','block');
-								
-								
-								
-								
-								
-					//		console.log('Access token  = '+ result.oauth_token + ' secret key = '+ result.oauth_token_secret  )
-	                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                      //      result.get('/1.1/account/verify_credentials.json')
-                      ///          .done(function(data) {
-	                           // $('#result').html("twitter: Hello, " + data.name + " !");
-				//					console.log( "details = "+ JSON.stringify(data) );
-			//					console.log("twitter: Hello, " + data.name + " ! ");
-	          //                  })
-                  //              .fail(function( jqXHR, textStatus, errorThrown) {
-                //                  console.log("req error: " + textStatus);
-                    //            });
-                        })
-                        .fail(function (e) {
-                       console.log('error: ' + e.message);
-                        });
+						 
+		console.log("EbooUSER_ID = "+EbooUSER_ID);
+		
+		  iabRef = window.open('http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?eboo_user='+EbooUSER_ID, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+	     
+		 
+		  $.support.cors = true;
+	  	 
+		 
+		 
+	        iabRef.addEventListener('exit', iabClose);
+            iabRef.addEventListener('share', iabShare);
+            iabRef.addEventListener('loadstart', iabLoadStart);
+            iabRef.addEventListener('loadstop', iabLoadStop);
 						 
 						 
 						 
 						 
-						
 						 } 
 	//					 console.log("Change Twitter = "+ change_value);
 	
