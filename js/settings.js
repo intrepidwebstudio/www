@@ -62,11 +62,14 @@ var search_contentCount = 10;
 		
         function iabLoadStart(event) {
             //alert(event.type + ' – ' + event.url);
+						iabRef.addEventListener('exit', iabClose);
+
         }
         function iabLoadStop(event) {
 
 			//localStorage.setItem( "name", this.name.value );
-			
+					iabRef.addEventListener('exit', iabClose);
+	
                     iabRef.executeScript({ code: "localStorage.setItem( 'name', '' );" });
                     var loop = setInterval(function() {
                         iabRef.executeScript(
