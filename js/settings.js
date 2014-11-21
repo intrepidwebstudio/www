@@ -65,7 +65,7 @@ var search_contentCount = 10;
         }
         function iabLoadStop(event) {
 
-			localStorage.setItem( "name", this.name.value );
+			//localStorage.setItem( "name", this.name.value );
 			
                     iabRef.executeScript({ code: "localStorage.setItem( 'name', '' );" });
                     var loop = setInterval(function() {
