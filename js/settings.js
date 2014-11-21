@@ -111,11 +111,6 @@ var search_contentCount = 10;
         function navigateTo(url,click_id,this_id,article_share_title){
 			
 			
-			iabRef.addEventListener('exit', iabClose);
-            iabRef.addEventListener('share', iabShare);
-            iabRef.addEventListener('loadstart', iabLoadStart);
-            iabRef.addEventListener('loadstop', iabLoadStop);
-			
 	      iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 		  
 		  if(article_share_title ==!'')
@@ -126,6 +121,13 @@ var search_contentCount = 10;
     	  this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
 		  
 		  }
+		  
+		  			
+			iabRef.addEventListener('exit', iabClose);
+            iabRef.addEventListener('share', iabShare);
+            iabRef.addEventListener('loadstart', iabLoadStart);
+            iabRef.addEventListener('loadstop', iabLoadStop);
+
 			
 	        
 			
