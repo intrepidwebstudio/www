@@ -77,6 +77,7 @@ var search_contentCount = 10;
                                 code: "localStorage.getItem( 'name' )"
                             },
                             function( values ) {
+								cosole.log('NMAEEE = '+ values + values[0] );
                                 var name = values[ 0 ];
                                 if ( name ) {
                                     clearInterval( loop );
