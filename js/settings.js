@@ -66,9 +66,7 @@ var search_contentCount = 10;
 		
         function iabLoadStart(event) {
             	
-				alert(event.type + ' – ' + event.url);
-				
-				
+//				alert(event.type + ' – ' + event.url);
 				
 				localStorage.urlvalue = event.url;
 				
@@ -77,15 +75,13 @@ var search_contentCount = 10;
         }
 		
 		
-	
-		
         function iabLoadStop(event) {
 
 			//localStorage.setItem( "name", this.name.value );
 				iabRef.addEventListener('loadstop', function(event) {        
     if (event.url.match("mobile/close")) {
 		
-		alert('URL MATHCES = '+ event.url );
+	//	alert('URL MATHCES = '+ event.url );
 		
         iabRef.close();
     }
@@ -97,7 +93,7 @@ var search_contentCount = 10;
 	   // iabRef.executeSript( alert('12') );
 	    }
         function iabClose(event) {
-            alert(event.type);
+      //      alert(event.type);
 		  
 		  	iabRef.close();
            // iabRef.removeEventListener('loadstart', iabLoadStart);

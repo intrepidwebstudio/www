@@ -604,9 +604,9 @@ input{
 </div>
   
 
-<div data-role="page" id="4ssettings" data-transition="slide">
+<div data-role="page" id="4ssettings" data-transition="slide" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
-        <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/640.jpg"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
      
      <div class="searchsettings">
@@ -650,7 +650,8 @@ input{
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
                         
                 </a> </li>
-                <li id="linkedinautho" ><a class="settingsmenu" data-transition="slide"  onClick="linkedinautho()" >
+                <li id="linkedinautho" >
+                <a class="settingsmenu" data-transition="slide"  onClick="linkedinautho()" >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
@@ -672,6 +673,14 @@ input{
                 
                 
          </ul>
+         
+         <a  style="background-color:#DFE3E7 !important;"  class="ui-hidden-accessible" id="linkedin_login" href="#" onClick="navigateTo('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin_login.php','','','')" > </a>
+         
+         
+
+    
+         
+         
         </div> 
     </div><!-- /content -->
     
@@ -864,7 +873,7 @@ $(document).keypress(function(e) {
 		
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token = '+security_token, 
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1047,7 +1056,7 @@ function load_trending()
 //window.plugins.spinnerDialog.show();
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token = '+security_token,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1358,41 +1367,25 @@ db.transaction(populateDB, errorCB, successCB);
 		
 				for(var i=0; i< length ; i++)
 				{
-					
-					
-					
-					
-					
 					EbooUSER_ID = result.rows.item(i).user_id;
-					
 					eboo_twitter= result.rows.item(i).twitter;
 					eboo_tumblr= result.rows.item(i).tumblr;
 					eboo_linkedin= result.rows.item(i).linkedin;
 					eboo_facebook= result.rows.item(i).facebook;
-					
-					
 			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email + "Twitter = "+ eboo_twitter + "Tumblr = "+eboo_tumblr +"linked_in =  "+ eboo_linkedin + "facebook = "+ eboo_facebook );
-			
-				//	alert(EbooUSER_ID);
+					//	alert(EbooUSER_ID);
 				//	console.log(EbooUSER_ID);
-					
 					}
 					
 					
 					if( eboo_twitter == '0' )
 					{
-						
 						$('#twitterlogout').css('display','block');
 						$('#twitterlogged').css('display','none');
-						
 						}else{
-							
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');	
-							
 							}
-
-
 					if( eboo_tumblr == '0' )
 					{
 						$('#tumblrlogout').css('display','block');
@@ -1402,21 +1395,14 @@ db.transaction(populateDB, errorCB, successCB);
 							
 						$('#tumblrlogout').css('display','none');
 						$('#tumblrlogged').css('display','block');	
-
-							}
-
-
-
+						}
 					if( eboo_facebook == '0' )
 					{
 						$('#facebooklogout').css('display','block');
 						$('#facebooklogged').css('display','none');
-						
 						}else{
-							
 						$('#facebooklogout').css('display','none');
 						$('#facebooklogged').css('display','block');	
-							
 							}
 					
 	
@@ -1501,7 +1487,7 @@ db.transaction(populateDB, errorCB, successCB);
 		$.ajax({
 			
 			url:ajax_path+'userinsert.php?useremail='+useremail+'&security_token = '+security_token,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1557,15 +1543,17 @@ db.transaction(populateDB, errorCB, successCB);
 		{
 			
 		//	alert('ss');
-			
-			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , tumblr , facebook , linkedin) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
-			
-			EbooUSER_ID = parameter2;
-			
-			eboo_twitter= p3;
+		EbooUSER_ID = parameter2;
+		eboo_twitter= p3;
 			eboo_tumblr= p4;
 			eboo_linkedin= p5;
 			eboo_facebook= p6;
+			
+			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , tumblr , facebook , linkedin) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
+			
+//			EbooUSER_ID = parameter2;
+			
+			
 			
 			
 			
@@ -1732,7 +1720,7 @@ function get_more_data()
 		
  		$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token = '+security_token,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',
@@ -1853,7 +1841,7 @@ function get_more_data()
 		$.support.cors = true;
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token = '+security_token,
-			type:'GET',
+			type:'POST',
 			contentType: "application/json",
         	async: true,
        		dataType: 'json',

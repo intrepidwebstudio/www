@@ -186,16 +186,16 @@ function hex(x) {
 		Global_share_titleee = title_aaa;
 			Global_share_linkkk = title_linkkk;
 			
-			console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
+		//	console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
 		
 		
 		
 		
 	        navigator.notification.confirm(
-            'You are the winner!',  // message
+            title_aaa,  // message
 			OnconfirmLinkedin,
-            'Game Over',            // title
-            'Restart,Exit'          // buttonLabels
+            'LinkedIn',            // title
+            'Cancel,Post'          // buttonLabels
         );
 
 		
@@ -244,14 +244,30 @@ function OnconfirmLinkedin(button)
 	   
 	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
 	   							function(response){
-									
 									console.log('RESULT = '+ JSON.stringify(response));
 									
+								 if( response.status== 'success')
+								 {
+//									navigator.notification.alert('');
+								 }else{
+									 
+									navigator.notification.alert('Please Login to Linkedin from settings page '); 
+									 
+									 }
+									
 									});
+									
+									
+									
+									
+									
+									
+									
+									
 	}
 	else{
 		
-		alert('do nonthing');
+	//	alert('do nonthing');
 		}
 		
 	
@@ -526,15 +542,13 @@ $(this).children('.backimg').css("opacity","1");
 						
 						console.log(JSON.stringify(info.response.user.blogs[0].url));
 						
-						
-						
+												
 						r.post('http://api.tumblr.com/v2/blog/'+hostname+'/post')
+											
 						
 						
-						
-						
-											var oath_token = r.oauth_token ;
-					var oath_secret_token = r.oauth_token_secret;
+					    var oath_token = r.oauth_token ;
+					    var oath_secret_token = r.oauth_token_secret;
 					
 					
 						var tumblr = require('tumblr/index.js');
@@ -635,6 +649,11 @@ $(this).children('.backimg').css("opacity","1");
 						 
 						 
 						 $('#linkedin_login').trigger('click');
+						 
+						 
+						  change_value = '1';
+						 $('#linkedinlogout').css('display','none');
+						$('#linkedinlogged').css('display','block');
 		 
 						 
 						 
