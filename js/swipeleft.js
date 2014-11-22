@@ -120,6 +120,12 @@ function hex(x) {
 			var title_linkkk = $(this).attr('data-value1');
 			var media_link = $(this).attr('data-value2');
 			
+			
+			
+			Global_share_titleee = title_aaa;
+			Global_share_linkkk = title_linkkk;
+			
+			
 		//	console.log("media LINK ="+ media_link);
 			
 			//com.apple.social.[facebook | twitter | sinaweibo | tencentweibo
@@ -178,31 +184,16 @@ function hex(x) {
 			else if( media_link == "linkedin")
 			  { 
 		
-		
-		        navigator.notification.confirm(
-            'Share Via LinkedIn!',  // message
-            function (){
-				        if(button == 1)
-						{
-						  $.support.cors = true;
-	  					  $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+title_aaa+'&article_link='+encodeURI(title_linkkk) );
-													
-							}
-						else{
-							alert('do nothing');
-							
-							}	
-
-				
-				},              // callback to invoke with index of button pressed
-            title_aaa,            // title
-            'Post,Cancel'          // buttonLabels
+	        navigator.notification.confirm(
+            'You are the winner!',  // message
+			OnconfirmLinkedin,
+            'Game Over',            // title
+            'Restart,Exit'          // buttonLabels
         );
 
 		
 		
 		  
-		
 			  
 			  
 //			  if( eboo_linkedin == "1" ){
@@ -232,6 +223,24 @@ function hex(x) {
 
 });
 
+
+function OnconfirmLinkedin(button)
+{
+	
+	
+	if( button == 2 )
+	{
+	   $.support.cors = true;
+	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) );
+	}
+	else{
+		
+		alert('do nonthing');
+		}
+		
+	
+	
+	}
 
 
        

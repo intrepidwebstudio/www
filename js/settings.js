@@ -24,6 +24,10 @@
    var global_article_title='';	
 	var global_article_link='';
 	
+	var Global_share_titleee ='';
+	var Global_share_linkkk ='';
+			
+	
 	var pageCount = 0;
 var contentCount = 10;
 
