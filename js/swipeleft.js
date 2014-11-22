@@ -179,9 +179,29 @@ function hex(x) {
 			  { 
 		
 		
+		        navigator.notification.confirm(
+            'Share Via LinkedIn!',  // message
+            function (){
+				        if(button == 1)
+						{
+						  $.support.cors = true;
+	  					  $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+title_aaa+'&article_link='+encodeURI(title_linkkk) );
+													
+							}
+						else{
+							alert('do nothing');
+							
+							}	
+
+				
+				},              // callback to invoke with index of button pressed
+            title_aaa,            // title
+            'Post,Cancel'          // buttonLabels
+        );
+
 		
-		  $.support.cors = true;
-	  	  $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+title_aaa+'&article_link='+encodeURI(title_linkkk) );
+		
+		  
 		
 			  
 			  
@@ -214,6 +234,10 @@ function hex(x) {
 
 
 
+       
+      // process the confirmation dialog result
+
+    // Show a custom confirmation dialog
 
 
 
