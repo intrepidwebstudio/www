@@ -122,8 +122,7 @@ function hex(x) {
 			
 			
 			
-			Global_share_titleee = title_aaa;
-			Global_share_linkkk = title_linkkk;
+			
 			
 			
 		//	console.log("media LINK ="+ media_link);
@@ -183,6 +182,14 @@ function hex(x) {
 				}
 			else if( media_link == "linkedin")
 			  { 
+		
+		Global_share_titleee = title_aaa;
+			Global_share_linkkk = title_linkkk;
+			
+			console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
+		
+		
+		
 		
 	        navigator.notification.confirm(
             'You are the winner!',  // message
