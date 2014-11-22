@@ -1541,15 +1541,16 @@ db.transaction(populateDB, errorCB, successCB);
 			
 		//	alert('ss');
 		EbooUSER_ID = parameter2;
-			
-			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , tumblr , facebook , linkedin) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
-			
-			EbooUSER_ID = parameter2;
-			
-			eboo_twitter= p3;
+		eboo_twitter= p3;
 			eboo_tumblr= p4;
 			eboo_linkedin= p5;
 			eboo_facebook= p6;
+			
+			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , tumblr , facebook , linkedin) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
+			
+//			EbooUSER_ID = parameter2;
+			
+			
 			
 			
 			

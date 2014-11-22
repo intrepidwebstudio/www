@@ -181,7 +181,7 @@ function hex(x) {
 		
 		
 		  $.support.cors = true;
-	  	  $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php?linkedin_user_id='+EbooUSER_ID);
+	  	  $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+title_aaa+'&article_link='+encodeURI(title_linkkk) );
 		
 			  
 			  
