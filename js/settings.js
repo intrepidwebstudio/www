@@ -120,6 +120,9 @@ var search_contentCount = 10;
 		  
 		  }else{
 			  
+			  
+			  console.log("EbooUSER_ID = "+EbooUSER_ID);
+			  
 			   iabRef = window.open(url+'?eboo_user='+EbooUSER_ID , '_blank', 'toolbarposition=top,location=yes,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 			  
 			  }
