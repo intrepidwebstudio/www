@@ -56,7 +56,7 @@ var search_contentCount = 10;
 	
 	
 	
-	 var iabUrl = null;
+	
         // Global InAppBrowser reference
         var iabRef = null;
 		
@@ -64,15 +64,29 @@ var search_contentCount = 10;
             	
 				alert(event.type + ' – ' + event.url);
 				
+				
+				
 				localStorage.urlvalue = event.url;
 				
 						iabRef.addEventListener('exit', iabClose);
 
         }
+		
+		
+	
+		
         function iabLoadStop(event) {
 
 			//localStorage.setItem( "name", this.name.value );
-					iabRef.addEventListener('exit', iabClose);
+				iabRef.addEventListener('loadstop', function(event) {        
+    if (event.url.match("mobile/close")) {
+		
+		alert('URL MATHCES = '+ event.url );
+		
+        iabRef.close();
+    }
+});
+			
 			
 //		 iabRef.executeScript({file: "myscript.js"});
 		//	alert('script dun over');
@@ -89,16 +103,13 @@ var search_contentCount = 10;
         }
         function iabShare(event){
           //  alert('SHARE:'+event.type);
-            iabRef.removeEventListener('loadstart', iabLoadStart);
-            iabRef.removeEventListener('loadstop', iabLoadStop);
-            iabRef.removeEventListener('exit', iabClose);
-            iabRef.removeEventListener('share', iabClose);
+         //   iabRef.removeEventListener('loadstart', iabLoadStart);
+          //  iabRef.removeEventListener('loadstop', iabLoadStop);
+           // iabRef.removeEventListener('exit', iabClose);
+           // iabRef.removeEventListener('share', iabClose);
         }
         function navigateTo(url,click_id,this_id,article_share_title){
 			
-			
-	     
-		  
 		  if(article_share_title ==!'')
 		  {
 		 
