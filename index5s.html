@@ -498,6 +498,10 @@ input{
                                      
     </div><!-- /content -->
     
+    
+    
+    
+    
                     <a  href="#popup_alert" id="alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
                     <div data-role="popup" id="popup_alert"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
                     <div data-role="header" style="background-color:#CCC" >
@@ -677,6 +681,31 @@ input{
          </ul>
          
          <a  style="background-color:#DFE3E7 !important;"  class="ui-hidden-accessible" id="linkedin_login" href="#" onClick="navigateTo('http://www.safelearners.com/oauth/mysqli_offline_access_to_google.php','','','')" > </a>
+         
+         
+       <script>  
+         
+      // process the confirmation dialog result
+    function onConfirm(button) {
+        alert('You selected button ' + button);
+    }
+
+    // Show a custom confirmation dialog
+    //
+    function showConfirm() {
+        navigator.notification.confirm(
+            'You are the winner!',  // message
+            onConfirm,              // callback to invoke with index of button pressed
+            'Game Over',            // title
+            'Restart,Exit'          // buttonLabels
+        );
+    }
+
+</script>
+   
+    <p><a href="#" onclick="showConfirm(); return false;">Show Confirm</a></p>
+    
+         
          
         </div> 
     </div><!-- /content -->
