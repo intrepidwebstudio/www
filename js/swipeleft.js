@@ -134,7 +134,7 @@ function hex(x) {
 			if( media_link == "twitter" )
 			{
 				if( eboo_twitter == "1" ){
-			window.plugins.socialsharing.shareViaTwitter(title_aaa, null /* img */,title_linkkk);	
+			window.plugins.socialsharing.shareViaTwitter("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);	
 				}else{
 					
 							$('#alert').trigger('click');
@@ -146,7 +146,7 @@ function hex(x) {
 			{
 				
 				if( eboo_facebook == "1" ){
-			window.plugins.socialsharing.shareViaFacebook(title_aaa, null /* img */,title_linkkk);
+			window.plugins.socialsharing.shareViaFacebook("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);
 				}else{
 	
 							$('#alert').trigger('click');
