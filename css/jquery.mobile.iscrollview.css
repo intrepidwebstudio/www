@@ -68,7 +68,7 @@
 
 
 /* Note on scrollbar styles: iscroll4 adds inline CSS to the scrollbar when it creates it.
-   It sets the z-index to 100 and positions it relative to the wrapper, at the right edge of
+ It sets the z-index to 100 and positions it relative to the wrapper, at the right edge of
    the wrapper. If you want to override this behaviour, set the scrollBarClass option, and then
    style that class as you please */
 
