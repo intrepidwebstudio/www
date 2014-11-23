@@ -112,3 +112,10 @@ function browser_setting()
 	
 
 
+$('#mostpopular').on("touchstart",function(e){	})
+.on("touchmove",function(e){  })	
+.on("touchend",function(e){
+	
+	 load_trending();
+	
+	  })	
