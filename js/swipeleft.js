@@ -165,120 +165,73 @@ function hex(x) {
 			else if( media_link == "tumblr") 
 			{
 				
-				if( eboo_tumblr == "1" ){
-					
-			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);	
-			
-				}else{
-
-							$('#alert').trigger('click');
-							$('#alertmessage').html('Please check the tumblr from settings page');
-
-					
-					
-					}
-				
+			Global_share_titleee = title_aaa;
+			Global_share_linkkk = title_linkkk;
+		//	console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
+	        navigator.notification.confirm(
+            title_aaa,  // message
+			OnconfirmTumblr,
+            'Tumblr',            // title
+            'Cancel,Post'          // buttonLabels
+        );
 					
 				}
 			else if( media_link == "linkedin")
 			  { 
 		
-		Global_share_titleee = title_aaa;
+			Global_share_titleee = title_aaa;
 			Global_share_linkkk = title_linkkk;
-			
 		//	console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
-		
-		
-		
-		
 	        navigator.notification.confirm(
             title_aaa,  // message
 			OnconfirmLinkedin,
             'LinkedIn',            // title
             'Cancel,Post'          // buttonLabels
         );
-
-		
-		
-		  
-			  
-			  
-//			  if( eboo_linkedin == "1" ){
-				  
-//			window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk);
-			
-	//			}else{
-					
-	//						$('#alert').trigger('click');
-	//						$('#alertmessage').html('Please check the linkedin from settings page');
-	//				}
-			
-			
-				}	
-						
-						
-//							window.plugins.socialsharing.shareVia(title_aaa, null /* img */,title_linkkk, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)});					
-					
-			
-		//	console.log('TITLEE = '+ title_aaa);
-		//	console.log('LINKKK = '+ title_linkkk);
-				
-
-		});
-
-	
-
-});
+	   }	
+    });
+ });
 
 
 function OnconfirmLinkedin(button)
 {
 	
-	
-	if( button == 2 )
+ if( button == 2 )
 	{
 	   $.support.cors = true;
-	   
 	   console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
-	   
-	   
 	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
 	   							function(response){
 									console.log('RESULT = '+ JSON.stringify(response));
-									
+									console.log("status = "+ response.status);
 								 if( response.status== 'success')
 								 {
-//									navigator.notification.alert('');
+//beep can be included later									navigator.notification.alert('');
 								 }else{
-									 
-									navigator.notification.alert('Please Login to Linkedin from settings page '); 
-									 
+								navigator.notification.alert('Please Login to Linkedin from settings page '); 
 									 }
-									
-									});
-									
-									
-									
-									
-									
-									
-									
-									
-	}
-	else{
-		
-	//	alert('do nonthing');
+				});
 		}
-		
-	
-	
-	}
-
-
-       
-      // process the confirmation dialog result
-
-    // Show a custom confirmation dialog
+}
+function OnconfirmTumblr(button)
+{
+ if( button == 2 )
+	{
+	   $.support.cors = true;
+	   console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
+	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_tumblr.php?tumblr_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
+	   							function(response){
+									console.log('RESULT = '+ JSON.stringify(response));
+									console.log("status = "+ response.status);
+								 if( response.status== 'success')
+								 {
+//beep can be included later									navigator.notification.alert('');
+								 }else{
+								navigator.notification.alert('Please Login to Tumblr from settings page '); 
+									 }
+				});
+		}
+}
 
 
 
@@ -433,64 +386,7 @@ $(this).children('.backimg').css("opacity","1");
 			 });
 			 
 			 
-/*
-		 $('#linkedinautho').on('touchstart', function() {	
-				  
-				  }).on('touchmove',function(){
-					  })
-				  .on('touchend',function(){
-				 
-				 
-					  if( eboo_linkedin == '1' )
-					  {
-						  change_value = '0';
-						$('#linkedinlogout').css('display','block');
-						$('#linkedinlogged').css('display','none');
-						  }
-					 else{
-						 change_value = '1';
-						$('#linkedinlogout').css('display','none');
-						$('#linkedinlogged').css('display','block');
-						 } 
-	//					 console.log("Change Twitter = "+ change_value);
-	
-				var socialName = 'linkedin';
-	
-			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-				 
-				 			
-					    });
-					*/
-		/*			
-				 $('#tumblrautho').on('touchstart', function() {	
-				  
-				  
-				  }).on('touchmove',function(){})
-				  .on('touchend',function(){
-
-					  if( eboo_tumblr == '1' )
-					  {
-						  change_value = '0';
-						$('#tumblrlogout').css('display','block');
-						$('#tumblrlogged').css('display','none');
-						  }
-					 else{
-						 change_value = '1';
-						$('#tumblrlogout').css('display','none');
-						$('#tumblrlogged').css('display','block');
-						 } 
-	//					 console.log("Change Twitter = "+ change_value);
-	
-				var socialName = 'tumblr';
-	
-			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-
-						
-				 });
-				
-				*/
-				
-			 $('#facebookautho').on('touchstart', function() {	
+		 $('#facebookautho').on('touchstart', function() {	
 				  
 				  
 				  }).on('touchmove',function(){})
@@ -527,99 +423,28 @@ $(this).children('.backimg').css("opacity","1");
 				  }).on('touchmove',function(){})
 				  .on('touchend',function(){
 							
-				OAuth.popup('tumblr')
-				.done(function (r) {
-					
-					
-					r.get('http://api.tumblr.com/v2/user/info')
-					.done(function(info){
-						
-						console.log("DATA = "+ JSON.stringify(info));
-						
-						console.log(info.response.user.blogs[0].url);
-						
-						var hostname = info.response.user.blogs[0].url
-						
-						console.log(JSON.stringify(info.response.user.blogs[0].url));
-						
-												
-						r.post('http://api.tumblr.com/v2/blog/'+hostname+'/post')
-											
-						
-						
-					    var oath_token = r.oauth_token ;
-					    var oath_secret_token = r.oauth_token_secret;
-					
-					
-						var tumblr = require('tumblr/index.js');
-						var client = tumblr.createClient({
-						consumer_key: 'jiShds82DRrk1ejO9hSOKAmocPsplYYn3FhHa4a9Nysn4rc35N',
-						consumer_secret: 'q6b286hbT4caFCDwyg0JlQ28amIe6tiN5a6Mial78LA1Uc7SEc',
-						token: oath_token,
-						token_secret: oath_secret_token
-						});
-						
-						
-						
-	client.userInfo(function (err, data) {
-    data.user.blogs.forEach(function (blog) {
-        console.log(blog.name);
-    });
-});					
-						
-
-						console.log("CLIENT ="+client);		
-						
-						
-						
-						client.userInfo(function (err, data) {
-    data.user.blogs.forEach(function (blog) {
-        console.log(blog.name);
-    });
-});
-						
-						
-						}
-					)
-					.fail(function(err){
-						
-						console.log("ERRORR = "+ JSON.stringify(info));
-						
-						});
-					
-					
-														
-					console.log(JSON.stringify(r));
-					
-						console.log(r.oauth_token +"---------"+r.oauth_token_secret);
-						
-
-
-					client.posts('seejohasdasd df asdfg nrun', { type: 'text' }, function (err, resp) {
-  resp.posts; // use them for something
-  
-  console.log(resp.posts);
-  
-  console.log("ERRRR = "+ JSON.stringify(err) );
-  
-});					
-					
-					
-					
-					
-					
 							
-								$('#tumblrlogout').css('display','none');
-								$('#tumblrlogged').css('display','block');
+	 			if( eboo_tumblr == '1' )
+				  {
+						  change_value = '0';
+						  
+						$('#tumblrlogout').css('display','block');
+						$('#tumblrlogged').css('display','none');
+				  }
+				 else{
+						 $('#tumblr_login').trigger('click');
+		
+						  change_value = '1';
+						  
+						 $('#tumblrlogout').css('display','none');
+ 	                     $('#tumblrlogged').css('display','block');
+		 
+						 } 
 								
-						})
-						  .fail(function (e) {
-                       console.log('error: ' + e.message);
-                        });
-							
-						
-						
-				  });	
+			var socialName = 'tumblr';
+			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );					
+								
+			  });	
 							
 							
 							

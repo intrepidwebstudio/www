@@ -38,63 +38,31 @@ var search_pageCount = 0;
 var search_contentCount = 10;
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	
 	//*************************************** settings complete here ***************************************
 	
-	
-		var	eboo_twitter;
-		var	eboo_tumblr;
-		var	eboo_linkedin;
-		var	eboo_facebook;		
-	
-	
-	
-	
-	
-	
-        // Global InAppBrowser reference
-        var iabRef = null;
-		
-        function iabLoadStart(event) {
-            	
-//				alert(event.type + ' – ' + event.url);
-				
-				localStorage.urlvalue = event.url;
-				
-						iabRef.addEventListener('exit', iabClose);
 
+var	eboo_twitter;
+var	eboo_tumblr;
+var	eboo_linkedin;
+var	eboo_facebook;		
+	
+	        // Global InAppBrowser reference
+        var iabRef = null;
+	    function iabLoadStart(event) {
+			localStorage.urlvalue = event.url;
+			iabRef.addEventListener('exit', iabClose);
         }
 		
 		
         function iabLoadStop(event) {
-
-			//localStorage.setItem( "name", this.name.value );
-				iabRef.addEventListener('loadstop', function(event) {        
-    if (event.url.match("mobile/close")) {
-		
-	//	alert('URL MATHCES = '+ event.url );
-		
-        iabRef.close();
-    }
+			iabRef.addEventListener('loadstop', function(event) {        
+				    if (event.url.match("mobile/close")) {
+					        iabRef.close();
+					    }
 });
-			
-			
-//		 iabRef.executeScript({file: "myscript.js"});
-		//	alert('script dun over');
-	   // iabRef.executeSript( alert('12') );
-	    }
+}
         function iabClose(event) {
-      //      alert(event.type);
-		  
 		  	iabRef.close();
            // iabRef.removeEventListener('loadstart', iabLoadStart);
           //  iabRef.removeEventListener('loadstop', iabLoadStop);
@@ -119,23 +87,14 @@ var search_contentCount = 10;
     	  this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
 		  
 		  }else{
-			  
-			  
 			  console.log("EbooUSER_ID = "+EbooUSER_ID);
-			  
-			   iabRef = window.open(url+'?eboo_user='+EbooUSER_ID , '_blank', 'toolbarposition=top,location=yes,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
-			  
+              iabRef = window.open(url+'?eboo_user='+EbooUSER_ID , '_blank', 'toolbarposition=top,location=yes,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 			  }
-		  
-		  			
 			iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);
             iabRef.addEventListener('loadstart', iabLoadStart);
             iabRef.addEventListener('loadstop', iabLoadStop);
 
-			
-	        
-			
         }
 		
 		
@@ -149,7 +108,6 @@ function browser_setting()
                         // $.mobile.loader.prototype.options.html ="<img src='icons/settings.png'/>";
                          $.mobile.allowCrossDomainPages = true;
                          });
-						 
 	}
 	
 
