@@ -85,7 +85,7 @@ function hex(x) {
 		//	console.log(" LEFTTTT  =" + left );
 			if(left < -90)
 			{
-		 var new_left = -240 + 'px';
+		 var new_left = -230 + 'px';
 			e.currentTarget.style.left = new_left;	
 			
 		e.currentTarget.style.setProperty('background-color', '#DFE3E7', 'important' );	
