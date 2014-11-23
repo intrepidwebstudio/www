@@ -115,8 +115,8 @@ function hex(x) {
 				$(this).children('.image_icon').css("opacity","1.0");
 				
 				
-				 $.getScript("js/SocialSharing.js");
-		  SocialSharing();
+	  		 $.getScript("js/SocialSharing.js");
+		 	 SocialSharing();
 				
 			var title_aaa =	$(this).attr('data-value');
 			var title_linkkk = $(this).attr('data-value1');
@@ -166,7 +166,10 @@ function hex(x) {
 				
 			else if( media_link == "tumblr") 
 			{
+				
 				alert('4');
+			if(eboo_tumblr== "1")	
+			{
 				
 			Global_share_titleee = title_aaa;
 			Global_share_linkkk = title_linkkk;
@@ -177,12 +180,22 @@ function hex(x) {
             'Tumblr',            // title
             'Cancel,Post'          // buttonLabels
         );
+		
+			}else{
+				
+				
+				
+				
+				}
 					
 				}
 			else if( media_link == "linkedin")
 			  { 
 		
 		alert('aa');
+		
+		if( eboo_linkedin == "1" )
+		{
 			Global_share_titleee = title_aaa;
 			Global_share_linkkk = title_linkkk;
 		//	console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
@@ -192,6 +205,10 @@ function hex(x) {
             'LinkedIn',            // title
             'Cancel,Post'          // buttonLabels
         );
+		}else{
+			
+			
+			}
 	   }	
     });
  });
@@ -521,7 +538,7 @@ $(this).children('.backimg').css("opacity","1");
 
 
 
-var callback = function(buttonIndex) {
+var callback123 = function(buttonIndex) {
     setTimeout(function() {
       // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
 //      alert('button index clicked: ' + buttonIndex);
