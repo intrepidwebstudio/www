@@ -232,20 +232,36 @@ topplace_empty{
 	
 	.lefticon img{
 			
-			float:left;
-			width:7%;
+			
+			width:40%;
 			max-width:70px;
-			padding-left:14px;
+			
 			
 		}	
+	.lefticon{
+		float:left;
+			min-height:40px !important;	
+			min-width:40px !important;
+			text-align:center;
+			
 		
+		}		
+		
+		
+	.righticon{
+			min-height:40px !important;	
+			min-width:40px !important;
+			float:right;
+			text-align:center;
+		
+		}	
 		
 	.righticon img{
 			
-			float:right;
-			width:7%;
+			
+			width:40%;
 			max-width:70px;	
-			padding-right:14px;
+			
 		}	
 		
 	.midicon {
@@ -485,16 +501,13 @@ input{
         
         <div class="searchsettings " id="top_menu" >
         
-        <div  class="lefticon" id="dragimg" >
-       		<a id="showsearch" data-role='ui-btn'  ><img  class="searchimg" src="icons/57x57/search.png"  ></a>
-        </div>
+       
+       		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg" src="icons/57x57/search.png"  ></a>
         
 		
         
         
-        <div class="righticon"  >
-        	<a href="#5ssettings" data-transition="slide" onClick="settings()" id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
-        </div>
+        	<a href="#5ssettings" class="righticon" onClick="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
         
         
         <div class="midicon"  ><img id="mostpopular" src="img/header.png" ></div>
