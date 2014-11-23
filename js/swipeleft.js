@@ -202,9 +202,12 @@ function OnconfirmLinkedin(button)
 	   console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
 	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
 	   							function(response){
-									console.log('RESULT = '+ JSON.stringify(response));
-									console.log("status = "+ status);
-								 if( status== 'success')
+									
+									result_variable = response;
+									
+									console.log('RESULT = '+ JSON.stringify(result_variable));
+									console.log("status = "+ result_variable.status);
+								 if( result_variable.status == 'success')
 								 {
 //beep can be included later									navigator.notification.alert('');
 								 }else{
