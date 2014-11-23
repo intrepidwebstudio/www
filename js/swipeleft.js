@@ -166,6 +166,7 @@ function hex(x) {
 				
 			else if( media_link == "tumblr") 
 			{
+				alert('4');
 				
 			Global_share_titleee = title_aaa;
 			Global_share_linkkk = title_linkkk;
@@ -181,6 +182,7 @@ function hex(x) {
 			else if( media_link == "linkedin")
 			  { 
 		
+		alert('aa');
 			Global_share_titleee = title_aaa;
 			Global_share_linkkk = title_linkkk;
 		//	console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
