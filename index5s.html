@@ -492,8 +492,8 @@ input{
 		
         
         
-        <div class="righticon" >
-        	<a href="#5ssettings" data-transition="slide" onClick="settings()" id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
+        <div class="righticon" onClick="settings()" >
+        	<a href="#5ssettings" data-transition="slide"  id="settingspage" data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
         </div>
         
         
@@ -1122,11 +1122,11 @@ function load_trending()
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
