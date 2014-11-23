@@ -203,8 +203,8 @@ function OnconfirmLinkedin(button)
 	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
 	   							function(response){
 									console.log('RESULT = '+ JSON.stringify(response));
-									console.log("status = "+ response.status);
-								 if( response.status== 'success')
+									console.log("status = "+ status);
+								 if( status== 'success')
 								 {
 //beep can be included later									navigator.notification.alert('');
 								 }else{
