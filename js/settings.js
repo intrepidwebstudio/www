@@ -57,9 +57,23 @@ var	eboo_facebook;
 		
         function iabLoadStop(event) {
 			iabRef.addEventListener('loadstop', function(event) {        
-				    if (event.url.match("mobile/close")) {
+				    if (event.url.match("/mobile/close/tumblrsuccess")) {
 					        iabRef.close();
+							
 					    }
+					else if(event.url.match("/mobile/close/tumblrfail")){
+						
+						iabRef.close();
+						}
+					else if(event.url.match("/mobile/close/linkedinsuccess")){
+						iabRef.close();
+						
+						}
+					else if(event.url.match("/mobile/close/linkedinsuccess")){
+						
+						iabRef.close();
+						
+						}			
 });
 }
         function iabClose(event) {

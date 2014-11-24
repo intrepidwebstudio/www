@@ -136,10 +136,8 @@ function hex(x) {
 				if( eboo_twitter == "1" ){
 			window.plugins.socialsharing.shareViaTwitter("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);	
 				}else{
-					
-							$('#alert').trigger('click');
-							$('#alertmessage').html('Please check the twitter from settings page');
-					
+					  $('#settingspage').trigger('click');				
+				   	  settings_page();
 					}
 				}
 			else if( media_link == "facebook"  )
@@ -148,11 +146,8 @@ function hex(x) {
 				if( eboo_facebook == "1" ){
 			window.plugins.socialsharing.shareViaFacebook("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);
 				}else{
-	
-							$('#alert').trigger('click');
-							$('#alertmessage').html('Please check the facebook from settings page');
-					
-					
+					 $('#settingspage').trigger('click');				
+				   	  settings_page();
 					}
 				
 				
@@ -162,7 +157,7 @@ function hex(x) {
 			{
 				
 				window.plugins.socialsharing.shareViaEmail(
-  title_aaa + title_linkkk, // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+  title_aaa +'<br>'+title_linkkk, // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
   'Check out this article',
 null, // TO: must be null or an array
   null, // CC: must be null or an array
@@ -177,7 +172,7 @@ null, // TO: must be null or an array
 			else if( media_link == "tumblr") 
 			{
 				
-				alert('4');
+				
 			if(eboo_tumblr== "1")	
 			{
 				
@@ -193,7 +188,14 @@ null, // TO: must be null or an array
 		
 			}else{
 				
-				
+				 $('#tumblr_login').trigger('click');
+				  change_value = '1';
+				 $('#tumblrlogout').css('display','none');
+ 	             $('#tumblrlogged').css('display','block');
+				 
+				var socialName = 'tumblr';
+				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+		 
 				
 				
 				}
@@ -202,7 +204,6 @@ null, // TO: must be null or an array
 			else if( media_link == "linkedin")
 			  { 
 		
-		alert('aa');
 		
 		if( eboo_linkedin == "1" )
 		{
@@ -217,6 +218,14 @@ null, // TO: must be null or an array
         );
 		}else{
 			
+				 $('#linkedin_login').trigger('click');
+				  change_value = '1';
+				 $('#linkedinlogout').css('display','none');
+ 	             $('#linkedinlogged').css('display','block');
+				 
+				var socialName = 'linkedin';
+				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+
 			
 			}
 	   }	
