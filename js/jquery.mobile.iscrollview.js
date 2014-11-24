@@ -460,11 +460,11 @@ function jqmIscrollviewRemoveLayerXYProps(e) {
     // Note that we ALWAYS prevent scrolling the page by dragging inside the scroller.
     preventPageScroll: true,
 
-    pullDownResetText   : "Pull down to refresh...",
-    pullDownPulledText  : "Release to refresh...",
+    pullDownResetText   : "Refresh",
+    pullDownPulledText  : "Refresh",
     pullDownLoadingText : "Loading...",
     pullUpResetText     : "Pull up to refresh...",
-    pullUpPulledText    : "Release to refresh...",
+    pullUpPulledText    : "Refresh",
     pullUpLoadingText   : "Loading...",
 
     pullPulledClass     : "iscroll-pull-pulled",
