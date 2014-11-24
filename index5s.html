@@ -233,6 +233,7 @@ topplace_empty{
 			
 			width:40%;
 			max-width:70px;
+			padding-top:9px;
 			
 			
 		}	
@@ -259,15 +260,20 @@ topplace_empty{
 			
 			width:40%;
 			max-width:70px;	
+			padding-top:9px;
 			
 		}	
+	
+	
+	
+	
 		
 	.midicon{
 		margin-left:auto;
 		margin-right:auto;
 		text-align:center !important;	
 
-		
+		padding-top:9px;
 		width: 25% !important;
 		opacity: .9 ;
 		
@@ -279,7 +285,7 @@ topplace_empty{
 	 .searchsettings{
 	 
 	 position:relative !important;
-	 top:19px !important;
+	 top:10px !important;
 	 
 	 }		
 	
@@ -386,6 +392,8 @@ topplace_empty{
 	
 .terms_of_service{
 	
+	padding-bottom:35px;
+	
 /*	background-color:#171514 !important  ; */
 	
 	}	
@@ -461,6 +469,7 @@ input{
  	position:absolute
 	}
 
+
   </style>
   
   
@@ -497,9 +506,9 @@ input{
         
         <div class="searchsettings " id="top_menu" >
        
-       		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg" src="icons/57x57/search.png"  ></a>
+       		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
         
-        	<a href="#5ssettings" class="righticon" onClick="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
+        	<a href="#5ssettings" class="righticon" onClick="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
         
         
 <center>        <img  class="midicon" id="mostpopular" src="img/header.png" ></center>
@@ -520,7 +529,7 @@ input{
         
         </ul>
           <div class="iscroll-pullup">
-          <center><span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="" ></span></center>
+          <center><span class="iscroll-pull-icon"></span><span style="margin-top:0px !important;" class="iscroll-pull-label" data-iscroll-loading-text="" ></span></center>
         </div>
           
            
@@ -852,8 +861,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
  
 $('#searcharea').on('blur',function(){ 
+									$('.search_empty').hide();		
 								    	$('#searcharea').hide();	
-									    $('.search_empty').hide();
+									    
 										$('#searcharea').blur();
 										
 										 
