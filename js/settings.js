@@ -59,19 +59,53 @@ var	eboo_facebook;
 			iabRef.addEventListener('loadstop', function(event) {        
 				    if (event.url.match("/mobile/close/tumblrsuccess")) {
 					        iabRef.close();
+											  change_value = '1';
+				 $('#tumblrlogout').css('display','none');
+ 	             $('#tumblrlogged').css('display','block');
+				 
+				var socialName = 'tumblr';
+				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+
 							
 					    }
 					else if(event.url.match("/mobile/close/tumblrfail")){
 						
+										  change_value = '0';
+				 $('#tumblrlogout').css('display','block');
+ 	             $('#tumblrlogged').css('display','none');
+				 
+				var socialName = 'tumblr';
+				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+
 						iabRef.close();
-						}
-					else if(event.url.match("/mobile/close/linkedinsuccess")){
-						iabRef.close();
+						
+						
 						
 						}
 					else if(event.url.match("/mobile/close/linkedinsuccess")){
 						
+						
 						iabRef.close();
+						  change_value = '1';
+				 $('#linkedinlogout').css('display','none');
+ 	             $('#linkedinlogged').css('display','block');
+				 
+				var socialName = 'linkedin';
+				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+
+						
+						}
+					else if(event.url.match("/mobile/close/linkedinfail")){
+						
+						iabRef.close();
+												  change_value = '0';
+				 $('#linkedinlogout').css('display','none');
+ 	             $('#linkedinlogged').css('display','block');
+				 
+				var socialName = 'linkedin';
+				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+
+						
 						
 						}			
 });

@@ -193,14 +193,7 @@ null, // TO: must be null or an array
 			}else{
 				
 				 $('#tumblr_login').trigger('click');
-				  change_value = '1';
-				 $('#tumblrlogout').css('display','none');
- 	             $('#tumblrlogged').css('display','block');
-				 
-				var socialName = 'tumblr';
-				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-		 
-				
+				 				
 				
 				}
 					
@@ -223,12 +216,6 @@ null, // TO: must be null or an array
 		}else{
 			
 				 $('#linkedin_login').trigger('click');
-				  change_value = '1';
-				 $('#linkedinlogout').css('display','none');
- 	             $('#linkedinlogged').css('display','block');
-				 
-				var socialName = 'linkedin';
-				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 
 			
 			}
