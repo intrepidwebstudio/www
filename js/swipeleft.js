@@ -136,11 +136,16 @@ function hex(x) {
 				if( eboo_twitter == "1" ){
 			window.plugins.socialsharing.shareViaTwitter("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);	
 				}else{
-					 $.mobile.changePage('#5spage1' , { transition:'slide' });
-					 
-					 // $('#settingspage').trigger('click');				
-				   	  settings_page();
-					}
+					
+			 navigator.notification.confirm(
+            'Allow Twitter to share ?',  // message
+			ontwitterconfirm,
+            'Allow Twitter',            // title
+            'Cancel,Allow'          // buttonLabels
+        );
+			
+					
+				}
 				}
 			else if( media_link == "facebook"  )
 			{
@@ -149,9 +154,14 @@ function hex(x) {
 			window.plugins.socialsharing.shareViaFacebook("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);
 				}else{
 					
-					 $.mobile.changePage('#5spage1' , { transition:'slide' });
-					// $('#settingspage').trigger('click');				
-				   	  settings_page();
+					  navigator.notification.confirm(
+            'Allow Facebook to share ?',  // message
+			onfacebookconfirm,
+            'Allow Facebook',            // title
+            'Cancel,Allow'          // buttonLabels
+        );
+					
+					
 					}
 				
 				
@@ -223,6 +233,34 @@ null, // TO: must be null or an array
     });
  });
 
+function onfacebookconfirm(button){
+	if(button == 2)
+	{
+			 change_value = '1';
+		$('#facebooklogout').css('display','none');
+		$('#facebooklogged').css('display','block');
+
+		var socialName = 'facebook';
+		db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+	}
+	
+}
+
+function ontwitterconfirm(button)
+{
+	
+	if(button == 2)
+	{
+			 change_value = '1';
+		$('#twitterlogout').css('display','none');
+		$('#twitterlogged').css('display','block');
+
+		var socialName = 'twitter';
+		db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+	}
+	
+	
+	}
 
 function OnconfirmLinkedin(button)
 {
