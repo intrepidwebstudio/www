@@ -140,7 +140,7 @@ function hex(x) {
 			 navigator.notification.confirm(
             'Allow Twitter to share ?',  // message
 			ontwitterconfirm,
-            'Allow Twitter',            // title
+            'Twitter',            // title
             'Cancel,Allow'          // buttonLabels
         );
 			
@@ -157,7 +157,7 @@ function hex(x) {
 					  navigator.notification.confirm(
             'Allow Facebook to share ?',  // message
 			onfacebookconfirm,
-            'Allow Facebook',            // title
+            'Facebook',            // title
             'Cancel,Allow'          // buttonLabels
         );
 					
@@ -280,7 +280,7 @@ function OnconfirmLinkedin(button)
 								 {
 //beep can be included later									navigator.notification.alert('');
 								 }else{
-								navigator.notification.alert('Please Login to Linkedin from settings page '); 
+							//	navigator.notification.alert('Please Login to Linkedin from settings page '); 
 									 }
 				});
 		}
@@ -299,7 +299,7 @@ function OnconfirmTumblr(button)
 								 {
 //beep can be included later									navigator.notification.alert('');
 								 }else{
-								navigator.notification.alert('Please Login to Tumblr from settings page '); 
+							//	navigator.notification.alert('Please Login to Tumblr from settings page '); 
 									 }
 				});
 		}
