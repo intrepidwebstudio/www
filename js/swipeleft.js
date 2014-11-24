@@ -136,7 +136,9 @@ function hex(x) {
 				if( eboo_twitter == "1" ){
 			window.plugins.socialsharing.shareViaTwitter("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);	
 				}else{
-					  $('#settingspage').trigger('click');				
+					 $.mobile.changePage('#5spage1' , { transition:'slide' });
+					 
+					 // $('#settingspage').trigger('click');				
 				   	  settings_page();
 					}
 				}
@@ -146,7 +148,9 @@ function hex(x) {
 				if( eboo_facebook == "1" ){
 			window.plugins.socialsharing.shareViaFacebook("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);
 				}else{
-					 $('#settingspage').trigger('click');				
+					
+					 $.mobile.changePage('#5spage1' , { transition:'slide' });
+					// $('#settingspage').trigger('click');				
 				   	  settings_page();
 					}
 				
