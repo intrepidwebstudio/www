@@ -103,6 +103,8 @@ function hex(x) {
 		
 		
 		
+
+
 		
 		$('.socialicon').on('touchstart', function(e) {
 		//console.log('touch started');	
@@ -113,18 +115,12 @@ function hex(x) {
         .on('touchend', function(e) {
 				//console.log('touch_end');
 				$(this).children('.image_icon').css("opacity","1.0");
-				
-				
 	  		 $.getScript("js/SocialSharing.js");
 		 	 SocialSharing();
 				
 			var title_aaa =	$(this).attr('data-value');
 			var title_linkkk = $(this).attr('data-value1');
 			var media_link = $(this).attr('data-value2');
-			
-			
-			
-			
 			
 			
 		//	console.log("media LINK ="+ media_link);
@@ -154,7 +150,7 @@ function hex(x) {
 			window.plugins.socialsharing.shareViaFacebook("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);
 				}else{
 					
-					  navigator.notification.confirm(
+  navigator.notification.confirm(
             'Allow Facebook to share ?',  // message
 			onfacebookconfirm,
             'Facebook',            // title
@@ -207,7 +203,7 @@ null, // TO: must be null or an array
 				
 				}
 					
-				}
+			}
 			else if( media_link == "linkedin")
 			  { 
 		
@@ -504,19 +500,19 @@ $(this).children('.backimg').css("opacity","1");
 						  
 						$('#tumblrlogout').css('display','block');
 						$('#tumblrlogged').css('display','none');
+						
+						
+						
+						
+				var socialName = 'tumblr';
+	
+			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+	
+						
 				  }
 				 else{
 						 $('#tumblr_login').trigger('click');
-		
-						  change_value = '1';
-						  
-						 $('#tumblrlogout').css('display','none');
- 	                     $('#tumblrlogged').css('display','block');
-		 
-						 } 
-								
-			var socialName = 'tumblr';
-			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );					
+					 } 
 								
 			  });	
 							
@@ -543,6 +539,15 @@ $(this).children('.backimg').css("opacity","1");
 						  change_value = '0';
 						$('#linkedinlogout').css('display','block');
 						$('#linkedinlogged').css('display','none');
+						
+						
+						
+				var socialName = 'linkedin';
+	
+			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+	
+						
+						
 						  }
 					 else{
 						 
@@ -550,18 +555,8 @@ $(this).children('.backimg').css("opacity","1");
 						 $('#linkedin_login').trigger('click');
 						 
 						 
-						  change_value = '1';
-						 $('#linkedinlogout').css('display','none');
-						$('#linkedinlogged').css('display','block');
-		 
-						 
-						 
 						 } 
 	//					 console.log("Change Twitter = "+ change_value);
-	
-				var socialName = 'linkedin';
-	
-			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 				 
                  
 						
