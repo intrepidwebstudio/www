@@ -233,8 +233,8 @@ null, // TO: must be null or an array
     });
  });
 
-function onfacebookconfirm(button){
-	if(button == 2)
+function onfacebookconfirm(button1){
+	if(button1 == 2)
 	{
 			 change_value = '1';
 		$('#facebooklogout').css('display','none');
@@ -246,10 +246,10 @@ function onfacebookconfirm(button){
 	
 }
 
-function ontwitterconfirm(button)
+function ontwitterconfirm(button2)
 {
 	
-	if(button == 2)
+	if(button2 == 2)
 	{
 			 change_value = '1';
 		$('#twitterlogout').css('display','none');
@@ -262,10 +262,10 @@ function ontwitterconfirm(button)
 	
 	}
 
-function OnconfirmLinkedin(button)
+function OnconfirmLinkedin(button3)
 {
 	
- if( button == 2 )
+ if( button3 == 2 )
 	{
 	   $.support.cors = true;
 	   console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
@@ -285,9 +285,9 @@ function OnconfirmLinkedin(button)
 				});
 		}
 }
-function OnconfirmTumblr(button)
+function OnconfirmTumblr(button4)
 {
- if( button == 2 )
+ if( button4 == 2 )
 	{
 	   $.support.cors = true;
 	   console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
@@ -348,6 +348,7 @@ $('#settingspage').on('touchstart', function(e) {
 .on('touchend',function(){
 	$(this).children('.settingsimg').css("opacity","1");
 	settings_page();
+	browser_setting();
 	});
 	
 	
@@ -434,6 +435,7 @@ $(this).children('.backimg').css("opacity","1");
       var change_value;   
 	function settings_page()
 	{		
+	
 				
 			 $('#twitterautho').on('touchstart', function() {	
 				  }).on('touchmove',function(){
