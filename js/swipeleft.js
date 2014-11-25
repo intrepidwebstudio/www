@@ -126,12 +126,7 @@ function hex(x) {
 			var title_linkkk = $(this).attr('data-value1');
 			var media_link = $(this).attr('data-value2');
 			
-			
-		//	console.log("media LINK ="+ media_link);
-			
-			//com.apple.social.[facebook | twitter | sinaweibo | tencentweibo
-			
-			if( media_link == "twitter" )
+		if( media_link == "twitter" )
 			{
 				if( eboo_twitter == "1" ){
 			window.plugins.socialsharing.shareViaTwitter("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);	

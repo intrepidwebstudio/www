@@ -648,7 +648,7 @@ input{
    
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
-          <ul data-role="listview"  data-divider="false"  data-icon="false"  >
+          <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
                 <li id="twitterautho" ><a class="settingsmenu" data-transition="slide"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
@@ -656,7 +656,7 @@ input{
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"  onClick="facebookautho()" >
+                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"   >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -664,7 +664,7 @@ input{
                         
                 </a> </li>
                
-                <li id="tumblrautho" ><a class="settingsmenu" data-transition="slide" onClick="tumblrautho()" >
+                <li id="tumblrautho" ><a class="settingsmenu" data-transition="slide"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
@@ -672,7 +672,7 @@ input{
                         
                 </a> </li>
                 <li id="linkedinautho" >
-                <a class="settingsmenu" data-transition="slide"  onClick="linkedinautho()" >
+                <a class="settingsmenu" data-transition="slide"   >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
@@ -1842,7 +1842,7 @@ function get_more_data()
 									$('#list_view *').unbind('touchmove');
 									$('#list_view *').unbind('touchend');
 	
-							
+							$('#settingList *').unbind();
 							
 							
 											$('#list_view').trigger("create");
@@ -1978,6 +1978,9 @@ function get_more_data()
 									$('#list_view *').unbind('touchstart');
 									$('#list_view *').unbind('touchmove');
 									$('#list_view *').unbind('touchend');
+									
+									$('#settingList *').unbind();
+									
 	
 							
 									
