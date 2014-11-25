@@ -290,7 +290,7 @@ function OnconfirmTumblr(button4)
 	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_tumblr.php?tumblr_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
 	   							function(data){
 									console.log('RESULT = '+ JSON.stringify(data));
-									console.log("status = "+ response.status);
+									
 								 if( data.response.status== 'success')
 								 {
 									 navigator.notification.alert("success", alertCallback, "Ebbu", "Done");
