@@ -58,9 +58,7 @@ var	eboo_facebook;
         function iabLoadStop(event) {
 			iabRef.addEventListener('loadstop', function(event) {        
 				    if (event.url.match("/mobile/close/tumblrsuccess")) {
-					        
-							
-											  change_value = '1';
+			change_value = '1';
 				 $('#tumblrlogout').css('display','none');
  	             $('#tumblrlogged').css('display','block');
 				 
@@ -132,7 +130,7 @@ var	eboo_facebook;
 		  if(article_share_title !='')
 		  {
 		 
-		  iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
+		  iabRef = window.open(url, '_blank', 'toolbarposition=top,location=no,presentationstyle=fullscreen,clearsessioncache=yes');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 	      $.support.cors = true;
 		  this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
 		  
@@ -143,7 +141,7 @@ var	eboo_facebook;
 		  
 		  }else{
 			  console.log("EbooUSER_ID = "+EbooUSER_ID);
-              iabRef = window.open(url+'?eboo_user='+EbooUSER_ID , '_blank', 'toolbarposition=top,location=yes,presentationstyle=pagesheet');//presentationstyle: Set to pagesheet, formsheet or fullscreen
+              iabRef = window.open(url+'?eboo_user='+EbooUSER_ID , '_blank', 'toolbarposition=top,location=no,presentationstyle=fullscreen,clearsessioncache=yes');//presentationstyle: Set to pagesheet, formsheet or fullscreen
 			  }
 			iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);
