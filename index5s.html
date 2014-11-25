@@ -829,7 +829,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-<script type="text/javascript" src="js/touchevents.js"></script>
+<!-- <script type="text/javascript" src="js/touchevents.js"></script> --->
 
 
 
@@ -2114,7 +2114,14 @@ $('#mostpopular').on("touchstart",function(e){	})
 	 load_trending();
 	
 	  });	
-
+var kp = 0 ;
+function callAlertAllow()
+{
+	alert("count  ="+ kp);
+	kp=kp+1;
+	
+	}
+	
 
 
 

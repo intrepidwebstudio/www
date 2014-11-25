@@ -59,6 +59,7 @@ var	eboo_facebook;
 			iabRef.addEventListener('loadstop', function(event) {        
 				    if (event.url.match("/mobile/close/tumblrsuccess")) {
 					        iabRef.close();
+							iabRef = null;
 											  change_value = '1';
 				 $('#tumblrlogout').css('display','none');
  	             $('#tumblrlogged').css('display','block');
@@ -78,6 +79,7 @@ var	eboo_facebook;
 				db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 
 						iabRef.close();
+						iabRef = null;
 						
 						
 						
@@ -86,6 +88,7 @@ var	eboo_facebook;
 						
 						
 						iabRef.close();
+						iabRef = null;
 						  change_value = '1';
 				 $('#linkedinlogout').css('display','none');
  	             $('#linkedinlogged').css('display','block');
@@ -98,6 +101,7 @@ var	eboo_facebook;
 					else if(event.url.match("/mobile/close/linkedinfail")){
 						
 						iabRef.close();
+						iabRef = null;
 												  change_value = '0';
 				 $('#linkedinlogout').css('display','none');
  	             $('#linkedinlogged').css('display','block');
@@ -111,11 +115,12 @@ var	eboo_facebook;
 });
 }
         function iabClose(event) {
-		  	iabRef.close();
-           // iabRef.removeEventListener('loadstart', iabLoadStart);
-          //  iabRef.removeEventListener('loadstop', iabLoadStop);
-         //   iabRef.removeEventListener('exit', iabClose);
-           // iabRef.removeEventListener('share', iabClose);
+		  	
+          iabRef.removeEventListener('loadstart', iabLoadStart);
+          iabRef.removeEventListener('loadstop', iabLoadStop);
+          iabRef.removeEventListener('exit', iabClose);
+          iabRef.removeEventListener('share', iabClose);
+		  iabRef.close();
         }
         function iabShare(event){
           //  alert('SHARE:'+event.type);
