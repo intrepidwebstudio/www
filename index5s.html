@@ -46,34 +46,6 @@ backface-visibility:hidden !important;
 -moz-backface-visibility:hidden !important; /* Firefox */
 }
 
-
-
-/* Border bottom for the previous button during the transition*/
-/*
-li.left a.ui-btn,
-li.right a.ui-btn {
-    border-top-width: 0;
-    border-left-width: 1px;
-    border-right-width: 1px;
-}
-li a.ui-btn.border-bottom {
-    border-bottom-width: 1px;
-}
-
-/* Hide the delete button on touch devices */
-
-/*
-ul.touch li.ui-li-has-alt a.delete {
-	display:none;
-}
-
-
-ul.touch li.ui-li-has-alt a.ui-btn {
-    margin-right:0;
-}
-
-*/
-
 /* Styling for the popup */
 #confirm p {
     text-align: center;
@@ -990,7 +962,7 @@ $(document).keypress(function(e) {
 					
 					
 					
-			navigator.notification.alert("No data to load", alertCallback, "Eboo", "Done");
+			navigator.notification.alert("No data to load", alertCallback, "Ebbu", "Done");
 			
 
 										
@@ -1170,7 +1142,7 @@ function load_trending()
 					
 					
 					
-			navigator.notification.alert("No data to load", alertCallback, "Eboo", "Done");
+			navigator.notification.alert("No data to load", alertCallback, "Ebbu", "Done");
 					
 					}
 			
@@ -1178,7 +1150,7 @@ function load_trending()
 				},
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
-	  navigator.notification.alert("Network problem", alertCallback, "Eboo", "Done");
+	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "Done");
 		
 			
 		//	console.log(e);
@@ -1849,7 +1821,7 @@ function get_more_data()
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
 	  
-	 		navigator.notification.alert("Network Error", alertCallback, "Eboo", "Done");
+	 		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
 	
 			
 		//	console.log(e);
@@ -1991,7 +1963,7 @@ function get_more_data()
 				},
 		error: function(e) {
 			//window.plugins.spinnerDialog.hide();
-     		navigator.notification.alert("Network Error", alertCallback, "Eboo", "Done");
+     		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
 	
 			
 		//	console.log(e.status);

@@ -392,7 +392,7 @@ topplace_empty{
 	
 .terms_of_service{
 	
-	padding-bottom:35px;
+	padding-bottom:20px;
 	
 /*	background-color:#171514 !important  ; */
 	
@@ -466,7 +466,7 @@ input{
 	
   alignment-adjust:middle !important;
   background: url(img/ajax-loader.gif) 0 0 no-repeat;
- 	position:absolute
+ 	position:absolute;
 	}
 
 
@@ -478,7 +478,7 @@ input{
 </head>
 
 
-<body>
+<body onLoad="onLinkedInLoad">
 
 
 <div class="ui-panel-page-container">
@@ -506,12 +506,12 @@ input{
         
         <div class="searchsettings " id="top_menu" >
        
-       		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg" src="icons/57x57/search.png"  ></a>
+       		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
         
-        	<a href="#4ssettings" class="righticon" onClick="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg" ></a>
+        	<a href="#4ssettings" class="righticon" onClick="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
         
         
-<center>        <img  class="midicon" id="mostpopular" src="img/header.png" ></center>
+		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
         
       </div>  
         
@@ -529,32 +529,14 @@ input{
         
         </ul>
           <div class="iscroll-pullup">
-          <center><span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="" ></span></center>
+          <center><span class="iscroll-pull-icon"></span><span style="margin-top:0px !important;" class="iscroll-pull-label Conv_MuseoSans-300Italic" data-iscroll-loading-text="" ></span></center>
         </div>
           
            
                                      
     </div><!-- /content -->
     
-    
-    
-    
-    
-                    <a  href="#popup_alert" id="alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
-                    <div data-role="popup" id="popup_alert"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
-                    <div data-role="header" style="background-color:#CCC" >
-                    <h1>Eboo</h1>
-                    </div>
-                    <div role="main" class="ui-content">
-                    
-                    <p id="alertmessage" ></p>
-                    <center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
-                    </div>
-                    </div>
-    
-    
  </div>
-
 
 <div data-role="page" data-position="fixed"  id="4spage" data-title="eboo" >
 
@@ -620,8 +602,8 @@ input{
 
 
 </div>
-  
 
+  
 
 <div data-role="page" id="4ssettings" data-transition="slide" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
@@ -649,7 +631,7 @@ input{
    
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
-          <ul data-role="listview"  data-divider="false"  data-icon="false"  >
+          <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
                 <li id="twitterautho" ><a class="settingsmenu" data-transition="slide"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
@@ -657,7 +639,7 @@ input{
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"  onClick="facebookautho()" >
+                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"   >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -665,7 +647,7 @@ input{
                         
                 </a> </li>
                
-                <li id="tumblrautho" ><a class="settingsmenu" data-transition="slide" onClick="tumblrautho()" >
+                <li id="tumblrautho" ><a class="settingsmenu" data-transition="slide"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
@@ -673,7 +655,7 @@ input{
                         
                 </a> </li>
                 <li id="linkedinautho" >
-                <a class="settingsmenu" data-transition="slide"  onClick="linkedinautho()" >
+                <a class="settingsmenu" data-transition="slide"   >
                 		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
@@ -716,7 +698,7 @@ input{
          
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
 	  
-      <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+      <img  src="img/640.png"  class="iphone4s"  style="margin-bottom:-5px !important; width:100%" >
         
         <div class="topmenucontainer" >
      
@@ -830,6 +812,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
+<!-- <script type="text/javascript" src="js/touchevents.js"></script> --->
 
 
 
@@ -862,8 +845,9 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 
  
 $('#searcharea').on('blur',function(){ 
+									$('.search_empty').hide();		
 								    	$('#searcharea').hide();	
-									    $('.search_empty').hide();
+									    
 										$('#searcharea').blur();
 										
 										 
@@ -960,18 +944,18 @@ $(document).keypress(function(e) {
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
  					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
@@ -1006,8 +990,8 @@ $(document).keypress(function(e) {
 					
 					
 					
-			$('#alert').trigger('click');
-			$('#alertmessage').html('No data to load');
+			navigator.notification.alert("No data to load", alertCallback, "Eboo", "Done");
+			
 
 										
 					}
@@ -1026,8 +1010,7 @@ $(document).keypress(function(e) {
 			
 			
 			
-			$('#alert').trigger('click');
-			$('#alertmessage').html('Network error');
+			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
 			
      //  alert(' please try after sometime');		
 	//	console.log(e.status);
@@ -1146,18 +1129,18 @@ function load_trending()
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
@@ -1187,8 +1170,7 @@ function load_trending()
 					
 					
 					
-			$('#alert').trigger('click');
-			$('#alertmessage').html('No data to load');
+			navigator.notification.alert("No data to load", alertCallback, "Eboo", "Done");
 					
 					}
 			
@@ -1196,9 +1178,7 @@ function load_trending()
 				},
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
-	  
-	 			$('#alert').trigger('click');
-			$('#alertmessage').html('Newtwork problem');
+	  navigator.notification.alert("Network problem", alertCallback, "Eboo", "Done");
 		
 			
 		//	console.log(e);
@@ -1389,7 +1369,7 @@ db.transaction(populateDB, errorCB, successCB);
 		
 		if(length >0)
 		{
-		//	$( "body" ).pagecontainer( "change", '#5spage1'  ,  { transition:'pop'  });
+		//	$( "body" ).pagecontainer( "change", '#4spage1'  ,  { transition:'pop'  });
 
 //		alert('ssss');
 
@@ -1469,7 +1449,7 @@ db.transaction(populateDB, errorCB, successCB);
 						
 		}else{
 	//		alert('1');
-	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
+	//$( "body" ).pagecontainer( "change", '#4spage'  ,  { transition:'pop'  });
 			
 	 	$.mobile.changePage('#4spage' , { transition:'slide' });
 		
@@ -1812,18 +1792,18 @@ function get_more_data()
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
@@ -1836,8 +1816,22 @@ function get_more_data()
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
 							//alert(append_data);
+							
+									$('#list_view *').unbind('touchstart');
+									$('#list_view *').unbind('touchmove');
+									$('#list_view *').unbind('touchend');
+	
+							$('#settingList *').unbind();
+							
+							
 											$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
+										
+										
+			
+										
+										
+										
 										//	$('#list_view').refresh();
 										browser_setting();
 										$.getScript("js/SocialSharing.js");
@@ -1855,8 +1849,7 @@ function get_more_data()
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
 	  
-	 			$('#alert').trigger('click');
-			$('#alertmessage').html('Network error');
+	 		navigator.notification.alert("Network Error", alertCallback, "Eboo", "Done");
 	
 			
 		//	console.log(e);
@@ -1936,18 +1929,18 @@ function get_more_data()
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
  					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
@@ -1959,11 +1952,23 @@ function get_more_data()
 						
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
+							
+									$('#list_view *').unbind('touchstart');
+									$('#list_view *').unbind('touchmove');
+									$('#list_view *').unbind('touchend');
+									
+									$('#settingList *').unbind();
+									
+	
+							
 									
 										$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
 											
 									//	$('#list_view').refresh();
+									
+									
+									
 										browser_setting();
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
@@ -1986,8 +1991,7 @@ function get_more_data()
 				},
 		error: function(e) {
 			//window.plugins.spinnerDialog.hide();
-     			$('#alert').trigger('click');
-			$('#alertmessage').html('Network error');
+     		navigator.notification.alert("Network Error", alertCallback, "Eboo", "Done");
 	
 			
 		//	console.log(e.status);
@@ -2114,6 +2118,7 @@ $('#mostpopular').on("touchstart",function(e){	})
 	
 	  });	
 
+	
 
 
 

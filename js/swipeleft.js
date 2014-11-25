@@ -288,13 +288,16 @@ function OnconfirmTumblr(button4)
 	   $.support.cors = true;
 	   console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
 	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_tumblr.php?tumblr_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
-	   							function(response){
-									console.log('RESULT = '+ JSON.stringify(response));
+	   							function(data){
+									console.log('RESULT = '+ JSON.stringify(data));
 									console.log("status = "+ response.status);
-								 if( response.status== 'success')
+								 if( data.response.status== 'success')
 								 {
+									 navigator.notification.alert("success", alertCallback, "Ebbu", "Done");
 //beep can be included later									navigator.notification.alert('');
 								 }else{
+									 
+									 navigator.notification.alert("fail", alertCallback, "Ebbu", "Done");
 							//	navigator.notification.alert('Please Login to Tumblr from settings page '); 
 									 }
 				});
