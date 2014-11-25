@@ -439,8 +439,6 @@ $(this).children('.backimg').css("opacity","1");
 	  
 	function settings_page()
 	{		
-	
-				
 			 $('#twitterautho').on('touchstart', function() {	
 				  }).on('touchmove',function(){
 					  })
@@ -457,19 +455,12 @@ $(this).children('.backimg').css("opacity","1");
 						$('#twitterlogged').css('display','block');
 						 } 
 	//					 console.log("Change Twitter = "+ change_value);
-	
-				var socialName = 'twitter';
-	
+			var socialName = 'twitter';
 			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 			 });
-			 
-			 
 		 $('#facebookautho').on('touchstart', function() {	
-				  
-				  
 				  }).on('touchmove',function(){})
 				  .on('touchend',function(){
-
 					  if( eboo_facebook == '1' )
 					  {
 						  change_value = '0';
@@ -482,19 +473,10 @@ $(this).children('.backimg').css("opacity","1");
 						$('#facebooklogged').css('display','block');
 						 } 
 	//					 console.log("Change Twitter = "+ change_value);
-	
 				var socialName = 'facebook';
-	
 			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-
-						
 				 });
 
-				
-				
-				
-					
-							
 			 $('#tumblrautho').on('touchstart', function() {	
 				  
 				  
@@ -504,88 +486,28 @@ $(this).children('.backimg').css("opacity","1");
 							
 	 			if( eboo_tumblr == '1' )
 				  {
-						  change_value = '0';
-						  
-						$('#tumblrlogout').css('display','block');
-						$('#tumblrlogged').css('display','none');
-						
-						
-						
-						
-				var socialName = 'tumblr';
-	
-			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-	
-						
+					change_value = '0';
+					$('#tumblrlogout').css('display','block');
+					$('#tumblrlogged').css('display','none');
+					var socialName = 'tumblr';
+					db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 				  }
-				 else{
-						 $('#tumblr_login').trigger('click');
-					 } 
-								
 			  });	
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-					
-				 $('#linkedinautho').on('touchstart', function() {	
-				  
-				  
+		 $('#linkedinautho').on('touchstart', function() {	
 				  }).on('touchmove',function(){})
 				  .on('touchend',function(){
-				 
 				if( eboo_linkedin == '1' )
 					  {
 						  change_value = '0';
 						$('#linkedinlogout').css('display','block');
 						$('#linkedinlogged').css('display','none');
-						
-						
-						
 				var socialName = 'linkedin';
-	
 			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-	
-						
-						
 						  }
-					 else{
-						 
-						 
-						 $('#linkedin_login').trigger('click');
-						 
-						 
-						 } 
-	//					 console.log("Change Twitter = "+ change_value);
-				 
-                 
-						
 				 });
-				 
-				 
-				 
-				 
-				 
-				 
-				 
-					
-		
-				 
-   			
-				
-
-				
-				
-				
 	}
+
+
 
 
 
