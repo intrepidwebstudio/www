@@ -137,7 +137,7 @@ function hex(x) {
 			window.plugins.socialsharing.shareViaTwitter("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);	
 				}else{
 	
-	callAlertAllow();
+	//callAlertAllow();
 					
 			 navigator.notification.confirm(
             'Allow Twitter to share ?',  // message
