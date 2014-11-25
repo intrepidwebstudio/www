@@ -392,7 +392,7 @@ topplace_empty{
 	
 .terms_of_service{
 	
-	padding-bottom:35px;
+	padding-bottom:20px;
 	
 /*	background-color:#171514 !important  ; */
 	
@@ -466,7 +466,7 @@ input{
 	
   alignment-adjust:middle !important;
   background: url(img/ajax-loader.gif) 0 0 no-repeat;
- 	position:absolute
+ 	position:absolute;
 	}
 
 
@@ -535,23 +535,6 @@ input{
            
                                      
     </div><!-- /content -->
-    
-    
-    
-    
-    
-                    <a  href="#popup_alert" id="alert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-hidden-accessible  ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">alert</a>
-                    <div data-role="popup" id="popup_alert"   data-dismissible="false" style="max-width:300px; width:250px; padding:10px; background-color:#F7F7F7;"  >
-                    <div data-role="header" style="background-color:#CCC" >
-                    <h1>Eboo</h1>
-                    </div>
-                    <div role="main" class="ui-content">
-                    
-                    <p id="alertmessage" ></p>
-                    <center><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn" data-rel="back"> close</a></center>
-                    </div>
-                    </div>
-    
     
  </div>
 
@@ -1007,8 +990,8 @@ $(document).keypress(function(e) {
 					
 					
 					
-			$('#alert').trigger('click');
-			$('#alertmessage').html('No data to load');
+			navigator.notification.alert("No data to load", alertCallback, "Eboo", "Done");
+			
 
 										
 					}
@@ -1027,8 +1010,7 @@ $(document).keypress(function(e) {
 			
 			
 			
-			$('#alert').trigger('click');
-			$('#alertmessage').html('Network error');
+			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
 			
      //  alert(' please try after sometime');		
 	//	console.log(e.status);
@@ -1188,8 +1170,7 @@ function load_trending()
 					
 					
 					
-			$('#alert').trigger('click');
-			$('#alertmessage').html('No data to load');
+			navigator.notification.alert("No data to load", alertCallback, "Eboo", "Done");
 					
 					}
 			
@@ -1197,9 +1178,7 @@ function load_trending()
 				},
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
-	  
-	 			$('#alert').trigger('click');
-			$('#alertmessage').html('Newtwork problem');
+	  navigator.notification.alert("Network problem", alertCallback, "Eboo", "Done");
 		
 			
 		//	console.log(e);
@@ -1870,8 +1849,7 @@ function get_more_data()
 		error: function(e) {
       //window.plugins.spinnerDialog.hide();
 	  
-	 			$('#alert').trigger('click');
-			$('#alertmessage').html('Network error');
+	 		navigator.notification.alert("Network Error", alertCallback, "Eboo", "Done");
 	
 			
 		//	console.log(e);
@@ -2013,8 +1991,7 @@ function get_more_data()
 				},
 		error: function(e) {
 			//window.plugins.spinnerDialog.hide();
-     			$('#alert').trigger('click');
-			$('#alertmessage').html('Network error');
+     		navigator.notification.alert("Network Error", alertCallback, "Eboo", "Done");
 	
 			
 		//	console.log(e.status);
@@ -2140,13 +2117,7 @@ $('#mostpopular').on("touchstart",function(e){	})
 	 load_trending();
 	
 	  });	
-var kp = 0 ;
-function callAlertAllow()
-{
-	alert("count  ="+ kp);
-	kp=kp+1;
-	
-	}
+
 	
 
 
