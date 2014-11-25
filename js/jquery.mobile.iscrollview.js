@@ -463,9 +463,9 @@ function jqmIscrollviewRemoveLayerXYProps(e) {
     pullDownResetText   : "Refresh",
     pullDownPulledText  : "Refresh",
     pullDownLoadingText : "Loading...",
-    pullUpResetText     : "Pull up to refresh...",
+    pullUpResetText     : "Refresh",
     pullUpPulledText    : "Refresh",
-    pullUpLoadingText   : "Loading...",
+    pullUpLoadingText   : "Loading",
 
     pullPulledClass     : "iscroll-pull-pulled",
     pullLoadingClass    : "iscroll-pull-loading",
