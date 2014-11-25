@@ -960,18 +960,18 @@ $(document).keypress(function(e) {
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
  					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
@@ -1146,18 +1146,18 @@ function load_trending()
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
@@ -1812,18 +1812,18 @@ function get_more_data()
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
@@ -1936,18 +1936,18 @@ function get_more_data()
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email" ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin" ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr" ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook" ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter" ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
  					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';

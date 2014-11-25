@@ -88,6 +88,8 @@ function hex(x) {
 		 var new_left = -230 + 'px';
 			e.currentTarget.style.left = new_left;	
 			
+			var click_id = $(this).attr('data-value3');
+			
 		e.currentTarget.style.setProperty('background-color', '#DFE3E7', 'important' );	
 		$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+ security_token);
 				}
