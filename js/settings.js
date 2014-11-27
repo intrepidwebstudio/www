@@ -50,12 +50,12 @@ var	eboo_facebook;
 	        // Global InAppBrowser reference
         var iabRef = null;
 	    function iabLoadStart(event) {
-			window.plugins.spinnerDialog.show();
+//			window.plugins.spinnerDialog.show();
 //			$('#loaderScreen').show();	
         }
 	   function iabLoadStop(event) {
 		   
-		   	window.plugins.spinnerDialog.show();
+//		   	window.plugins.spinnerDialog.show();
 //			$('#loaderScreen').hide();
 		}
         function iabClose(event) {
