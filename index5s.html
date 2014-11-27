@@ -79,44 +79,41 @@ background: rgba(255, 255, 255, 0.95) !important;
         height: 100%;
         position: absolute;
         right: 0;
+		
 	  }
 	
 	.behind  a{
-			
+			display:table-cell;
 			height:100% !important;
 			vertical-align:middle !important;
-			
-		
+			background-color:#936;
 		}
 		
 		
-	.behind a:first-child img{
-	
-			padding-top:25px;
-			padding-bottom:25px;	
-			padding-right:16px;
-		
+/*	.behind a:first-child img{
 		}
 		
 	.behind a img{
-		
-			padding-top:25px;
-			padding-bottom:25px;	
-			padding-left:8px;
-		
+		vertical-align:middle !important;
 		}	
 		
 		.behind a:last-child img{
-			padding-top:25px;
-			padding-bottom:25px;	
-			padding-left:10px;
-		
 		}	
+	*/
+	.socialicon{
 	
+	width:77px !important;	
+	vertical-align:middle !important;
+	text-align:center;
+		
+		}
 			
 	.socialicon img {
+		
+		padding-top:35%;
+		padding-bottom:30%;	
 		 width:35px;
-		 
+		 vertical-align:middle !important;
 	}	
 	
 	
@@ -128,8 +125,7 @@ background: rgba(255, 255, 255, 0.95) !important;
 		
     }
     .behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
-      
-	  	
+      	  	
         text-shadow: none;
     }
 	
@@ -142,16 +138,10 @@ background: rgba(255, 255, 255, 0.95) !important;
 		float:right;
 		vertical-align:middle !important;
 		
-		
-		
+				
 		}
 
 	
-	.socialicon a{
-	
-		background-color:#FF0 !important;	
-		
-		}
 	
 		
 	.sourceicon{
@@ -394,8 +384,14 @@ ul li div{ background-color:#F7F7F7 !important;	}
 ul li:nth-child(odd) div{ background-color:#FFFFFF !important;  }
 
 
+
 ul li a.settingsmenu{ background-color: #FFFFFF  !important; }
 ul li:nth-child(odd) a.settingsmenu{ background-color: #F7F7F7 !important; }
+
+
+ul li a.settingsmenu{ padding: 1.3em 1.1em !important; }
+
+ul li a.settingsmenu p{ font-size:15px !important; font-weight:100 !important;   }
 
 
 
@@ -409,10 +405,10 @@ ul li:nth-child(odd) a.settingsmenu{ background-color: #F7F7F7 !important; }
 
 input{
 	
-			vertical-align:middle !important;
+		vertical-align:middle !important;
 		text-align:center !important;
 		cursor:vertical-text !important;
-
+	
 	
 	}
 
@@ -440,11 +436,51 @@ input{
   background: url(img/ajax-loader.gif) 0 0 no-repeat;
  	position:absolute;
 	}
+	
+.facebookBackground{  background-color:#3B5998 !important; 	}	
+.twitterBackground{  background-color:#4099FF !important;  }
+.emailBackground{  background-color:#EA6D6C !important;  }	
 
+.lefticonAlign{
+	
+	width:34% !important;
+	margin-left:-7px;
+	margin-right:7px;
+	
+	}
 
   </style>
   
-  
+  <style>
+
+  #loaderScreen {
+    -webkit-animation: rotationLoader 2s infinite linear;
+}
+
+
+@-webkit-keyframes rotationLoader {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotationLoader {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+
+@-o-keyframes rotationLoader {
+  from { -o-transform: rotate(0deg); }
+  to { -o-transform: rotate(360deg); }
+}
+
+@-keyframes rotationLoader {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} 
+
+
+
+</style>
   
 
 </head>
@@ -455,9 +491,10 @@ input{
 
 <div class="ui-panel-page-container">
 
+<img id="loaderScreen" style="position:absolute;bottom:43%; left:50%;  width:25px; alignment-adjust:middle !important;   z-index:99999999; " src="loader.png" >
 
 
-<div data-role="page" id="5spage1" data-title="eboo" >
+<div data-role="page" id="5spage1" data-title="Ebbu" >
 
     <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
     
@@ -466,7 +503,7 @@ input{
         </div>
     
 	      <div class="ui-field-contain forceinline">
-	          <input type="text" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+	          <input type="text" title="go" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
     
         <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
@@ -480,7 +517,7 @@ input{
        
        		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
         
-        	<a href="#5ssettings" class="righticon" onClick="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
+        	<a href="#5ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
         
         
 		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
@@ -501,7 +538,7 @@ input{
         
         </ul>
           <div class="iscroll-pullup">
-          <center><span class="iscroll-pull-icon"></span><span style="margin-top:0px !important;" class="iscroll-pull-label Conv_MuseoSans-300Italic" data-iscroll-loading-text="" ></span></center>
+          <center><span class="iscroll-pull-icon"></span><span style="margin-top:0px !important; font-size:8px;" class="iscroll-pull-label Conv_MuseoSans-300Italic"  data-iscroll-loading-text="" ></span></center>
         </div>
           
            
@@ -510,7 +547,7 @@ input{
     
  </div>
 
-<div data-role="page" data-position="fixed"  id="5spage" data-title="eboo" >
+<div data-role="page" data-position="fixed"  id="5spage" data-title="Ebbu" >
 
 
 <div class="swiper-container">
@@ -541,9 +578,9 @@ input{
          </div>
        
         <center> <div style=" font-size:21px; color:#FFF !important; padding-bottom:5% !important;
-		cursor:vertical-text; text-align:center  !important; width:70% !important ;  " class="Conv_MuseoSans-300"  >Feed <strong><span class="Conv_MuseoSans-700Italic" style="font-size:21px;">your curiousity.</span></strong></div></center>
+		 text-align:center  !important; width:70% !important ;  " class="Conv_MuseoSans-500"  >Feed <strong><span class="Conv_MuseoSans-700Italic" style="font-size:21px;">your curiosity.</span></strong></div></center>
         
-        <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
+        <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" ontap="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
 		cursor:vertical-text; " data-corners="false" placeholder="E-mail Address"   ></center>
 
 		<center>
@@ -552,9 +589,10 @@ input{
         Start Using Ebbu</button>
         </center>
         
-        <center><img src="img/ajax-loader.gif" id="loader_login" style="display:none;"></center>
+        <center> <img id="loaderScreen" src="loader.png" style="display:none; width:25px;" ></center>
              
-                
+               
+         
         
         </div>
         
@@ -584,9 +622,9 @@ input{
      
      <div class="searchsettings">
 
-       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
+       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign"  src="icons/57x57/back.png" ></a>
              <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
-        <center><img  class="midicon"  src="img/header.png" ></center>
+   		     <center><img  class="midicon"  src="img/header.png" ></center>
 
                
      </div>  
@@ -605,43 +643,28 @@ input{
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
                 <li id="twitterautho" ><a class="settingsmenu" data-transition="slide"  >
-                		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
+                		<p style="float:left;" class="Conv_MuseoSans_500" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
                 <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"   >
-                		<p style="float:left" class="Conv_MuseoSans_700" >Facebook  </p>
+                		<p style="float:left;" class="Conv_MuseoSans_500" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="facebooklogout" ></p>
                         
                 </a> </li>
                
-                <li id="tumblrautho" ><a class="settingsmenu" data-transition="slide"  >
-                		<p style="float:left" class="Conv_MuseoSans_700" >Tumblr  </p>
-                		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="tumblrlogged" style="display:none;" >
-                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="tumblrlogout" ></p>
-                        
-                </a> </li>
-                <li id="linkedinautho" >
-                <a class="settingsmenu" data-transition="slide"   >
-                		<p style="float:left" class="Conv_MuseoSans_700" >LinkedIn  </p>
-                		<p  style="vertical-align:middle !important; float:right">
-                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="linkedinlogged" style="display:none;" >
-                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="linkedinlogout" ></p>
-                        
-                </a> </li>
                 <li><a class="settingsmenu" data-transition="slide" href="#5stermsofservice" data-prefetch="true" >
-                		<p style="float:left" class="Conv_MuseoSans_700" >Terms of service  </p>
+                		<p style="float:left ; " class="Conv_MuseoSans_500" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
                 <li><a class="settingsmenu" data-transition="slide" href="#5sprivacy" data-prefetch="true" >
-                		<p style="float:left" class="Conv_MuseoSans_700" >Privacy  </p>
+                		<p style="float:left ;font-weight:normal !important;" class="Conv_MuseoSans_500" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
                         
@@ -650,12 +673,8 @@ input{
                 
          </ul>
          
-         <a  style="background-color:#DFE3E7 !important;"  class="ui-hidden-accessible" id="linkedin_login" href="#" onClick="navigateTo('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin_login.php','','','')" > </a>
-         <a  style="background-color:#DFE3E7 !important;"  class="ui-hidden-accessible" id="tumblr_login" href="#" onClick="navigateTo('http://www.safelearners.com/oauth/mysqli_offline_access_to_tumblr_login.php','','','')" > </a> 
-         
+<!-- <img id="loaderScreen" src="loader.png" >-->
 
-    
-         
          
         </div> 
     </div><!-- /content -->
@@ -675,7 +694,7 @@ input{
         <div class="topmenucontainer" >
      
      <div class="searchsettings">
-       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
+       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign" src="icons/57x57/back.png" ></a>
              <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
         <center><img  class="midicon"  src="img/header.png" ></center>
         
@@ -729,7 +748,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     
      
      <div class="searchsettings">
-       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg" src="icons/57x57/back.png" ></a>
+       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign" src="icons/57x57/back.png" ></a>
              <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
         <center><img  class="midicon"  src="img/header.png" ></center>
       </div>  
@@ -846,7 +865,7 @@ $(document).keypress(function(e) {
 		
 		search_pageCount = 0;
 		
-		
+		$('#loaderScreen').show();
 		
 		
 		
@@ -916,11 +935,9 @@ $(document).keypress(function(e) {
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
@@ -951,7 +968,7 @@ $(document).keypress(function(e) {
 										
 										
 					search_pageCount = search_pageCount + 1;					
-										
+								$('#loaderScreen').hide();		
 												
 							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
@@ -961,8 +978,8 @@ $(document).keypress(function(e) {
 					//window.plugins.spinnerDialog.hide();
 					
 					
-					
-			navigator.notification.alert("No data to load", alertCallback, "Ebbu", "Done");
+					$('#loaderScreen').hide();
+			navigator.notification.alert("We couldn't find any articles on your topic.", alertCallback, "Ebbu", "OK");
 			
 
 										
@@ -975,18 +992,19 @@ $(document).keypress(function(e) {
 			$('#searcharea').val('');
 			
 			
+			
 				},
 		error: function(e) {
 			//window.plugins.spinnerDialog.hide();
 			
 			
+			$('#loaderScreen').hide();
 			
-			
-			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
+			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "OK");
 			
      //  alert(' please try after sometime');		
 	//	console.log(e.status);
-	
+
 			
 			
 		}
@@ -1029,11 +1047,9 @@ function load_trending()
 		
  pageCount = 0;
 
-	
 
-	
-	
-	
+
+	$('#loaderScreen').show();
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
@@ -1101,11 +1117,9 @@ function load_trending()
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
@@ -1135,27 +1149,37 @@ function load_trending()
 						//window.plugins.spinnerDialog.hide();
 						pageCount = pageCount +1;
 						
+						$('#loaderScreen').hide();
+						
+						
 				}//user data match if
 				else{
 					//window.plugins.spinnerDialog.hide();
 					// user data doent match
 					
+					$('#loaderScreen').hide();
 					
-					
-			navigator.notification.alert("No data to load", alertCallback, "Ebbu", "Done");
+			navigator.notification.alert("We couldn't find any articles now, please try later.", alertCallback, "Ebbu", "OK");
 					
 					}
 			
 			
 				},
 		error: function(e) {
+			$('#loaderScreen').hide();
+			
       //window.plugins.spinnerDialog.hide();
-	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "Done");
+	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "OK");
 		
 			
 		//	console.log(e);
+		
 			
 		}
+		
+		
+		
+		
 			
 	});
 	
@@ -1217,10 +1241,11 @@ $(window).resize();
 	
 //alert('sasdasds');
 	    
-	
+	$('#loaderScreen').show();
 	    setTimeout(function() {
 			
 	//	startswiperfunction();
+	$('#loaderScreen').hide();
         navigator.splashscreen.hide();
 		
 	//	//window.plugins.spinnerDialog.show();
@@ -1452,7 +1477,7 @@ db.transaction(populateDB, errorCB, successCB);
 	{ 
 	//window.plugins.spinnerDialog.show();
 	
-	$("#loader_login").show();
+	$("#loaderScreen").show();
 	
 	var	useremail = $('#useremail').val();
 	var checkk = 	IsEmail(useremail);
@@ -1460,9 +1485,9 @@ db.transaction(populateDB, errorCB, successCB);
 	{
 		//window.plugins.spinnerDialog.hide();
 		
-	$("#loader_login").hide();	
+	$("#loaderScreen").hide();	
 		
-	navigator.notification.alert("Enter a Valid E-mail Address", alertCallback, "Error !!", "Done");
+	navigator.notification.alert("Enter a Valid E-mail Address", alertCallback, "Error !!", "OK");
 	//	alert('enter a vaild email');
 	
 		}
@@ -1499,17 +1524,17 @@ db.transaction(populateDB, errorCB, successCB);
 								else{
 									//window.plugins.spinnerDialog.hide();
 									
-											navigator.notification.alert("server problem , please try after sometime !!", alertCallback, "Ebbu", "Done");
+											navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
 								
 									}	
-								$("#loader_login").hide();
+								$("#loaderScreen").hide();
 								
 								},
 			error: function(e)
 				{
 					//window.plugins.spinnerDialog.hide();
 					
-				$("#loader_login").hide();	
+				$("#loaderScreen").hide();	
 					
 				navigator.notification.alert("Network Error !!", alertCallback, "Ebbu", "Done");
 					
@@ -1764,11 +1789,9 @@ function get_more_data()
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
@@ -1793,7 +1816,7 @@ function get_more_data()
 									$('#list_view *').unbind('touchmove');
 									$('#list_view *').unbind('touchend');
 	
-							$('#settingList *').unbind();
+							//$('#settingList *').unbind();
 							
 							
 											$('#list_view').trigger("create");
@@ -1901,11 +1924,9 @@ function get_more_data()
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"  ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="linkedin"   data-value3="'+article_id+'"    ><img src="socialicons/linkedin.png" class="image_icon" alt="LinkedIn"  ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="tumblr"   data-value3="'+article_id+'"    ><img src="socialicons/tumblr.png" alt="tumblr" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
 					if(viewstatus=='1')
 					{
@@ -1929,7 +1950,7 @@ function get_more_data()
 									$('#list_view *').unbind('touchmove');
 									$('#list_view *').unbind('touchend');
 									
-									$('#settingList *').unbind();
+									//$('#settingList *').unbind();
 									
 	
 							

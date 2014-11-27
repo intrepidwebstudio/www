@@ -1707,11 +1707,11 @@ button.ui-btn-icon-notext,
 }
 .in {
 	-webkit-animation-timing-function: ease-out;
-	-webkit-animation-duration: 350ms;
+	-webkit-animation-duration: 240ms;
 	-moz-animation-timing-function: ease-out;
-	-moz-animation-duration: 350ms;
+	-moz-animation-duration: 240ms;
 	animation-timing-function: ease-out;
-	animation-duration: 350ms;
+	animation-duration: 240ms;
 }
 .out {
 	-webkit-animation-timing-function: ease-in;

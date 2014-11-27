@@ -442,6 +442,15 @@ input{
 	}
 
 
+.ui-listview > .ui-li-has-thumb > .ui-btn, .ui-listview > .ui-li-static.ui-li-has-thumb {
+
+	    min-height: 4.625em !important;
+		padding-left: 7.3em !important;
+		padding-right: 2.3em !important;
+		
+	}
+
+
   </style>
   
   
@@ -2070,7 +2079,7 @@ function get_more_data()
     }    
   
   // Set-up jQuery event callbacks
-  $(document).delegate("#6ppage1", "pageinit", 
+  $(document).delegate("#6p7page1", "pageinit", 
     function bindPullPagePullCallbacks(event) {
       $(".iscroll-wrapper", this).bind( {
       iscroll_onpulldown : onPullDown,

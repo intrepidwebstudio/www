@@ -631,7 +631,7 @@ input{
    
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
-          <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
+          <ul data-role="listview"   data-divider="false"  data-icon="false"  >
                 <li id="twitterautho" ><a class="settingsmenu" data-transition="slide"  >
                 		<p style="float:left" class="Conv_MuseoSans_700" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
@@ -1821,8 +1821,6 @@ function get_more_data()
 									$('#list_view *').unbind('touchmove');
 									$('#list_view *').unbind('touchend');
 	
-							$('#settingList *').unbind();
-							
 							
 											$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
@@ -1956,10 +1954,7 @@ function get_more_data()
 									$('#list_view *').unbind('touchstart');
 									$('#list_view *').unbind('touchmove');
 									$('#list_view *').unbind('touchend');
-									
-									$('#settingList *').unbind();
-									
-	
+								
 							
 									
 										$('#list_view').trigger("create");

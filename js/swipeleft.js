@@ -85,7 +85,7 @@ function hex(x) {
 		//	console.log(" LEFTTTT  =" + left );
 			if(left < -90)
 			{
-		 var new_left = -230 + 'px';
+		 var new_left = -231 + 'px';
 			e.currentTarget.style.left = new_left;	
 			
 			var click_id = $(this).attr('data-value3');
@@ -129,13 +129,13 @@ function hex(x) {
 		if( media_link == "twitter" )
 			{
 				if( eboo_twitter == "1" ){
-			window.plugins.socialsharing.shareViaTwitter("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);	
+			window.plugins.socialsharing.shareViaTwitter("Found on @EbbuApp:  "+title_aaa, null /* img */,title_linkkk);	
 				}else{
 	
 	//callAlertAllow();
 					
 			 navigator.notification.confirm(
-            'Allow Twitter to share ?',  // message
+            'To share this article, we need access to your account.',  // message
 			ontwitterconfirm,
             'Twitter',            // title
             'Cancel,Allow'          // buttonLabels
@@ -148,11 +148,11 @@ function hex(x) {
 			{
 				
 				if( eboo_facebook == "1" ){
-			window.plugins.socialsharing.shareViaFacebook("Found this article via GetEboo.com:  "+title_aaa, null /* img */,title_linkkk);
+			window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+title_aaa, null /* img */,title_linkkk);
 				}else{
 					
   navigator.notification.confirm(
-            'Allow Facebook to share ?',  // message
+            'To share this article, we need access to your account.',  // message
 			onfacebookconfirm,
             'Facebook',            // title
             'Cancel,Allow'          // buttonLabels
@@ -167,7 +167,7 @@ function hex(x) {
 			else if( media_link == "email"  )
 			{
 window.plugins.socialsharing.shareViaEmail(
-  title_aaa +'<br>'+title_linkkk, // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+  'I found this article on <a href="http://www.EbbuApp.com"> EbbuApp.com </a> and thought of you. Check it out. '+'<p>'+title_aaa +'<br>'+title_linkkk+'</p>', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
   'Check out this article',
 null, // TO: must be null or an array
   null, // CC: must be null or an array
@@ -179,53 +179,7 @@ null, // TO: must be null or an array
 		//	window.plugins.socialsharing.shareViaEmail(title_aaa , null /* img */,title_linkkk );
 				}
 				
-			else if( media_link == "tumblr") 
-			{
 				
-				
-			if(eboo_tumblr== "1")	
-			{
-				
-			Global_share_titleee = title_aaa;
-			Global_share_linkkk = title_linkkk;
-		//	console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
-	        navigator.notification.confirm(
-            title_aaa,  // message
-			OnconfirmTumblr,
-            'Tumblr',            // title
-            'Cancel,Post'          // buttonLabels
-        );
-		
-			}else{
-				
-				 $('#tumblr_login').trigger('click');
-				 				
-				
-				}
-					
-			}
-			else if( media_link == "linkedin")
-			  { 
-		
-		
-		if( eboo_linkedin == "1" )
-		{
-			Global_share_titleee = title_aaa;
-			Global_share_linkkk = title_linkkk;
-		//	console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
-	        navigator.notification.confirm(
-            title_aaa,  // message
-			OnconfirmLinkedin,
-            'LinkedIn',            // title
-            'Cancel,Post'          // buttonLabels
-        );
-		}else{
-			
-				 $('#linkedin_login').trigger('click');
-
-			
-			}
-	   }	
     });
  });
 
@@ -258,51 +212,6 @@ function ontwitterconfirm(button2)
 	
 	}
 
-function OnconfirmLinkedin(button3)
-{
-	
- if( button3 == 2 )
-	{
-	   $.support.cors = true;
-	   console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
-	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_linkedin.php?linkedin_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
-	   							function(response){
-									
-									result_variable = response;
-									
-									console.log('RESULT = '+ JSON.stringify(result_variable));
-									console.log("status = "+ result_variable.status);
-								 if( result_variable.status == 'success')
-								 {
-//beep can be included later									navigator.notification.alert('');
-								 }else{
-							//	navigator.notification.alert('Please Login to Linkedin from settings page '); 
-									 }
-				});
-		}
-}
-function OnconfirmTumblr(button4)
-{
- if( button4 == 2 )
-	{
-	   $.support.cors = true;
-	   console.log('article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk));
-	   $.post('http://www.safelearners.com/oauth/mysqli_offline_access_to_tumblr.php?tumblr_user_id='+EbooUSER_ID+'&article_title='+Global_share_titleee+'&article_link='+encodeURI(Global_share_linkkk) , 
-	   							function(data){
-									console.log('RESULT = '+ JSON.stringify(data));
-									
-								 if( data.response.status== 'success')
-								 {
-									 navigator.notification.alert("success", alertCallback, "Ebbu", "Done");
-//beep can be included later									navigator.notification.alert('');
-								 }else{
-									 
-									 navigator.notification.alert("fail", alertCallback, "Ebbu", "Done");
-							//	navigator.notification.alert('Please Login to Tumblr from settings page '); 
-									 }
-				});
-		}
-}
 
 
 
